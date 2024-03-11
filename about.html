@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Evan Butler</title>
+  <link rel="stylesheet" href="aboutstyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="video-container">
+    <picture>
+      <source media="(max-width: 767px)" srcset="streets.png">
+      <source media="(min-width: 768px)" srcset="darktimes.mp4">
+      <img src="streets.png" alt="">
+    </picture>
+    <video class="video-slide desktop-only" width="100%" height="auto" autoplay muted loop>
+      <source src="darktimes.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  
+  
+
+  <header>
+    <a href="index.html" class="brand">Atelier</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+
+
+
+<section class="contact-info">
+  <h1>About</h1>
+  <p>
+    Hello Everybody, welcome to my space. I'm Evan, born and raised in <span class="emphasis">Bed-Stuy, Brooklyn</span> - I am African American with roots in <span class="emphasis">Barbados</span>. Now, I'm expanding my horizons over at <span class="emphasis">Tokyo University of Technology</span>, where I'm not just studying, but evolving.<br><br>
+
+    Being here is about more than academics; it's about channeling that <span class="emphasis">hustle ingrained</span> in me into something bigger. I've got a toolkit of talents, and my aim? To lift up those from my community, to spark change, and to contribute something meaningful back to the places that shaped me.<br><br>
+    
+    <span class="emphasis">Art and innovation are my playgrounds.</span> I believe in the power of creation - whether that's through visuals, tech, or community work - to convey stories, challenge perceptions, and <span class="emphasis">bridge divides.</span> My mission is to create with purpose, to resonate and inspire.<br><br>
+    
+    This website? It's a window into my world. Here, I plan to share not just my Talents, but the essence of my journey.  So, I hope that through my services I can help those from my community. I'm here to make an <span class="emphasis">impact</span>, push <span class="emphasis">boundaries</span>, and leave a <span class="emphasis">legacy</span>.<br><br>
+</p>
+
+
+
+  <div class="contact-methods">
+    <div class="email">
+      <h2></h2>
+      <p><a href=""></a></p>
+    </div>
+    <div class="skype">
+      <h2></h2>
+      <p></p>
+    </div>
+  </div>
+  
+  <div class="home">
+    <div class="home">
+      </div>
+
+
+
+    <div class="media-icons">
+      <a href="https://www.facebook.com/evan.butler.9619"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/emun_ra_/"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <div class="mobile-gif"></div>
+ 
+</section>
+
+
+
+
+<!-- Menu Icon -->
+<button id="toggle-chat-btn" aria-label="Toggle Chat">
+    <i class="fas fa-bars"></i>
+  </button>
+  
+
+
+<!-- ChatGPT Chatbot Interface -->
+<div class="chat-container" style="display:none;">
+    <div class="chatbot" id="chatbot">
+        <h1>Chatbox</h1>
+        <textarea id="prompt" placeholder="Enter your prompt"></textarea>
+        <button id="submit">Send</button>
+        <div id="response"></div>
+    </div>
+  </div>
+  
+  <script src="app.js"></script>
+  <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+  
+
+</body>
+</html>
