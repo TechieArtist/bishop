@@ -188,7 +188,7 @@ body {
     height: 500px; /* Example height */
     overflow: auto; /* Adds scrollbars as needed */
     right: 5%;
-    top: 40%;
+    bottom: 10%;
     z-index: 1000;
     animation: slideIn 1s ease-out; /* Apply the animation */
     display: none;
