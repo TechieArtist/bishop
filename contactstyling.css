@@ -391,3 +391,8 @@ header .navigation{
   }
 }
 
+@media (max-width: 600px) {
+  .portraitEvan {
+    display: none;
+  }
+}
