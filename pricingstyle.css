@@ -428,3 +428,9 @@ section{
   margin-bottom: 10px; /* Adjust as needed */
   padding: 5px 0; /* Adjust as needed */
 }
+
+@media screen and (max-width: 768px) {
+  .MyImg {
+      display: none;
+  }
+}
