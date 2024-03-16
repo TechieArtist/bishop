@@ -172,11 +172,14 @@ section{
 }
 
 .chat-container button {
-  color: #000000; /* Black */
-  position: relative;
-  top: 75%;
-}
-
+    color: #ffffff; /* Black */
+    position: relative;
+    border-radius: 50px;
+    top: 75%;
+    
+    background-color: #000000;
+    border-color: #fff;
+  }
 #response {
   color: #ffffff; /* White */
 }
