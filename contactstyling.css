@@ -225,7 +225,7 @@ header .navigation{
 
 .contact .row .image img{
     height: 80%;
-    width:80%;
+    width:100%;
     object-fit: cover;
 }
 
@@ -243,6 +243,40 @@ header .navigation{
     border:.1rem solid green;
     text-transform: none;
     resize: none;
+}
+
+inputBox {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.inputBox input, .inputBox textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+
+.inputBox label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #999;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.inputBox input:focus + label,
+.inputBox textarea:focus + label,
+.inputBox input:not(:placeholder-shown) + label,
+.inputBox textarea:not(:placeholder-shown) + label {
+  top: -20px;
+  left: 0;
+  color: #333;
+  font-size: 12px;
 }
 
 .contact .row form .inputBox label{
@@ -397,9 +431,3 @@ header .navigation{
   }
 }
 
-
-@media screen and (max-width: 768px) {
-    .MyImg {
-        display: none;
-    }
-}
