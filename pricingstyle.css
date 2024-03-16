@@ -27,7 +27,8 @@ html, body {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Example: creates a 3-column layout */
     grid-template-rows: auto; /* Rows size will adjust based on content */
-    gap: 0px; /* Space between grid items */
+    grid-gap: 20px; /* Adjust gap as needed */
+    padding: 0 20px; /* Add padding to the container */
     border-color: #00000000;
   }
 
@@ -44,9 +45,11 @@ html, body {
     color: #ffffff; /* White text color */
     position: relative;
     line-height: 1.5;
-    margin: 0;
     padding: 0;
     overflow-x: hidden; /* Hide horizontal scrollbar for the container element */
+    max-width: 350px; /* Or any maximum width you find appropriate */
+    margin: auto; /* This will center the grid items in their grid columns */
+    /* Other styles remain unchanged */
   }
   
   
@@ -342,10 +345,12 @@ section{
   }
 }
 
-@media (max-width: 560px){
-  .home .content h1{
-    font-size: 3em;
-    line-height: 60px;
+@media (max-width: 768px) {
+  #box1 {
+    grid-template-columns: 1fr; /* Stack the grid items on smaller screens */
+  }
+  .grid-item {
+    max-width: none; /* Allow grid items to fill the container */
   }
 }
 
@@ -413,4 +418,13 @@ section{
   font-weight: bold; /* Optionally, make the emphasized words bold */
   /* You can add more styles here as needed */
   font-size: large;
+}
+
+.grid-item ul {
+  padding: 0;
+  list-style: none; /* Removes default list styling */
+}
+.grid-item ul li {
+  margin-bottom: 10px; /* Adjust as needed */
+  padding: 5px 0; /* Adjust as needed */
 }
