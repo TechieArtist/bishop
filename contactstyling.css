@@ -114,11 +114,6 @@ header .navigation{
   background-color: #0000007e;
 }
 
-/* Hover effect */
-.contact-info a:hover {
-    background-color: white; /* Change background color to white on hover */
-    color: rgb(0, 0, 0); /* Change text color to red on hover */
-}
 
 .media-icons a {
   margin: 0 10px;
