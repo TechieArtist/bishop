@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const app = express();
 const cors = require('cors'); // Make sure this line is included
-const port = process.env.PORT||8000
+const port = process.env.PORT||3000
 //const port = 8000;
 
 app.use(cors());
