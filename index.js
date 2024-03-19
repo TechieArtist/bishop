@@ -4,10 +4,7 @@ const bodyParser = require('body-parser');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const app = express();
 const cors = require('cors'); // Make sure this line is included
-const port = process.env.PORT||3000
-const openaiApiKey = process.env.OPENAI_API_KEY;
-
-
+const port = 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -16,7 +13,6 @@ app.use(express.static('public'));
 const predefinedResponses = {
     "website owner": "The owner of this website is Evan, a talented individual with a background in art, innovation, and community work...",
     "pricing": "Here is a breakdown of the pricing for Evan's services on his website:...",
-    // Add more predefined responses as needed
 };
 
 app.post('/api/chat', async (req, res) => {
@@ -73,5 +69,24 @@ app.post('/api/chat', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Starting server at http://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });
+
+// Function to handle graceful shutdown
+function gracefulShutdown() {
+    console.log('Gracefully shutting down');
+    server.close(() => {
+        console.log('Closed out remaining connections');
+        process.exit();
+    });
+    
+    // If the server hasn't finished in 10 seconds, forcefully shut down
+    setTimeout(() => {
+        console.error('Could not close connections in time, forcefully shutting down');
+        process.exit(1);
+    }, 10000);
+}
+
+// Listen for termination signals
+process.on('SIGTERM', gracefulShutdown);
+process.on('SIGINT', gracefulShutdown);
