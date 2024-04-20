@@ -1,136 +1,155 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Evan Butler</title>
-  <link rel="stylesheet" href="aboutstyle.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evanatelier.com</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
+    
+<!-- header section starts  -->
 
-  <div class="video-container">
-    <picture>
-        <source srcset="projects2.png">
-        <img src="projects2.png" alt=""width="100%" height="auto">
-      </picture>
-  </div>
-  
-  
+<header class="header">
 
-  <header>
-    <a href="index.html" class="brand">Atelier</a>
-    <div class="menu-btn"></div>
-    <div class="navigation">
-      <div class="navigation-items">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="pricing.html">Services</a>
-        <a href="contact.html">Contact</a>
-        <a href="projects.html">projects</a>
-      </div>
+    <section class="flex">
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="projects.html">projects</a>
+        </nav>
+
+
+        <div class="scroll-bar"></div>
+
+    </section>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<div class="home" id="home">
+
+    <section class="flex">
+        <div class="content">
+            <h1>A <span>Hood Story</span></h1>
+            <p>A life of partying an hell raising</p>
+            <a href="about.html" class="btn">about me</a>
+        </div>
+    </section>
+
+</div>
+
+<!-- home section ends -->
+
+
+<!-- service section starts  -->
+
+<div class="service" id="service">
+
+<section>
+
+    <h1 class="heading">Points</h1>
+
+    <div class="box-container">
+        
+        <div class="box">
+            <span class="number">01</span>
+            <h3>AI development</h3>
+            <p></p>
+        </div>
+
+        <div class="box">
+            <span class="number">02</span>
+            <h3>artistic elements</h3>
+            <p></p>
+        </div>
+
+        <div class="box">
+            <span class="number">03</span>
+            <h3>meaningful storytelling</h3>
+            <p></p>
+        </div>
+
+        
     </div>
-  </header>
 
-
-
-
-<section class="contact-info">
-  <h1>Upcoming  Short-Film</h1>
-  <p>
-  breakdown coming soon...
-</p>
-
-
-
-  <div class="contact-methods">
-    <div class="email">
-      <h2></h2>
-      <p><a href=""></a></p>
-    </div>
-    <div class="skype">
-      <h2></h2>
-      <p></p>
-    </div>
-  </div>
-  
-  <div class="home">
-    <div class="home">
-      </div>
-
-
-
-    <div class="media-icons">
-      <a href="https://www.facebook.com/evan.butler.9619"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/emun_ra_/"><i class="fab fa-instagram"></i></a>
-    </div>
-
-    <div class="mobile-gif"></div>
- 
 </section>
 
+</div>
+
+<!-- service section ends -->
 
 
+<!-- portfolio section starts  -->
 
-  <!-- Menu Icon -->
-  <div id="toggle-chat-btn" aria-label="Toggle Chat">
-    <i class="fas fa-bars"></i>
-  </div>
-  
+<div class="portfolio" id="portfolio">
+
+<section>
+
+    <h1 class="heading">Concepts</h1>
+
+    <div class="box-container">
+
+        <a href="#" class="box">
+            <img src="images/concept2.png" alt="">
+            <div class="info">concept 01</div>
+        </a>
+
+        <a href="#" class="box">
+            <img src="images/concept1.png" alt="">
+            <div class="info">concept 02</div>
+        </a>
+
+        <a href="#" class="box">
+            <img src="" alt="">
+            <div class="info">concept 03</div>
+        </a>
 
 
-<!-- ChatGPT Chatbot Interface -->
-<div class="chat-container" style="display:none;">
-    <div class="chatbot" id="chatbot">
-        <h1>Chatbox</h1>
-        <textarea id="prompt" placeholder="Enter your prompt"></textarea>
-        <button id="submit">Send</button>
-        <div id="response"></div>
     </div>
-  </div>
-  
-  <script src="app.js"></script>
-  <script type="text/javascript">
-    //Javacript for responsive navigation menu
-    const menuBtn = document.querySelector(".menu-btn");
-    const navigation = document.querySelector(".navigation");
 
-    menuBtn.addEventListener("click", () => {
-      menuBtn.classList.toggle("active");
-      navigation.classList.toggle("active");
-    });
+</section>
 
-    //Javacript for video slider navigation
-    const btns = document.querySelectorAll(".nav-btn");
-    const slides = document.querySelectorAll(".video-slide");
-    const contents = document.querySelectorAll(".content");
+</div>
 
-    var sliderNav = function(manual){
-      btns.forEach((btn) => {
-        btn.classList.remove("active");
-      });
+<!-- portfolio section ends -->
 
-      slides.forEach((slide) => {
-        slide.classList.remove("active");
-      });
 
-      contents.forEach((content) => {
-        content.classList.remove("active");
-      });
 
-      btns[manual].classList.add("active");
-      slides[manual].classList.add("active");
-      contents[manual].classList.add("active");
-    }
+<!-- footer section  -->
 
-    btns.forEach((btn, i) => {
-      btn.addEventListener("click", () => {
-        sliderNav(i);
-      });
-    });
-    </script>
+<div class="footer">
+    created by <a href="evanatelier.com">Evan Butler</a> | all rights reserved!
+</div>
 
-  
+
+
+
+
+
+
+
+
+
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
 
 </body>
 </html>
