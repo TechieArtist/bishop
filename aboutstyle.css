@@ -9,8 +9,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
   overflow-x: hidden;
 
   background-image: url('IMG_3452.jpeg');
@@ -278,7 +277,8 @@ body {
 
 
 
-}
+
+
 
 
 
