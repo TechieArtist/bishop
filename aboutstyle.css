@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@200;300;400;500;600;700&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: "Poppins", sans-serif;
   color: #fff;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   min-height: 100vh;
   overflow-x: hidden;
 
@@ -19,278 +19,125 @@ body {
   background-attachment: fixed;
 }
 
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
+/* ===== HEADER ===== */
 
-  
-
-
-  header{
-    z-index: 999;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 200px;
-    transition: 0.5s ease;
-  }
-  
-  header .brand{
-    color: #fff;
-    font-size: 1.5em;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-  
-  header .navigation{
-    position: relative;
-  }
-  
-  header .navigation .navigation-items a{
-    position: relative;
-    color: #fff;
-    font-size: 1em;
-    font-weight: 500;
-    text-decoration: none;
-    margin-left: 30px;
-    transition: 0.3s ease;
-  }
-  
-  header .navigation .navigation-items a:before{
-    content: '';
-    position: absolute;
-    background: #fff;
-    width: 0;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    transition: 0.3s ease;
-  }
-  
-  header .navigation .navigation-items a:hover:before{
-    width: 100%;
-  }
-  
-
-  section{
-    padding: 100px 200px;
-  }
-
-
-  .home:before{
-    z-index: 10;
-    content: '';
-    position: absolute;
-    background: linear-gradient(to top, rgba(146, 221, 184, 0.068) 30%, rgba(0, 0, 0, 0.8));
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
-
-.image-portrait {
-    position: relative;
-    width: 20%; 
-    height: auto;
-}
-.navigation .navigation-items a {
-  color: #fff;
-  font-size: 1em;
-  font-weight: 500;
-  text-decoration: none;
-  margin-left: 30px;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.navigation .navigation-items a:hover:before {
-  content: '';
-  position: absolute;
-  background: #fff;
-  width: 100%;
-  height: 3px;
-  bottom: -5px;
+header {
+  position: fixed;
+  top: 0;
   left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
 }
+
+header .brand {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navigation-items {
+  display: flex;
+  gap: 30px;
+}
+
+.navigation-items a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  position: relative;
+}
+
+.navigation-items a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: 0.3s ease;
+}
+
+.navigation-items a:hover::after {
+  width: 100%;
+}
+
+/* ===== ABOUT SECTION ===== */
 
 .contact-info {
-  padding: 20px 10px;
-  position: relative;
-  text-align: left;
+  margin: 160px auto 100px auto;
+  padding: 60px 40px;
+  max-width: 800px;
+
   background: rgba(0, 0, 0, 0.75);
-  margin: 120px auto;
-  max-width: 900px;
-  border-radius: 8px;
-  line-height: 1.7;
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+
+  line-height: 1.8;
 }
+
+.contact-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contact-info p {
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+
+/* ===== SOCIAL ICONS ===== */
+
+.media-icons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.media-icons a {
+  font-size: 1.4rem;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.media-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* ===== MOBILE ===== */
 
 @media (max-width: 768px) {
+  header {
+    padding: 20px;
+  }
+
+  .navigation-items {
+    gap: 15px;
+  }
+
   .contact-info {
-    padding: 100px 25px;
-    margin: 100px 20px;
+    margin: 140px 20px 80px 20px;
+    padding: 40px 25px;
+  }
+
+  .contact-info h1 {
+    font-size: 2rem;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
   }
 }
 
-.contact-info h1, .contact-info h2 {
-  margin-bottom: 20px;
-  z-index: 40;
-  position: relative;
+/* ===== EMPHASIS ===== */
+
+.emphasis {
+  color: #FF5733;
+  font-weight: 600;
 }
-
-.contact-info p, .contact-info a {
-  display: block;
-  margin: 10px auto;
-  color: #fff;
-  z-index: 40;
-  position: relative;
-  background-color: #000000bb;
-  border-radius: 5px;
-  border-width: 5px;
-}
-
-.contact-methods div, .social-media {
-  margin-bottom: 20px;
-}
-
-.media-icons{
-    z-index: 888;
-    position: relative;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    transition: 0.5s ease;
-  }
-  
-  .media-icons a{
-    color: #fff;
-    font-size: 1.6em;
-    transition: 0.3s ease;
-  }
-  
-   .media-icons a:not(:last-child){
-    margin-bottom: 20px;
-  }
-  
-   .media-icons a:hover{
-    transform: scale(1.3);
-  }
-
-  .fa-bars {
-    position: fixed; /* Or absolute, depending on your layout needs */
-    top: 90%; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
-    font-size: 30px; /* Adjust as needed */
-    color: #fff; /* Adjust color as needed */
-    z-index: 7000; /* Ensures it's above other content */
-    cursor: pointer;
-  }
-
-
-  
-  
-
-  @media (max-width: 1040px){
-    header{
-      padding: 12px 20px;
-    }
-  
-    section{
-      padding: 100px 20px;
-    }
-  
-    .home .media-icons{
-      right: 15px;
-    }
-  
-    header .navigation{
-      display: none;
-    }
-  
-    header .navigation.active{
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      top: 0;
-      left: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: rgba(1, 1, 1, 0.5);
-    }
-  
-    header .navigation .navigation-items a{
-      color: #222;
-      font-size: 1.2em;
-      margin: 20px;
-    }
-  
-    header .navigation .navigation-items a:before{
-      background: #222;
-      height: 5px;
-    }
-  
-    header .navigation.active .navigation-items{
-      background: #fff;
-      width: 600px;
-      max-width: 600px;
-      margin: 20px;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-radius: 5px;
-      box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
-    }
-  
-    .menu-btn{
-      background: url(menu.png)no-repeat;
-      background-size: 30px;
-      background-position: center;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-  
-    .menu-btn.active{
-      z-index: 999;
-      background: url(close.png)no-repeat;
-      background-size: 25px;
-      background-position: center;
-      transition: 0.3s ease;
-    }
-  }
-  
-  @media (max-width: 560px){
-    .home .content h1{
-      font-size: 3em;
-      line-height: 60px;
-    }
-  }
-  
-  .emphasis {
-    color: #FF5733; /* Change to the desired color for emphasis */
-    font-weight: bold; /* Optionally, make the emphasized words bold */
-    /* You can add more styles here as needed */
-  }
-  
-
-
-
-
-
-
-
-
-
-
-
-
