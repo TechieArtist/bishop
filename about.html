@@ -3,137 +3,89 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Evan Butler</title>
-  <link rel="stylesheet" href="aboutstyle.css">
+  <title>Catalogue</title>
+
+  <!-- Your original fonts -->
+  <link rel="stylesheet" href="pricingstyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 </head>
+
 <body>
-  
-  
 
-  <header>
-    <a href="index.html" class="brand">The Funk</a>
-    <div class="menu-btn"></div>
-    <div class="navigation">
-      <div class="navigation-items">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="pricing.html">Catalouge</a>
-        <a href="contact.html">Contact</a>
-    
-      </div>
-    </div>
-  </header>
+<header>
+  <a href="index.html" class="brand">The Funk</a>
+  <div class="menu-btn"></div>
 
-
-
-
-<section class="contact-info">
-  <h1>About</h1>
-  <p>
-    First off, I'd like thank everyone who took their time to view my page, welcome to my site. I'm Evan, born and raised in <span class="emphasis">Bed-Stuy, Brooklyn</span> - I am African American with roots in <span class="emphasis">Barbados</span>. Now, I'm expanding my horizons over at <span class="emphasis">Tokyo University of Technology</span>, where I'm not just studying, but evolving.<br><br>
-
-    For storytelling I get alot of my inspiration from spike lee, Ice Cube and many other <span class="emphasis">talented</span> black storytellers, artistically i've learned a lot from many japanese visual artist and combined their skillsets to create my own. I like to express my self in a raw, unsolicited manner so I try to translate that into my works<br><br>
-    
-    <span class="emphasis">Creativity and innovation are natural to me.</span> I believe creativity is the last hope for the youth- whether that's through visuals, music, comedy, community work - to convey stories, challenge perceptions, and <span class="emphasis">bridge divides.</span> My mission is to create with purpose, to resonate and inspire.<br><br>
-    
-
-
-  <div class="contact-methods">
-    <div class="email">
-      <h2></h2>
-      <p><a href=""></a></p>
-    </div>
-    <div class="skype">
-      <h2></h2>
-      <p></p>
+  <div class="navigation">
+    <div class="navigation-items">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="pricing.html" class="active">Catalogue</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
-  
-  <div class="home">
-    <div class="home">
-      </div>
+</header>
 
 
+<!-- HERO SECTION -->
+<section class="home">
+  <div class="content active">
+    <h1>Catalogue</h1>
+  </div>
 
-    <div class="media-icons">
-      <a href="https://www.facebook.com/evan.butler.9619"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/evanwilliams3920?igsh=dHpybHhzZGQ4MGd0&utm_source=qr"><i class="fab fa-instagram"></i></a>
-    </div>
-
-
- 
+  <div class="media-icons">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
 </section>
 
 
 
+<!-- ===== NEW CATALOGUE LAYOUT ===== -->
 
-  <!-- Menu Icon 
-  <div id="toggle-chat-btn" aria-label="Toggle Chat">
-    <i class="fas fa-bars"></i>
-  </div> -->
-  
+<section class="catalogue-section">
 
+  <div class="year-label">2025</div>
 
-<!-- ChatGPT Chatbot Interface 
-<div class="chat-container" style="display:none;">
-    <div class="chatbot" id="chatbot">
-        <h1>Chatbox</h1>
-        <textarea id="prompt" placeholder="Enter your prompt"></textarea>
-        <button id="submit">Send</button>
-        <div id="response"></div>
+  <!-- Artwork 1 -->
+  <div class="artwork-block">
+    <a href="#">
+      <img src="artwork1.jpg" alt="Artwork One">
+    </a>
+    <div class="art-meta">
+      <h2>Olokun</h2>
+      <a href="#">View Details →</a>
     </div>
-  </div> -->
-  
-  <script src="app.js"></script>
-  <script type="text/javascript">
-    //Javacript for responsive navigation menu
-    const menuBtn = document.querySelector(".menu-btn");
-    const navigation = document.querySelector(".navigation");
+  </div>
 
-    menuBtn.addEventListener("click", () => {
-      menuBtn.classList.toggle("active");
-      navigation.classList.toggle("active");
-    });
 
-    //Javacript for video slider navigation
-    const btns = document.querySelectorAll(".nav-btn");
-    const slides = document.querySelectorAll(".video-slide");
-    const contents = document.querySelectorAll(".content");
+  <!-- Artwork 2 -->
+  <div class="artwork-block">
+    <a href="#">
+      <img src="artwork2.jpg" alt="Artwork Two">
+    </a>
+    <div class="art-meta">
+      <h2>Ori</h2>
+      <a href="#">View Details →</a>
+    </div>
+  </div>
 
-    var sliderNav = function(manual){
-      btns.forEach((btn) => {
-        btn.classList.remove("active");
-      });
+</section>
 
-      slides.forEach((slide) => {
-        slide.classList.remove("active");
-      });
 
-      contents.forEach((content) => {
-        content.classList.remove("active");
-      });
 
-      btns[manual].classList.add("active");
-      slides[manual].classList.add("active");
-      contents[manual].classList.add("active");
-    }
+<script src="app.js"></script>
 
-    btns.forEach((btn, i) => {
-      btn.addEventListener("click", () => {
-        sliderNav(i);
-      });
-    });
-    </script>
+<script>
+  // KEEPING YOUR ORIGINAL NAV SCRIPT
+  const menuBtn = document.querySelector(".menu-btn");
+  const navigation = document.querySelector(".navigation");
 
-  
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+  });
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
-
