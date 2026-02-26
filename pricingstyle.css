@@ -29,7 +29,7 @@ header{
 }
 
 header .brand{
-  color: #000000;
+  color: #fff;
   font-size: 1.5em;
   font-weight: 700;
   text-transform: uppercase;
@@ -42,7 +42,7 @@ header .navigation{
 
 header .navigation .navigation-items a{
   position: relative;
-  color: #000000;
+  color: #fff;
   font-size: 1em;
   font-weight: 500;
   text-decoration: none;
@@ -53,7 +53,7 @@ header .navigation .navigation-items a{
 header .navigation .navigation-items a:before{
   content: '';
   position: absolute;
-  background: #000000;
+  background: #fff;
   width: 0;
   height: 3px;
   bottom: 0;
@@ -61,7 +61,35 @@ header .navigation .navigation-items a:before{
   transition: 0.3s ease;
 }
 
+header .navigation .navigation-items a:hover:before{
+  width: 100%;
+}
 
+section{
+  padding: 100px 200px;
+}
+
+.home{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #000000;
+  overflow: hidden; /* Ensure no overflow from the absolutely positioned GIF */
+}
+
+.home:before{
+  z-index: 777;
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.63);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
 /* ===== MAIN CATALOGUE ===== */
 
 .catalogue {
@@ -220,6 +248,7 @@ header .navigation .navigation-items a:before{
       line-height: 60px;
     }
   }
+
 
 
 
