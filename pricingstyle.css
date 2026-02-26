@@ -15,59 +15,39 @@ body {
 
 /* ===== HEADER ===== */
 
-header{
-  z-index: 999;
-  position: absolute;
+header {
+  position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
-  width: 100%;
+  padding: 25px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 200px;
-  transition: 0.5s ease;
+  background: #000;
+  z-index: 1000;
 }
 
-header .brand{
-  color: #000000;
-  font-size: 1.5em;
-  font-weight: 700;
-  text-transform: uppercase;
+.brand {
+  color: #fff;
   text-decoration: none;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
 }
 
-header .navigation{
-  position: relative;
-}
-
-header .navigation .navigation-items a{
-  position: relative;
-  color: #000000;
-  font-size: 1em;
-  font-weight: 500;
+.navigation-items a {
+  margin-left: 35px;
+  color: #aaa;
   text-decoration: none;
-  margin-left: 30px;
   transition: 0.3s ease;
 }
 
-header .navigation .navigation-items a:before{
-  content: '';
-  position: absolute;
-  background: #000000;
-  width: 0;
-  height: 3px;
-  bottom: 0;
-  left: 0;
-  transition: 0.3s ease;
+.navigation-items a:hover,
+.navigation-items a.active {
+  color: #fff;
 }
 
-header .navigation .navigation-items a:hover:before{
-  width: 100%;
-}
 
-section{
-  padding: 100px 200px;
-}
 /* ===== MAIN CATALOGUE ===== */
 
 .catalogue {
@@ -226,6 +206,7 @@ section{
       line-height: 60px;
     }
   }
+
 
 
 
