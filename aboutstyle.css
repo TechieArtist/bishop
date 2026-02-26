@@ -4,16 +4,21 @@
 
 
 body {
-    font-family: "Poppins", sans-serif;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    height: 100vh; /* Makes sure the body covers the full viewport height */
-    width: 100vw; /* Ensures the body covers the full viewport width */
-    overflow-x: hidden; /* Prevents horizontal scroll */
-    background-color: #000000;
-  }
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+
+  background-image: url('IMG_3452.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
   *{
     margin: 0;
@@ -275,6 +280,7 @@ body {
 
 
 }
+
 
 
 
