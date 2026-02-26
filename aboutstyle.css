@@ -118,9 +118,9 @@ body {
 }
 
 .contact-info {
-  padding: 50px 100px;
+  padding: 20px 10px;
   position: relative;
-  text-align: center;
+  text-align: left;
   background-color: rgba(0, 0, 0, 0.767); /* Set the background color to black */
   color: white; /* Set the text color to white for contrast */
   margin: 50px;
@@ -390,3 +390,4 @@ body {
       display: block; /* Show the GIF background div on mobile */
   }
 }
+
