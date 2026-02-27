@@ -16,52 +16,217 @@ body {
 
 /* ===== HEADER ===== */
 
-header {
-  position: fixed;
+header{
+  z-index: 999;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
+  padding: 15px 200px;
+  transition: 0.5s ease;
 }
 
-header .brand {
-  font-size: 1.4rem;
-  font-weight: 600;
-  text-decoration: none;
+header .brand{
   color: #fff;
-}
-
-.navigation-items {
-  display: flex;
-  gap: 30px;
-}
-
-.navigation-items a {
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
   text-decoration: none;
-  color: #fff;
-  font-weight: 400;
+}
+
+header .navigation{
   position: relative;
 }
 
-.navigation-items a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: #fff;
+header .navigation .navigation-items a{
+  position: relative;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 30px;
   transition: 0.3s ease;
 }
 
-.navigation-items a:hover::after {
+header .navigation .navigation-items a:before{
+  content: '';
+  position: absolute;
+  background: #fff;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:hover:before{
   width: 100%;
 }
 
+section{
+  padding: 100px 200px;
+}
+
+.home{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #000000;
+  overflow: hidden; /* Ensure no overflow from the absolutely positioned GIF */
+}
+
+.home:before{
+  z-index: 777;
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.63);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+
+.home .content{
+  z-index: 888;
+  color: #fff;
+  width: 70%;
+  margin-top: 50px;
+  display: none;
+}
+
+.home .content.active {
+  display: block;
+  /* Corrected animation application */
+  animation: mySlide 4s; /* Shorthand for 'name duration' */
+  font-size: small;
+}
+
+
+@keyframes mySlide {
+  from { margin-left: 100%; }
+  to { margin-left: 0%; }
+  from {
+    opacity: 0%;
+    
+        to {
+            opacity: 100%;
+        }
+    
+}
+}
+
+/* For wider browser support */
+@-webkit-keyframes mySlide {
+  from { margin-left: 100%; }
+  to { margin-left: 0%; }
+  from {
+    opacity: 20%;
+    
+        to {
+            opacity: 100%;
+        }
+    
+}
+.home .media-icons{
+  z-index: 888;
+  position: absolute;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease;
+}
+
+.home .media-icons a{
+  color: #fff;
+  font-size: 1.6em;
+  transition: 0.3s ease;
+}
+
+.home .media-icons a:not(:last-child){
+  margin-bottom: 20px;
+}
+
+.home .media-icons a:hover{
+  transform: scale(1.3);
+}
+@media (max-width: 1040px){
+  header{
+    padding: 12px 20px;
+  }
+
+  section{
+    padding: 100px 20px;
+  }
+
+  .home .media-icons{
+    right: 15px;
+  }
+
+  header .navigation{
+    display: none;
+  }
+
+  header .navigation.active{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(1, 1, 1, 0.5);
+  }
+
+  header .navigation .navigation-items a{
+    color: #222;
+    font-size: 1.2em;
+    margin: 20px;
+  }
+
+  header .navigation .navigation-items a:before{
+    background: #222;
+    height: 5px;
+  }
+
+  header .navigation.active .navigation-items{
+    background: #fff;
+    width: 600px;
+    max-width: 600px;
+    margin: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+  }
+
+  .menu-btn{
+    background: url(menu.png)no-repeat;
+    background-size: 30px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .menu-btn.active{
+    z-index: 999;
+    background: url(close.png)no-repeat;
+    background-size: 25px;
+    background-position: center;
+    transition: 0.3s ease;
+  }
+}
 /* ===== ABOUT SECTION ===== */
 
 .contact-info {
@@ -70,7 +235,7 @@ header .brand {
   padding: 60px 40px;
   max-width: 800px;
 
-  background-image: url('IMG_3452.jpeg');
+  background-image: url('Grace.JPG');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -108,24 +273,6 @@ header .brand {
   margin-bottom: 20px;
 }
 
-/* ===== SOCIAL ICONS ===== */
-
-.media-icons {
-  margin-top: 30px;
-  display: flex;
-  gap: 20px;
-}
-
-.media-icons a {
-  font-size: 1.4rem;
-  color: #fff;
-  transition: 0.3s ease;
-}
-
-.media-icons a:hover {
-  transform: scale(1.2);
-}
-
 /* ===== MOBILE ===== */
 
 @media (max-width: 768px) {
@@ -159,85 +306,10 @@ header .brand {
 }
 
 
-
-
-
-
-  @media (max-width: 1040px){
-    header{
-      padding: 12px 20px;
-    }
-
-    section{
-      padding: 100px 20px;
-    }
-
-    .home .media-icons{
-      right: 15px;
-    }
-
-    header .navigation{
-      display: none;
-    }
-
-    header .navigation.active{
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      top: 0;
-      left: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: rgba(1, 1, 1, 0.5);
-    }
-
-    header .navigation .navigation-items a{
-      color: #222;
-      font-size: 1.2em;
-      margin: 20px;
-    }
-
-    header .navigation .navigation-items a:before{
-      background: #222;
-      height: 5px;
-    }
-
-    header .navigation.active .navigation-items{
-      background: #fff;
-      width: 600px;
-      max-width: 600px;
-      margin: 20px;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-radius: 5px;
-      box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
-    }
-
-    .menu-btn{
-      background: url(menu.png)no-repeat;
-      background-size: 30px;
-      background-position: center;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-
-    .menu-btn.active{
-      z-index: 999;
-      background: url(close.png)no-repeat;
-      background-size: 25px;
-      background-position: center;
-      transition: 0.3s ease;
-    }
-  }
-
   @media (max-width: 560px){
     .home .content h1{
       font-size: 3em;
       line-height: 60px;
     }
   }
+
