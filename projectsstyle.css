@@ -132,50 +132,49 @@ header .brand {
   }
 }
 
-.journal {
-  background: var(--light-bg);
-  padding-top: 10rem;
-  padding-bottom: 8rem;
-}
+/* ===== JOURNAL SECTION ===== */
 
-.journal-container {
-  max-width: 800px;
-  width: 90%;
-  margin: 0 auto;
+.journal {
+  padding: 140px 40px 80px 40px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .journal-entry {
-  margin-bottom: 6rem;
+  margin-bottom: 120px;
 }
 
 .journal-entry img {
   width: 100%;
-  max-width: 650px;
   height: auto;
   display: block;
-  margin: 0 auto 2rem auto;
+  transition: 0.4s ease;
+}
+
+.journal-entry img:hover {
+  opacity: 0.9;
 }
 
 .journal-text {
-  text-align: left;
+  margin-top: 25px;
 }
 
 .journal-text h2 {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  color: var(--black);
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
 }
 
 .journal-text p {
-  font-size: 1.4rem;
-  line-height: 1.9;
-  color: var(--light-color);
-  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 12px;
+  line-height: 1.7;
 }
 
 .journal hr {
   border: none;
   height: 1px;
-  background: #333;
-  margin: 6rem 0;
+  background: #222;
+  margin: 80px 0;
 }
