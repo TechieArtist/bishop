@@ -143,6 +143,37 @@ section{
   cursor: pointer;
 }
 
+.contact-info {
+  padding: 50px 20px; /* Adjust padding */
+  text-align: center;
+  z-index: 3;
+  position: relative;
+}
+
+.contact-info h1, .contact-info h2 {
+  margin-bottom: 20px;
+  z-index: 3;
+  position: relative;
+}
+
+.contact-info p, .contact-info a {
+  display: block;
+  margin: 10px auto;
+  color: #fff;
+  z-index: 3;
+  position: relative;
+}
+
+.contact-methods div, .social-media {
+  margin-bottom: 20px;
+  border-color: #ffffff;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 4px;
+  transition: background-color 0.3s, color 0.3s; /* Add transition for smooth effect */
+  background-color: #0000007e;
+}
+
 
 @media (max-width: 1040px){
   header{
@@ -222,6 +253,7 @@ section{
     line-height: 60px;
   }
 }
+
 
 
 
