@@ -11,7 +11,7 @@
 
 </head>
  <footer class="site-footer">
-  <p>©2017–2026 by Harmonia Rosales.<br>Los Angeles, CA</p>
+  <p>©2026 by Evan Butler.<br>New York, Brooklyn</p>
 </footer>
 <body>
 
@@ -32,7 +32,7 @@
 
 <main class="catalogue">
 
-  <div class="year">2023</div>
+  <div class="year">2024</div>
 
   <section class="artwork">
     <a href="untitled-2023.html">
@@ -41,8 +41,8 @@
 
     <div class="art-info">
       <div class="left">
-        <h2>Untitled</h2>
-        <p>Digital Art · 2023</p>
+        <h2>The Black Cat and the Cocoon</h2>
+        <p>Digital Art · 2024</p>
       </div>
 
       <div class="right">
@@ -71,39 +71,11 @@
     menuBtn.classList.toggle("active");
     navigation.classList.toggle("active");
   });
-
-  //Javacript for video slider navigation
-  const btns = document.querySelectorAll(".nav-btn");
-  const slides = document.querySelectorAll(".video-slide");
-  const contents = document.querySelectorAll(".content");
-
-  var sliderNav = function(manual){
-    btns.forEach((btn) => {
-      btn.classList.remove("active");
-    });
-
-    slides.forEach((slide) => {
-      slide.classList.remove("active");
-    });
-
-    contents.forEach((content) => {
-      content.classList.remove("active");
-    });
-
-    btns[manual].classList.add("active");
-    slides[manual].classList.add("active");
-    contents[manual].classList.add("active");
-  }
-
-  btns.forEach((btn, i) => {
-    btn.addEventListener("click", () => {
-      sliderNav(i);
-    });
-  });
   </script>
 
   </body>
 </html>
+
 
 
 
