@@ -4,7 +4,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600&display=swap');
 
-body{
+
+html, body {
+  overflow-x: hidden;
   background-color: #000000;
 }
 
@@ -416,4 +418,5 @@ section{
     }
 
 }
+
 
