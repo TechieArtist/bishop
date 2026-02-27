@@ -292,7 +292,8 @@ section{
 }
 
 .journal-container {
-    max-width: 900px;
+    max-width: 800px;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -302,9 +303,11 @@ section{
 
 .journal-entry img {
     width: 100%;
-    max-width: 800px;
+    max-width: 650px;      /* Hard visual cap */
+    height: auto;
     display: block;
     margin: 0 auto 2rem auto;
+    object-fit: contain;   /* Prevent distortion */
 }
 
 .journal-text {
