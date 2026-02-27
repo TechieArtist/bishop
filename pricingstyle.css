@@ -144,30 +144,30 @@ section{
   color: #fff;
 }
 
-/* ===== FOOTER ===== */
+/* ===== MEDIA ICONS (Right Side Fixed Like Homepage) ===== */
 
-.home .media-icons{
-  z-index: 888;
-  position: absolute;
+.media-icons {
+  position: fixed;
+  top: 50%;
   right: 30px;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  transition: 0.5s ease;
+  z-index: 999;
 }
 
-.home .media-icons a{
+.media-icons a {
   color: #fff;
   font-size: 1.6em;
+  margin-bottom: 20px;
   transition: 0.3s ease;
 }
 
-.home .media-icons a:not(:last-child){
-  margin-bottom: 20px;
-}
-
-.home .media-icons a:hover{
+.media-icons a:hover {
   transform: scale(1.3);
 }
+
+
 
 
 
@@ -252,6 +252,15 @@ section{
 
 
 
+/* ===== FOOTER TEXT ===== */
+
+.site-footer {
+  text-align: center;
+  padding: 80px 20px 40px 20px;
+  font-size: 0.85rem;
+  color: #777;
+  letter-spacing: 1px;
+}
 
 
 
