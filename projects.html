@@ -26,7 +26,10 @@
   </header>
 
 <!-- header section ends -->
-
+<div class="media-icons">
+      <a href="https://www.facebook.com/evan.butler.9619"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/evanwilliams3920?igsh=dHpybHhzZGQ4MGd0&utm_source=qr"><i class="fab fa-instagram"></i></a>
+    </div>
 <!-- JOURNAL SECTION STARTS -->
 
 <div class="journal">
@@ -65,8 +68,20 @@
         </article>
 
     </section>
+<script src="app.js"></script>
+  <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
 
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    </script>
 </div>
 
 <!-- JOURNAL SECTION ENDS -->
+
 
