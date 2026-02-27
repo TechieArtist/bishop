@@ -20,7 +20,7 @@
         <a href="about.html">About</a>
         <a href="pricing.html">Catalouge</a>
         <a href="contact.html">News</a>
-        <a href="projects.html">Poetry</a
+        <a href="projects.html">Poetry</a>
       </div>
     </div>
   </header>
@@ -54,9 +54,11 @@
     <div class="home">
       </div>
 
+</section>
 
-
-    <div class="media-icons">
+    <section class="home">
+   
+      <div class="media-icons">
       <a href="https://www.facebook.com/evan.butler.9619"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/evanwilliams3920?igsh=dHpybHhzZGQ4MGd0&utm_source=qr"><i class="fab fa-instagram"></i></a>
     </div>
@@ -65,25 +67,6 @@
 
 </section>
 
-
-
-
-  <!-- Menu Icon 
-  <div id="toggle-chat-btn" aria-label="Toggle Chat">
-    <i class="fas fa-bars"></i>
-  </div> -->
-
-
-
-<!-- ChatGPT Chatbot Interface 
-<div class="chat-container" style="display:none;">
-    <div class="chatbot" id="chatbot">
-        <h1>Chatbox</h1>
-        <textarea id="prompt" placeholder="Enter your prompt"></textarea>
-        <button id="submit">Send</button>
-        <div id="response"></div>
-    </div>
-  </div> -->
 
   <script src="app.js"></script>
   <script type="text/javascript">
@@ -96,40 +79,10 @@
       navigation.classList.toggle("active");
     });
 
-    //Javacript for video slider navigation
-    const btns = document.querySelectorAll(".nav-btn");
-    const slides = document.querySelectorAll(".video-slide");
-    const contents = document.querySelectorAll(".content");
-
-    var sliderNav = function(manual){
-      btns.forEach((btn) => {
-        btn.classList.remove("active");
-      });
-
-      slides.forEach((slide) => {
-        slide.classList.remove("active");
-      });
-
-      contents.forEach((content) => {
-        content.classList.remove("active");
-      });
-
-      btns[manual].classList.add("active");
-      slides[manual].classList.add("active");
-      contents[manual].classList.add("active");
-    }
-
-    btns.forEach((btn, i) => {
-      btn.addEventListener("click", () => {
-        sliderNav(i);
-      });
-    });
-    </script>
-
-
 
 </body>
 </html>
+
 
 
 
