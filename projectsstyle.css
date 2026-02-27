@@ -89,6 +89,8 @@ section{
 .home{
   position: relative;
   width: 100%;
+  min-height: auto;
+  padding-top: 120px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -333,4 +335,5 @@ section{
   background: #222;
   margin: 80px 0;
 }
+
 
