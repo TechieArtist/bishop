@@ -787,4 +787,10 @@ section{
 .sib-form-block__button:hover {
   opacity: 0.7;
 }
+.mail-title{
+  color:white;
+  font-size:24px;
+  margin-bottom:20px;
+}
+
 
