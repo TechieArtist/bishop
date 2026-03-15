@@ -793,4 +793,17 @@ section{
   margin-bottom:20px;
 }
 
+.sib-form-block{
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.entry__field{
+  margin-bottom:25px;
+}
+
+#sib-form{
+  max-width:400px;
+}
+
 
