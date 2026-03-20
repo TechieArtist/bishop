@@ -79,14 +79,6 @@ header .brand {
   overflow: hidden;
   line-height: 1.8;
 }
-.contact-info::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(20, 60, 50, 0.75); /* greenish tint */
-  backdrop-filter: blur(3px);
-  z-index: 1;
-}
 .contact-info * {
   position: relative;
   z-index: 2;
