@@ -74,50 +74,6 @@ header .brand {
 
 
 
-/* ===== SOCIAL ICONS ===== */
-
-.media-icons {
-  margin-top: 30px;
-  display: flex;
-  gap: 20px;
-}
-
-.media-icons a {
-  font-size: 1.4rem;
-  color: #fff;
-  transition: 0.3s ease;
-}
-
-.media-icons a:hover {
-  transform: scale(1.2);
-}
-
-/* ===== MOBILE ===== */
-
-@media (max-width: 768px) {
-  header {
-    padding: 20px;
-  }
-  .navigation-items {
-    gap: 15px;
-  }
-  .contact-info {
-    margin: 140px 20px 80px 20px;
-    padding: 40px 25px;
-  }
-  .contact-info h1 {
-    font-size: 2rem;
-  }
-  .contact-info p {
-    font-size: 1rem;
-  }
-}
-/* ===== EMPHASIS ===== */
-.emphasis {
-  color: #FF5733;
-  font-weight: 600;
-}
-
 
 
 
@@ -201,4 +157,5 @@ header .brand {
       line-height: 60px;
     }
   }
+
 
