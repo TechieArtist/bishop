@@ -6,13 +6,23 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  color: #fff;
-  min-height: 100vh;
-  overflow-x: hidden;
-  background-color: #000; /* solid black page */
-}
+html, body {
+    background-image: url('Dadssong.jpg'); /* Add your image as the background */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh; /* Makes sure the body covers the full viewport height */
+    width: 100vw; /* Ensures the body covers the full viewport width */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    background-color: #000000;
+    font-size: 16px; /* Adjust base font size */
+    line-height: 1.6; /* Adjust line height */
+  }
 
 /* ===== HEADER ===== */
 
@@ -62,36 +72,7 @@ header .brand {
   width: 100%;
 }
 
-/* ===== ABOUT SECTION ===== */
 
-.contact-info {
-  position: relative;
-  margin: 160px auto 100px auto;
-  padding: 60px 40px;
-  max-width: 800px;
-
-  background-image: url('IMG_4923.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  border-radius: 12px;
-  overflow: hidden;
-  line-height: 1.8;
-}
-.contact-info * {
-  position: relative;
-  z-index: 2;
-}
-.contact-info h1 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  text-align: center;
-}
-.contact-info p {
-  font-size: 1.05rem;
-  margin-bottom: 20px;
-}
 
 /* ===== SOCIAL ICONS ===== */
 
