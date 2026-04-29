@@ -52,7 +52,7 @@ header .brand {
 
 .navigation-items a {
   text-decoration: none;
-  color: #fff;
+  color: #000;
   font-weight: 400;
   position: relative;
 }
@@ -64,7 +64,7 @@ header .brand {
   bottom: -4px;
   width: 0;
   height: 2px;
-  background: #fff;
+  background: #000;
   transition: 0.3s ease;
 }
 
@@ -95,7 +95,7 @@ header .brand {
 }
 /* ===== EMPHASIS ===== */
 .emphasis {
-  color: #FF5733;
+  color: #fff;
   font-weight: 600;
 }
 
