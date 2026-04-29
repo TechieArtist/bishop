@@ -99,7 +99,28 @@ header .brand {
   font-weight: 600;
 }
 
+/* ===== MEDIA ICONS (Right Side Fixed Like Homepage) ===== */
 
+.media-icons {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.media-icons a {
+  color: #fff;
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  transition: 0.3s ease;
+}
+
+.media-icons a:hover {
+  transform: scale(1.3);
+}
 
 
 
@@ -183,15 +204,7 @@ header .brand {
       line-height: 60px;
     }
     
-  }.media-icons a {
-  margin: 0 10px;
-  color: #fff;
-  transition: transform 0.3s ease;
-}
-
-.media-icons a:hover {
-  transform: scale(1.3);
-}p
+  p
 
 
 
