@@ -7,22 +7,22 @@
 }
 
 html, body {
-  height: 100%;
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #000;
-  color: #fff;
-  line-height: 1.6;
-}
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-}
+    background-image: url('Evanwilliams.PNG'); /* Add your image as the background */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh; /* Makes sure the body covers the full viewport height */
+    width: 100vw; /* Ensures the body covers the full viewport width */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    background-color: #000000;
+    font-size: 16px; /* Adjust base font size */
+    line-height: 1.6; /* Adjust line height */
+  }
 
 /* ===== HEADER ===== */
 
