@@ -112,7 +112,7 @@ header .brand {
 }
 
 .media-icons a {
-  color: #fff;
+  color: #000;
   font-size: 1.6em;
   margin-bottom: 20px;
   transition: 0.3s ease;
@@ -204,95 +204,6 @@ header .brand {
       line-height: 60px;
     }
     
-  /* Minimal newsletter form */
-
-.sib-form {
-  background: transparent !important;
-}
-
-#sib-container {
-  background: transparent !important;
-  border: none !important;
-  max-width: 500px;
-}
-
-#sib-container input {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid white;
-  color: white;
-  font-size: 18px;
-  padding: 10px 0;
-  width: 100%;
-}
-
-#sib-container input::placeholder {
-  color: rgba(255,255,255,0.6);
-}
-
-.sib-form-block__button {
-  background: transparent !important;
-  border: none !important;
-  color: white !important;
-  font-size: 18px;
-  padding: 10px 0;
-  text-align: left;
-}
-
-.sib-form-block__button:hover {
-  opacity: 0.7;
-}
-
-#sib-container {
-  background: transparent !important;
-  border: none !important;
-  max-width: 500px;
-}
-
-#sib-container input {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid white;
-  color: white;
-  font-size: 18px;
-  padding: 10px 0;
-  width: 100%;
-}
-
-#sib-container input::placeholder {
-  color: rgba(255,255,255,0.6);
-}
-
-.sib-form-block__button {
-  background: transparent !important;
-  border: none !important;
-  color: white !important;
-  font-size: 18px;
-  padding: 10px 0;
-  text-align: left;
-}
-
-.sib-form-block__button:hover {
-  opacity: 0.7;
-}
-.mail-title{
-  color:white;
-  font-size:24px;
-  margin-bottom:20px;
-}
-
-.sib-form-block{
-  padding:0 !important;
-  margin:0 !important;
-}
-
-.entry__field{
-  margin-bottom:25px;
-}
-
-#sib-form{
-  max-width:400px;
-}
 
 
 
