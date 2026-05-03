@@ -7,7 +7,7 @@ html, body {
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the image */
     font-family: "Poppins", sans-serif;
-    color: #000;
+    color: #757575;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -43,7 +43,7 @@ html, body {
 
 .press-item {
   margin-bottom: 80px;
- color: #000; 
+ color: #757575; 
 }
 
 .press-item h2 {
@@ -81,7 +81,7 @@ html, body {
 }
 
 header .brand{
-  color: #000;
+  color: #757575;
   font-size: 1.5em;
   font-weight: 700;
   text-transform: uppercase;
