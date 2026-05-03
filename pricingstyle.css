@@ -108,9 +108,9 @@ section{
 /* ===== MAIN CATALOGUE ===== */
 
 .catalogue {
-  padding: 140px 40px 80px 40px;
-  max-width: 1400px;
-  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
 }
 
 .year {
@@ -122,7 +122,7 @@ section{
 /* ===== ARTWORK BLOCK ===== */
 
 .artwork {
-  margin-bottom: 120px;
+  margin-bottom: 0px;
 }
 
 .artwork img {
