@@ -147,7 +147,9 @@ section{
 .home .content{
   z-index: 888;
   color: #fff;
-  width: 70%;
+  width: 100%;
+  max-width:650px;
+  margin-left: 80px;
   margin-top: 50px;
   display: none;
   font-size: clamp(16px, 1.2vw,20px);
