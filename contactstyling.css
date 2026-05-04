@@ -150,13 +150,13 @@ section{
   width: 70%;
   margin-top: 50px;
   display: none;
+  font-size: clamp(16px, 1.2vw,20px);
 }
 
 .home .content.active {
   display: block;
   /* Corrected animation application */
   animation: mySlide 4s; /* Shorthand for 'name duration' */
-  font-size: small;
 }
 
 
