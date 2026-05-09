@@ -28,7 +28,7 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    min-height: 100vh; 
+    height: 100%; 
     width: 100%; 
     overflow-x: hidden; /* Prevents horizontal scroll */
   }
@@ -86,7 +86,7 @@ header .brand {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 140px 80px 80px 80px;
+  padding: 140px 293px 80px 300px;
 }
 
 .about-box {
