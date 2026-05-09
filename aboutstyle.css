@@ -12,7 +12,7 @@
 
 html, body {
     background-image: url('Evanwilliams.PNG'); /* Add your image as the background */
-    background-size: contain; /* Contains the entire page */
+    background-size: cover; /* Contains the entire page */
     background-position: center center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-color: #fff;
