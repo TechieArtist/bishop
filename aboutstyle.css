@@ -107,21 +107,30 @@ header .brand {
 /* ===== MOBILE ===== */
 
 @media (max-width: 768px) {
+
   header {
     padding: 20px;
   }
+
+  .contact-info {
+    padding: 120px 20px 60px 20px;
+  }
+
+  .about-box {
+    padding: 30px;
+  }
+
+  .about-box h1 {
+    font-size: 3rem;
+  }
+
+  .about-box p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
   .navigation-items {
     gap: 15px;
-  }
-  .contact-info {
-    margin: 140px 20px 80px 20px;
-    padding: 40px 25px;
-  }
-  .contact-info h1 {
-    font-size: 2rem;
-  }
-  .contact-info p {
-    font-size: 1rem;
   }
 }
 /* ===== EMPHASIS ===== */
