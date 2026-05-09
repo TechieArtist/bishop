@@ -12,20 +12,25 @@
 
 html, body {
     background-image: url('Evanwilliams.PNG'); /* Add your image as the background */
-    background-size: cover; /* Cover the entire page */
-    background-position: center; /* Center the background image */
+    background-size: contain; /* Contains the entire page */
+    background-position: center center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the image */
+    background-color: #fff;
+} 
+@media (max-width:768px) {
+  html, body {
+     background-size: cover;
+  }
+}
+    
     font-family: "Poppins", sans-serif;
     color: #fff;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh; /* Makes sure the body covers the full viewport height */
-    width: 100vw; /* Ensures the body covers the full viewport width */
+    min-height: 100vh; 
+    width: 100%; 
     overflow-x: hidden; /* Prevents horizontal scroll */
-    background-color: #000000;
-    font-size: 16px; /* Adjust base font size */
-    line-height: 1.6; /* Adjust line height */
   }
 
 /* ===== HEADER ===== */
