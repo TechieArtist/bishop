@@ -75,7 +75,34 @@ header .brand {
 .navigation-items a:hover::after {
   width: 100%;
 }
+/* ===== ABOUT SECTION ===== */
 
+.contact-info {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 80px 80px 80px;
+}
+
+.about-box {
+  width: 100%;
+  max-width: 750px;
+  background: rgba(0,0,0,0.45);
+  padding: 50px;
+  backdrop-filter: blur(3px);
+}
+
+.about-box h1 {
+  font-size: 4rem;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.about-box p {
+  font-size: 1.3rem;
+  line-height: 2;
+  color: #fff;
+}
 
 /* ===== MOBILE ===== */
 
