@@ -19,7 +19,7 @@ html, body {
     height: 100vh; /* Makes sure the body covers the full viewport height */
     width: 100vw; /* Ensures the body covers the full viewport width */
     overflow-x: hidden; /* Prevents horizontal scroll */
-    background-color: #000000;
+    background-color: #fff;
     font-size: 16px; /* Adjust base font size */
     line-height: 1.6; /* Adjust line height */
   }
