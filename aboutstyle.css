@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-
-
-
-
 * {
   margin: 0;
   padding: 0;
@@ -116,7 +112,7 @@ header .brand {
 }
 
 .media-icons a {
-  color: #000;
+  color: #fff;
   font-size: 1.6em;
   margin-bottom: 20px;
   transition: 0.3s ease;
@@ -207,7 +203,3 @@ header .brand {
       font-size: 3em;
       line-height: 60px;
     }
-
-
-
-~
