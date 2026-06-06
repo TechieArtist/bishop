@@ -97,8 +97,19 @@ header .brand{
 }
 /* ===== EMPHASIS ===== */
 .emphasis {
-  color: #fff;
   font-weight: 600;
+}
+
+.emphasis.fire {
+  color: #ff4d2e;
+}
+
+.emphasis.blue {
+  color: #2e86ff;
+}
+
+.emphasis.brown {
+  color: #8b5a2b;
 }
 
 /* ===== MEDIA ICONS (Right Side Fixed Like Homepage) ===== */
