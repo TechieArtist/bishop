@@ -101,15 +101,21 @@ header .brand{
 }
 
 .emphasis.fire {
-  color: #ff4d2e;
+  color: #fff;
+  <!--color: #ff4d2e;-->
+    
 }
 
 .emphasis.blue {
-  color: #2e86ff;
+  color: #fff;
+ <!-- color: #2e86ff;-->
+     
 }
 
 .emphasis.brown {
-  color: #8b5a2b;
+  color: #fff;
+  <!--color: #8b5a2b;-->
+    
 }
 
 /* ===== MEDIA ICONS (Right Side Fixed Like Homepage) ===== */
