@@ -53,10 +53,13 @@ header .brand{
 }
 
 .navigation-items a {
-  text-decoration: none;
-  color: #000;
-  font-weight: 400;
   position: relative;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 30px;
+  transition: 0.3s ease;
 }
 
 .navigation-items a::after {
