@@ -332,19 +332,7 @@ section{
   }
 }
 
-/* Style for the mobile GIF */
-.mobile-gif {
-  display: none; /* Hide it by default */
-  position: absolute; /* Position the GIF absolutely */
-  top: 0;
-  left: 0;
-  width: 100%; /* Cover the full width of the .home section */
-  height: 100%; /* Cover the full height of the .home section */
-  background-image: url('Worldprison.gif'); /* Set the background GIF */
-  background-size: cover; /* Ensure the background covers the div */
-  background-position: center; /* Center the background image */
-  z-index: 1; /* Ensure the GIF is behind all other content */
-}
+
 
 /* Media query for devices with a maximum width of 768px */
 @media (max-width: 768px) {
@@ -702,7 +690,7 @@ section{
   left: 0;
   width: 100%; /* Cover the full width of the .home section */
   height: 100%; /* Cover the full height of the .home section */
-  background-image: url('BuildingsBW.gif'); /* Set the background GIF */
+  background-image: url('Worldprison.gif'); /* Set the background GIF */
   background-size: cover; /* Ensure the background covers the div */
   background-position: center; /* Center the background image */
   z-index: 1; /* Ensure the GIF is behind all other content */
