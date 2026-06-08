@@ -84,7 +84,7 @@ section{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: #000000;
+  background: #ff4949;
   overflow: hidden; /* Ensure no overflow from the absolutely positioned GIF */
 }
 
@@ -92,7 +92,7 @@ section{
   z-index: 777;
   content: '';
   position: absolute;
-  background: rgba(0, 0, 0, 0.63);
+  background: rgba(0, 0, 0, 0.20);
   width: 100%;
   height: 100%;
   top: 0;
