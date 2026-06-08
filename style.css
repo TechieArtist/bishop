@@ -112,7 +112,7 @@ section{
   display: block;
   /* Corrected animation application */
   animation: mySlide 4s; /* Shorthand for 'name duration' */
-  font-size: small;
+  
 }
 
 
