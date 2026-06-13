@@ -31,8 +31,11 @@ html, body {
   }
 
 .about-box{
-    width: min(700px, 90%);
-    padding: 40px;
+    max-width: 700px;
+    padding: 50px;
+    background: rgba(0,0,0,.25);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
 }
 
 /* ===== HEADER ===== */
