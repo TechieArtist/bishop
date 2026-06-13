@@ -104,10 +104,13 @@ header .brand{
 
 /* ===== MOBILE ===== */
 
-@media (max-width: 768px) {
-  header {
-    padding: 20px;
-  }
+@media (max-width:768px){
+    .about-box{
+        background: none;
+        backdrop-filter: none;
+        padding: 0;
+    }
+}
   .navigation-items {
     gap: 15px;
   }
