@@ -32,13 +32,6 @@ html, body {
 
 
 
-
-
-
-
-
-
-
 .about-box{
     max-width: min(700px, 90%);
     padding: 50px;
@@ -184,8 +177,6 @@ header .brand{
 .media-icons a:hover {
   transform: scale(1.3);
 }
-
-
 
 
 
