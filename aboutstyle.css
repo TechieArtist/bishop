@@ -24,6 +24,11 @@ html, body {
     line-height: 1.6; /* Adjust line height */
   }
 
+.about-box{
+    width: min(700px, 90%);
+    padding: 40px;
+}
+
 /* ===== HEADER ===== */
 
 header{
