@@ -59,7 +59,7 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 200px;
+  padding: 35px 80px;
   transition: 0.5s ease;
 }
 
