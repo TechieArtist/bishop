@@ -7,15 +7,15 @@
 }
 
 html, body {
-    background-image:
-      linear-gradient(
+     linear-gradient(
         rgba(0,0,0,.35),
         rgba(0,0,0,.35)
       ),
-      url("Liquor.PNG"); /* Add your image as the background */
-    background-size: cover; /* Cover the entire page */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the image */
+      url("Liquor.PNG");
+
+    background-size: cover;
+    background-position: 35% center;
+    background-repeat: no-repeat;
     font-family: "Poppins", sans-serif;
     color: #fff;
     margin: 0;
