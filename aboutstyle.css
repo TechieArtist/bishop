@@ -106,27 +106,29 @@ header .brand{
 /* ===== MOBILE ===== */
 
 @media (max-width:768px){
+
     .about-box{
-        background: none;
-        backdrop-filter: none;
-        padding: 0;
+        background:none;
+        backdrop-filter:none;
+        padding:0;
     }
-}
-  .navigation-items {
-    gap: 15px;
-  }
-  .contact-info{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-left: 80px;
-}
-  .contact-info h1 {
-    font-size: 2rem;
-  }
-  .contact-info p {
-    font-size: 1rem;
-  }
+
+    .navigation-items{
+        gap:15px;
+    }
+
+    .contact-info{
+        margin-top:140px;
+        padding:0 20px;
+    }
+
+    .contact-info h1{
+        font-size:2rem;
+    }
+
+    .contact-info p{
+        font-size:1rem;
+    }
 }
 /* ===== EMPHASIS ===== */
 .emphasis {
