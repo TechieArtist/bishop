@@ -7,7 +7,12 @@
 }
 
 html, body {
-    background-image: url('Liquor.PNG'); /* Add your image as the background */
+    background-image:
+      linear-gradient(
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.35)
+      ),
+      url("Liquor.PNG"); /* Add your image as the background */
     background-size: cover; /* Cover the entire page */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -22,6 +27,7 @@ html, body {
     background-color: #000;
     font-size: 16px; /* Adjust base font size */
     line-height: 1.6; /* Adjust line height */
+  
   }
 
 .about-box{
