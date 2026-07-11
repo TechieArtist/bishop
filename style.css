@@ -137,7 +137,7 @@ section{
   left: 0;
   width: 100%; /* Cover the full width of the .home section */
   height: 100%; /* Cover the full height of the .home section */
-  background-image: url('buildings.gif'); /* Set the background GIF */
+  background-image: url('Buildingscross.gif'); /* Set the background GIF */
   background-size: cover; /* Ensure the background covers the div */
   background-position: center; /* Center the background image */
   z-index: 1; /* Ensure the GIF is behind all other content */
