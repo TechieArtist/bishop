@@ -106,87 +106,123 @@ section{
 }
 /* ===== MAIN CATALOGUE ===== */
 
-.catalogue {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-}
-
-.year {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #ccc;
+.catalogue{
+    column-count:2;
+    column-gap:40px;
+    padding:140px 40px 80px;
 }
 
 /* ===== ARTWORK BLOCK ===== */
 
-
-
-.artwork img {
-  width: 20vw;
-  height: auto;
-  display: block;
-  transition: 0.4s ease;
+.artwork{
+    display:inline-block;
+    width:100%;
+    margin:0 0 80px;
+    break-inside:avoid;
+    page-break-inside:avoid;
 }
 
-.artwork img:hover {
-  opacity: 0.85;
+.artwork img{
+    width:100%;
+    height:auto;
+    display:block;
+    transition:0.4s ease;
 }
 
-.art-info {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.artwork img:hover{
+    opacity:0.9;
 }
 
-.art-info h2 {
-  font-weight: 400;
-  font-size: 1.2rem;
+.art-info{
+    margin-top:20px;
 }
 
-.art-info a {
-  text-decoration: none;
-  color: #aaa;
-  font-size: 0.95rem;
-  transition: 0.3s ease;
+.art-info h2{
+    font-size:1.8rem;
+    font-weight:500;
+    line-height:1.2;
+    margin-bottom:8px;
 }
 
-.art-info a:hover {
-  color: #fff;
+.art-info p{
+    font-size:1rem;
+    color:#ddd;
+    margin-bottom:15px;
 }
 
-/* ===== MEDIA ICONS (Right Side Fixed Like Homepage) ===== */
-
-.media-icons {
-  position: fixed;
-  top: 50%;
-  right: 30px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  z-index: 999;
+.art-info a{
+    text-decoration:none;
+    color:#aaa;
+    font-size:1rem;
+    transition:0.3s ease;
 }
 
-.media-icons a {
-  color: #fff;
-  font-size: 1.6em;
-  margin-bottom: 20px;
-  transition: 0.3s ease;
+.art-info a:hover{
+    color:#fff;
 }
 
-.media-icons a:hover {
-  transform: scale(1.3);
+/* ===== MEDIA ICONS ===== */
+
+.media-icons{
+    position:fixed;
+    top:50%;
+    right:30px;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    z-index:999;
 }
 
+.media-icons a{
+    color:#fff;
+    font-size:1.6em;
+    margin-bottom:20px;
+    transition:0.3s ease;
+}
 
+.media-icons a:hover{
+    transform:scale(1.3);
+}
 
+/* ===== MOBILE ===== */
 
+@media (max-width:1040px){
 
-@media (max-width: 1040px){
-  header{
-    padding: 12px 20px;
-  }
+    .catalogue{
+        column-count:1;
+        column-gap:0;
+        padding:120px 20px 40px;
+    }
+
+    .artwork{
+        margin-bottom:70px;
+    }
+
+    .art-info h2{
+        font-size:2rem;
+    }
+
+    .art-info p{
+        font-size:1.1rem;
+    }
+
+}
+
+@media (max-width:560px){
+
+    .catalogue{
+        padding:110px 20px 30px;
+    }
+
+    .art-info h2{
+        font-size:1.7rem;
+    }
+
+    .art-info p{
+        font-size:1rem;
+    }
+
+}
 
   section{
     padding: 100px 20px;
