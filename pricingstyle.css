@@ -122,14 +122,16 @@ section{
     page-break-inside:avoid;
 }
 
-.artwork img{
+.artwork img,
+.artwork video{
     width:100%;
     height:auto;
     display:block;
     transition:0.4s ease;
 }
 
-.artwork img:hover{
+.artwork img:hover,
+.artwork video:hover{
     opacity:0.9;
 }
 
