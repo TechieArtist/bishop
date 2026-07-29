@@ -117,19 +117,19 @@ header .brand{
 
 @media (max-width:768px){
 
+    .contact-info{
+        margin-top:140px;
+        padding:0 20px;
+        justify-content: center;
+    }
+
     .about-box{
         background:none;
         backdrop-filter:none;
         padding:0;
-    }
-
-    .navigation-items{
-        gap:15px;
-    }
-
-    .contact-info{
-        margin-top:140px;
-        padding:0 20px;
+        margin-left: 0;
+        max-width: 90%;
+        text-align: center;
     }
 
     .contact-info h1{
@@ -140,6 +140,7 @@ header .brand{
         font-size:1rem;
     }
 }
+
 /* ===== EMPHASIS ===== */
 .emphasis {
   font-weight: 600;
