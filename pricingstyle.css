@@ -107,9 +107,9 @@ section{
 /* ===== MAIN CATALOGUE ===== */
 
 .catalogue{
-    column-count:2;
-    column-gap:40px;
-    padding:140px 40px 80px;
+    max-width:900px;
+    margin:0 auto;
+    padding:140px 20px;
 }
 
 /* ===== ARTWORK BLOCK ===== */
