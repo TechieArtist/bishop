@@ -115,19 +115,14 @@ section{
 /* ===== ARTWORK BLOCK ===== */
 
 .artwork{
-    display:inline-block;
     width:100%;
-    margin:0 0 80px;
-    break-inside:avoid;
-    page-break-inside:avoid;
+    margin-bottom:140px;
 }
 
 .artwork img,
 .artwork video{
     width:100%;
-    height:auto;
-    display:block;
-    transition:0.4s ease;
+    border-radius:2px;
 }
 
 .artwork img:hover,
