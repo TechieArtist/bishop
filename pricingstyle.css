@@ -158,6 +158,43 @@ section{
     color:#fff;
 }
 
+.art-slider{
+    position:relative;
+}
+
+.art-slide{
+    display:none;
+}
+
+.art-slide.active{
+    display:block;
+}
+
+.art-slide img,
+.art-slide video{
+    width:100%;
+    display:block;
+}
+
+.art-slider-nav{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin:18px 0;
+}
+
+.art-slider-nav .dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#666;
+    cursor:pointer;
+}
+
+.art-slider-nav .dot.active{
+    background:#fff;
+}
+
 /* ===== MEDIA ICONS ===== */
 
 .media-icons{
