@@ -42,7 +42,7 @@ html, body {
 .about-box{
     width: 100%;
     padding: 50px;
-    margin-left:80px;  
+    margin-left:40px;  
     background: rgba(0,0,0,.25);
     backdrop-filter: blur(4px);
     border-radius: 20px;
@@ -128,7 +128,7 @@ header .brand{
     }
 
     .contact-info{
-        margin-top:10px;
+        margin-top:140px;
         padding:0 20px;
     }
 
