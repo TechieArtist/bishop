@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artwork</title>
+<title>Exhibition</title>
 
 <link rel="stylesheet" href="pricingstyle.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -194,6 +194,42 @@
       </div>
     </div>
   </section>
+
+
+<section class="artwork">
+
+  <div class="art-slider">
+
+    <div class="art-slide active">
+      <video controls poster="Vagabond1.jpg">
+        <source src="Poseidonblue2.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="art-slide">
+      <video controls poster="Vagabond2.jpg">
+        <source src="Vagabond2.mov" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="art-slide">
+      <img src="VagabondDrawing.jpg">
+    </div>
+
+  </div>
+
+  <div class="art-slider-nav">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+  </div>
+
+  <div class="art-info">
+      <h2>Vagabond</h2>
+      <p>Crayon, AI animation, 3D animation · 2026</p>
+  </div>
+
+</section>
  
 </div>
  
@@ -219,9 +255,32 @@
     menuBtn.classList.toggle("active");
     navigation.classList.toggle("active");
   });
-  </script>
+ 
 
-  </body>
+
+ document.querySelectorAll(".artwork").forEach(work => {
+
+    const slides = work.querySelectorAll(".art-slide");
+    const dots = work.querySelectorAll(".dot");
+
+    dots.forEach((dot,index)=>{
+
+        dot.addEventListener("click",()=>{
+
+            slides.forEach(slide=>slide.classList.remove("active"));
+            dots.forEach(dot=>dot.classList.remove("active"));
+
+            slides[index].classList.add("active");
+            dots[index].classList.add("active");
+
+        });
+
+    });
+
+});
+</script>
+
+</body>
 </html>
 
 
