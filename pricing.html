@@ -63,17 +63,34 @@
     <h2>EXHIBITION<br>SPECIAL MOVIE</h2>
 
     <div class="movie-links">
-      <a href="Movie1.mp4" class="movie-link">
+      <a href="#" class="movie-link" onclick="openMovieModal('luKyjNCPfDg'); return false;">
         <span>1st</span>
         <img src="Playr.png" alt="Play">
       </a>
-      <a href="Movie2.mp4" class="movie-link">
+      <!-- add a second video the same way when you have it -->
+      <!--
+      <a href="#" class="movie-link" onclick="openMovieModal('SECOND_VIDEO_ID'); return false;">
         <span>2nd</span>
         <img src="Playr.png" alt="Play">
       </a>
+      -->
     </div>
   </div>
 </section>
+
+<!-- Video Modal -->
+<div class="movie-modal" id="movieModal">
+  <div class="movie-modal-close" onclick="closeMovieModal()">&times;</div>
+  <div class="movie-modal-inner">
+    <iframe id="movieFrame"
+      src=""
+      frameborder="0"
+      allow="autoplay; fullscreen; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
 
  
 <div class="catalogue">
