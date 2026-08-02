@@ -534,6 +534,82 @@ section{
 }
 
 
+.special-movie{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('SpecialMoviePoster.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.special-movie-overlay{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.35);
+    z-index: 1;
+}
+
+.special-movie-content{
+    position: relative;
+    z-index: 2;
+    padding: 0 60px;
+}
+
+.special-movie-content h2{
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+}
+
+.movie-links{
+    display: flex;
+    gap: 40px;
+}
+
+.movie-link{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.movie-link img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.movie-link:hover img{
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px){
+    .special-movie-content h2{
+        font-size: 2.2rem;
+    }
+
+    .movie-link{
+        font-size: 1.2rem;
+    }
+
+    .movie-link img{
+        width: 45px;
+        height: 45px;
+    }
+}
+
+
 
 /* ===== FOOTER TEXT ===== */
 
