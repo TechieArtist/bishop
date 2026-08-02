@@ -426,6 +426,8 @@ section{
     }
   }
 
+/* ===== Poster ===== */
+
 .poster{
     position: relative;
     width: 100%;
@@ -481,6 +483,55 @@ section{
     }
 }
 
+/* ===== commentary ===== */
+
+.commentary{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 120px 20px;
+    color: #eee;
+}
+
+.commentary-label{
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.commentary-dash{
+    color: #666;
+    margin-bottom: 60px;
+}
+
+.chapter-tag{
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #b33a2e;
+    margin-bottom: 15px;
+}
+
+.chapter-title{
+    font-family: "Hahmlet", serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 40px;
+    max-width: 700px;
+}
+
+.chapter-body{
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #ccc;
+    max-width: 650px;
+}
+
+@media (max-width: 768px){
+    .chapter-title{
+        font-size: 1.8rem;
+    }
+}
 
 
 
