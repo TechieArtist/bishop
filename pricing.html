@@ -399,6 +399,22 @@
     });
 
 });
+
+ <script>
+function openMovieModal(videoId){
+    const modal = document.getElementById('movieModal');
+    const frame = document.getElementById('movieFrame');
+    frame.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+    modal.classList.add('active');
+}
+
+function closeMovieModal(){
+    const modal = document.getElementById('movieModal');
+    const frame = document.getElementById('movieFrame');
+    modal.classList.remove('active');
+    frame.src = '';
+}
+</script>
 </script>
 
 </body>
