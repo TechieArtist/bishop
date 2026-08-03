@@ -648,8 +648,7 @@ section{
 
 
 .artwork-frame{
-    background: #fff;
-    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.4);
     display: inline-block;
     width: 100%;
 }
@@ -658,6 +657,7 @@ section{
     display: block;
     width: 100%;
 }
+
 
 
 
