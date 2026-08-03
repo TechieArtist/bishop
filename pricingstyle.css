@@ -647,6 +647,19 @@ section{
 }
 
 
+.artwork-frame{
+    background: #fff;
+    padding: 30px;
+    display: inline-block;
+    width: 100%;
+}
+
+.artwork-frame img{
+    display: block;
+    width: 100%;
+}
+
+
 
 
 
