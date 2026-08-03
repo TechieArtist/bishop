@@ -527,6 +527,16 @@ section{
     max-width: 650px;
 }
 
+.artwork + .commentary{
+    margin-top: -80px;
+}
+
+.commentary-dash{
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
 @media (max-width: 768px){
     .chapter-title{
         font-size: 1.8rem;
