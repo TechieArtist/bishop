@@ -58,6 +58,10 @@
 </section>
 
 <section class="special-movie">
+  <video class="special-movie-bg" autoplay muted loop playsinline poster="SpecialMoviePoster.jpg">
+    <source src="SpecialMovieBG.mp4" type="video/mp4">
+  </video>
+
   <div class="special-movie-overlay"></div>
   <div class="special-movie-content">
     <h2>EXHIBITION<br>SPECIAL MOVIE</h2>
@@ -67,16 +71,14 @@
         <span>1st</span>
         <img src="Playr.PNG" alt="Play">
       </a>
-      <!-- add a second video the same way when you have it -->
-      <!--
       <a href="#" class="movie-link" onclick="openMovieModal('SECOND_VIDEO_ID'); return false;">
         <span>2nd</span>
-        <img src="Playr.png" alt="Play">
+        <img src="Playr.PNG" alt="Play">
       </a>
-      -->
     </div>
   </div>
 </section>
+
 
 <!-- Video Modal -->
 <div class="movie-modal" id="movieModal">
