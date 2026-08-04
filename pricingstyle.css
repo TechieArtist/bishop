@@ -543,17 +543,27 @@ section{
     }
 }
 
+
+
 .special-movie{
     position: relative;
     width: 100%;
-    height: 60vh;
-    background-image: url('SpecialMoviePoster.jpg');
-    background-size: cover;
-    background-position: center;
+    height: 100vh;
     display: flex;
     align-items: center;
     overflow: hidden;
 }
+
+.special-movie-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
 
 .special-movie-overlay{
     position: absolute;
