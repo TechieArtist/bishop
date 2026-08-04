@@ -658,7 +658,8 @@ section{
 
 
 .artwork-frame{
-    border: 1px solid rgba(255,255,255,0.4);
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #e8e8e8, #888, #fff, #666, #ccc) 1;
     display: inline-block;
     width: 100%;
     padding: 3%;
@@ -674,6 +675,7 @@ section{
 .artwork-frame .video-wrapper{
     padding-top: 56.25%;
 }
+
 
 
 
