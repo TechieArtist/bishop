@@ -665,10 +665,16 @@ section{
     box-sizing: border-box;
 }
 
-.artwork-frame img{
+.artwork-frame img,
+.artwork-frame video{
     display: block;
     width: 100%;
 }
+
+.artwork-frame .video-wrapper{
+    padding-top: 56.25%;
+}
+
 
 
 
