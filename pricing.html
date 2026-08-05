@@ -118,14 +118,10 @@
   <!-- Artwork 2: Breaking (short loop) -->
   <section class="artwork">
     <div class="artwork-frame">
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="Break.jpg">
-        <source src="Form.MP4" type="video/mp4">
-      </video>
+      <video muted loop playsinline preload="none" poster="Break.jpg" data-lazy-video>
+  <source src="Form.MP4" type="video/mp4">
+</video>
+
     </div>
 
     <div class="art-info">
@@ -139,9 +135,10 @@
   <section class="artwork">
     <div class="artwork-frame">
       <video
-        autoplay
+        data-lazy-video
         muted
         loop
+        preload="none"
         playsinline
         poster="Dantep.jpg">
         <source src="Dante.MP4" type="video/mp4">
@@ -164,9 +161,10 @@
   <section class="artwork">
     <div class="artwork-frame">
       <video
-        autoplay
+        data-lazy-video
         muted
         loop
+        preload="none"
         playsinline
         poster="Hungrygullp.jpg">
         <source src="Watervessel.MP4" type="video/mp4">
@@ -280,9 +278,10 @@
   <section class="artwork">
     <div class="artwork-frame">
       <video
-        autoplay
+        data-lazy-video
         muted
         loop
+        preload="none"
         playsinline
         poster="Venuscycle.PNG">
         <source src="Venuscycle.MP4" type="video/mp4">
@@ -371,6 +370,9 @@
 
 <script src="app.js"></script>
 
+
+
+ 
 <script type="text/javascript">
   //Javacript for responsive navigation menu
   const menuBtn = document.querySelector(".menu-btn");
@@ -418,6 +420,23 @@ function closeMovieModal(){
     frame.src = '';
 }
 </script>
+
+<script> const lazyVideos = document.querySelectorAll('[data-lazy-video]');
+
+const videoObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const video = entry.target;
+    if (entry.isIntersecting) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+}, { threshold: 0.4 });
+
+lazyVideos.forEach(video => videoObserver.observe(video));
+</script>
+
 
 </body>
 </html>
