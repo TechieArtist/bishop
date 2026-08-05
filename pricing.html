@@ -448,6 +448,20 @@ lazyVideos.forEach(video => videoObserver.observe(video));
 
  </script>
 
+ <script>
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.artwork').forEach(work => {
+    fadeObserver.observe(work);
+  });
+</script>
+
 
 </body>
 </html>
