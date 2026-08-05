@@ -121,13 +121,10 @@
   <!-- Artwork 2: Breaking (short loop) -->
   <section class="artwork">
     <div class="artwork-frame">
-  <div class="video-frame-wrap">
-    <img src="Break.jpg" class="video-poster-overlay" alt="">
-    <video muted loop playsinline preload="metadata" data-lazy-video>
-      <source src="Form.MP4" type="video/mp4">
-    </video>
+        <video autoplay muted loop playsinline poster="Break.jpg">
+  <source src="Form.MP4" type="video/mp4">
+</video>
   </div>
-</div>
 
 
     <div class="art-info">
@@ -141,10 +138,10 @@
   <section class="artwork">
     <div class="artwork-frame">
       <video
-        data-lazy-video
+        autoplay
         muted
         loop
-        preload="none"
+        
         playsinline
         poster="Dantep.jpg">
         <source src="Dante.MP4" type="video/mp4">
@@ -284,10 +281,10 @@
   <section class="artwork">
     <div class="artwork-frame">
       <video
-        data-lazy-video
+        autoplay
         muted
         loop
-        preload="none"
+        
         playsinline
         poster="Venuscycle.PNG">
         <source src="Venuscycle.MP4" type="video/mp4">
@@ -427,7 +424,7 @@ function closeMovieModal(){
 }
 </script>
 
-<script> const lazyVideos = document.querySelectorAll('[data-lazy-video]');
+<!-- <script> const lazyVideos = document.querySelectorAll('[data-lazy-video]');
 
 const videoObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -446,7 +443,7 @@ const videoObserver = new IntersectionObserver((entries) => {
 lazyVideos.forEach(video => videoObserver.observe(video));
 
 
- </script>
+ </script> -->
 
  <script>
   const fadeObserver = new IntersectionObserver((entries) => {
