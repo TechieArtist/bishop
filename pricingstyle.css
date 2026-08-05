@@ -119,6 +119,18 @@ section{
 }
 
 /* ===== ARTWORK BLOCK ===== */
+.artwork{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.artwork.in-view{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 
 .artwork{
     width:100%;
