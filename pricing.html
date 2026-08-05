@@ -58,10 +58,6 @@
 </section>
 
 <section class="special-movie">
-  <video class="special-movie-bg" autoplay muted loop playsinline poster="SpecialMoviePoster.jpg">
-    <source src="SpecialMovieBG.mp4" type="video/mp4">
-  </video>
-
   <div class="special-movie-overlay"></div>
   <div class="special-movie-content">
     <h2>EXHIBITION<br>SPECIAL MOVIE</h2>
@@ -71,14 +67,16 @@
         <span>1st</span>
         <img src="Playr.PNG" alt="Play">
       </a>
+      <!-- add a second video the same way when you have it -->
+      <!--
       <a href="#" class="movie-link" onclick="openMovieModal('SECOND_VIDEO_ID'); return false;">
         <span>2nd</span>
-        <img src="Playr.PNG" alt="Play">
+        <img src="Playr.png" alt="Play">
       </a>
+      -->
     </div>
   </div>
 </section>
-
 
 <!-- Video Modal -->
 <div class="movie-modal" id="movieModal">
@@ -117,13 +115,14 @@
 </section>
 
 
-  <!-- Artwork 2: Breaking -->
+  <!-- Artwork 2: Breaking (short loop) -->
   <section class="artwork">
     <div class="artwork-frame">
       <video
-        controls
+        autoplay
+        muted
+        loop
         playsinline
-        preload="metadata"
         poster="Break.jpg">
         <source src="Form.MP4" type="video/mp4">
       </video>
@@ -136,13 +135,14 @@
     </div>
 </section>
 
-<!-- Artwork 3: Dante's Inferno -->
+<!-- Artwork 3: Dante's Inferno (short loop) -->
   <section class="artwork">
     <div class="artwork-frame">
       <video
-        controls
+        autoplay
+        muted
+        loop
         playsinline
-        preload="metadata"
         poster="Dantep.jpg">
         <source src="Dante.MP4" type="video/mp4">
       </video>
@@ -160,13 +160,14 @@
     </div>
   </section>
 
-<!-- Artwork 4: Hungry Gull and the Water Vessel -->
+<!-- Artwork 4: Hungry Gull and the Water Vessel (short loop) -->
   <section class="artwork">
     <div class="artwork-frame">
       <video
-        controls
+        autoplay
+        muted
+        loop
         playsinline
-        preload="metadata"
         poster="Hungrygullp.jpg">
         <source src="Watervessel.MP4" type="video/mp4">
       </video>
@@ -251,7 +252,7 @@
 
 
  
- <!-- Artwork 6: Untitled 2025 -->
+ <!-- Artwork 6: Untitled 2025 (long video, stays on Vimeo with controls) -->
 <section class="artwork">
   <div class="artwork-frame">
   <div class="video-wrapper">
@@ -275,13 +276,14 @@
   </div>
 </section>
 
- <!-- Artwork 7: Venus's Cycle -->
+ <!-- Artwork 7: Venus's Cycle (short loop) -->
   <section class="artwork">
     <div class="artwork-frame">
       <video
-        controls
+        autoplay
+        muted
+        loop
         playsinline
-        preload="metadata"
         poster="Venuscycle.PNG">
         <source src="Venuscycle.MP4" type="video/mp4">
       </video>
@@ -299,20 +301,20 @@
     </div>
   </section>
 
- <!-- Artwork 8: Vagabond -->
+ <!-- Artwork 8: Vagabond (short loops) -->
 <section class="artwork">
 
   <div class="artwork-frame">
   <div class="art-slider">
 
     <div class="art-slide active">
-      <video controls poster="Vagabondp.jpg">
+      <video autoplay muted loop playsinline poster="Vagabondp.jpg">
         <source src="Poseidonblue2.mp4" type="video/mp4">
       </video>
     </div>
 
     <div class="art-slide">
-      <video controls poster="Vagabond2p.jpg">
+      <video autoplay muted loop playsinline poster="Vagabond2p.jpg">
         <source src="Vagabond2.mov" type="video/mp4">
       </video>
     </div>
