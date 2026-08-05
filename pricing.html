@@ -56,7 +56,7 @@
   </p>
 </section>
 
-<section class="special-movie">
+<section class="special-movie"id="specialMovie">
   <video class="special-movie-bg" autoplay muted loop playsinline poster="SpecialMoviePoster.jpg">
     <source src="SpecialMovieBG.mp4" type="video/mp4">
   </video>
@@ -370,6 +370,12 @@
   </div>
 </footer>
 
+<div class="scroll-toggle" id="scrollToggle">
+  <img src="Dashdown.PNG" alt="Scroll down" class="scroll-icon" id="dashDown" onclick="document.getElementById('specialMovie').scrollIntoView({behavior:'smooth'})">
+  <img src="Dashup.PNG" alt="Scroll up" class="scroll-icon" id="dashUp" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="display:none;">
+</div>
+
+ 
 <script src="app.js"></script>
 
 
@@ -458,6 +464,22 @@ lazyVideos.forEach(video => videoObserver.observe(video));
   });
 </script>
 
+<script>
+ const dashDown = document.getElementById('dashDown');
+const dashUp = document.getElementById('dashUp');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    dashDown.style.display = 'none';
+    dashUp.style.display = 'block';
+  } else {
+    dashDown.style.display = 'block';
+    dashUp.style.display = 'none';
+  }
+});
+
+</script>
+ 
 
 </body>
 </html>
