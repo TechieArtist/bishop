@@ -121,11 +121,14 @@
   <!-- Artwork 2: Breaking (short loop) -->
   <section class="artwork">
     <div class="artwork-frame">
-      <video muted loop playsinline preload="none" poster="Break.jpg" data-lazy-video>
-  <source src="Form.MP4" type="video/mp4">
-</video>
+  <div class="video-frame-wrap">
+    <img src="Break.jpg" class="video-poster-overlay" alt="">
+    <video muted loop playsinline preload="metadata" data-lazy-video>
+      <source src="Form.MP4" type="video/mp4">
+    </video>
+  </div>
+</div>
 
-    </div>
 
     <div class="art-info">
         <h2>Breaking (割れる)</h2>
@@ -431,6 +434,9 @@ const videoObserver = new IntersectionObserver((entries) => {
     const video = entry.target;
     if (entry.isIntersecting) {
       video.play();
+      video.addEventListener('playing', () => {
+        video.classList.add('playing');
+      }, { once: true });
     } else {
       video.pause();
     }
@@ -438,20 +444,7 @@ const videoObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 lazyVideos.forEach(video => videoObserver.observe(video));
-</script>
 
- <script>
-  const fadeObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-    }
-  });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.artwork').forEach(work => {
-  fadeObserver.observe(work);
-});
 
  </script>
 
