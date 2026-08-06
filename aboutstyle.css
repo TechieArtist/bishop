@@ -33,20 +33,19 @@ html, body {
 .contact-info{
     min-height:100vh;
     display:flex;
-    align-items:center;
+    align-items:flex-start;   /* was center */
     width:100%;
 }
 
-
-
 .about-box{
     width: 100%;
-    padding: 50px;
+    padding: 140px 50px 160px;  /* was 50px — top clears header, bottom clears scroll icon */
     margin-left:40px;  
     background: rgba(0,0,0,.25);
     backdrop-filter: blur(4px);
     border-radius: 20px;
 }
+
 
 .about-box h1{
     font-size: 5rem;
@@ -119,11 +118,12 @@ header .brand{
 
     .contact-info{
     margin-top:80px;
-    padding:0 20px;
+    padding:0 20px 100px;   /* add bottom padding */
     justify-content: center;
     align-items: flex-start;
     min-height: auto;
   }
+
 
 
     .about-box{
