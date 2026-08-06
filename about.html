@@ -20,8 +20,6 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="pricing.html">Exhibition</a>
-      
-      
     </div>
   </div>
 </header>
@@ -33,36 +31,29 @@
 
     <h1>About</h1>
 
-    <p> B. 2002
-Brooklyn, NY
+    <p class="bio-meta">B. 2002<br>Brooklyn, NY</p>
 
-Evan Butler is a contemporary artist. Without formal training in the fine arts, Butler has developed a multidisciplinary artistic practice spanning several media.
+    <p>Evan Butler is a contemporary artist. Without formal training in the fine arts, Butler has developed a multidisciplinary artistic practice spanning several media.</p>
 
-Late 2022 marked Butler’s emergence as an artist using both traditional and digital painting techniques. Throughout 2023, he expanded his practice into 3D design,         developing an unfinished game and an experimental short film (Untitled) that was later completed in 2026.
+    <hr class="section-divider">
 
-During the summer of 2023, Butler began work on an animated short film that remained unfinished. In the same period, he produced Untitled (2023), one of his earliest major works.
+    <p>Late 2022 marked Butler's emergence as an artist using both traditional and digital painting techniques. Throughout 2023, he expanded his practice into 3D design, developing an unfinished game and an experimental short film (Untitled) that was later completed in 2026.</p>
 
-In early 2024, Butler’s practice shifted toward artificial intelligence as both a conceptual and technical framework, informing his artistic and academic trajectory. Alongside the production of East Asian-influenced concept art, he engaged with AI as a generative medium prior to enrolling in the AI Systems course at the Tokyo Institute of Technology.
+    <hr class="section-divider">
 
-Toward the end of 2024, Butler’s work increasingly engaged with violent imagery and depictions of destitute urban environments. He subsequently paused his artistic practice following relocation to New Jersey under precarious living conditions.
+    <p>During the summer of 2023, Butler began work on an animated short film that remained unfinished. In the same period, he produced Untitled (2023), one of his earliest major works.</p>
 
-In June 2026, Butler began development on his first solo exhibition, The Atelier.  </p>
+    <hr class="section-divider">
 
-   <!-- <p>
-      It started with a boy wide-eyed and gleeful, life more crimson than a <span class="emphasis fire">prostitute’s spat of fire.</span> Across the <span class="emphasis blue">Poseidon blue</span> body of water the boy’s desire’s reside. But like the traveler and the sea don’t let your hopes carry you away from reality. That’s it! The color of this boys song is 
+    <p>In early 2024, Butler's practice shifted toward artificial intelligence as both a conceptual and technical framework, informing his artistic and academic trajectory. Alongside the production of East Asian-influenced concept art, he engaged with AI as a generative medium prior to enrolling in the AI Systems course at the Tokyo Institute of Technology.</p>
 
-<span class="emphasis brown">Liquor Brown</span> -->
-      
+    <hr class="section-divider">
 
-       
-      
+    <p>Toward the end of 2024, Butler's work increasingly engaged with violent imagery and depictions of destitute urban environments. He subsequently paused his artistic practice following relocation to New Jersey under precarious living conditions.</p>
 
-  
+    <hr class="section-divider">
 
-      <!--<span class="emphasis">Creativity and innovation are natural to me.</span>
-      I believe creativity is the last hope for the youth — whether that's through visuals, music, comedy, community work — to convey stories, challenge perceptions, and <span class="emphasis">bridge divides.</span> My mission is to create with purpose, to resonate and inspire.
-    </p>-->
-    
+    <p>In June 2026, Butler began development on his first solo exhibition, The Atelier.</p>
 
   </div>
 
@@ -78,6 +69,11 @@ In June 2026, Butler began development on his first solo exhibition, The Atelier
   </a>
 </div>
 
+<div class="scroll-toggle" id="scrollToggle">
+  <img src="Dashdown.PNG" alt="Scroll down" class="scroll-icon" id="dashDown" onclick="document.querySelector('.about-box').scrollIntoView({behavior:'smooth', block:'end'})">
+  <img src="Dashup.PNG" alt="Scroll up" class="scroll-icon" id="dashUp" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="display:none;">
+</div>
+
 <script src="app.js"></script>
 
 <script>
@@ -90,14 +86,20 @@ menuBtn.addEventListener("click", () => {
 });
 </script>
 
+<script>
+  const dashDown = document.getElementById('dashDown');
+  const dashUp = document.getElementById('dashUp');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      dashDown.style.display = 'none';
+      dashUp.style.display = 'block';
+    } else {
+      dashDown.style.display = 'block';
+      dashUp.style.display = 'none';
+    }
+  });
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
