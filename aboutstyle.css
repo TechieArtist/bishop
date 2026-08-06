@@ -9,26 +9,26 @@
 html, body {
     background-image:
       linear-gradient(
-        rgba(0,0,0,.35),
-        rgba(0,0,0,.35)
+        rgba(0,0,0,.5),
+        rgba(0,0,0,.5)
       ),
-      url("Whiteroom.jpg"); /* Add your image as the background */
-    background-size: cover; /* Cover the entire page */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the image */
+      url('Whiteroom.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: "Poppins", sans-serif;
     color: #fff;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh; /* Makes sure the body covers the full viewport height */
-    width: 100vw; /* Ensures the body covers the full viewport width */
-    overflow-x: hidden; /* Prevents horizontal scroll */
-    background-color: #000;
-    font-size: 16px; /* Adjust base font size */
-    line-height: 1.6; /* Adjust line height */
-
+    min-height: 100vh;   /* was height: 100vh */
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: #000000;
+    font-size: 16px;
+    line-height: 1.6;
 }
+
 
 .contact-info{
     min-height:100vh;
