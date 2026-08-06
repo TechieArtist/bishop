@@ -318,12 +318,12 @@ header .brand{
 
     
 .bio-photo {
-  float: right;
-  width: 180px;
+  width: 200px;        /* adjust to whatever size you want */
+  max-width: 100%;
   height: auto;
-  margin: 0 0 20px 30px;
-  border-radius: 2px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;  /* optional, if you want rounded corners */
+  display: block;
+  margin: 0 auto 20px;  /* centers it, adds spacing below */
 }
 
 @media (max-width: 768px) {
