@@ -269,3 +269,50 @@ header .brand{
       font-size: 3em;
       line-height: 60px;
     }
+
+
+    .section-divider {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 24px 0;
+  width: 100%;
+}
+
+.about-box p {
+  margin-bottom: 0; /* dividers handle spacing now */
+}
+
+.bio-meta {
+  opacity: 0.75;
+  margin-bottom: 20px;
+}
+
+/* ===== SCROLL ICON (matches pricing page) ===== */
+.scroll-toggle {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateZ(0);
+  -webkit-transform: translateX(-50%) translateZ(0);
+  will-change: transform;
+  z-index: 998;
+}
+
+.scroll-icon {
+  width: 50px;
+  height: auto;
+  cursor: pointer;
+}
+
+.scroll-icon:hover {
+  transform: translateY(-4px);
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .section-divider {
+    margin: 18px 0;
+  }
+}
+
