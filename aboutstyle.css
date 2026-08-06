@@ -316,3 +316,22 @@ header .brand{
   }
 }
 
+    
+.bio-photo {
+  float: right;
+  width: 180px;
+  height: auto;
+  margin: 0 0 20px 30px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 768px) {
+  .bio-photo {
+    float: none;
+    display: block;
+    width: 140px;
+    margin: 0 auto 30px;
+  }
+}
+
