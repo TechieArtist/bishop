@@ -13,6 +13,9 @@
  
 <body>
 
+<div id="topSentinel" style="position:absolute; top:0; height:1px; width:1px;"></div>
+
+ 
 <header>
   <a href="index.html" class="brand">The Atelier</a>
   <div class="menu-btn"></div>
@@ -481,16 +484,22 @@ lazyVideos.forEach(video => videoObserver.observe(video));
 <script>
  const dashDown = document.getElementById('dashDown');
 const dashUp = document.getElementById('dashUp');
+const topSentinel = document.getElementById('topSentinel');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 100) {
-    dashDown.style.display = 'none';
-    dashUp.style.display = 'block';
-  } else {
-    dashDown.style.display = 'block';
-    dashUp.style.display = 'none';
-  }
-});
+const toggleObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      dashDown.style.display = 'block';
+      dashUp.style.display = 'none';
+    } else {
+      dashDown.style.display = 'none';
+      dashUp.style.display = 'block';
+    }
+  });
+}, { threshold: 0 });
+
+toggleObserver.observe(topSentinel);
+
 
 </script>
  
