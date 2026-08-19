@@ -122,6 +122,35 @@
         sliderNav(i);
       });
     });
+
+    // Swipe support for hero slider
+    const homeSection = document.querySelector(".home");
+    let currentSlideIndex = 0;
+
+    btns.forEach((btn, i) => {
+      if (btn.classList.contains("active")) currentSlideIndex = i;
+    });
+
+    let heroStartX = 0;
+
+    homeSection.addEventListener("touchstart", (e) => {
+      heroStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    homeSection.addEventListener("touchend", (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const diff = heroStartX - endX;
+      const swipeThreshold = 40;
+
+      if (Math.abs(diff) > swipeThreshold){
+        if (diff > 0 && currentSlideIndex < slides.length - 1){
+          currentSlideIndex++;
+        } else if (diff < 0 && currentSlideIndex > 0){
+          currentSlideIndex--;
+        }
+        sliderNav(currentSlideIndex);
+      }
+    }, { passive: true });
     </script>
 
 
