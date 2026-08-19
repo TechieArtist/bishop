@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -172,3 +173,142 @@
 
 
 
+=======
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evanatelier.com</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+
+    <header>
+      <a href="index.html" class="brand">The Atelier</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="pricing.html">Exhibition</a>
+          
+                                  
+                                         
+        </div>
+      </div>
+    </header>
+
+
+    
+    <section class="home">
+      <video class="video-slide" src="assets/videos/Dante.MP4" autoplay muted loop></video>
+      <video class="video-slide" src="assets/videos/Poseidonblue2.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="assets/videos/Watervessel.MP4" autoplay muted loop></video>
+      <video class="video-slide" src="4.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="5.mp4" autoplay muted loop></video>
+      <div class="content active">
+        <h1>Untitled<br><span></span></h1>
+        <p></p>
+        <a href="about.html">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Vagabond<br><span></span></span></h1>
+        <p>I find that my paintings are at their best when I’m away from home, where the night seems to amplify the sound of my life.
+
+</p>
+        <a href="about.html">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Hungry Gull and The Water Vessel<br><span></span></h1>
+        <p>The gull would do anything to get high even smoke Hydrangea.</p>
+        </p>
+        <a href="about.html">Read More</a>
+      </div>
+      
+
+      <div class="media-icons">
+        <a href="https://www.facebook.com/evan.butler.9619"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/evan.t.butler/"><i class="fab fa-instagram"></i></a>        
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        
+      </div>
+
+      <div class="mobile-gif"></div>
+
+    </section>
+
+
+
+
+
+  
+<script src="app.js"></script>
+
+
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+
+
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> e72299ce1f4dda7380c64f969bafdc00dd62c278
