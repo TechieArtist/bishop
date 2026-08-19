@@ -12,7 +12,7 @@ html, body {
         rgba(0,0,0,.5),
         rgba(0,0,0,.5)
       ),
-      url('Whiteroom.jpg');
+      url('assets/images/Whiteroom.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -246,7 +246,7 @@ header .brand{
     }
 
     .menu-btn{
-      background: url(menu.png)no-repeat;
+      background: url(assets/images/menu.png)no-repeat;
       background-size: 30px;
       background-position: center;
       width: 40px;
@@ -257,7 +257,7 @@ header .brand{
 
     .menu-btn.active{
       z-index: 999;
-      background: url(close.png)no-repeat;
+      background: url(assets/images/close.png)no-repeat;
       background-size: 25px;
       background-position: center;
       transition: 0.3s ease;
