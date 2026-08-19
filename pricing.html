@@ -415,20 +415,56 @@
 
     const slides = work.querySelectorAll(".art-slide");
     const dots = work.querySelectorAll(".dot");
+    const slider = work.querySelector(".art-slider");
+
+    if (!slides.length) return;
+
+    function goToSlide(index){
+        slides.forEach(slide=>slide.classList.remove("active"));
+        dots.forEach(dot=>dot.classList.remove("active"));
+        slides[index].classList.add("active");
+        if (dots[index]) dots[index].classList.add("active");
+    }
 
     dots.forEach((dot,index)=>{
-
         dot.addEventListener("click",()=>{
+            goToSlide(index);
+        });
+    });
 
-            slides.forEach(slide=>slide.classList.remove("active"));
-            dots.forEach(dot=>dot.classList.remove("active"));
+    if (slider){
+        let startX = 0;
+        let currentIndex = 0;
 
-            slides[index].classList.add("active");
-            dots[index].classList.add("active");
-
+        slides.forEach((slide, i) => {
+            if (slide.classList.contains("active")) currentIndex = i;
         });
 
-    });
+        slider.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+        }, { passive: true });
+
+        slider.addEventListener("touchend", (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+            const swipeThreshold = 40;
+
+            if (Math.abs(diff) > swipeThreshold){
+                if (diff > 0 && currentIndex < slides.length - 1){
+                    currentIndex++;
+                } else if (diff < 0 && currentIndex > 0){
+                    currentIndex--;
+                }
+                goToSlide(currentIndex);
+            }
+        }, { passive: true });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                currentIndex = index;
+            });
+        });
+    }
 
 });
 </script>
