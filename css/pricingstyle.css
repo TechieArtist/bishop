@@ -180,7 +180,8 @@ section{
     position: relative;
     overflow: hidden;
     touch-action: pan-y;
-    aspect-ratio: 4 / 5;
+    width: 100%;
+    padding-top: 125%; /* 4:5 ratio */
 }
 
 .art-slide{
