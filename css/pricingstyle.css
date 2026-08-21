@@ -177,21 +177,27 @@ section{
 }
 
 .art-slider{
-    position:relative;
+    position: relative;
+    overflow: hidden;
+    touch-action: pan-y;
+    aspect-ratio: 4 / 5;
 }
 
 .art-slide{
-    display:none;
-}
-
-.art-slide.active{
-    display:block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block !important;
 }
 
 .art-slide img,
 .art-slide video{
-    width:100%;
-    display:block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .art-slider-nav{

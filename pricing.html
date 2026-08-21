@@ -419,54 +419,65 @@
     const dots = work.querySelectorAll(".dot");
     const slider = work.querySelector(".art-slider");
 
-    if (!slides.length) return;
+    if (!slides.length || !slider) return;
 
-    function goToSlide(index){
-        slides.forEach(slide=>slide.classList.remove("active"));
-        dots.forEach(dot=>dot.classList.remove("active"));
-        slides[index].classList.add("active");
-        if (dots[index]) dots[index].classList.add("active");
+    let currentIndex = 0;
+    slides.forEach((slide, i) => {
+        if (slide.classList.contains("active")) currentIndex = i;
+    });
+
+    function positionSlides(offsetPx = 0, animate = false){
+        slides.forEach((slide, i) => {
+            slide.style.transition = animate ? "transform 0.35s ease" : "none";
+            slide.style.transform = `translateX(calc(${(i - currentIndex) * 100}% + ${offsetPx}px))`;
+        });
     }
 
-    dots.forEach((dot,index)=>{
-        dot.addEventListener("click",()=>{
+    function goToSlide(index){
+        currentIndex = Math.max(0, Math.min(index, slides.length - 1));
+        dots.forEach(dot => dot.classList.remove("active"));
+        if (dots[currentIndex]) dots[currentIndex].classList.add("active");
+        positionSlides(0, true);
+    }
+
+    positionSlides();
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
             goToSlide(index);
         });
     });
 
-    if (slider){
-        let startX = 0;
-        let currentIndex = 0;
+    let startX = 0;
+    let dragOffset = 0;
+    let isDragging = false;
 
-        slides.forEach((slide, i) => {
-            if (slide.classList.contains("active")) currentIndex = i;
-        });
+    slider.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    }, { passive: true });
 
-        slider.addEventListener("touchstart", (e) => {
-            startX = e.touches[0].clientX;
-        }, { passive: true });
+    slider.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        dragOffset = e.touches[0].clientX - startX;
+        positionSlides(dragOffset, false);
+    }, { passive: true });
 
-        slider.addEventListener("touchend", (e) => {
-            const endX = e.changedTouches[0].clientX;
-            const diff = startX - endX;
-            const swipeThreshold = 40;
+    slider.addEventListener("touchend", () => {
+        isDragging = false;
+        const swipeThreshold = 60;
 
-            if (Math.abs(diff) > swipeThreshold){
-                if (diff > 0 && currentIndex < slides.length - 1){
-                    currentIndex++;
-                } else if (diff < 0 && currentIndex > 0){
-                    currentIndex--;
-                }
-                goToSlide(currentIndex);
+        if (Math.abs(dragOffset) > swipeThreshold){
+            if (dragOffset < 0 && currentIndex < slides.length - 1){
+                currentIndex++;
+            } else if (dragOffset > 0 && currentIndex > 0){
+                currentIndex--;
             }
-        }, { passive: true });
+        }
 
-        dots.forEach((dot, index) => {
-            dot.addEventListener("click", () => {
-                currentIndex = index;
-            });
-        });
-    }
+        dragOffset = 0;
+        goToSlide(currentIndex);
+    }, { passive: true });
 
 });
 </script>
