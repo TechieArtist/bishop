@@ -12,6 +12,8 @@
 </head>
  
 <body>
+<div class="page-transition" id="pageTransition"></div>
+
 
 <div id="topSentinel" style="position:absolute; top:0; height:1px; width:1px;"></div>
 
@@ -542,6 +544,34 @@ toggleObserver.observe(topSentinel);
 
 </script>
  
+
+
+<script>
+const pageTransition = document.getElementById('pageTransition');
+
+window.addEventListener('DOMContentLoaded', () => {
+  requestAnimationFrame(() => {
+    pageTransition.classList.add('fade-in');
+  });
+});
+
+document.querySelectorAll('a[href]').forEach(link => {
+  const href = link.getAttribute('href');
+  const isInternal = href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:');
+
+  if (isInternal){
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      pageTransition.classList.remove('fade-in');
+      pageTransition.classList.add('fade-out');
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 600);
+    });
+  }
+});
+</script>
 
 </body>
 </html>

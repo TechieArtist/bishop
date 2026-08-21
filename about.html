@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 </head>
 <body>
+<div class="page-transition" id="pageTransition"></div>
+
 
 <header>
   <a href="index.html" class="brand">The Atelier</a>
@@ -101,6 +103,34 @@ menuBtn.addEventListener("click", () => {
       dashUp.style.display = 'none';
     }
   });
+</script>
+
+
+<script>
+const pageTransition = document.getElementById('pageTransition');
+
+window.addEventListener('DOMContentLoaded', () => {
+  requestAnimationFrame(() => {
+    pageTransition.classList.add('fade-in');
+  });
+});
+
+document.querySelectorAll('a[href]').forEach(link => {
+  const href = link.getAttribute('href');
+  const isInternal = href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:');
+
+  if (isInternal){
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      pageTransition.classList.remove('fade-in');
+      pageTransition.classList.add('fade-out');
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 600);
+    });
+  }
+});
 </script>
 
 </body>
