@@ -271,7 +271,7 @@
 
  
  <!-- Artwork 6: Untitled 2025 -->
-<section class="artwork">
+<section class="artwork no-zoom">
   <div class="artwork-frame">
   <div class="video-wrapper">
     <iframe 
@@ -582,6 +582,151 @@ document.querySelectorAll('a[href]').forEach(link => {
     });
   }
 });
+</script>
+
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-close" id="lightboxClose">&times;</div>
+  <div class="lightbox-track" id="lightboxTrack"></div>
+</div>
+
+
+<script>
+(function(){
+    const lightbox = document.getElementById('lightbox');
+    const track = document.getElementById('lightboxTrack');
+    const closeBtn = document.getElementById('lightboxClose');
+
+    const mediaItems = [];
+
+    document.querySelectorAll('.artwork:not(.no-zoom) .artwork-frame').forEach(frame => {
+        const slides = frame.querySelectorAll('.art-slide');
+        if (slides.length){
+            slides.forEach(slide => {
+                const img = slide.querySelector('img');
+                const video = slide.querySelector('video source');
+                if (img) mediaItems.push({ type: 'img', src: img.getAttribute('src') });
+                else if (video) mediaItems.push({ type: 'video', src: video.getAttribute('src') });
+            });
+        } else {
+            const img = frame.querySelector('img');
+            const video = frame.querySelector('video source');
+            if (img) mediaItems.push({ type: 'img', src: img.getAttribute('src') });
+            else if (video) mediaItems.push({ type: 'video', src: video.getAttribute('src') });
+        }
+    });
+
+    mediaItems.forEach((item, i) => {
+        const slide = document.createElement('div');
+        slide.className = 'lightbox-slide';
+        slide.dataset.index = i;
+
+        if (item.type === 'img'){
+            const img = document.createElement('img');
+            img.src = item.src;
+            slide.appendChild(img);
+        } else {
+            const video = document.createElement('video');
+            video.src = item.src;
+            video.controls = true;
+            video.playsInline = true;
+            slide.appendChild(video);
+        }
+
+        track.appendChild(slide);
+    });
+
+    const lightboxSlides = track.querySelectorAll('.lightbox-slide');
+    let currentIndex = 0;
+
+    function positionLightbox(offsetPx = 0, animate = false){
+        lightboxSlides.forEach((slide, i) => {
+            slide.style.transition = animate ? "transform 0.35s ease" : "none";
+            slide.style.transform = `translateX(calc(${(i - currentIndex) * 100}% + ${offsetPx}px))`;
+        });
+    }
+
+    function goToLightboxSlide(index){
+        currentIndex = Math.max(0, Math.min(index, lightboxSlides.length - 1));
+        positionLightbox(0, true);
+
+        lightboxSlides.forEach((slide, i) => {
+            const video = slide.querySelector('video');
+            if (video){
+                if (i === currentIndex) video.play().catch(()=>{});
+                else video.pause();
+            }
+        });
+    }
+
+    function openLightbox(index){
+        currentIndex = index;
+        positionLightbox();
+        lightbox.classList.add('active');
+        goToLightboxSlide(index);
+    }
+
+    function closeLightbox(){
+        lightbox.classList.remove('active');
+        lightboxSlides.forEach(slide => {
+            const video = slide.querySelector('video');
+            if (video) video.pause();
+        });
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+
+    let mediaCursor = 0;
+    document.querySelectorAll('.artwork:not(.no-zoom) .artwork-frame').forEach(frame => {
+        const slides = frame.querySelectorAll('.art-slide');
+        const count = slides.length || 1;
+        const startIndex = mediaCursor;
+
+        frame.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;
+            let offsetIntoGroup = 0;
+            if (slides.length){
+                const activeSlide = frame.querySelector('.art-slide.active');
+                offsetIntoGroup = Array.from(slides).indexOf(activeSlide);
+                if (offsetIntoGroup < 0) offsetIntoGroup = 0;
+            }
+            openLightbox(startIndex + offsetIntoGroup);
+        });
+
+        mediaCursor += count;
+    });
+
+    let startX = 0;
+    let dragOffset = 0;
+    let isDragging = false;
+
+    lightbox.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        dragOffset = e.touches[0].clientX - startX;
+        positionLightbox(dragOffset, false);
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', () => {
+        isDragging = false;
+        const swipeThreshold = 60;
+
+        if (Math.abs(dragOffset) > swipeThreshold){
+            if (dragOffset < 0 && currentIndex < lightboxSlides.length - 1){
+                currentIndex++;
+            } else if (dragOffset > 0 && currentIndex > 0){
+                currentIndex--;
+            }
+        }
+
+        dragOffset = 0;
+        goToLightboxSlide(currentIndex);
+    }, { passive: true });
+})();
 </script>
 
 </body>
