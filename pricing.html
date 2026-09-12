@@ -271,25 +271,31 @@
 
 
  
- <!-- Artwork 6: Untitled 2025 -->
-<section class="artwork no-zoom">
-  <div class="artwork-frame">
-  <div class="video-wrapper">
-    <iframe 
-      src="https://www.youtube.com/embed/Hi8313E4Rk0" 
-      frameborder="0" 
-      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-      referrerpolicy="strict-origin-when-cross-origin" 
-      title="Untitled"
-      allowfullscreen>
-    </iframe>
-  </div>
+ <!-- Artwork 6: Untitled 2025 + A.iF -->
+<section class="artwork">
+  <div class="artwork-grid">
+    <div class="artwork-frame no-zoom">
+      <div class="video-wrapper">
+        <iframe 
+          src="https://www.youtube.com/embed/Hi8313E4Rk0" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          title="Untitled"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="artwork-frame">
+      <img src="assets/images/AIF-placeholder.jpg" alt="A.iF">
+    </div>
   </div>
 
   <div class="art-info">
     <div class="left">
-      <h2>Untitled 2025</h2>
-      <p>3D animation, Mixed video · 2025</p>
+      <h2>Untitled 2025 / A.iF</h2>
+      <p>3D animation, Mixed video · 2025 &nbsp;&mdash;&nbsp; A.iF · 2026</p>
     </div>
     <div class="right"></div>
   </div>
@@ -322,35 +328,25 @@
     </div>
   </section>
 
- <!-- Artwork 8: Vagabond (short loops) -->
+ <!-- Artwork 8: Vagabond (separate pieces) -->
 <section class="artwork" id="lastArtwork">
 
-  <div class="artwork-frame">
-  <div class="art-slider">
-
-    <div class="art-slide active">
+  <div class="artwork-grid">
+    <div class="artwork-frame">
       <video autoplay muted loop playsinline poster="assets/images/Vagabondp.jpg">
         <source src="assets/videos/Poseidonblue2.mp4" type="video/mp4">
       </video>
     </div>
 
-    <div class="art-slide">
+    <div class="artwork-frame">
       <video autoplay muted loop playsinline poster="assets/images/Vagabond2p.jpg">
         <source src="assets/videos/Vagabond2.mp4" type="video/mp4">
       </video>
     </div>
 
-    <div class="art-slide">
+    <div class="artwork-frame">
       <img src="assets/images/VagabondDrawing.PNG">
     </div>
-
-  </div>
-  </div>
-
-  <div class="art-slider-nav">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
   </div>
 
   <div class="art-info">
@@ -588,7 +584,7 @@ document.querySelectorAll('a[href]').forEach(link => {
 
     const mediaItems = [];
 
-    document.querySelectorAll('.artwork:not(.no-zoom) .artwork-frame').forEach(frame => {
+    document.querySelectorAll('.artwork-frame:not(.no-zoom)').forEach(frame => {
         const slides = frame.querySelectorAll('.art-slide');
         if (slides.length){
             slides.forEach(slide => {
@@ -666,7 +662,7 @@ document.querySelectorAll('a[href]').forEach(link => {
     closeBtn.addEventListener('click', closeLightbox);
 
     let mediaCursor = 0;
-    document.querySelectorAll('.artwork:not(.no-zoom) .artwork-frame').forEach(frame => {
+    document.querySelectorAll('.artwork-frame:not(.no-zoom)').forEach(frame => {
         const slides = frame.querySelectorAll('.art-slide');
         const count = slides.length || 1;
         const startIndex = mediaCursor;
