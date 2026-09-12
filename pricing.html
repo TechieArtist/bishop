@@ -128,9 +128,12 @@
   <!-- Artwork 2: Breaking (short loop) -->
   <section class="artwork">
     <div class="artwork-frame">
-        <video autoplay muted loop playsinline poster="assets/images/Break.jpg">
-  <source src="assets/videos/Form.MP4" type="video/mp4">
-</video>
+        <div class="video-frame-wrap">
+  <img src="assets/images/Break.jpg" class="video-poster-bg" alt="">
+  <video muted loop playsinline preload="metadata" data-lazy-video>
+    <source src="assets/videos/Form.MP4" type="video/mp4">
+  </video>
+</div>
   </div>
 
 
@@ -144,15 +147,12 @@
 <!-- Artwork 3: Dante's Inferno (short loop) -->
   <section class="artwork">
     <div class="artwork-frame">
-      <video
-        autoplay
-        muted
-        loop
-        
-        playsinline
-        poster="assets/images/Dantep.jpg">
-        <source src="assets/videos/Dante.MP4" type="video/mp4">
-      </video>
+      <div class="video-frame-wrap">
+  <img src="assets/images/Dantep.jpg" class="video-poster-bg" alt="">
+  <video muted loop playsinline preload="metadata" data-lazy-video>
+    <source src="assets/videos/Dante.MP4" type="video/mp4">
+  </video>
+</div>
     </div>
 
     <div class="art-info">
@@ -183,15 +183,12 @@
 <!-- Artwork 4: Hungry Gull and the Water Vessel (short loop) -->
   <section class="artwork">
     <div class="artwork-frame">
-      <video
-        autoplay
-        muted
-        loop
-        
-        playsinline
-        poster="assets/images/Hungrygullp.jpg">
-        <source src="assets/videos/Hungrygull.mov" type="video/mp4">
-      </video>
+      <div class="video-frame-wrap">
+  <img src="assets/images/Hungrygullp.jpg" class="video-poster-bg" alt="">
+  <video muted loop playsinline preload="metadata" data-lazy-video>
+    <source src="assets/videos/Hungrygull.mov" type="video/mp4">
+  </video>
+</div>
     </div>
 
     <div class="art-info">
@@ -305,15 +302,12 @@
  <!-- Artwork 7: Venus's Cycle (short loop) -->
   <section class="artwork">
     <div class="artwork-frame">
-      <video
-        autoplay
-        muted
-        loop
-        
-        playsinline
-        poster="assets/images/Venuscycle.PNG">
-        <source src="assets/videos/Venuscycle.MP4" type="video/mp4">
-      </video>
+      <div class="video-frame-wrap">
+  <img src="assets/images/Venuscycle.PNG" class="video-poster-bg" alt="">
+  <video muted loop playsinline preload="metadata" data-lazy-video>
+    <source src="assets/videos/Venuscycle.MP4" type="video/mp4">
+  </video>
+</div>
     </div>
 
     <div class="art-info">
@@ -333,15 +327,21 @@
 
   <div class="artwork-grid">
     <div class="artwork-frame">
-      <video autoplay muted loop playsinline poster="assets/images/Vagabondp.jpg">
-        <source src="assets/videos/Poseidonblue2.mp4" type="video/mp4">
-      </video>
+      <div class="video-frame-wrap">
+  <img src="assets/images/Vagabondp.jpg" class="video-poster-bg" alt="">
+  <video muted loop playsinline preload="metadata" data-lazy-video>
+    <source src="assets/videos/Poseidonblue2.mp4" type="video/mp4">
+  </video>
+</div>
     </div>
 
     <div class="artwork-frame">
-      <video autoplay muted loop playsinline poster="assets/images/Vagabond2p.jpg">
-        <source src="assets/videos/Vagabond2.mp4" type="video/mp4">
-      </video>
+      <div class="video-frame-wrap">
+  <img src="assets/images/Vagabond2p.jpg" class="video-poster-bg" alt="">
+  <video muted loop playsinline preload="metadata" data-lazy-video>
+    <source src="assets/videos/Vagabond2.mp4" type="video/mp4">
+  </video>
+</div>
     </div>
 
     <div class="artwork-frame">
@@ -490,26 +490,31 @@ function closeMovieModal(){
 }
 </script>
 
-<!-- <script> const lazyVideos = document.querySelectorAll('[data-lazy-video]');
+<script>
+const lazyVideos = document.querySelectorAll('[data-lazy-video]');
 
 const videoObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     const video = entry.target;
     if (entry.isIntersecting) {
-      video.play();
-      video.addEventListener('playing', () => {
-        video.classList.add('playing');
-      }, { once: true });
+      video.play().catch(()=>{});
     } else {
       video.pause();
+      video.classList.remove('playing');
     }
   });
-}, { threshold: 0.4 });
+}, { threshold: 0.35 });
 
-lazyVideos.forEach(video => videoObserver.observe(video));
-
-
- </script> -->
+lazyVideos.forEach(video => {
+  video.addEventListener('playing', () => {
+    video.classList.add('playing');
+  });
+  video.addEventListener('pause', () => {
+    video.classList.remove('playing');
+  });
+  videoObserver.observe(video);
+});
+</script>
 
  <script>
   const fadeObserver = new IntersectionObserver((entries) => {
