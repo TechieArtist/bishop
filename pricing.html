@@ -593,16 +593,16 @@ document.querySelectorAll('a[href]').forEach(link => {
         const slides = frame.querySelectorAll('.art-slide');
         if (slides.length){
             slides.forEach(slide => {
-                const img = slide.querySelector('img');
                 const video = slide.querySelector('video source');
-                if (img) mediaItems.push({ type: 'img', src: img.getAttribute('src') });
-                else if (video) mediaItems.push({ type: 'video', src: video.getAttribute('src') });
+                const img = slide.querySelector('img');
+                if (video) mediaItems.push({ type: 'video', src: video.getAttribute('src') });
+                else if (img) mediaItems.push({ type: 'img', src: img.getAttribute('src') });
             });
         } else {
-            const img = frame.querySelector('img');
             const video = frame.querySelector('video source');
-            if (img) mediaItems.push({ type: 'img', src: img.getAttribute('src') });
-            else if (video) mediaItems.push({ type: 'video', src: video.getAttribute('src') });
+            const img = frame.querySelector(':scope > img, :scope .video-poster-bg');
+            if (video) mediaItems.push({ type: 'video', src: video.getAttribute('src') });
+            else if (frame.querySelector('img')) mediaItems.push({ type: 'img', src: frame.querySelector('img').getAttribute('src') });
         }
     });
 
