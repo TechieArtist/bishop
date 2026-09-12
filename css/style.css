@@ -341,10 +341,32 @@ section{
   }
 }
 
-@media (max-width: 560px){
+@media (max-width: 768px){
+  .home .content{
+    width: 90%;
+  }
+
   .home .content h1{
-    font-size: 3em;
-    line-height: 60px;
+    font-size: 10vw;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    word-break: break-word;
+  }
+
+  .home .content p{
+    font-size: 1rem;
+    margin-bottom: 35px;
+  }
+
+  .home .content a{
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px){
+  .home .content h1{
+    font-size: 11vw;
   }
 }
 
