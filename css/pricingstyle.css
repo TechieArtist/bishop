@@ -513,26 +513,6 @@ section{
     z-index: 1;
 }
 
-#introCommentary{
-    background-image:
-      linear-gradient(
-        rgba(0,0,0,.6),
-        rgba(0,0,0,.6)
-      ),
-      url('../assets/images/CommentaryBG.jpg');
-    background-size: cover;
-    background-position: center;
-    max-width: 100%;
-    padding: 100px 20px 140px;
-}
-
-#introCommentary .commentary-label,
-#introCommentary .chapter-title,
-#introCommentary .chapter-body{
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .commentary-label{
     font-size: 1rem;
