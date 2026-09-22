@@ -513,7 +513,7 @@ section{
     z-index: 1;
 }
 
-.commentary:first-of-type{
+#introCommentary{
     background-image:
       linear-gradient(
         rgba(0,0,0,.6),
@@ -527,9 +527,9 @@ section{
     padding: 100px 20px 140px;
 }
 
-.commentary:first-of-type .commentary-label,
-.commentary:first-of-type .chapter-title,
-.commentary:first-of-type .chapter-body{
+#introCommentary .commentary-label,
+#introCommentary .chapter-title,
+#introCommentary .chapter-body{
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
