@@ -522,7 +522,6 @@ section{
       url('../assets/images/CommentaryBG.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     max-width: 100%;
     padding: 100px 20px 140px;
 }
