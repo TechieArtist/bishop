@@ -33,6 +33,7 @@
   /* placement */
   .artwork > .artwork-frame,
   .artwork > .artwork-grid { grid-column: 1; grid-row: 1; justify-self: center; }
+  .artwork > .artwork-grid { justify-self: stretch; width: 100%; }
   .artwork > .art-info { grid-column: 2; grid-row: 1 / span 2; margin-top: 0; }
   .artwork > .art-slider-nav { grid-column: 1; grid-row: 2; }
   .artwork.flip > .artwork-frame,
