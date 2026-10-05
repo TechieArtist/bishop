@@ -6,7 +6,6 @@
 <title>Exhibition</title>
 <link rel="icon" type="image/png" href="assets/images/favicon.png">
 <link rel="stylesheet" href="css/pricingstyle.css">
-<link rel="stylesheet" href="css/desktop.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
@@ -114,7 +113,7 @@
   <div class="artwork-frame">
      
     <img src="assets/images/Untitled2023.jpg" alt="Untitled2023">
-    
+    </a>
   </div>
 
   <div class="art-info">
@@ -270,31 +269,38 @@
 
 
  
- <!-- Artwork 6: Untitled 2025 -->
+ <!-- Artwork 6: Untitled 2025 + UntitledF -->
 <section class="artwork">
   <div class="artwork-grid">
     <div class="artwork-frame no-zoom">
       <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/Hi8313E4Rk0"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
+        <iframe 
+          src="https://www.youtube.com/embed/Hi8313E4Rk0" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
           title="Untitled"
           allowfullscreen>
         </iframe>
       </div>
     </div>
-  </div>
 
+    <!-- <div class="artwork-frame">
+      <img src="assets/images/AIF-placeholder.jpg" alt="A.iF">
+    </div>
+  </div>
+-->
+   
   <div class="art-info">
     <div class="left">
       <h2>Untitled 2025</h2>
-      <p>3D animation · Mixed video · 2025</p>
-    </div>
+      <p>3D animation · Mixed video · 2025 </p>
+       <!--  &nbsp;&mdash;&nbsp; UntitledF · Digital art · 2026
+    </div> -->
     <div class="right"></div>
   </div>
 </section>
+
 
  <!-- Artwork 7: Venus's Cycle (short loop) -->
   <section class="artwork">
@@ -687,8 +693,6 @@ document.querySelectorAll('a[href]').forEach(link => {
     let dragOffset = 0;
     let isDragging = false;
 
-    window.lightboxAPI = { go: goToLightboxSlide, index: () => currentIndex, isOpen: () => lightbox.classList.contains('active'), close: closeLightbox };
-
     lightbox.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
         isDragging = true;
@@ -718,6 +722,5 @@ document.querySelectorAll('a[href]').forEach(link => {
 })();
 </script>
 
-<script src="js/desktop.js" defer></script>
 </body>
 </html>

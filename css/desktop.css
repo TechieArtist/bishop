@@ -1,0 +1,118 @@
+/* desktop.css — wall-hung gallery layout. Desktop only (>1040px); phone layout untouched. */
+@media (min-width: 1041px) {
+
+  /* ----- Nav: show the real menu, hide the hamburger ----- */
+  .menu-btn { display: none; }
+  header .navigation { display: block; position: relative; width: auto; height: auto; background: none; }
+  header .navigation .navigation-items,
+  header .navigation.active .navigation-items {
+    display: block; background: none; width: auto; max-width: none;
+    margin: 0; padding: 0; box-shadow: none; border-radius: 0;
+  }
+  header .navigation .navigation-items a { color: #fff; font-size: 1em; margin: 0 0 0 30px; }
+  header .navigation .navigation-items a:before { background: #fff; height: 3px; }
+
+  /* ----- Snap each work into view ----- */
+  html, body { scroll-snap-type: y proximity; }
+  .artwork { scroll-snap-align: center; }
+
+  /* ----- Wider wall; each work is its own row: work + wall label ----- */
+  .catalogue { max-width: 1280px; padding: 140px 40px; }
+
+  .artwork {
+    --work-h: 80vh;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 240px;
+    column-gap: 56px;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 160px;
+  }
+  .artwork.flip { grid-template-columns: 240px minmax(0, 1fr); }
+
+  /* placement */
+  .artwork > .artwork-frame,
+  .artwork > .artwork-grid { grid-column: 1; grid-row: 1; justify-self: center; }
+  .artwork > .art-info { grid-column: 2; grid-row: 1 / span 2; margin-top: 0; }
+  .artwork > .art-slider-nav { grid-column: 1; grid-row: 2; }
+  .artwork.flip > .artwork-frame,
+  .artwork.flip > .artwork-grid,
+  .artwork.flip > .art-slider-nav { grid-column: 2; }
+  .artwork.flip > .art-info { grid-column: 1; text-align: right; }
+
+  /* ----- Wall label ----- */
+  .art-info { border-top: 1px solid #555; padding-top: 16px; }
+  .art-info h2 { font-family: "Hahmlet", serif; font-size: 1.45rem; font-weight: 500; }
+  .art-info p { font-size: 0.95rem; color: #aaa; margin-bottom: 0; }
+
+  /* ----- Frames: never taller than the window ----- */
+  .artwork-frame {
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    padding: 14px;
+  }
+  .catalogue .artwork-frame img,
+  .catalogue .artwork-frame video {
+    width: auto;
+    max-width: 100%;
+    max-height: calc(var(--work-h) - 32px);
+    margin: 0 auto;
+  }
+  .video-frame-wrap { width: fit-content; max-width: 100%; margin: 0 auto; }
+  .catalogue .video-frame-wrap video { width: 100%; height: 100%; max-height: none; }
+
+  /* YouTube embed: 16:9, capped by height */
+  .artwork-frame .video-wrapper {
+    width: min(100%, calc((var(--work-h) - 32px) * 16 / 9));
+    margin: 0 auto;
+  }
+
+  /* Multi-piece works (Untitled 2025, Vagabond): one column per piece */
+  .artwork-grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+  .artwork-grid .artwork-frame { width: 100%; }
+
+  /* Tanpeki slider: 4:5, fitted to the window */
+  .art-slider {
+    padding-top: 0;
+    width: auto;
+    height: calc(var(--work-h) - 32px);
+    aspect-ratio: 4 / 5;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .art-slider-nav { margin: 18px 0 0; }
+
+  /* ----- Slider and lightbox arrows ----- */
+  .slider-arrow, .lightbox-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 44px; height: 44px; border: 0; border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55); color: #fff;
+    font-size: 1.8rem; line-height: 1; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s ease, opacity 0.2s ease;
+  }
+  .slider-arrow:hover, .lightbox-arrow:hover { background: rgba(0, 0, 0, 0.85); }
+  .slider-arrow:disabled { opacity: 0; pointer-events: none; }
+  .slider-arrow:focus-visible, .lightbox-arrow:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .slider-arrow.prev { left: 28px; }
+  .slider-arrow.next { right: 28px; }
+
+  .lightbox-arrow { z-index: 100001; width: 56px; height: 56px; }
+  .lightbox-arrow.prev { left: 30px; }
+  .lightbox-arrow.next { right: 30px; }
+}
+
+/* Arrows only exist on desktop */
+@media (max-width: 1040px) {
+  .slider-arrow, .lightbox-arrow { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html, body { scroll-snap-type: none; }
+}
