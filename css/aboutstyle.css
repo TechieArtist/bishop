@@ -1,310 +1,629 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* =========================================================
+   RESET
+========================================================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  background-image:
-    linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
-    url('../assets/images/Whiteroom.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)),
+    url('../assets/images/Whiteroom.jpg') center center / cover no-repeat fixed;
+  background-color: #000;
+
   font-family: "Poppins", sans-serif;
   color: #fff;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  width: 100vw;
-  overflow-x: hidden;
-  background-color: #000000;
+
   font-size: 16px;
   line-height: 1.6;
+
+  overflow-x: hidden;
 }
 
-/* ===== ABOUT BOX ===== */
 
-.contact-info{
-  min-height: 100vh;
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-  padding: 0 80px;
-}
+/* =========================================================
+   PAGE TRANSITION
+========================================================= */
 
-.about-box{
-  display: flow-root;            /* contains the floated portrait */
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 140px 56px 160px;     /* top clears header, bottom clears scroll icon */
-  background: rgba(0,0,0,.25);
-  backdrop-filter: blur(4px);
-  border-radius: 20px;
-}
-
-.about-box h1{
-  font-size: 5rem;
-  margin-bottom: 20px;
-}
-
-.about-box p{
-  font-size: 1.3rem;
-  line-height: 1.8;
-  max-width: 650px;
-  margin-bottom: 0;              /* dividers handle spacing */
-}
-
-.bio-meta{
-  opacity: 0.75;
-  margin-bottom: 20px;
-}
-
-/* Portrait: sits left of the text on desktop */
-.bio-photo{
-  float: left;
-  display: block;
-  width: 300px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 0 56px 24px 0;
-}
-
-.section-divider{
-  border: none;
-  height: 1px;
-  background: rgba(255,255,255,.25);
-  margin: 24px 0;
-  overflow: hidden;              /* lets the line sit beside the floated photo */
-}
-
-/* ===== HEADER ===== */
-
-header{
-  z-index: 999;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 35px 80px;
-  transition: 0.5s ease;
-}
-
-header .brand{
-  color: #fff;
-  font-size: 1.5em;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.navigation-items{
-  display: flex;
-  gap: 30px;
-}
-
-.navigation-items a{
-  position: relative;
-  color: #fff;
-  font-size: 1em;
-  font-weight: 500;
-  text-decoration: none;
-  margin-left: 30px;
-  transition: 0.3s ease;
-}
-
-.navigation-items a::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: #fff;
-  transition: 0.3s ease;
-}
-
-.navigation-items a:hover::after{
-  width: 100%;
-}
-
-/* ===== EMPHASIS ===== */
-
-.emphasis{ font-weight: 600; }
-.emphasis.fire,
-.emphasis.blue,
-.emphasis.brown{ color: #fff; }
-/* old accent colors: fire #ff4d2e, blue #2e86ff, brown #8b5a2b */
-
-/* ===== MEDIA ICONS ===== */
-
-.media-icons{
+.page-transition {
   position: fixed;
-  top: 50%;
-  right: 30px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  z-index: 999;
-}
-
-.media-icons a{
-  color: #fff;
-  font-size: 1.6em;
-  margin-bottom: 20px;
-  transition: 0.3s ease;
-}
-
-.media-icons a:hover{
-  transform: scale(1.3);
-}
-
-/* ===== SCROLL ICON ===== */
-
-.scroll-toggle{
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%) translateZ(0);
-  -webkit-transform: translateX(-50%) translateZ(0);
-  will-change: transform;
-  z-index: 998;
-}
-
-.scroll-icon{
-  width: 50px;
-  height: auto;
-  cursor: pointer;
-}
-
-.scroll-icon:hover{
-  transform: translateY(-4px);
-  opacity: 0.7;
-}
-
-/* ===== PAGE TRANSITION ===== */
-
-.page-transition{
-  position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   background: #000;
   z-index: 99999;
+
   opacity: 1;
   pointer-events: none;
+
   transition: opacity 0.6s ease;
 }
 
-.page-transition.fade-in{ opacity: 0; }
+.page-transition.fade-in {
+  opacity: 0;
+}
 
-.page-transition.fade-out{
+.page-transition.fade-out {
   opacity: 1;
   pointer-events: all;
 }
 
-/* ===== TABLET / MOBILE NAV (<=1040px) ===== */
 
-@media (max-width: 1040px){
+/* =========================================================
+   HEADER
+========================================================= */
 
-  header{ padding: 12px 20px; }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
 
-  section{ padding: 100px 20px; }
+  width: 100%;
+  height: auto;
 
-  header .navigation{ display: none; }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  header .navigation.active{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(1,1,1,.5);
+  padding: 28px 55px;
+
+  z-index: 999;
+
+  transition: 0.5s ease;
+}
+
+header .brand {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  text-decoration: none;
+
+  letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navigation-items {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navigation-items a {
+  position: relative;
+
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.navigation-items a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+
+  width: 0;
+  height: 1px;
+
+  background: #fff;
+
+  transition: 0.3s ease;
+}
+
+.navigation-items a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-btn {
+  display: none;
+}
+
+
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+
+.contact-info {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 130px 50px 120px;
+}
+
+
+/* =========================================================
+   MAIN ABOUT CONTAINER
+========================================================= */
+
+.about-box {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 50px;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  border-radius: 10px;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+
+/* =========================================================
+   ABOUT HEADING
+========================================================= */
+
+.about-box h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 600;
+
+  line-height: 1;
+
+  margin-bottom: 15px;
+
+  letter-spacing: -0.04em;
+}
+
+.bio-meta {
+  font-size: 0.7rem !important;
+  line-height: 1.4 !important;
+
+  opacity: 0.7;
+
+  margin-bottom: 45px !important;
+}
+
+
+/* =========================================================
+   BIOGRAPHY LAYOUT
+========================================================= */
+
+/*
+   Desktop:
+   --------------------------------
+   |              |               |
+   |   PORTRAIT   |   BIO TEXT    |
+   |              |               |
+   --------------------------------
+*/
+
+.bio-content {
+  display: grid;
+
+  grid-template-columns: minmax(300px, 0.9fr) minmax(350px, 1.1fr);
+
+  gap: 65px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   PORTRAIT
+========================================================= */
+
+.bio-photo {
+  display: block;
+
+  width: 100%;
+  max-width: 430px;
+
+  height: auto;
+
+  margin: 0;
+
+  border-radius: 5px;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   BIOGRAPHY TEXT
+========================================================= */
+
+.bio-text {
+  width: 100%;
+  max-width: 620px;
+}
+
+.bio-text p {
+  font-size: 0.82rem;
+  line-height: 1.75;
+
+  font-weight: 300;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   DIVIDERS
+========================================================= */
+
+.section-divider {
+  border: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  margin: 25px 0;
+}
+
+
+/* =========================================================
+   EMPHASIS
+========================================================= */
+
+.emphasis {
+  font-weight: 600;
+}
+
+.emphasis.fire,
+.emphasis.blue,
+.emphasis.brown {
+  color: #fff;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA
+========================================================= */
+
+.media-icons {
+  position: fixed;
+
+  top: 50%;
+  right: 25px;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+
+  z-index: 998;
+}
+
+.media-icons a {
+  color: #fff;
+
+  font-size: 1rem;
+
+  transition: 0.3s ease;
+}
+
+.media-icons a:hover {
+  transform: scale(1.3);
+}
+
+
+/* =========================================================
+   SCROLL BUTTON
+========================================================= */
+
+.scroll-toggle {
+  position: fixed;
+
+  bottom: 25px;
+  left: 50%;
+
+  transform: translateX(-50%) translateZ(0);
+  -webkit-transform: translateX(-50%) translateZ(0);
+
+  z-index: 998;
+
+  will-change: transform;
+}
+
+.scroll-icon {
+  width: 45px;
+  height: auto;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.scroll-icon:hover {
+  transform: translateY(-4px);
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1040px) {
+
+  header {
+    padding: 25px 30px;
   }
 
-  header .navigation .navigation-items a{
-    color: #222;
-    font-size: 1.2em;
-    margin: 20px;
+  .contact-info {
+    padding: 120px 30px 100px;
   }
 
-  header .navigation .navigation-items a::after{
-    background: #222;
-    height: 5px;
-  }
-
-  header .navigation.active .navigation-items{
-    background: #fff;
-    width: 600px;
-    max-width: 600px;
-    margin: 20px;
+  .about-box {
+    max-width: 950px;
     padding: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 5px;
-    box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
   }
 
-  .menu-btn{
-    background: url(../assets/images/menu.png) no-repeat;
-    background-size: 30px;
-    background-position: center;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    transition: 0.3s ease;
+  .bio-content {
+    grid-template-columns:
+      minmax(260px, 0.9fr)
+      minmax(300px, 1.1fr);
+
+    gap: 40px;
   }
 
-  .menu-btn.active{
-    z-index: 999;
-    background: url(../assets/images/close.png) no-repeat;
-    background-size: 25px;
-    background-position: center;
-    transition: 0.3s ease;
+  .bio-text p {
+    font-size: 0.78rem;
+  }
+
+  .media-icons {
+    right: 18px;
   }
 }
 
-/* ===== MOBILE (<=768px) ===== */
 
-@media (max-width: 768px){
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
 
-  .contact-info{
-    margin-top: 80px;
-    padding: 0 20px 100px;
+@media (max-width: 768px) {
+
+  header {
+    padding: 20px;
+  }
+
+  header .brand {
+    font-size: 0.95rem;
+  }
+
+  .menu-btn {
+    display: block;
+
+    width: 40px;
+    height: 40px;
+
+    background:
+      url('../assets/images/menu.png')
+      center / 25px
+      no-repeat;
+
+    cursor: pointer;
+
+    z-index: 1001;
+  }
+
+  .menu-btn.active {
+    background:
+      url('../assets/images/close.png')
+      center / 22px
+      no-repeat;
+  }
+
+  header .navigation {
+    display: none;
+  }
+
+  header .navigation.active {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
     justify-content: center;
-    align-items: flex-start;
-    min-height: auto;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
-  .about-box{
-    background: none;
-    backdrop-filter: none;
-    padding: 0;
+  header .navigation .navigation-items {
+    width: calc(100% - 40px);
+    max-width: 500px;
+
+    padding: 45px 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: #fff;
+
+    border-radius: 5px;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  header .navigation .navigation-items a {
+    color: #222;
+
+    font-size: 1.1rem;
+
     margin: 0;
-    max-width: 90%;
-    text-align: center;
   }
 
-  .contact-info h1{ font-size: 2rem; }
-  .contact-info p{ font-size: 1rem; }
-
-  .bio-photo{
-    float: none;
-    width: 140px;
-    margin: 0 auto 30px;
+  header .navigation .navigation-items a::after {
+    background: #222;
   }
 
-  .section-divider{ margin: 18px 0; }
+
+  /* =========================================
+     MOBILE ABOUT
+  ========================================= */
+
+  .contact-info {
+    min-height: auto;
+
+    padding: 100px 20px 110px;
+
+    display: block;
+  }
+
+  .about-box {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+    background: none;
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .about-box h1 {
+    font-size: 3rem;
+
+    margin-bottom: 10px;
+  }
+
+  .bio-meta {
+    margin-bottom: 30px !important;
+  }
+
+
+  /* =========================================
+     MOBILE BIO LAYOUT
+  ========================================= */
+
+  .bio-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 35px;
+  }
+
+  .bio-photo {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    border-radius: 4px;
+  }
+
+  .bio-text {
+    width: 100%;
+    max-width: none;
+  }
+
+  .bio-text p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+
+    text-align: left;
+  }
+
+  .section-divider {
+    margin: 22px 0;
+  }
+
+  .media-icons {
+    right: 12px;
+
+    gap: 15px;
+  }
+
+  .media-icons a {
+    font-size: 0.9rem;
+  }
+
+  .scroll-toggle {
+    bottom: 20px;
+  }
+
+  .scroll-icon {
+    width: 40px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .contact-info {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .about-box h1 {
+    font-size: 2.5rem;
+  }
+
+  .bio-meta {
+    font-size: 0.65rem !important;
+  }
+
+  .bio-text p {
+    font-size: 0.78rem;
+    line-height: 1.7;
+  }
+
+  .section-divider {
+    margin: 20px 0;
+  }
+
+  .media-icons {
+    display: none;
+  }
 }
