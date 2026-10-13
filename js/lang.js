@@ -25,6 +25,7 @@
     ] },
 
     // ----- exhibition -----
+    { sel: '.commentary-label', ja: ['The Atelier/Propitiation · オンライン展覧会 · 2026年 — 開催中'] },
     { sel: '.chapter-tag', ja: ['はじめに', '第一章', '第二章', '第三章'] },
     { sel: '.chapter-title', ja: ['新時代', 'インターネットの人々', '爆弾', '地獄'] },
     { sel: '.chapter-body', ja: [
@@ -34,7 +35,6 @@
       '私たちが人生の中でつくり上げるペルソナについて、何を理解すべきなのか。革命家は、自らの生きる社会を曲げるべきか、それとも自分自身を曲げるべきか。人々が革命を必要としているのか、それとも革命家のほうが革命を必要としているのか。'
     ] },
     { sel: '.special-movie-content h2', ja: ['展覧会<br>スペシャルムービー'] },
-    { sel: '.movie-link span', ja: ['1作目'] },
     { sel: '.art-info p', ja: [
       'デジタルアート · 2023',
       'デジタルアート · 映像 · 2025',
@@ -48,8 +48,10 @@
   ];
 
   var TITLES = {
-    'Exhibition': '展覧会',
-    'About Evan Butler': 'エヴァン・バトラー | プロフィール'
+    'Evan Butler — Contemporary Artist': 'エヴァン・バトラー — 現代美術家',
+    'About Evan Butler': 'エヴァン・バトラー | プロフィール',
+    'The Atelier/Propitiation — Evan Butler': 'The Atelier/Propitiation — エヴァン・バトラー',
+    'Contact — Evan Butler': 'お問い合わせ — エヴァン・バトラー'
   };
 
   var items = [];
