@@ -1,87 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News | Evan Butler</title>
-  <link rel="stylesheet" href="css/contactstyling.css">
+  <title>Contact — Evan Butler</title>
+  <meta name="description" content="Contact Evan Butler for exhibition and press inquiries. Brooklyn, New York.">
+  <link rel="stylesheet" href="css/aboutstyle.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 </head>
 <body>
+<div class="page-transition" id="pageTransition"></div>
 
 <header>
-  <a href="index.html" class="brand">The Funk</a>
+  <a href="index.html" class="brand">The Atelier</a>
   <div class="menu-btn"></div>
   <div class="navigation">
     <div class="navigation-items">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="exhibition.html">Catalogue</a>
-      <a href="contact.html">News</a>
-     
+      <a href="exhibition.html">Exhibition</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
 </header>
 
-<section class="news-section">
+<section class="contact-info">
+  <div class="contact-box">
+    <h1>Contact</h1>
+    <div class="contact-place">New York, Brooklyn</div>
 
-  <div class="press-label">Featured Press</div>
+    <hr class="section-divider">
 
-  <div class="press-container">
+    <p class="contact-lead">For exhibition and press inquiries:</p>
+    <a class="contact-email" href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a>
 
-    <div class="press-item">
-      <h2>Forbes</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sapien at lorem dictum placerat. Integer vel lorem in velit aliquet gravida.</p>
-      <p>Curabitur interdum, tortor nec varius luctus, turpis massa dapibus est, sed fermentum magna nunc in sapien.</p>
-    </div>
+    <hr class="section-divider">
 
-    <div class="press-item">
-      <h2>Essence</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla sem et lacus hendrerit, sed bibendum nulla viverra.</p>
-      <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
-    </div>
-
-    <div class="press-item">
-      <h2>NPR</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti.</p>
-      <p>Phasellus luctus, massa nec varius feugiat, ligula sapien dignissim purus, sed facilisis elit odio non neque.</p>
-    </div>
-
-    <div class="press-item">
-      <h2>GBH</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec augue vitae neque convallis volutpat.</p>
-      <p>Aliquam erat volutpat. In euismod sapien sit amet est bibendum, vel porttitor mi tristique.</p>
-    </div>
-
-    <div class="press-item">
-      <h2>CNN</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat lorem at justo pharetra, non cursus risus elementum.</p>
-      <p>Vivamus vel sem sit amet augue tincidunt tincidunt.</p>
-    </div>
-
-    <div class="press-item">
-      <h2>ArtNews</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus.</p>
-      <p>Nulla facilisi. Praesent tristique leo vel nisi malesuada, vitae blandit ipsum tempor.</p>
-    </div>
-
+    <a class="contact-link" href="https://www.instagram.com/evan.t.butler/">Instagram — @evan.t.butler</a>
   </div>
-
 </section>
 
-<script src="app.js"></script>
-<script>
-  const menuBtn = document.querySelector(".menu-btn");
-  const navigation = document.querySelector(".navigation");
+<div class="media-icons">
+  <a href="https://www.facebook.com/evan.butler.9619"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://www.instagram.com/evan.t.butler"><i class="fab fa-instagram"></i></a>
+</div>
 
-  menuBtn.addEventListener("click", () => {
-    menuBtn.classList.toggle("active");
-    navigation.classList.toggle("active");
-  });
+<script>
+const menuBtn = document.querySelector(".menu-btn");
+const navigation = document.querySelector(".navigation");
+menuBtn.addEventListener("click", () => {
+  menuBtn.classList.toggle("active");
+  navigation.classList.toggle("active");
+});
 </script>
 
+<script>
+const pageTransition = document.getElementById('pageTransition');
+window.addEventListener('DOMContentLoaded', () => {
+  requestAnimationFrame(() => { pageTransition.classList.add('fade-in'); });
+});
+document.querySelectorAll('a[href]').forEach(link => {
+  const href = link.getAttribute('href');
+  const isInternal = href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:');
+  if (isInternal){
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      pageTransition.classList.remove('fade-in');
+      pageTransition.classList.add('fade-out');
+      setTimeout(() => { window.location.href = href; }, 600);
+    });
+  }
+});
+</script>
+
+<script src="js/lang.js"></script>
 </body>
 </html>
-
-
-

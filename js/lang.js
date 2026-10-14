@@ -1,8 +1,8 @@
 (function () {
   var RULES = [
     // ----- all pages -----
-    { sel: '.navigation-items a', ja: ['ホーム', 'プロフィール', '展覧会'] },
-    { sel: '.site-footer p', ja: ['©2026 Evan Butler<br>ニューヨーク、ブルックリン'] },
+    { sel: '.navigation-items a', ja: ['ホーム', 'プロフィール', '展覧会', 'お問い合わせ'] },
+    { sel: '.site-footer p', ja: ['©2026 Evan Butler<br>ニューヨーク、ブルックリン<br><a href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a>'] },
 
     // ----- home -----
     { sel: '.home .content p', ja: [
@@ -23,6 +23,29 @@
       '2024年末にかけて、バトラーの作品は暴力的なイメージや困窮した都市環境の描写へと次第に傾いていった。その後、不安定な生活状況のもとニュージャージーへ移り住み、制作活動を中断した。',
       '2026年6月、バトラーは初の個展『The Atelier/Propitiation』の制作に着手した。'
     ] },
+
+    // ----- contact -----
+    { sel: '.contact-box h1', ja: ['お問い合わせ'] },
+    { sel: '.contact-place', ja: ['ニューヨーク、ブルックリン'] },
+    { sel: '.contact-lead', ja: ['展覧会・取材に関するお問い合わせ：'] },
+
+    // ----- about: CV -----
+    { sel: '.cv-title', ja: ['略歴'] },
+    { sel: '.cv-heading', ja: ['学歴', '個展', '主な作品'] },
+    { sel: '.cv-list li', ja: [
+      '<span class="cv-year"></span><span class="cv-text">独学</span>',
+      '<span class="cv-year">2024</span><span class="cv-text">東京工業大学 AIシステム講座</span>',
+      '<span class="cv-year">2026</span><span class="cv-text"><em>The Atelier/Propitiation</em>（オンライン展覧会）、evanatelier.com</span>',
+      '<span class="cv-year">2023</span><span class="cv-text"><em>Untitled</em> — デジタルアート</span>',
+      '<span class="cv-year">2025</span><span class="cv-text"><em>Breaking (割れる)</em> — デジタルアート · 映像</span>',
+      '<span class="cv-year">2025</span><span class="cv-text"><em>Tanpeki (丹碧)</em> — デジタルアート</span>',
+      '<span class="cv-year">2025</span><span class="cv-text"><em>Untitled</em> — 3Dアニメーション · ミクストメディア映像</span>',
+      '<span class="cv-year">2026</span><span class="cv-text"><em>Dante\'s Inferno</em> — デジタルアート · 映像</span>',
+      '<span class="cv-year">2026</span><span class="cv-text"><em>Hungry Gull and the Water Vessel</em> — デジタルアート · アニメーション</span>',
+      '<span class="cv-year">2026</span><span class="cv-text"><em>Venus\'s Cycle</em> — AIアニメーション · 映像</span>',
+      '<span class="cv-year">2026</span><span class="cv-text"><em>Vagabond</em> — AIアニメーション · 3Dアニメーション · クレヨン</span>'
+    ] },
+    { sel: '.cv-download', ja: ['略歴をダウンロード（PDF）'] },
 
     // ----- exhibition -----
     { sel: '.commentary-label', ja: ['The Atelier/Propitiation · オンライン展覧会 · 2026年 — 開催中'] },

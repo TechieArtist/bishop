@@ -627,3 +627,94 @@ header .brand {
     display: none;
   }
 }
+
+
+/* ===== CONTACT PAGE ===== */
+.contact-box{
+  width: 100%;
+  padding: 140px 50px 160px;
+  margin-left: 40px;
+  background: rgba(0,0,0,.25);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+}
+.contact-box h1{ font-size: 5rem; margin-bottom: 20px; }
+.contact-place{ opacity: .75; margin-bottom: 20px; }
+.contact-lead{ font-size: 1.3rem; line-height: 1.8; max-width: 650px; margin-bottom: 6px; }
+.contact-email{
+  display: inline-block;
+  font-size: 1.8rem;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.5);
+  padding-bottom: 2px;
+  transition: opacity .3s;
+}
+.contact-link{
+  color: #fff;
+  font-size: 1.3rem;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.5);
+  padding-bottom: 2px;
+  transition: opacity .3s;
+}
+.contact-email:hover, .contact-link:hover{ opacity: .7; }
+
+@media (max-width: 768px){
+  .contact-box{
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+    margin-left: 0;
+    max-width: 90%;
+    text-align: center;
+  }
+  .contact-box h1{ font-size: 2rem; }
+  .contact-lead{ font-size: 1rem; }
+  .contact-email{ font-size: 1.2rem; }
+  .contact-link{ font-size: 1.05rem; }
+}
+
+/* ===== CV (about page) ===== */
+.cv-section{ max-width: 650px; margin-top: 10px; }
+.cv-title{ font-size: 2.2rem; margin-bottom: 8px; }
+.cv-contact{ font-size: 1rem; opacity: .75; margin-bottom: 28px; }
+.cv-contact a{ color: inherit; }
+.cv-heading{
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: .8;
+  margin: 28px 0 12px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.25);
+}
+.cv-list{ list-style: none; }
+.cv-list li{
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 12px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 6px 0;
+}
+.cv-year{ opacity: .65; font-variant-numeric: tabular-nums; }
+.cv-download{
+  display: inline-block;
+  margin-top: 26px;
+  padding: 12px 28px;
+  border: 1px solid rgba(255,255,255,.6);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  transition: .3s ease;
+}
+.cv-download:hover{ background: #fff; color: #000; }
+
+@media (max-width: 768px){
+  .cv-section{ text-align: left; margin-left: auto; margin-right: auto; }
+  .cv-title{ font-size: 1.7rem; }
+  .cv-list li{ font-size: 1rem; grid-template-columns: 3.6rem 1fr; }
+}

@@ -866,3 +866,6 @@ section{
 .video-frame-wrap video.playing{
     opacity: 1;
 }
+
+
+.site-footer a{ color: inherit; text-decoration: underline; text-underline-offset: 3px; }
