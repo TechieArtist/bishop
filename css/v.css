@@ -159,6 +159,11 @@ header .lang-toggle{
   transform: translate(calc(-50% - 110%), 40px) rotate(-16deg) scale(.7);
 }
 
+.volume-card[data-offset="1"],
+.volume-card[data-offset="-1"]{
+  cursor: pointer;
+}
+
 /* Incoming card, next: starts behind on the right, tilted, then
    arcs up and over the top — tilted upward slightly — before
    settling front and centre. */
@@ -169,7 +174,7 @@ header .lang-toggle{
     z-index: 1;
   }
   45%{
-    transform: translate(calc(-50% + 12%), -46px) rotate(-6deg) scale(.97);
+    transform: translate(calc(-50% + 12%), -64px) rotate(-8deg) scale(.97);
     opacity: 1;
     z-index: 1;
   }
@@ -209,7 +214,7 @@ header .lang-toggle{
     z-index: 1;
   }
   45%{
-    transform: translate(calc(-50% - 12%), -46px) rotate(6deg) scale(.97);
+    transform: translate(calc(-50% - 12%), -64px) rotate(8deg) scale(.97);
     opacity: 1;
     z-index: 1;
   }
@@ -253,6 +258,8 @@ header .lang-toggle{
 }
 
 .volume-arrow{
+  position: relative;
+  z-index: 10;
   flex: 0 0 auto;
   width: 48px;
   height: 48px;

@@ -112,6 +112,15 @@
   prevBtn.addEventListener('click', function () { move(-1); });
   nextBtn.addEventListener('click', function () { move(1); });
 
+  // Clicking a peeking neighbour card turns the wheel toward it.
+  cards.forEach(function (card, i) {
+    card.el.addEventListener('click', function () {
+      var off = signedOffset(i);
+      if (off === 1) move(1);
+      else if (off === -1) move(-1);
+    });
+  });
+
   // keyboard arrows, unless the full-screen menu is open
   document.addEventListener('keydown', function (e) {
     if (document.body.classList.contains('menu-open')) return;
