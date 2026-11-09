@@ -29,7 +29,10 @@
 </header>
 
 <main class="volumes">
-  <p class="volumes-eyebrow">V</p>
+  <picture class="volumes-mark">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/images/VMark-white.jpg">
+    <img src="assets/images/VMark-black.jpg" alt="V">
+  </picture>
   <div class="volume-row" id="volumeRow">
     <button class="volume-arrow prev" id="volumePrev" type="button" aria-label="Previous volume">&#8249;</button>
     <div class="volume-stage" id="volumeStage">
