@@ -100,6 +100,68 @@ body.volume-page .media-icons a{
     color: #111;
 }
 
+/* ===== THE STORY (volume 2) — the short story, in full.
+   Follows the site's language: English while the site is in
+   English, Japanese when the JP toggle is on. */
+.story{
+    max-width: 650px;
+    margin: 100px auto 0;
+    padding: 0 20px;
+}
+
+.story-label{
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #b33a2e;
+    margin-bottom: 15px;
+}
+
+.story-title{
+    font-family: "Hahmlet", serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 8px;
+}
+
+.story-subtitle{
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.story-body[hidden]{
+    display: none;
+}
+
+.story-body .story-page{
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #666;
+    margin: 60px 0 25px;
+}
+
+.story-body .story-page:first-child{
+    margin-top: 0;
+}
+
+.story-body p{
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #333;
+    margin-bottom: 18px;
+}
+
+.story-body .story-fin{
+    text-align: center;
+    letter-spacing: 3px;
+    color: #111;
+    margin-top: 60px;
+}
+
 /* The small V in the volume label is the V mark image, not
    text — black in light mode, white in dark mode (the
    <picture> element in the label picks by system setting). */
@@ -151,6 +213,22 @@ body.volume-page .media-icons a{
 
   body.volume-page .art-info p{
     color: #ddd;
+  }
+
+  body.volume-page .story-subtitle{
+    color: #ccc;
+  }
+
+  body.volume-page .story-body p{
+    color: #ccc;
+  }
+
+  body.volume-page .story-body .story-page{
+    color: #ccc;
+  }
+
+  body.volume-page .story-body .story-fin{
+    color: #eee;
   }
 
   body.volume-page .site-footer p{

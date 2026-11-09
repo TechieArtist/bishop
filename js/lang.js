@@ -48,7 +48,7 @@
     { sel: '.cv-download', ja: ['略歴をダウンロード（PDF）'] },
 
     // ----- exhibition -----
-    { sel: '.commentary-label', ja: ['The Atelier/Propitiation · オンライン展覧会 · 2026年 — 開催中'] },
+    { sel: '.exhibition-page .commentary-label', ja: ['The Atelier/Propitiation · オンライン展覧会 · 2026年 — 開催中'] },
     { sel: '.chapter-tag', ja: ['はじめに', '第一章', '第二章', '第三章'] },
     { sel: '.chapter-title', ja: ['新時代', 'インターネットの人々', '爆弾', '地獄'] },
     { sel: '.chapter-body', ja: [
