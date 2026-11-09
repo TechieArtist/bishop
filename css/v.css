@@ -95,18 +95,155 @@ header .lang-toggle{
   width: 100%;
 }
 
-.volume-cover{
-  margin: 0;
-  line-height: 0;
+/* ----- Rotary volumes ----- */
+/* Cards sit on a wheel: the current volume is front and centre,
+   the neighbours peek out from behind it on either side, tilted.
+   On an arrow press the wheel turns one step — the incoming card
+   swings up and over in an arc, tilted, while the outgoing card
+   sinks down behind on the other side. */
+
+.volume-stage{
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 560px;
+  height: min(58vh, 560px);
 }
 
-.volume-cover img{
-  height: min(58vh, 600px);
-  width: auto;
-  max-width: min(72vw, 460px);
+.volume-card{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(100%, 400px);
+  height: 100%;
+  margin: 0;
+  line-height: 0;
+  transition: transform .65s cubic-bezier(.3, .7, .3, 1), opacity .65s ease;
+  will-change: transform;
+}
+
+.volume-card img{
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   display: block;
 }
+
+.volume-card[data-offset="0"]{
+  transform: translate(-50%, 0) rotate(0deg) scale(1);
+  opacity: 1;
+  z-index: 3;
+}
+
+.volume-card[data-offset="1"]{
+  transform: translate(calc(-50% + 52%), 18px) rotate(8deg) scale(.86);
+  opacity: .85;
+  z-index: 1;
+}
+
+.volume-card[data-offset="-1"]{
+  transform: translate(calc(-50% - 52%), 18px) rotate(-8deg) scale(.86);
+  opacity: .85;
+  z-index: 1;
+}
+
+.volume-card[data-offset="2"],
+.volume-card[data-offset="-2"]{
+  transform: translate(calc(-50% + 110%), 40px) rotate(16deg) scale(.7);
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.volume-card[data-offset="-2"]{
+  transform: translate(calc(-50% - 110%), 40px) rotate(-16deg) scale(.7);
+}
+
+/* Incoming card, next: starts behind on the right, tilted, then
+   arcs up and over the top — tilted upward slightly — before
+   settling front and centre. */
+@keyframes swing-in-next{
+  0%{
+    transform: translate(calc(-50% + 52%), 18px) rotate(8deg) scale(.86);
+    opacity: .85;
+    z-index: 1;
+  }
+  45%{
+    transform: translate(calc(-50% + 12%), -46px) rotate(-6deg) scale(.97);
+    opacity: 1;
+    z-index: 1;
+  }
+  46%{ z-index: 4; }
+  100%{
+    transform: translate(-50%, 0) rotate(0deg) scale(1);
+    opacity: 1;
+    z-index: 3;
+  }
+}
+
+/* Outgoing card, next: sinks down behind on the left. */
+@keyframes swing-out-next{
+  0%{
+    transform: translate(-50%, 0) rotate(0deg) scale(1);
+    opacity: 1;
+    z-index: 3;
+  }
+  45%{
+    transform: translate(calc(-50% - 30%), 36px) rotate(-12deg) scale(.9);
+    opacity: .9;
+    z-index: 3;
+  }
+  46%{ z-index: 1; }
+  100%{
+    transform: translate(calc(-50% - 52%), 18px) rotate(-8deg) scale(.86);
+    opacity: .85;
+    z-index: 1;
+  }
+}
+
+/* Mirrored pair for the previous direction. */
+@keyframes swing-in-prev{
+  0%{
+    transform: translate(calc(-50% - 52%), 18px) rotate(-8deg) scale(.86);
+    opacity: .85;
+    z-index: 1;
+  }
+  45%{
+    transform: translate(calc(-50% - 12%), -46px) rotate(6deg) scale(.97);
+    opacity: 1;
+    z-index: 1;
+  }
+  46%{ z-index: 4; }
+  100%{
+    transform: translate(-50%, 0) rotate(0deg) scale(1);
+    opacity: 1;
+    z-index: 3;
+  }
+}
+
+@keyframes swing-out-prev{
+  0%{
+    transform: translate(-50%, 0) rotate(0deg) scale(1);
+    opacity: 1;
+    z-index: 3;
+  }
+  45%{
+    transform: translate(calc(-50% + 30%), 36px) rotate(12deg) scale(.9);
+    opacity: .9;
+    z-index: 3;
+  }
+  46%{ z-index: 1; }
+  100%{
+    transform: translate(calc(-50% + 52%), 18px) rotate(8deg) scale(.86);
+    opacity: .85;
+    z-index: 1;
+  }
+}
+
+.volume-card.anim-in-next{ animation: swing-in-next .65s cubic-bezier(.3, .7, .3, 1) forwards; }
+.volume-card.anim-out-next{ animation: swing-out-next .65s cubic-bezier(.3, .7, .3, 1) forwards; }
+.volume-card.anim-in-prev{ animation: swing-in-prev .65s cubic-bezier(.3, .7, .3, 1) forwards; }
+.volume-card.anim-out-prev{ animation: swing-out-prev .65s cubic-bezier(.3, .7, .3, 1) forwards; }
 
 .volume-title{
   margin-top: 28px;
@@ -144,26 +281,33 @@ header .lang-toggle{
   outline-offset: 3px;
 }
 
-/* Rotate + fade between volumes. JS sets --v-rot to +4deg for
-   next and -4deg for previous, then swaps the cover while hidden. */
-.volume-cover,
+/* Title fades and lifts slightly on a volume change. */
 .volume-title{
-  transition: opacity .35s ease, transform .35s ease;
+  transition: opacity .3s ease, transform .3s ease;
 }
 
-.volume-cover.is-leaving,
 .volume-title.is-leaving{
   opacity: 0;
-  transform: rotate(var(--v-rot, 4deg)) scale(.97);
+  transform: translateY(6px);
 }
 
 @media (prefers-reduced-motion: reduce){
-  .volume-cover,
+  .volume-card{
+    transition: opacity .2s ease;
+    animation: none !important;
+  }
+
+  .volume-card[data-offset="1"],
+  .volume-card[data-offset="-1"],
+  .volume-card[data-offset="2"],
+  .volume-card[data-offset="-2"]{
+    transform: translate(-50%, 0) scale(.9);
+  }
+
   .volume-title{
     transition: opacity .2s ease;
   }
 
-  .volume-cover.is-leaving,
   .volume-title.is-leaving{
     transform: none;
   }
