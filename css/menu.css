@@ -66,8 +66,31 @@ header{ z-index: 5000; }
     color: #000;
   }
 
+  /* Crisp CSS close icon: close.png rendered as a rough,
+     scribbled X once inverted onto the white menu, so the X
+     is drawn with two bars instead of the image. */
   header .menu-btn.active{
-    filter: invert(1);
+    background: none;
+    filter: none;
+  }
+
+  header .menu-btn.active::before,
+  header .menu-btn.active::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 26px;
+    height: 2px;
+    background: #000;
+  }
+
+  header .menu-btn.active::before{
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  header .menu-btn.active::after{
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 
   body.menu-open{
@@ -82,8 +105,7 @@ header{ z-index: 5000; }
 
 /* Dark mode follows the system setting: the full-screen menu
    inverts too — black background, white links, white header.
-   The close icon is a white image, so it stays un-inverted
-   on the black menu. */
+   The CSS close icon turns white on the black menu. */
 @media (max-width: 1040px) and (prefers-color-scheme: dark){
 
   header .navigation.active{
@@ -101,5 +123,10 @@ header{ z-index: 5000; }
 
   header .menu-btn.active{
     filter: none;
+  }
+
+  header .menu-btn.active::before,
+  header .menu-btn.active::after{
+    background: #fff;
   }
 }

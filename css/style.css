@@ -282,6 +282,14 @@ section{
     right: 15px;
   }
 
+  /* Shrink the hero heading so long single-word titles
+     (e.g. PROPITIATION) fit instead of clipping at the edge */
+  .home .content h1{
+    font-size: 3.2em;
+    letter-spacing: 3px;
+    line-height: 1.15;
+  }
+
   header .navigation{
     display: none;
   }
@@ -347,10 +355,24 @@ section{
   }
 
   .home .content h1{
-    font-size: 10vw;
+    font-size: 8.5vw;
     line-height: 1.1;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     word-break: break-word;
+  }
+
+  /* Social icons sit in a row at the bottom on mobile so they
+     can no longer overlap the hero heading */
+  .home .media-icons{
+    top: auto;
+    bottom: 28px;
+    right: 15px;
+    flex-direction: row;
+  }
+
+  .home .media-icons a:not(:last-child){
+    margin-bottom: 0;
+    margin-right: 18px;
   }
 
   .home .content p{
@@ -366,7 +388,7 @@ section{
 
 @media (max-width: 480px){
   .home .content h1{
-    font-size: 11vw;
+    font-size: 8vw;
   }
 }
 

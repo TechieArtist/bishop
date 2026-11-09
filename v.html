@@ -40,6 +40,17 @@
   <h1 class="volume-title" id="volumeTitle" aria-live="polite">Untitled 2023</h1>
 </main>
 
+<script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+</script>
+
 <script>
 const pageTransition = document.getElementById('pageTransition');
 
