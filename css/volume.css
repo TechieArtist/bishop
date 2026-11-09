@@ -5,8 +5,7 @@
    light/dark theme.
 
    Colours follow the system setting, like the V orbit page:
-   white background in light mode, the exhibition's dark
-   Whiteroom look in dark mode. */
+   white background in light mode, solid black in dark mode. */
 
 :root{
   color-scheme: light dark;
@@ -116,25 +115,15 @@ body.volume-page .media-icons a{
     display: block;
 }
 
-/* ===== DARK MODE: the exhibition's dark Whiteroom look ===== */
+/* ===== DARK MODE: solid black, like the V orbit page ===== */
 @media (prefers-color-scheme: dark){
   html{
-    background-image:
-      linear-gradient(
-        rgba(0,0,0,.5),
-        rgba(0,0,0,.5)
-      ),
-      url('../assets/images/Whiteroom.jpg');
+    background-image: none;
     background-color: #000;
   }
 
   body.volume-page{
-    background-image:
-      linear-gradient(
-        rgba(0,0,0,.5),
-        rgba(0,0,0,.5)
-      ),
-      url('../assets/images/Whiteroom.jpg');
+    background-image: none;
     background-color: #000;
     color: #fff;
   }
