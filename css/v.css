@@ -78,18 +78,19 @@ header .lang-toggle{
 }
 
 /* The V mark: the black version on a light page, the white
-   version on a dark page — the browser picks by system setting. */
+   version on a dark page — the browser picks by system setting.
+   The size is set on the img itself in px (not a percentage of
+   the <picture>), so it holds in every browser. */
 .volumes-mark{
-  height: 72px;
-  width: auto;
   display: block;
   margin-bottom: 32px;
 }
 
 .volumes-mark img{
-  height: 100%;
-  width: auto;
   display: block;
+  height: 72px;
+  width: auto;
+  margin: 0 auto;
 }
 
 .volume-row{
@@ -226,8 +227,11 @@ body{
   }
 
   .volumes-mark{
-    height: 56px;
     margin-bottom: 24px;
+  }
+
+  .volumes-mark img{
+    height: 56px;
   }
 
   .volume-row{
