@@ -175,5 +175,15 @@
 
   window.addEventListener('resize', place);
   window.addEventListener('load', place);
+
+  // Coming back with the browser's Back button restores the page
+  // exactly as it was left — including mid-fade, invisible, after
+  // a volume was clicked. Clear the leaving state on return so
+  // the orbit is visible again without a reload.
+  window.addEventListener('pageshow', function () {
+    leaving = false;
+    if (volumesEl) volumesEl.classList.remove('is-leaving');
+  });
+
   place();
 })();
