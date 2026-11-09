@@ -79,3 +79,27 @@ header{ z-index: 5000; }
   from{ opacity: 0; }
   to{ opacity: 1; }
 }
+
+/* Dark mode follows the system setting: the full-screen menu
+   inverts too — black background, white links, white header.
+   The close icon is a white image, so it stays un-inverted
+   on the black menu. */
+@media (max-width: 1040px) and (prefers-color-scheme: dark){
+
+  header .navigation.active{
+    background: #000;
+  }
+
+  header .navigation .navigation-items a{
+    color: #fff;
+  }
+
+  body.menu-open header .brand,
+  body.menu-open header .lang-toggle{
+    color: #fff;
+  }
+
+  header .menu-btn.active{
+    filter: none;
+  }
+}

@@ -1,7 +1,7 @@
 (function () {
   var RULES = [
     // ----- all pages -----
-    { sel: '.navigation-items a', ja: ['ホーム', 'プロフィール', '展覧会', 'お問い合わせ'] },
+    { sel: '.navigation-items a', ja: ['ホーム', 'プロフィール', '展覧会', 'V', 'お問い合わせ'] },
     { sel: '.site-footer p', ja: ['©2026 Evan Butler<br>ニューヨーク、ブルックリン<br><a href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a>'] },
 
     // ----- home -----
@@ -74,7 +74,8 @@
     'Evan Butler — Contemporary Artist': 'エヴァン・バトラー — 現代美術家',
     'About Evan Butler': 'エヴァン・バトラー | プロフィール',
     'The Atelier/Propitiation — Evan Butler': 'The Atelier/Propitiation — エヴァン・バトラー',
-    'Contact — Evan Butler': 'お問い合わせ — エヴァン・バトラー'
+    'Contact — Evan Butler': 'お問い合わせ — エヴァン・バトラー',
+    'V — Evan Butler': 'V — エヴァン・バトラー'
   };
 
   var items = [];

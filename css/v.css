@@ -1,0 +1,170 @@
+/* v.css — V volumes page. Minimal, light by default.
+   Colours follow the system setting: white becomes black and
+   black becomes white when the OS is in dark mode. */
+
+:root{
+  color-scheme: light dark;
+  --v-bg: #fff;
+  --v-fg: #000;
+  --v-muted: rgba(0, 0, 0, .55);
+  --v-line: rgba(0, 0, 0, .25);
+  --v-arrow-hover-bg: #000;
+  --v-arrow-hover-fg: #fff;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --v-bg: #000;
+    --v-fg: #fff;
+    --v-muted: rgba(255, 255, 255, .6);
+    --v-line: rgba(255, 255, 255, .3);
+    --v-arrow-hover-bg: #fff;
+    --v-arrow-hover-fg: #000;
+  }
+}
+
+html{
+  background: var(--v-bg);
+}
+
+body{
+  background: var(--v-bg);
+  color: var(--v-fg);
+}
+
+/* Header sits on a light page, so the brand, nav and language
+   toggle flip to the page foreground (black in light mode,
+   white in dark mode). The hamburger icon is a white image,
+   so it is inverted on the light page. */
+header .brand{
+  color: var(--v-fg);
+}
+
+header .navigation .navigation-items a{
+  color: var(--v-fg);
+}
+
+header .navigation .navigation-items a:before{
+  background: var(--v-fg);
+}
+
+header .lang-toggle{
+  color: var(--v-fg);
+}
+
+@media (max-width: 1040px){
+  .menu-btn{
+    filter: invert(1);
+  }
+}
+
+@media (max-width: 1040px) and (prefers-color-scheme: dark){
+  .menu-btn,
+  header .menu-btn.active{
+    filter: none;
+  }
+}
+
+/* ----- Volumes ----- */
+
+.volumes{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 60px;
+  text-align: center;
+}
+
+.volumes-eyebrow{
+  font-size: .85rem;
+  font-weight: 300;
+  letter-spacing: .5em;
+  text-indent: .5em;
+  text-transform: uppercase;
+  color: var(--v-muted);
+  margin-bottom: 32px;
+}
+
+.volume-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 4vw, 36px);
+  width: 100%;
+}
+
+.volume-cover{
+  margin: 0;
+  line-height: 0;
+}
+
+.volume-cover img{
+  height: min(58vh, 600px);
+  width: auto;
+  max-width: min(72vw, 460px);
+  object-fit: contain;
+  display: block;
+}
+
+.volume-title{
+  margin-top: 28px;
+  font-size: clamp(1.15rem, 3vw, 1.6rem);
+  font-weight: 300;
+  letter-spacing: .04em;
+}
+
+.volume-arrow{
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--v-line);
+  background: transparent;
+  color: var(--v-fg);
+  font-size: 1.7rem;
+  line-height: 1;
+  padding-bottom: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.volume-arrow:hover{
+  background: var(--v-arrow-hover-bg);
+  color: var(--v-arrow-hover-fg);
+  border-color: transparent;
+}
+
+.volume-arrow:focus-visible{
+  outline: 2px solid var(--v-fg);
+  outline-offset: 3px;
+}
+
+/* Rotate + fade between volumes. JS sets --v-rot to +4deg for
+   next and -4deg for previous, then swaps the cover while hidden. */
+.volume-cover,
+.volume-title{
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+.volume-cover.is-leaving,
+.volume-title.is-leaving{
+  opacity: 0;
+  transform: rotate(var(--v-rot, 4deg)) scale(.97);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .volume-cover,
+  .volume-title{
+    transition: opacity .2s ease;
+  }
+
+  .volume-cover.is-leaving,
+  .volume-title.is-leaving{
+    transform: none;
+  }
+}
