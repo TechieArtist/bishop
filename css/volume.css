@@ -1,7 +1,16 @@
 /* volume.css — V volume pages (volume2.html, volume3.html,
    volume4.html). The artwork presentation is the exhibition
    page's (pricingstyle.css); this file only adds the site's
-   page transition and the volume pages' own spacing. */
+   page transition, the volume pages' own spacing, and the
+   light/dark theme.
+
+   Colours follow the system setting, like the V orbit page:
+   white background in light mode, the exhibition's dark
+   Whiteroom look in dark mode. */
+
+:root{
+  color-scheme: light dark;
+}
 
 /* ===== PAGE TRANSITION ===== */
 .page-transition{
@@ -34,4 +43,135 @@ body.volume-page .commentary{
 
 body.volume-page .catalogue{
     padding-top: 0;
+}
+
+/* ===== LIGHT MODE (default): white background ===== */
+html{
+    background-image: none;
+    background-color: #fff;
+}
+
+body.volume-page{
+    background-image: none;
+    background-color: #fff;
+    color: #111;
+}
+
+body.volume-page header .brand,
+body.volume-page header .navigation .navigation-items a{
+    color: #000;
+}
+
+body.volume-page header .navigation .navigation-items a:before{
+    background: #000;
+}
+
+/* The hamburger is a white image: invert it on the white page. */
+@media (max-width: 1040px){
+  body.volume-page .menu-btn{
+    filter: invert(1);
+  }
+}
+
+body.volume-page .commentary{
+    color: #111;
+}
+
+body.volume-page .commentary-label{
+    color: #666;
+}
+
+body.volume-page .art-info p{
+    color: #555;
+}
+
+body.volume-page .site-footer p{
+    color: #666;
+}
+
+body.volume-page .site-footer a{
+    color: #111;
+}
+
+body.volume-page .media-icons a{
+    color: #111;
+}
+
+/* The small V in the volume label is the V mark image, not
+   text — black in light mode, white in dark mode (the
+   <picture> element in the label picks by system setting). */
+.label-mark{
+    display: inline-block;
+    height: 1.1em;
+    vertical-align: -0.15em;
+}
+
+.label-mark img{
+    height: 100%;
+    width: auto;
+    display: block;
+}
+
+/* ===== DARK MODE: the exhibition's dark Whiteroom look ===== */
+@media (prefers-color-scheme: dark){
+  html{
+    background-image:
+      linear-gradient(
+        rgba(0,0,0,.5),
+        rgba(0,0,0,.5)
+      ),
+      url('../assets/images/Whiteroom.jpg');
+    background-color: #000;
+  }
+
+  body.volume-page{
+    background-image:
+      linear-gradient(
+        rgba(0,0,0,.5),
+        rgba(0,0,0,.5)
+      ),
+      url('../assets/images/Whiteroom.jpg');
+    background-color: #000;
+    color: #fff;
+  }
+
+  body.volume-page header .brand,
+  body.volume-page header .navigation .navigation-items a{
+    color: #fff;
+  }
+
+  body.volume-page header .navigation .navigation-items a:before{
+    background: #fff;
+  }
+
+  body.volume-page .commentary{
+    color: #eee;
+  }
+
+  body.volume-page .commentary-label{
+    color: #ccc;
+  }
+
+  body.volume-page .art-info p{
+    color: #ddd;
+  }
+
+  body.volume-page .site-footer p{
+    color: #fff;
+  }
+
+  body.volume-page .site-footer a{
+    color: #fff;
+  }
+
+  body.volume-page .media-icons a{
+    color: #fff;
+  }
+}
+
+/* The hamburger stays white in dark mode. */
+@media (max-width: 1040px) and (prefers-color-scheme: dark){
+  body.volume-page .menu-btn{
+    filter: none;
+  }
 }
