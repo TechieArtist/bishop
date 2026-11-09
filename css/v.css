@@ -198,10 +198,17 @@ header .lang-toggle{
   transform: translateY(6px);
 }
 
-/* The wheel's peeking covers must never widen the page, or the
-   header shifts and the page can be dragged sideways. */
+/* Lock horizontal scrolling: the wheel's cards travel past the
+   stage edges, and without this the page widens and Safari
+   re-centres it on every turn. `hidden` on the body alone does
+   not hold on iOS — the lock has to be on the root as well, and
+   `clip` (unlike `hidden`) creates no scroll container at all,
+   so there is nothing to readjust. */
+html,
 body{
   overflow-x: hidden;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
 }
 
 /* ----- Small screens: contain the wheel ----- */
