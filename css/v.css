@@ -110,15 +110,33 @@ header .lang-toggle{
   height: min(58vh, 560px);
 }
 
+/* The orbit ring: the path the volumes travel, seen from the
+   horizon. Faint, behind the cards. */
+.orbit-ring{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 76%;
+  height: 18%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--v-line);
+  border-radius: 50%;
+  opacity: .5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Cards are placed by js/volumes.js on the ellipse — position,
+   size and depth all come from the card's angle on the orbit,
+   so there is no resting transform here to fight the animation. */
 .volume-card{
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 50%;
   width: min(100%, 400px);
-  height: 100%;
+  height: 82%;
   margin: 0;
   line-height: 0;
-  transition: transform .65s cubic-bezier(.3, .7, .3, 1), opacity .65s ease;
   will-change: transform;
 }
 
@@ -129,126 +147,8 @@ header .lang-toggle{
   display: block;
 }
 
-.volume-card[data-offset="0"]{
-  transform: translate(-50%, 0) rotate(0deg) scale(1);
-  opacity: 1;
-  z-index: 3;
-}
-
-.volume-card[data-offset="1"]{
-  transform: translate(calc(-50% + 52%), 18px) rotate(8deg) scale(.86);
-  opacity: .85;
-  z-index: 1;
-}
-
-.volume-card[data-offset="-1"]{
-  transform: translate(calc(-50% - 52%), 18px) rotate(-8deg) scale(.86);
-  opacity: .85;
-  z-index: 1;
-}
-
-.volume-card[data-offset="2"],
-.volume-card[data-offset="-2"]{
-  transform: translate(calc(-50% + 110%), 40px) rotate(16deg) scale(.7);
-  opacity: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.volume-card[data-offset="-2"]{
-  transform: translate(calc(-50% - 110%), 40px) rotate(-16deg) scale(.7);
-}
-
-.volume-card[data-offset="1"],
-.volume-card[data-offset="-1"]{
-  cursor: pointer;
-}
-
-/* Incoming card, next: starts behind on the right, tilted, then
-   arcs up and over the top — tilted upward slightly — before
-   settling front and centre. */
-@keyframes swing-in-next{
-  0%{
-    transform: translate(calc(-50% + 52%), 18px) rotate(8deg) scale(.86);
-    opacity: .85;
-    z-index: 1;
-  }
-  45%{
-    transform: translate(calc(-50% + 12%), -64px) rotate(-8deg) scale(.97);
-    opacity: 1;
-    z-index: 1;
-  }
-  46%{ z-index: 4; }
-  100%{
-    transform: translate(-50%, 0) rotate(0deg) scale(1);
-    opacity: 1;
-    z-index: 3;
-  }
-}
-
-/* Outgoing card, next: sinks down behind on the left. */
-@keyframes swing-out-next{
-  0%{
-    transform: translate(-50%, 0) rotate(0deg) scale(1);
-    opacity: 1;
-    z-index: 3;
-  }
-  45%{
-    transform: translate(calc(-50% - 30%), 36px) rotate(-12deg) scale(.9);
-    opacity: .9;
-    z-index: 3;
-  }
-  46%{ z-index: 1; }
-  100%{
-    transform: translate(calc(-50% - 52%), 18px) rotate(-8deg) scale(.86);
-    opacity: .85;
-    z-index: 1;
-  }
-}
-
-/* Mirrored pair for the previous direction. */
-@keyframes swing-in-prev{
-  0%{
-    transform: translate(calc(-50% - 52%), 18px) rotate(-8deg) scale(.86);
-    opacity: .85;
-    z-index: 1;
-  }
-  45%{
-    transform: translate(calc(-50% - 12%), -64px) rotate(8deg) scale(.97);
-    opacity: 1;
-    z-index: 1;
-  }
-  46%{ z-index: 4; }
-  100%{
-    transform: translate(-50%, 0) rotate(0deg) scale(1);
-    opacity: 1;
-    z-index: 3;
-  }
-}
-
-@keyframes swing-out-prev{
-  0%{
-    transform: translate(-50%, 0) rotate(0deg) scale(1);
-    opacity: 1;
-    z-index: 3;
-  }
-  45%{
-    transform: translate(calc(-50% + 30%), 36px) rotate(12deg) scale(.9);
-    opacity: .9;
-    z-index: 3;
-  }
-  46%{ z-index: 1; }
-  100%{
-    transform: translate(calc(-50% + 52%), 18px) rotate(8deg) scale(.86);
-    opacity: .85;
-    z-index: 1;
-  }
-}
-
-.volume-card.anim-in-next{ animation: swing-in-next .65s cubic-bezier(.3, .7, .3, 1) forwards; }
-.volume-card.anim-out-next{ animation: swing-out-next .65s cubic-bezier(.3, .7, .3, 1) forwards; }
-.volume-card.anim-in-prev{ animation: swing-in-prev .65s cubic-bezier(.3, .7, .3, 1) forwards; }
-.volume-card.anim-out-prev{ animation: swing-out-prev .65s cubic-bezier(.3, .7, .3, 1) forwards; }
+/* Motion lives in js/volumes.js: one continuous rotation of the
+   wheel, eased, driving every card along the ellipse together. */
 
 .volume-title{
   margin-top: 28px;
@@ -305,12 +205,9 @@ body{
 }
 
 /* ----- Small screens: contain the wheel ----- */
-/* On a phone the ±52% neighbours spill past the screen edges,
-   bury the arrows and push the title below the fold. So the
-   wheel shrinks to fit: a narrower centre card, neighbours
-   peeking just inside the edges, arrows overlaid on the stage
-   edges, and the far card fading in place behind instead of
-   sweeping across the screen. */
+/* On a phone the wheel shrinks to fit: a narrower centre card,
+   a tighter ellipse, arrows overlaid on the stage edges, and a
+   shorter stage so the title stays above the browser chrome. */
 @media (max-width: 720px){
   .volumes{
     padding: 96px 16px 48px;
@@ -326,24 +223,11 @@ body{
   }
 
   .volume-card{
-    width: min(72%, 400px);
-    transition: transform .7s cubic-bezier(.22, .61, .21, 1), opacity .7s ease;
+    width: min(64%, 400px);
   }
 
-  .volume-card[data-offset="1"]{
-    transform: translate(calc(-50% + 34%), 12px) rotate(6deg) scale(.8);
-    opacity: .8;
-  }
-
-  .volume-card[data-offset="-1"]{
-    transform: translate(calc(-50% - 34%), 12px) rotate(-6deg) scale(.8);
-    opacity: .8;
-  }
-
-  .volume-card[data-offset="2"],
-  .volume-card[data-offset="-2"]{
-    transform: translate(-50%, 10px) scale(.72);
-    opacity: 0;
+  .orbit-ring{
+    width: 52%;
   }
 
   /* Arrows sit on the stage edges so they are always tappable. */
@@ -357,104 +241,11 @@ body{
 
   .volume-arrow.prev{ left: 4px; }
   .volume-arrow.next{ right: 4px; }
-
-  /* Same wheel, smaller arc: the incoming card starts where the
-     neighbour rests, so it never flies in from off-screen. */
-  @keyframes swing-in-next{
-    0%{
-      transform: translate(calc(-50% + 34%), 12px) rotate(6deg) scale(.8);
-      opacity: .8;
-      z-index: 1;
-    }
-    45%{
-      transform: translate(calc(-50% + 8%), -40px) rotate(-7deg) scale(.96);
-      opacity: 1;
-      z-index: 1;
-    }
-    46%{ z-index: 4; }
-    100%{
-      transform: translate(-50%, 0) rotate(0deg) scale(1);
-      opacity: 1;
-      z-index: 3;
-    }
-  }
-
-  @keyframes swing-out-next{
-    0%{
-      transform: translate(-50%, 0) rotate(0deg) scale(1);
-      opacity: 1;
-      z-index: 3;
-    }
-    45%{
-      transform: translate(calc(-50% - 20%), 24px) rotate(-10deg) scale(.9);
-      opacity: .9;
-      z-index: 3;
-    }
-    46%{ z-index: 1; }
-    100%{
-      transform: translate(calc(-50% - 34%), 12px) rotate(-6deg) scale(.8);
-      opacity: .8;
-      z-index: 1;
-    }
-  }
-
-  @keyframes swing-in-prev{
-    0%{
-      transform: translate(calc(-50% - 34%), 12px) rotate(-6deg) scale(.8);
-      opacity: .8;
-      z-index: 1;
-    }
-    45%{
-      transform: translate(calc(-50% - 8%), -40px) rotate(7deg) scale(.96);
-      opacity: 1;
-      z-index: 1;
-    }
-    46%{ z-index: 4; }
-    100%{
-      transform: translate(-50%, 0) rotate(0deg) scale(1);
-      opacity: 1;
-      z-index: 3;
-    }
-  }
-
-  @keyframes swing-out-prev{
-    0%{
-      transform: translate(-50%, 0) rotate(0deg) scale(1);
-      opacity: 1;
-      z-index: 3;
-    }
-    45%{
-      transform: translate(calc(-50% + 20%), 24px) rotate(10deg) scale(.9);
-      opacity: .9;
-      z-index: 3;
-    }
-    46%{ z-index: 1; }
-    100%{
-      transform: translate(calc(-50% + 34%), 12px) rotate(6deg) scale(.8);
-      opacity: .8;
-      z-index: 1;
-    }
-  }
-
-  .volume-card.anim-in-next{ animation: swing-in-next .7s cubic-bezier(.22, .61, .21, 1) forwards; }
-  .volume-card.anim-out-next{ animation: swing-out-next .7s cubic-bezier(.22, .61, .21, 1) forwards; }
-  .volume-card.anim-in-prev{ animation: swing-in-prev .7s cubic-bezier(.22, .61, .21, 1) forwards; }
-  .volume-card.anim-out-prev{ animation: swing-out-prev .7s cubic-bezier(.22, .61, .21, 1) forwards; }
 }
 
 @media (prefers-reduced-motion: reduce){
-  .volume-card{
-    transition: opacity .2s ease;
-    animation: none !important;
-  }
-
-  .volume-card[data-offset="1"],
-  .volume-card[data-offset="-1"],
-  .volume-card[data-offset="2"],
-  .volume-card[data-offset="-2"]{
-    transform: translate(-50%, 0) scale(.9);
-  }
-
+  /* js/volumes.js jumps the wheel to its new position instead of
+     animating it when reduced motion is set. */
   .volume-title{
     transition: opacity .2s ease;
   }
