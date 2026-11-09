@@ -86,9 +86,34 @@ header .lang-toggle{
   pointer-events: none;
 }
 
-/* Every card on the orbit opens its volume's page. */
+/* Every card on the orbit opens its volume's page, except one
+   marked coming soon — it has no page to open yet. */
 .volume-card{
   cursor: pointer;
+}
+
+.volume-card[data-coming-soon]{
+  cursor: default;
+}
+
+/* "Coming soon" rides on the card, bottom centre, readable in
+   light and dark mode. */
+.coming-soon{
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  font-size: 13px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 9px 15px;
+  background: rgba(0,0,0,.72);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.45);
+  border-radius: 999px;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 /* The V mark: the black version on a light page, the white
