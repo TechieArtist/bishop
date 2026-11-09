@@ -1,0 +1,81 @@
+/* Shared menu styles: loaded last on every page */
+
+/* header sits above page content but below the video modal and viewer */
+header{ z-index: 5000; }
+
+@media (max-width: 1040px){
+
+  header .brand,
+  header .lang-toggle,
+  header .menu-btn{
+    position: relative;
+    z-index: 2;
+  }
+
+  header .brand,
+  header .lang-toggle{
+    transition: color .25s ease, opacity .3s ease;
+  }
+
+  /* full-screen white menu */
+  header .navigation.active{
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    touch-action: none;
+    animation: menuFade .25s ease;
+  }
+
+  header .navigation.active .navigation-items{
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  header .navigation .navigation-items a{
+    color: #000;
+    font-size: clamp(1.8rem, 8vw, 2.6rem);
+    font-weight: 300;
+    letter-spacing: .5px;
+    margin: 0;
+    padding: 10px 24px;
+  }
+
+  header .navigation .navigation-items a::before,
+  header .navigation .navigation-items a::after{
+    display: none;
+  }
+
+  /* header flips to black while the menu is open */
+  body.menu-open header .brand,
+  body.menu-open header .lang-toggle{
+    color: #000;
+  }
+
+  header .menu-btn.active{
+    filter: invert(1);
+  }
+
+  body.menu-open{
+    overflow: hidden;
+  }
+}
+
+@keyframes menuFade{
+  from{ opacity: 0; }
+  to{ opacity: 1; }
+}
