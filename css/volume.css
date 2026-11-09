@@ -77,6 +77,10 @@ body.volume-page .commentary{
     color: #111;
 }
 
+body.volume-page .chapter-body{
+    color: #333;
+}
+
 body.volume-page .commentary-label{
     color: #666;
 }
@@ -146,6 +150,10 @@ body.volume-page .media-icons a{
 
   body.volume-page .commentary{
     color: #eee;
+  }
+
+  body.volume-page .chapter-body{
+    color: #ccc;
   }
 
   body.volume-page .commentary-label{
