@@ -75,6 +75,20 @@ header .lang-toggle{
   justify-content: center;
   padding: 120px 20px 60px;
   text-align: center;
+  transition: opacity .45s ease, transform .45s ease;
+}
+
+/* Clicking a volume fades the whole orbit up and out; the
+   volume's own page then fades in on arrival. */
+.volumes.is-leaving{
+  opacity: 0;
+  transform: translateY(-28px);
+  pointer-events: none;
+}
+
+/* Every card on the orbit opens its volume's page. */
+.volume-card{
+  cursor: pointer;
 }
 
 /* The V mark: the black version on a light page, the white
@@ -267,6 +281,14 @@ body{
 @media (prefers-reduced-motion: reduce){
   /* js/volumes.js jumps the wheel to its new position instead of
      animating it when reduced motion is set. */
+  .volumes{
+    transition: none;
+  }
+
+  .volumes.is-leaving{
+    transform: none;
+  }
+
   .volume-title{
     transition: opacity .2s ease;
   }

@@ -1,0 +1,37 @@
+/* volume.css — V volume pages (volume2.html, volume3.html,
+   volume4.html). The artwork presentation is the exhibition
+   page's (pricingstyle.css); this file only adds the site's
+   page transition and the volume pages' own spacing. */
+
+/* ===== PAGE TRANSITION ===== */
+.page-transition{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 99999;
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+}
+
+.page-transition.fade-in{
+    opacity: 0;
+}
+
+.page-transition.fade-out{
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* The intro is the first thing on the page, so it clears the
+   fixed header; the catalogue then follows it closely. */
+body.volume-page .commentary{
+    padding-top: 140px;
+}
+
+body.volume-page .catalogue{
+    padding-top: 0;
+}

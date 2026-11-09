@@ -6,6 +6,10 @@
 // around the front while the current one recedes behind.
 // A single continuous rotation drives every card, so the motion
 // is one smooth turn, not a set of separate slides.
+// The arrows, keys and swipes turn the wheel in volume order
+// (Untitled 2023 → Volume 2 → Volume 3 → Volume 4 → loop).
+// Clicking a card opens that volume's page: the orbit fades up
+// first, then the volume's page fades in on arrival.
 //
 // To add a volume, add one <figure class="volume-card"> inside
 // #volumeStage in v.html with its cover and data-title. To remove
@@ -13,6 +17,7 @@
 (function () {
   var stage = document.getElementById('volumeStage');
   var row = document.getElementById('volumeRow');
+  var volumesEl = document.querySelector('.volumes');
   var titleEl = document.getElementById('volumeTitle');
   var prevBtn = document.getElementById('volumePrev');
   var nextBtn = document.getElementById('volumeNext');
@@ -26,6 +31,8 @@
   var index = 0;            // card at the front (for the title)
   var wheel = 0;            // wheel rotation in degrees; one step = 360 / n
   var animating = false;
+  var leaving = false;      // the orbit is fading out to a volume page
+  var lastSwipeAt = 0;      // a swipe just ended — the tap after it is not a click
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function step() { return 360 / Math.max(n, 1); }
@@ -80,7 +87,7 @@
         'translate(-50%, -50%) translate(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px) scale(' + s.toFixed(3) + ')';
       card.el.style.opacity = (0.55 + 0.45 * t).toFixed(3);
       card.el.style.zIndex = String(1 + Math.round(t * 10));
-      card.el.style.cursor = t > 0.99 ? 'default' : 'pointer';
+      card.el.style.cursor = 'pointer';
     });
   }
 
@@ -92,7 +99,11 @@
     if (animating || n < 2) return;
     animating = true;
     var from = wheel;
-    var to = wheel + dir * step();
+    // The wheel turns the other way from the title index, so the
+    // rotation has to run opposite to the index step for the front
+    // card and the title to agree: Next brings Volume 2 to the
+    // front after Untitled 2023, then 3, then 4, then loops.
+    var to = wheel - dir * step();
     index = (index + dir + n) % n;
 
     titleEl.classList.add('is-leaving');
@@ -124,13 +135,20 @@
   prevBtn.addEventListener('click', function () { move(-1); });
   nextBtn.addEventListener('click', function () { move(1); });
 
-  // Clicking a card on the orbit turns the wheel to bring it front.
-  cards.forEach(function (card, i) {
+  // Clicking a volume opens its page: the orbit fades up and
+  // out, then the volume's page fades in on arrival (its own
+  // page transition). The arrows, keys and swipes still turn
+  // the wheel; a tap is what opens a volume.
+  cards.forEach(function (card) {
     card.el.addEventListener('click', function () {
-      if (animating || n < 2) return;
-      var off = ((angleOf(i) - 90) % 360 + 540) % 360 - 180;
-      if (off > 1) move(-1);
-      else if (off < -1) move(1);
+      if (leaving || animating || n < 2) return;
+      if (Date.now() - lastSwipeAt < 500) return; // a swipe just ended, not a tap
+      var page = card.el.getAttribute('data-page');
+      if (!page) return;
+      leaving = true;
+      if (reduced) { window.location.href = page; return; }
+      if (volumesEl) volumesEl.classList.add('is-leaving');
+      setTimeout(function () { window.location.href = page; }, 480);
     });
   });
 
@@ -149,7 +167,10 @@
 
   row.addEventListener('touchend', function (e) {
     var diff = startX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) move(diff > 0 ? 1 : -1);
+    if (Math.abs(diff) > 40) {
+      lastSwipeAt = Date.now();
+      move(diff > 0 ? 1 : -1);
+    }
   }, { passive: true });
 
   window.addEventListener('resize', place);
