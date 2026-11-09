@@ -298,6 +298,150 @@ header .lang-toggle{
   transform: translateY(6px);
 }
 
+/* The wheel's peeking covers must never widen the page, or the
+   header shifts and the page can be dragged sideways. */
+body{
+  overflow-x: hidden;
+}
+
+/* ----- Small screens: contain the wheel ----- */
+/* On a phone the ±52% neighbours spill past the screen edges,
+   bury the arrows and push the title below the fold. So the
+   wheel shrinks to fit: a narrower centre card, neighbours
+   peeking just inside the edges, arrows overlaid on the stage
+   edges, and the far card fading in place behind instead of
+   sweeping across the screen. */
+@media (max-width: 720px){
+  .volumes{
+    padding: 96px 16px 48px;
+  }
+
+  .volume-row{
+    position: relative;
+  }
+
+  .volume-stage{
+    max-width: none;
+    height: min(48vh, 480px);
+  }
+
+  .volume-card{
+    width: min(72%, 400px);
+    transition: transform .7s cubic-bezier(.22, .61, .21, 1), opacity .7s ease;
+  }
+
+  .volume-card[data-offset="1"]{
+    transform: translate(calc(-50% + 34%), 12px) rotate(6deg) scale(.8);
+    opacity: .8;
+  }
+
+  .volume-card[data-offset="-1"]{
+    transform: translate(calc(-50% - 34%), 12px) rotate(-6deg) scale(.8);
+    opacity: .8;
+  }
+
+  .volume-card[data-offset="2"],
+  .volume-card[data-offset="-2"]{
+    transform: translate(-50%, 10px) scale(.72);
+    opacity: 0;
+  }
+
+  /* Arrows sit on the stage edges so they are always tappable. */
+  .volume-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--v-bg);
+    background: color-mix(in srgb, var(--v-bg) 72%, transparent);
+  }
+
+  .volume-arrow.prev{ left: 4px; }
+  .volume-arrow.next{ right: 4px; }
+
+  /* Same wheel, smaller arc: the incoming card starts where the
+     neighbour rests, so it never flies in from off-screen. */
+  @keyframes swing-in-next{
+    0%{
+      transform: translate(calc(-50% + 34%), 12px) rotate(6deg) scale(.8);
+      opacity: .8;
+      z-index: 1;
+    }
+    45%{
+      transform: translate(calc(-50% + 8%), -40px) rotate(-7deg) scale(.96);
+      opacity: 1;
+      z-index: 1;
+    }
+    46%{ z-index: 4; }
+    100%{
+      transform: translate(-50%, 0) rotate(0deg) scale(1);
+      opacity: 1;
+      z-index: 3;
+    }
+  }
+
+  @keyframes swing-out-next{
+    0%{
+      transform: translate(-50%, 0) rotate(0deg) scale(1);
+      opacity: 1;
+      z-index: 3;
+    }
+    45%{
+      transform: translate(calc(-50% - 20%), 24px) rotate(-10deg) scale(.9);
+      opacity: .9;
+      z-index: 3;
+    }
+    46%{ z-index: 1; }
+    100%{
+      transform: translate(calc(-50% - 34%), 12px) rotate(-6deg) scale(.8);
+      opacity: .8;
+      z-index: 1;
+    }
+  }
+
+  @keyframes swing-in-prev{
+    0%{
+      transform: translate(calc(-50% - 34%), 12px) rotate(-6deg) scale(.8);
+      opacity: .8;
+      z-index: 1;
+    }
+    45%{
+      transform: translate(calc(-50% - 8%), -40px) rotate(7deg) scale(.96);
+      opacity: 1;
+      z-index: 1;
+    }
+    46%{ z-index: 4; }
+    100%{
+      transform: translate(-50%, 0) rotate(0deg) scale(1);
+      opacity: 1;
+      z-index: 3;
+    }
+  }
+
+  @keyframes swing-out-prev{
+    0%{
+      transform: translate(-50%, 0) rotate(0deg) scale(1);
+      opacity: 1;
+      z-index: 3;
+    }
+    45%{
+      transform: translate(calc(-50% + 20%), 24px) rotate(10deg) scale(.9);
+      opacity: .9;
+      z-index: 3;
+    }
+    46%{ z-index: 1; }
+    100%{
+      transform: translate(calc(-50% + 34%), 12px) rotate(6deg) scale(.8);
+      opacity: .8;
+      z-index: 1;
+    }
+  }
+
+  .volume-card.anim-in-next{ animation: swing-in-next .7s cubic-bezier(.22, .61, .21, 1) forwards; }
+  .volume-card.anim-out-next{ animation: swing-out-next .7s cubic-bezier(.22, .61, .21, 1) forwards; }
+  .volume-card.anim-in-prev{ animation: swing-in-prev .7s cubic-bezier(.22, .61, .21, 1) forwards; }
+  .volume-card.anim-out-prev{ animation: swing-out-prev .7s cubic-bezier(.22, .61, .21, 1) forwards; }
+}
+
 @media (prefers-reduced-motion: reduce){
   .volume-card{
     transition: opacity .2s ease;
