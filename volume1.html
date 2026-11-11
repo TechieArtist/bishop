@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="V — Volume 1: Breaking. Evan Butler.">
+<title>Volume 1 — Breaking · Evan Butler</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="stylesheet" href="css/pricingstyle.css">
+<link rel="stylesheet" href="css/desktop.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/volume.css?v=8">
+</head>
+
+<body class="volume-page">
+<div class="page-transition" id="pageTransition"></div>
+
+<header>
+  <a href="index.html" class="brand">Distortion</a>
+  <div class="menu-btn"></div>
+  <div class="navigation">
+    <div class="navigation-items">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="exhibition.html">Exhibition</a>
+      <a href="v.html" class="active">V</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="commentary">
+  <p class="commentary-label"><a href="v.html" aria-label="Back to V"><picture class="label-mark"><source media="(prefers-color-scheme: dark)" srcset="assets/images/VMark-white.jpg"><img src="assets/images/VMark-black.jpg" alt="V"></picture></a> · Volume 1</p>
+  <p class="commentary-dash">—</p>
+
+  <p class="chapter-tag">VOLUME 1</p>
+  <h2 class="chapter-title">Breaking</h2>
+
+  <p class="chapter-body">
+    The world was supposed to be faithful to reality. Somewhere, a distortion appeared.
+  </p>
+</section>
+
+<div class="catalogue">
+
+  <section class="artwork">
+    <div class="artwork-frame">
+      <img src="assets/images/Volume1Events.jpg" alt="V — Events timeline">
+    </div>
+    <div class="art-info">
+      <div class="left">
+        <h2>Events</h2>
+        <p>Digital art · 2026</p>
+      </div>
+      <div class="right"></div>
+    </div>
+  </section>
+
+</div>
+
+<section class="breakdown">
+  <p class="breakdown-label">THE BREAKDOWN</p>
+  <h2 class="breakdown-title">The distortion, in brief</h2>
+
+  <div class="breakdown-event">
+    <span class="breakdown-date">1800s</span>
+    <p class="breakdown-text">First distortion begins in Kowloon.</p>
+  </div>
+  <div class="breakdown-event">
+    <span class="breakdown-date">1960s</span>
+    <p class="breakdown-text">Breaking begins widespread purging.</p>
+  </div>
+  <div class="breakdown-event">
+    <span class="breakdown-date">2000s</span>
+    <p class="breakdown-text">Media coverage of Tanpeki begins.</p>
+  </div>
+
+  <p class="breakdown-note">
+    The distortions began on the Kowloon peninsula. Dividing its irregular population by 0.3, a factor drawn from the Milky Way's initial mass function (IMF), gives an approximation of 43.00, a number whose meaning is not yet understood, but is consequential. Some speculate that it is related to the number of distortions yet to occur.
+  </p>
+</section>
+
+<footer class="site-footer">
+  <p>©2026 by Evan Butler.<br>New York, Brooklyn<br><a href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a></p>
+</footer>
+
+<footer>
+  <div class="media-icons">
+    <a href="https://www.facebook.com/evan.butler.9619"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/evan.t.butler/"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+
+<script type="text/javascript">
+  //Javacript for responsive navigation menu
+  const menuBtn = document.querySelector(".menu-btn");
+  const navigation = document.querySelector(".navigation");
+
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+  });
+</script>
+
+<script>
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.artwork').forEach(work => {
+    fadeObserver.observe(work);
+  });
+</script>
+
+<script>
+const pageTransition = document.getElementById('pageTransition');
+
+window.addEventListener('DOMContentLoaded', () => {
+  requestAnimationFrame(() => {
+    pageTransition.classList.add('fade-in');
+  });
+});
+
+document.querySelectorAll('a[href]').forEach(link => {
+  const href = link.getAttribute('href');
+  const isInternal = href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:');
+
+  if (isInternal){
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      pageTransition.classList.remove('fade-in');
+      pageTransition.classList.add('fade-out');
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 600);
+    });
+  }
+});
+</script>
+
+<script src="js/lang.js?v=2"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>

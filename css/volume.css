@@ -239,3 +239,76 @@ body.volume-page .media-icons a{
     filter: none;
   }
 }
+
+/* ===== THE BREAKDOWN (volume 1) — what V is, in brief:
+   the Events timeline and the Kowloon number, in text so
+   they read on the page as well as in the Events image. */
+.breakdown{
+    max-width: 650px;
+    margin: 100px auto 0;
+    padding: 0 20px;
+}
+
+.breakdown-label{
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #b33a2e;
+    margin-bottom: 15px;
+}
+
+.breakdown-title{
+    font-family: "Hahmlet", serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 50px;
+}
+
+.breakdown-event{
+    display: flex;
+    gap: 24px;
+    padding: 22px 0;
+    border-top: 1px solid #ddd;
+}
+
+.breakdown-event:last-of-type{
+    border-bottom: 1px solid #ddd;
+}
+
+.breakdown-date{
+    font-family: "Hahmlet", serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    min-width: 90px;
+    flex-shrink: 0;
+}
+
+.breakdown-text{
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+    margin: 0;
+}
+
+.breakdown-note{
+    margin-top: 40px;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #333;
+}
+
+@media (prefers-color-scheme: dark){
+  .breakdown-event{
+    border-top-color: #333;
+  }
+
+  .breakdown-event:last-of-type{
+    border-bottom-color: #333;
+  }
+
+  .breakdown-text,
+  .breakdown-note{
+    color: #ccc;
+  }
+}
