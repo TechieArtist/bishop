@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 <link rel="stylesheet" href="css/menu.css">
-<link rel="stylesheet" href="css/volume.css?v=7">
+<link rel="stylesheet" href="css/volume.css?v=9">
 </head>
 
 <body class="volume-page">
@@ -86,8 +86,39 @@
 
   <section class="artwork">
     <div class="artwork-frame">
-      <img src="assets/images/Tanpeki.jpg" alt="Tanpeki(丹碧)">
+      <div class="art-slider">
+
+        <div class="art-slide active">
+          <img src="assets/images/Tanpeki.jpg" alt="Tanpeki(丹碧) — 1">
+        </div>
+
+        <div class="art-slide">
+          <img src="assets/images/Tanpeki3.jpg" alt="Tanpeki(丹碧) — 2">
+        </div>
+
+        <div class="art-slide">
+          <img src="assets/images/Tanpeki5.jpg" alt="Tanpeki(丹碧) — 3">
+        </div>
+
+        <div class="art-slide">
+          <img src="assets/images/Tanpeki6.jpg" alt="Tanpeki(丹碧) — 4">
+        </div>
+
+        <div class="art-slide">
+          <img src="assets/images/Tanpeki7.jpg" alt="Tanpeki(丹碧) — 5">
+        </div>
+
+      </div>
     </div>
+
+    <div class="art-slider-nav">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
     <div class="art-info">
       <div class="left">
         <h2>Tanpeki(丹碧)</h2>
@@ -98,6 +129,13 @@
   </section>
 
 </div>
+
+<!-- THE BREAKDOWN — the video: Tanpeki as a system, in science. -->
+<section class="breakdown">
+  <p class="breakdown-label">THE BREAKDOWN</p>
+  <h2 class="breakdown-title">A scientific breakdown of Tanpeki</h2>
+  <video class="breakdown-video" controls preload="metadata" playsinline src="assets/videos/TanpekiBreakdown.mp4"></video>
+</section>
 
 <!-- THE STORY — a short summary and a link to the reader.
      The full story lives in the page-turn readers; this section
@@ -153,6 +191,78 @@
 
   document.querySelectorAll('.artwork').forEach(work => {
     fadeObserver.observe(work);
+  });
+</script>
+
+<script>
+  // The Tanpeki slider, as on the exhibition page: dots and swipe
+  // move between the slides of one artwork.
+  document.querySelectorAll(".artwork").forEach(work => {
+
+    const slides = work.querySelectorAll(".art-slide");
+    const dots = work.querySelectorAll(".dot");
+    const slider = work.querySelector(".art-slider");
+
+    if (!slides.length || !slider) return;
+
+    let currentIndex = 0;
+    slides.forEach((slide, i) => {
+        if (slide.classList.contains("active")) currentIndex = i;
+    });
+
+    function positionSlides(offsetPx = 0, animate = false){
+        slides.forEach((slide, i) => {
+            slide.style.transition = animate ? "transform 0.35s ease" : "none";
+            slide.style.transform = `translateX(calc(${(i - currentIndex) * 100}% + ${offsetPx}px))`;
+        });
+    }
+
+    function goToSlide(index){
+        currentIndex = Math.max(0, Math.min(index, slides.length - 1));
+        dots.forEach(dot => dot.classList.remove("active"));
+        if (dots[currentIndex]) dots[currentIndex].classList.add("active");
+        positionSlides(0, true);
+    }
+
+    positionSlides();
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            goToSlide(index);
+        });
+    });
+
+    let startX = 0;
+    let dragOffset = 0;
+    let isDragging = false;
+
+    slider.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    }, { passive: true });
+
+    slider.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        dragOffset = e.touches[0].clientX - startX;
+        positionSlides(dragOffset, false);
+    }, { passive: true });
+
+    slider.addEventListener("touchend", () => {
+        isDragging = false;
+        const swipeThreshold = 60;
+
+        if (Math.abs(dragOffset) > swipeThreshold){
+            if (dragOffset < 0 && currentIndex < slides.length - 1){
+                currentIndex++;
+            } else if (dragOffset > 0 && currentIndex > 0){
+                currentIndex--;
+            }
+        }
+
+        dragOffset = 0;
+        goToSlide(currentIndex);
+    }, { passive: true });
+
   });
 </script>
 

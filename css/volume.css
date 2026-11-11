@@ -298,6 +298,16 @@ body.volume-page .media-icons a{
     color: #333;
 }
 
+/* The breakdown video is portrait (9:16), so it sits narrow
+   and centred instead of filling the column. */
+.breakdown-video{
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    background: #000;
+}
+
 @media (prefers-color-scheme: dark){
   .breakdown-event{
     border-top-color: #333;
