@@ -308,6 +308,17 @@ body.volume-page .media-icons a{
     background: #000;
 }
 
+/* Slider dots on volume pages: the exhibition's active dot is
+   white, which vanishes on the volume pages' white background
+   in light mode — so the active dot is black here instead. */
+body.volume-page .art-slider-nav .dot{
+    background: #999;
+}
+
+body.volume-page .art-slider-nav .dot.active{
+    background: #111;
+}
+
 @media (prefers-color-scheme: dark){
   .breakdown-event{
     border-top-color: #333;
@@ -320,5 +331,13 @@ body.volume-page .media-icons a{
   .breakdown-text,
   .breakdown-note{
     color: #ccc;
+  }
+
+  body.volume-page .art-slider-nav .dot{
+    background: #666;
+  }
+
+  body.volume-page .art-slider-nav .dot.active{
+    background: #fff;
   }
 }
