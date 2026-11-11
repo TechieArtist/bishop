@@ -7,7 +7,7 @@
 // A single continuous rotation drives every card, so the motion
 // is one smooth turn, not a set of separate slides.
 // The arrows, keys and swipes turn the wheel in volume order
-// (Untitled 2023 → Volume 2 → Volume 3 → Volume 4 → loop).
+// (Volume 1 → Volume 2 → Volume 3 → Volume 4 → loop).
 // Clicking a card opens that volume's page: the orbit fades up
 // first, then the volume's page fades in on arrival.
 //
@@ -102,7 +102,7 @@
     // The wheel turns the other way from the title index, so the
     // rotation has to run opposite to the index step for the front
     // card and the title to agree: Next brings Volume 2 to the
-    // front after Untitled 2023, then 3, then 4, then loops.
+    // front after Volume 1, then 3, then 4, then loops.
     var to = wheel - dir * step();
     index = (index + dir + n) % n;
 
