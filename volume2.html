@@ -143,27 +143,6 @@
   <video class="breakdown-video" controls preload="metadata" playsinline src="assets/videos/TanpekiBreakdown.mp4"></video>
 </section>
 
-<!-- THE STORY — a short summary and a link to the reader.
-     The full story lives in the page-turn readers; this section
-     only introduces it. Follows the site's language (JP/EN
-     toggle in the header): English while the site is in
-     English, Japanese when the JP toggle is on. -->
-<section class="story" id="story">
-  <p class="story-label">Short Story — 読み切り</p>
-  <h2 class="story-title">Baby, close your eyes</h2>
-  <p class="story-subtitle">ベイビー、目を閉じて</p>
-
-  <div class="story-summary" lang="en" id="storyEn">
-    <p>Rinne is a nurse who sees the vitality of the people around her as a coloured halo above their heads. The story follows her through one hospital shift, one night at home, and one night back in the ER.</p>
-    <p><a class="story-link" href="https://muse.ai/s/baby-close-your-eyes-xqd6txxxhfmexku/o2tNpZmguLG0m6oqNpHZBrToa1xRfEPJyYj42XsmKTM" target="_blank" rel="noopener">Read the story &rarr;</a></p>
-  </div>
-
-  <div class="story-summary" lang="ja" id="storyJa" hidden>
-    <p>りんねは看護師で、まわりの人の生命力が、頭の上に色のハローとして見える。物語は、病院での勤務、家での一夜、そしてERに戻る一夜をたどる。</p>
-    <p><a class="story-link" href="https://muse.ai/s/baby-close-your-eyes-japanese-xgxl6txxxhccqxco/hBwMCWElDnzyR8-bDx0d64aGsAZ9BXiLaeGUc9ausm8" target="_blank" rel="noopener">物語を読む &rarr;</a></p>
-  </div>
-</section>
-
 <footer class="site-footer">
   <p>©2026 by Evan Butler.<br>New York, Brooklyn<br><a href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a></p>
 </footer>
@@ -317,28 +296,6 @@ document.querySelectorAll('a[href]').forEach(link => {
 
 <script src="js/lang.js?v=2"></script>
 <script src="js/menu.js"></script>
-<script>
-// The story follows the site's language: lang.js records the
-// JP/EN toggle on <html lang>. Show the matching text on load
-// and whenever the toggle changes.
-(function () {
-  var en = document.getElementById('storyEn');
-  var ja = document.getElementById('storyJa');
-  function show(lang) {
-    var isJa = lang === 'ja';
-    if (en) en.hidden = isJa;
-    if (ja) ja.hidden = !isJa;
-  }
-  show(document.documentElement.lang || 'en');
-  if (window.MutationObserver) {
-    new MutationObserver(function (muts) {
-      muts.forEach(function (m) {
-        if (m.attributeName === 'lang') show(document.documentElement.lang);
-      });
-    }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
-  }
-})();
-</script>
 
 
 

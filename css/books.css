@@ -1,0 +1,20 @@
+/* books.css — Books section page. The story text styles live in
+   volume.css (.story-*); this file only lays out the book entry. */
+
+.book{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+}
+
+.book-cover{
+    margin: 0 0 8px;
+}
+
+.book-cover img{
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 0 auto;
+}

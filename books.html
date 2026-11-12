@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="V — Books. Evan Butler.">
+<title>Books · V — Evan Butler</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="stylesheet" href="css/pricingstyle.css">
+<link rel="stylesheet" href="css/desktop.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/volume.css?v=11">
+<link rel="stylesheet" href="css/books.css?v=1">
+</head>
+
+<body class="volume-page">
+<div class="page-transition" id="pageTransition"></div>
+
+<header>
+  <a href="index.html" class="brand">Distortion</a>
+  <div class="menu-btn"></div>
+  <div class="navigation">
+    <div class="navigation-items">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="exhibition.html">Exhibition</a>
+      <a href="v.html" class="active">V</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="commentary">
+  <p class="commentary-label"><a href="v.html" aria-label="Back to V"><picture class="label-mark"><source media="(prefers-color-scheme: dark)" srcset="assets/images/VMark-white.jpg"><img src="assets/images/VMark-black.jpg" alt="V"></picture></a> · Books</p>
+  <p class="commentary-dash">—</p>
+
+  <p class="chapter-tag">BOOKS</p>
+  <h2 class="chapter-title">Books</h2>
+</section>
+
+<div class="book">
+  <figure class="book-cover">
+    <img src="assets/images/Volume2Cover.jpg?v=3" alt="Baby, close your eyes — cover">
+  </figure>
+
+  <!-- THE STORY — a short summary and a link to the reader.
+       The full story lives in the page-turn readers; this section
+       only introduces it. Follows the site's language (JP/EN
+       toggle in the header): English while the site is in
+       English, Japanese when the JP toggle is on. -->
+  <section class="story" id="story">
+    <p class="story-label">Short Story — 読み切り</p>
+    <h2 class="story-title">Baby, close your eyes</h2>
+    <p class="story-subtitle">ベイビー、目を閉じて</p>
+
+    <div class="story-summary" lang="en" id="storyEn">
+      <p>Rinne is a nurse who sees the vitality of the people around her as a coloured halo above their heads. The story follows her through one hospital shift, one night at home, and one night back in the ER.</p>
+      <p><a class="story-link" href="https://muse.ai/s/baby-close-your-eyes-xqd6txxxhfmexku/o2tNpZmguLG0m6oqNpHZBrToa1xRfEPJyYj42XsmKTM" target="_blank" rel="noopener">Read the story &rarr;</a></p>
+    </div>
+
+    <div class="story-summary" lang="ja" id="storyJa" hidden>
+      <p>りんねは看護師で、まわりの人の生命力が、頭の上に色のハローとして見える。物語は、病院での勤務、家での一夜、そしてERに戻る一夜をたどる。</p>
+      <p><a class="story-link" href="https://muse.ai/s/baby-close-your-eyes-japanese-xgxl6txxxhccqxco/hBwMCWElDnzyR8-bDx0d64aGsAZ9BXiLaeGUc9ausm8" target="_blank" rel="noopener">物語を読む &rarr;</a></p>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <p>©2026 by Evan Butler.<br>New York, Brooklyn<br><a href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a></p>
+</footer>
+
+<footer>
+  <div class="media-icons">
+    <a href="https://www.facebook.com/evan.butler.9619"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/evan.t.butler/"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+
+<script type="text/javascript">
+  //Javacript for responsive navigation menu
+  const menuBtn = document.querySelector(".menu-btn");
+  const navigation = document.querySelector(".navigation");
+
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+  });
+</script>
+
+<script>
+const pageTransition = document.getElementById('pageTransition');
+
+window.addEventListener('DOMContentLoaded', () => {
+  requestAnimationFrame(() => {
+    pageTransition.classList.add('fade-in');
+  });
+});
+
+document.querySelectorAll('a[href]').forEach(link => {
+  const href = link.getAttribute('href');
+  const isInternal = href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:');
+
+  if (isInternal){
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      pageTransition.classList.remove('fade-in');
+      pageTransition.classList.add('fade-out');
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 600);
+    });
+  }
+});
+</script>
+
+<script src="js/lang.js?v=2"></script>
+<script src="js/menu.js"></script>
+<script>
+// The story follows the site's language: lang.js records the
+// JP/EN toggle on <html lang>. Show the matching text on load
+// and whenever the toggle changes.
+(function () {
+  var en = document.getElementById('storyEn');
+  var ja = document.getElementById('storyJa');
+  function show(lang) {
+    var isJa = lang === 'ja';
+    if (en) en.hidden = isJa;
+    if (ja) ja.hidden = !isJa;
+  }
+  show(document.documentElement.lang || 'en');
+  if (window.MutationObserver) {
+    new MutationObserver(function (muts) {
+      muts.forEach(function (m) {
+        if (m.attributeName === 'lang') show(document.documentElement.lang);
+      });
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  }
+})();
+</script>
+
+</body>
+</html>
