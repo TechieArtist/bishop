@@ -16,12 +16,12 @@
     { sel: '.about-box h1', ja: ['プロフィール'] },
     { sel: '.bio-meta', ja: ['2002年生まれ<br>ニューヨーク、ブルックリン'] },
     { sel: '.about-box p:not(.bio-meta)', ja: [
-      'エヴァン・バトラーはアメリカの画家である。美術の正規教育を受けることなく、複数のメディアにまたがる学際的な制作活動を築いてきた。',
+      'エヴァン・バトラーは美術家と作家である。美術の正規教育を受けることなく、複数のメディアにまたがる学際的な制作活動を築いてきた。',
       '2022年後半、バトラーは伝統的な絵画技法とデジタルの絵画技法の両方を用いるアーティストとして登場した。2023年を通じて制作を3Dデザインへと広げ、未完成のゲームと、のちに2026年に完成した実験的な短編映画（Untitled）を手がけた。',
       '2023年の夏、バトラーはアニメーション短編映画の制作に着手したが、未完のままとなった。同じ時期に、初期の主要作品のひとつである《Untitled (2023)》を制作した。',
       '2024年初頭、バトラーの制作は、概念的にも技術的にも人工知能を枠組みとする方向へ移り、芸術と学術の両面における軌跡を方向づけた。東アジアに影響を受けたコンセプトアートを制作する傍ら、東京工業大学のAIシステム講座に入学する以前から、生成メディアとしてのAIに取り組んでいた。',
       '2024年末にかけて、バトラーの作品は暴力的なイメージや困窮した都市環境の描写へと次第に傾いていった。その後、不安定な生活状況のもとニュージャージーへ移り住み、制作活動を中断した。',
-      '2026年6月、バトラーは初の個展『The Atelier/Propitiation』の制作に着手した。'
+      '2026年6月、バトラーは初の個展『Propitiation』の制作に着手した。現在はアーカイブされている。現在、バトラーはVという歪んだ世界を、巻ごとに展開する形で制作している。'
     ] },
 
     // ----- contact -----
@@ -35,7 +35,7 @@
     { sel: '.cv-list li', ja: [
       '<span class="cv-year"></span><span class="cv-text">独学</span>',
       '<span class="cv-year">2024</span><span class="cv-text">東京工業大学 AIシステム講座</span>',
-      '<span class="cv-year">2026</span><span class="cv-text"><em>The Atelier/Propitiation</em>（オンライン展覧会）、evanatelier.com</span>',
+      '<span class="cv-year">2026</span><span class="cv-text"><em>Propitiation</em>（アーカイブされたオンライン展覧会）、evanatelier.com</span>',
       '<span class="cv-year">2023</span><span class="cv-text"><em>Untitled</em> — デジタルアート</span>',
       '<span class="cv-year">2025</span><span class="cv-text"><em>Breaking (割れる)</em> — デジタルアート · 映像</span>',
       '<span class="cv-year">2025</span><span class="cv-text"><em>Tanpeki (丹碧)</em> — デジタルアート</span>',
@@ -48,11 +48,11 @@
     { sel: '.cv-download', ja: ['略歴をダウンロード（PDF）'] },
 
     // ----- exhibition -----
-    { sel: '.exhibition-page .commentary-label', ja: ['The Atelier/Propitiation · オンライン展覧会 · 2026年 — 開催中'] },
+    { sel: '.exhibition-page .commentary-label', ja: ['Propitiation · オンライン展覧会 · 2026年 — アーカイブ'] },
     { sel: '.chapter-tag', ja: ['はじめに', '第一章', '第二章', '第三章'] },
     { sel: '.chapter-title', ja: ['新時代', 'インターネットの人々', '爆弾', '地獄'] },
     { sel: '.chapter-body', ja: [
-      '『<em>The Atelier/Propitiation</em>』を制作するにあたり、私はひとつの単純な考えを示したかった。デジタルアートとは、コンピューターで作られた芸術にとどまらず、それ自身の固有の精神を持つものだということだ。描くことに伴う触覚的な感触が失われることで、この身体的な経験は精神的な経験へと変容し、思考がかたちを成していく。私はこれを、現状に異議を唱える新たな思考の枠組みへの入り口と捉えている。本展で展示される作品は販売しない。',
+      '『<em>Propitiation</em>』を制作するにあたり、私はひとつの単純な考えを示したかった。デジタルアートとは、コンピューターで作られた芸術にとどまらず、それ自身の固有の精神を持つものだということだ。描くことに伴う触覚的な感触が失われることで、この身体的な経験は精神的な経験へと変容し、思考がかたちを成していく。私はこれを、現状に異議を唱える新たな思考の枠組みへの入り口と捉えている。本展で展示される作品は販売しない。',
       '集合的記憶に深く刻み込まれたイメージ。その複製は、描かれた人物その人よりも身近なものとなっている。',
       '世界が嘘をつくとき、誰が真実を語り続けるのか。爆弾は一つの場所だけに落とされたのではない。私たち全員の上に落とされたのだ。',
       '私たちが人生の中でつくり上げるペルソナについて、何を理解すべきなのか。革命家は、自らの生きる社会を曲げるべきか、それとも自分自身を曲げるべきか。人々が革命を必要としているのか、それとも革命家のほうが革命を必要としているのか。'
@@ -72,8 +72,10 @@
 
   var TITLES = {
     'Evan Butler — Contemporary Artist': 'エヴァン・バトラー — 現代美術家',
+    'Evan Butler — Artist and Writer': 'エヴァン・バトラー — 美術家と作家',
     'About Evan Butler': 'エヴァン・バトラー | プロフィール',
     'The Atelier/Propitiation — Evan Butler': 'The Atelier/Propitiation — エヴァン・バトラー',
+    'Propitiation (Archived) — Evan Butler': 'Propitiation（アーカイブ）— エヴァン・バトラー',
     'Contact — Evan Butler': 'お問い合わせ — エヴァン・バトラー',
     'V — Evan Butler': 'V — エヴァン・バトラー'
   };
