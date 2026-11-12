@@ -150,7 +150,184 @@ document.querySelectorAll('a[href]').forEach(link => {
 });
 </script>
 
-<script src="js/lang.js"></script>
+<script src="js/lang.js?v=2"></script>
 <script src="js/menu.js"></script>
+
+
+<!-- Zoom: the exhibition-page lightbox. Clicking an artwork opens it full-screen; swipe or arrows move between works. -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-close" id="lightboxClose">&times;</div>
+  <div class="lightbox-track" id="lightboxTrack"></div>
+</div>
+
+
+<script>
+(function(){
+    const lightbox = document.getElementById('lightbox');
+    const track = document.getElementById('lightboxTrack');
+    const closeBtn = document.getElementById('lightboxClose');
+
+    const mediaItems = [];
+
+    document.querySelectorAll('.artwork-frame:not(.no-zoom)').forEach(frame => {
+        const slides = frame.querySelectorAll('.art-slide');
+        if (slides.length){
+            slides.forEach(slide => {
+                const video = slide.querySelector('video source');
+                const img = slide.querySelector('img');
+                if (video) mediaItems.push({ type: 'video', src: video.getAttribute('src') });
+                else if (img) mediaItems.push({ type: 'img', src: img.getAttribute('src') });
+            });
+        } else {
+            const video = frame.querySelector('video source');
+            const img = frame.querySelector(':scope > img, :scope .video-poster-bg');
+            if (video) mediaItems.push({ type: 'video', src: video.getAttribute('src') });
+            else if (frame.querySelector('img')) mediaItems.push({ type: 'img', src: frame.querySelector('img').getAttribute('src') });
+        }
+    });
+
+    mediaItems.forEach((item, i) => {
+        const slide = document.createElement('div');
+        slide.className = 'lightbox-slide';
+        slide.dataset.index = i;
+
+        if (item.type === 'img'){
+            const img = document.createElement('img');
+            img.src = item.src;
+            slide.appendChild(img);
+        } else {
+            const video = document.createElement('video');
+            video.src = item.src;
+            video.controls = true;
+            video.playsInline = true;
+            slide.appendChild(video);
+        }
+
+        track.appendChild(slide);
+    });
+
+    const lightboxSlides = track.querySelectorAll('.lightbox-slide');
+    let currentIndex = 0;
+
+    function positionLightbox(offsetPx = 0, animate = false){
+        lightboxSlides.forEach((slide, i) => {
+            slide.style.transition = animate ? "transform 0.35s ease" : "none";
+            slide.style.transform = `translateX(calc(${(i - currentIndex) * 100}% + ${offsetPx}px))`;
+        });
+    }
+
+    function goToLightboxSlide(index){
+        currentIndex = Math.max(0, Math.min(index, lightboxSlides.length - 1));
+        positionLightbox(0, true);
+
+        lightboxSlides.forEach((slide, i) => {
+            const video = slide.querySelector('video');
+            if (video){
+                if (i === currentIndex) video.play().catch(()=>{});
+                else video.pause();
+            }
+        });
+    }
+
+    function openLightbox(index){
+        currentIndex = index;
+        positionLightbox();
+        lightbox.classList.add('active');
+        goToLightboxSlide(index);
+    }
+
+    function closeLightbox(){
+        lightbox.classList.remove('active');
+        lightboxSlides.forEach(slide => {
+            const video = slide.querySelector('video');
+            if (video) video.pause();
+        });
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+
+    let mediaCursor = 0;
+    document.querySelectorAll('.artwork-frame:not(.no-zoom)').forEach(frame => {
+        const slides = frame.querySelectorAll('.art-slide');
+        const count = slides.length || 1;
+        const startIndex = mediaCursor;
+
+        frame.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;
+            let offsetIntoGroup = 0;
+            if (slides.length){
+                const activeSlide = frame.querySelector('.art-slide.active');
+                offsetIntoGroup = Array.from(slides).indexOf(activeSlide);
+                if (offsetIntoGroup < 0) offsetIntoGroup = 0;
+            }
+            openLightbox(startIndex + offsetIntoGroup);
+        });
+
+        mediaCursor += count;
+    });
+
+    let startX = 0;
+    let dragOffset = 0;
+    let isDragging = false;
+
+    window.lightboxAPI = { go: goToLightboxSlide, index: () => currentIndex, isOpen: () => lightbox.classList.contains('active'), close: closeLightbox };
+
+    lightbox.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        dragOffset = e.touches[0].clientX - startX;
+        positionLightbox(dragOffset, false);
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', () => {
+        isDragging = false;
+        const swipeThreshold = 60;
+
+        if (Math.abs(dragOffset) > swipeThreshold){
+            if (dragOffset < 0 && currentIndex < lightboxSlides.length - 1){
+                currentIndex++;
+            } else if (dragOffset > 0 && currentIndex > 0){
+                currentIndex--;
+            }
+        }
+
+        dragOffset = 0;
+        goToLightboxSlide(currentIndex);
+    }, { passive: true });
+})();
+</script>
+
+<script>
+(function(){
+    // Lightbox arrows and keyboard, as on the exhibition page
+    // (desktop.js parts 3-4 only: no wall-label flip, no slider arrows).
+    const lb = document.getElementById('lightbox');
+    const api = () => window.lightboxAPI;
+    if (lb) {
+        const mk = (cls, label, text, dir) => {
+            const b = document.createElement('button');
+            b.className = 'lightbox-arrow ' + cls;
+            b.type = 'button';
+            b.setAttribute('aria-label', label);
+            b.textContent = text;
+            b.addEventListener('click', e => { e.stopPropagation(); if (api()) api().go(api().index() + dir); });
+            lb.appendChild(b);
+        };
+        mk('prev', 'Previous work', '‹', -1);
+        mk('next', 'Next work', '›', 1);
+    }
+    document.addEventListener('keydown', e => {
+        if (!api() || !api().isOpen()) return;
+        if (e.key === 'Escape') { api().close(); return; }
+        const dir = e.key === 'ArrowLeft' ? -1 : e.key === 'ArrowRight' ? 1 : 0;
+        if (dir) { e.preventDefault(); api().go(api().index() + dir); }
+    });
+})();
+</script>
+
 </body>
 </html>
