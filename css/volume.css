@@ -341,3 +341,76 @@ body.volume-page .art-slider-nav .dot.active{
     background: #fff;
   }
 }
+
+/* Scroll-out system tabs (volume pages) */
+.scroll-tabs{
+    position: fixed;
+    left: 0;
+    top: 38%;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.scroll-tab{
+    display: block;
+    transform: translateX(calc(-100% + 12px));
+    transition: transform 0.9s ease;
+    background: #fff;
+    border: 1px solid #222;
+    border-left: none;
+    padding: 8px 14px 8px 12px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    color: #111;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.scroll-tabs.is-out .scroll-tab{
+    transform: translateX(0);
+}
+
+.scroll-tabs.is-out .scroll-tab:nth-child(2){
+    transition-delay: 0.12s;
+}
+
+.scroll-tabs.is-out .scroll-tab:nth-child(3){
+    transition-delay: 0.24s;
+}
+
+a.scroll-tab:hover{
+    color: #b33a2e;
+}
+
+.scroll-tab.is-placeholder{
+    color: #999;
+    cursor: default;
+}
+
+@media (prefers-color-scheme: dark){
+    .scroll-tab{
+        background: #000;
+        border-color: #ddd;
+        color: #eee;
+    }
+
+    .scroll-tab.is-placeholder{
+        color: #666;
+    }
+}
+
+@media (max-width: 700px){
+    .scroll-tab{
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .scroll-tab{
+        transition: none;
+    }
+}

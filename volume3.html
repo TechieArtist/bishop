@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 <link rel="stylesheet" href="css/menu.css">
-<link rel="stylesheet" href="css/volume.css?v=4">
+<link rel="stylesheet" href="css/volume.css?v=5">
 </head>
 
 <body class="volume-page">
@@ -30,6 +30,12 @@
     </div>
   </div>
 </header>
+
+<nav class="scroll-tabs" id="scrollTabs" aria-label="Systems">
+  <a class="scroll-tab" href="vermillion.html">Vermillion</a>
+  <span class="scroll-tab is-placeholder">—</span>
+  <span class="scroll-tab is-placeholder">—</span>
+</nav>
 
 <section class="commentary">
   <p class="commentary-label"><a href="v.html" aria-label="Back to V"><picture class="label-mark"><source media="(prefers-color-scheme: dark)" srcset="assets/images/VMark-white.jpg"><img src="assets/images/VMark-black.jpg" alt="V"></picture></a> · Volume 3</p>
@@ -208,6 +214,22 @@ document.querySelectorAll('a[href]').forEach(link => {
     });
   }
 });
+</script>
+
+<script>
+(function(){
+  var tabs = document.getElementById('scrollTabs');
+  if(!tabs) return;
+  var ticking = false;
+  function update(){
+    ticking = false;
+    tabs.classList.toggle('is-out', window.scrollY > 160);
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(update); ticking = true; }
+  }, {passive:true});
+  update();
+})();
 </script>
 
 <script src="js/lang.js?v=2"></script>
