@@ -361,3 +361,16 @@ body{
 .books-bar:hover .books-bar-arrow{
   transform: translateX(4px);
 }
+
+/* ----- What V is ----- */
+/* One line under the V mark, above the orbit: the premise, so a
+   first-time visitor knows what V is before the volumes turn. */
+.volumes-intro{
+  margin: 0 0 28px;
+  max-width: 560px;
+  font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+  font-weight: 300;
+  letter-spacing: .04em;
+  line-height: 1.5;
+  color: var(--v-fg);
+}
