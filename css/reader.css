@@ -1,0 +1,119 @@
+/* Reader pages — styled after the Muse page-turn reader */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+    background:#9fb9c1;
+    font-family:Georgia,'Times New Roman',serif;
+    color:#1c2224;
+    -webkit-font-smoothing:antialiased;
+}
+img{display:block}
+
+/* Page transition (same pattern as the rest of the site) */
+.page-transition{
+    position:fixed;top:0;left:0;width:100%;height:100%;
+    background:#9fb9c1;z-index:99999;opacity:1;
+    transition:opacity .6s ease;pointer-events:none;
+}
+.page-transition.fade-in{opacity:0}
+.page-transition.fade-out{opacity:1;pointer-events:all}
+
+/* Slim top strip: back to Books + language switch */
+.reader-topbar{
+    height:44px;display:flex;justify-content:space-between;align-items:center;
+    padding:0 16px;
+    font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+}
+.reader-topbar a{
+    color:#1c2224;text-decoration:none;font-size:14px;letter-spacing:.04em;
+}
+.reader-topbar a:hover{text-decoration:underline}
+
+/* Centered panel */
+.reader-panel{
+    position:relative;max-width:760px;margin:0 auto;
+    height:calc(100vh - 44px);height:calc(100dvh - 44px);
+    display:flex;flex-direction:column;
+    background:#f4f4f4;overflow:hidden;
+}
+.reader-page{display:none;flex:1;min-height:0}
+.reader-page.is-active{display:flex;flex-direction:column}
+
+/* Cover: poster on the blue-grey ground */
+.reader-page.is-cover{background:#9fb9c1;align-items:center;justify-content:center;padding:0}
+.reader-page.is-cover img{max-width:100%;max-height:100%;object-fit:contain}
+
+/* Prose pages: off-white page, narrow serif column */
+.reader-page.is-prose{background:#f4f4f4;overflow-y:auto;padding:40px 24px 32px}
+.prose-col{width:100%;max-width:510px;margin:0 auto}
+.reader-prose-header{
+    display:flex;justify-content:space-between;align-items:baseline;
+    border-bottom:1px solid #d8dedd;padding-bottom:10px;margin-bottom:28px;
+}
+.reader-prose-header .page-no{
+    font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+    font-size:12px;letter-spacing:.18em;color:#6b7678;
+}
+.reader-prose-header .reader-v{font-size:20px;font-weight:700;line-height:1}
+.reader-prose p{
+    font-size:19px;line-height:1.85;margin:0 0 1.85em;text-align:left;
+}
+.reader-prose p:last-child{margin-bottom:0}
+.reader-prose p.gap-before{margin-top:3.2em}
+
+/* Japanese prose: serif JP stack, slightly more leading */
+.reader-ja .reader-prose p{
+    font-family:Georgia,'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif;
+    line-height:2;
+}
+
+/* Fin: white Fin over the cardinal */
+.reader-page.is-fin{
+    background:#9fb9c1;align-items:center;justify-content:flex-start;
+    padding:48px 24px 24px;gap:28px;
+}
+.fin-word{font-size:clamp(64px,14vw,110px);color:#fff;line-height:1;font-weight:400;margin:0}
+.reader-page.is-fin img{
+    max-width:min(420px,86%);max-height:calc(100% - 170px);object-fit:contain;
+}
+
+/* Progress line above the footer */
+.reader-progress{height:2px;background:#d8dedd;flex-shrink:0}
+.reader-progress-fill{height:100%;background:#1c2224;width:20%;transition:width .35s ease}
+
+/* Footer: pill buttons + centred count/label */
+.reader-footer{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding:14px 16px calc(14px + env(safe-area-inset-bottom));
+    background:#f4f4f4;flex-shrink:0;
+    font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+}
+.reader-footer button{
+    font-family:inherit;font-size:14px;padding:9px 20px;
+    border:1px solid #1c2224;border-radius:999px;
+    background:transparent;color:#1c2224;cursor:pointer;white-space:nowrap;
+}
+.reader-footer button:hover:not(:disabled){background:#1c2224;color:#f4f4f4}
+.reader-footer button:disabled{opacity:.3;cursor:default}
+.reader-count{text-align:center;display:flex;flex-direction:column;gap:2px}
+.reader-count .count-no{font-size:14px}
+.reader-count .count-label{font-size:11px;letter-spacing:.16em;color:#6b7678}
+
+/* Edge tap zones */
+.reader-zone{
+    position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+    background:transparent;border:none;font-size:34px;line-height:1;
+    color:rgba(28,34,36,.35);cursor:pointer;padding:20px 10px;
+}
+.reader-zone.prev{left:2px}
+.reader-zone.next{right:2px}
+.reader-zone.is-hidden{visibility:hidden}
+
+@media (max-width:520px){
+    .reader-page.is-prose{padding:32px 20px 24px}
+    .reader-prose p{font-size:18px}
+    .reader-footer{padding:12px 12px calc(12px + env(safe-area-inset-bottom))}
+    .reader-footer button{font-size:13px;padding:8px 14px}
+    .reader-zone{font-size:28px;padding:16px 6px}
+    .reader-page.is-fin{padding-top:36px;gap:20px}
+}
