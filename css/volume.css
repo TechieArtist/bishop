@@ -342,25 +342,23 @@ body.volume-page .art-slider-nav .dot.active{
   }
 }
 
-/* Scroll-out system tabs (volume pages) */
-.scroll-tabs{
-    position: fixed;
-    left: 0;
-    top: 38%;
-    z-index: 60;
+/* System tabs (volume pages) — a row of rectangle tabs under the
+   intro, linking the volume to its systems articles. */
+.system-tabs{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 8px;
+    max-width: 760px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
 }
 
-.scroll-tab{
+.system-tab{
     display: block;
-    transform: translateX(calc(-100% + 12px));
-    transition: transform 0.9s ease;
     background: #fff;
     border: 1px solid #222;
-    border-left: none;
-    padding: 8px 14px 8px 12px;
+    padding: 8px 16px;
     font-size: 13px;
     letter-spacing: 0.04em;
     line-height: 1.2;
@@ -369,48 +367,30 @@ body.volume-page .art-slider-nav .dot.active{
     white-space: nowrap;
 }
 
-.scroll-tabs.is-out .scroll-tab{
-    transform: translateX(0);
-}
-
-.scroll-tabs.is-out .scroll-tab:nth-child(2){
-    transition-delay: 0.12s;
-}
-
-.scroll-tabs.is-out .scroll-tab:nth-child(3){
-    transition-delay: 0.24s;
-}
-
-a.scroll-tab:hover{
+a.system-tab:hover{
     color: #b33a2e;
 }
 
-.scroll-tab.is-placeholder{
+.system-tab.is-placeholder{
     color: #999;
     cursor: default;
 }
 
 @media (prefers-color-scheme: dark){
-    .scroll-tab{
+    .system-tab{
         background: #000;
         border-color: #ddd;
         color: #eee;
     }
 
-    .scroll-tab.is-placeholder{
+    .system-tab.is-placeholder{
         color: #666;
     }
 }
 
 @media (max-width: 700px){
-    .scroll-tab{
+    .system-tab{
         font-size: 11px;
-        padding: 6px 10px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce){
-    .scroll-tab{
-        transition: none;
+        padding: 6px 12px;
     }
 }
