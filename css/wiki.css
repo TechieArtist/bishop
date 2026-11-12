@@ -62,6 +62,16 @@
     margin-bottom: 0;
 }
 
+.wiki-figure{
+    margin: 0 0 1.2em;
+}
+
+.wiki-figure img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .wiki-list{
     font-size: 1.1rem;
     line-height: 1.9;
