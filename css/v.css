@@ -374,3 +374,34 @@ body{
   line-height: 1.5;
   color: var(--v-fg);
 }
+
+/* ----- Distortion counter ----- */
+/* Under the premise line, above the orbit: how many distortions
+   are recorded so far, against the number assumed to come. */
+.distortion-counter{
+  margin: 0 0 28px;
+  text-align: center;
+}
+
+.distortion-counter-label{
+  margin: 0 0 2px;
+  font-size: .7rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--v-muted);
+}
+
+.distortion-counter-number{
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(3rem, 9vw, 4.5rem);
+  line-height: 1;
+  color: #b33a2e;
+}
+
+.distortion-counter-note{
+  margin: 6px 0 0;
+  font-size: .85rem;
+  letter-spacing: .06em;
+  color: var(--v-muted);
+}
