@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="V — Tanpeki: the vitality halo. Evan Butler.">
+<title>Tanpeki · V — Systems · Evan Butler</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="stylesheet" href="css/pricingstyle.css">
+<link rel="stylesheet" href="css/desktop.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/volume.css?v=8">
+<link rel="stylesheet" href="css/wiki.css?v=1">
+</head>
+
+<body class="volume-page">
+<div class="page-transition" id="pageTransition"></div>
+
+<header>
+  <a href="index.html" class="brand">Distortion</a>
+  <div class="menu-btn"></div>
+  <div class="navigation">
+    <div class="navigation-items">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="exhibition.html">Exhibition</a>
+      <a href="v.html" class="active">V</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="commentary">
+  <p class="commentary-label"><a href="v.html" aria-label="Back to V"><picture class="label-mark"><source media="(prefers-color-scheme: dark)" srcset="assets/images/VMark-white.jpg"><img src="assets/images/VMark-black.jpg" alt="V"></picture></a> · Systems</p>
+  <p class="commentary-dash">—</p>
+
+  <p class="chapter-tag">SYSTEMS</p>
+  <h2 class="chapter-title">Tanpeki (丹碧)</h2>
+</section>
+
+<div class="wiki-layout">
+
+  <aside class="wiki-tab">
+    <a href="kowloon.html">Kowloon</a>
+    <a href="breaking.html">Breaking</a>
+    <a href="tanpeki.html" class="active">Tanpeki</a>
+  </aside>
+
+  <article class="wiki-article">
+    <p class="wiki-body">
+      Tanpeki (丹碧) is a perceptual phenomenon that distorts how color is seen. The term was coined by scientists in Hokkaido, who took the 丹 from 丹田, the body's energy center. Only certain females of a species can read a spectrum of vitality through the distortion, seeing how alive a thing is as shifts in color. Males are affected by Tanpeki too, but to them it is only distortion, and life stays invisible.
+    </p>
+
+    <h3>The halo</h3>
+    <p class="wiki-body">
+      A perceptual phenomenon in which vitality appears as a colored halo above a person's head. Only certain females can perceive these halos.
+    </p>
+    <ul class="wiki-list">
+      <li><b>Deteriorating</b> — pink</li>
+      <li><b>Stable</b> — cyan</li>
+      <li><b>Healthy</b> — green</li>
+    </ul>
+
+    <h3>The school</h3>
+    <p class="wiki-body">
+      照顔学校 (Shiyōugan) is an all-girls school in Tokyo for women who can perceive life through Tanpeki.
+    </p>
+
+    <h3>In V</h3>
+    <p class="wiki-body">
+      Tanpeki is <a class="wiki-link" href="volume2.html">Volume 2 — Baby, close your eyes</a>, following Rinne, a nurse who sees the vitality of the people around her as a coloured halo above their heads.
+    </p>
+  </article>
+
+</div>
+
+<footer class="site-footer">
+  <p>©2026 by Evan Butler.<br>New York, Brooklyn<br><a href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a></p>
+</footer>
+
+<footer>
+  <div class="media-icons">
+    <a href="https://www.facebook.com/evan.butler.9619"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/evan.t.butler/"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+
+<script type="text/javascript">
+  //Javacript for responsive navigation menu
+  const menuBtn = document.querySelector(".menu-btn");
+  const navigation = document.querySelector(".navigation");
+
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+  });
+</script>
+
+<script>
+const pageTransition = document.getElementById('pageTransition');
+
+window.addEventListener('DOMContentLoaded', () => {
+  requestAnimationFrame(() => {
+    pageTransition.classList.add('fade-in');
+  });
+});
+
+document.querySelectorAll('a[href]').forEach(link => {
+  const href = link.getAttribute('href');
+  const isInternal = href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:');
+
+  if (isInternal){
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      pageTransition.classList.remove('fade-in');
+      pageTransition.classList.add('fade-out');
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 600);
+    });
+  }
+});
+</script>
+
+<script src="js/lang.js?v=2"></script>
+<script src="js/menu.js"></script>
+
+</body>
+</html>

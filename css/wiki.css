@@ -1,0 +1,134 @@
+/* ===== WIKI — systems & distortions articles =====
+   The left tab is a plain rectangle holding the terms;
+   the article reads like a document page. */
+
+.wiki-layout{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 48px;
+    align-items: start;
+}
+
+/* The tab: a rectangle on the left, holding the terms. */
+.wiki-tab{
+    border: 1px solid #999;
+    padding: 18px 20px;
+    position: sticky;
+    top: 100px;
+}
+
+.wiki-tab a{
+    display: block;
+    padding: 6px 0;
+    color: #111;
+    text-decoration: none;
+    font-size: 1.05rem;
+}
+
+.wiki-tab a:hover{
+    text-decoration: underline;
+}
+
+.wiki-tab a.active{
+    color: #b33a2e;
+    font-weight: 600;
+}
+
+/* The article. */
+.wiki-article h3{
+    font-family: "Hahmlet", serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin: 2em 0 0.6em;
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid #999;
+}
+
+.wiki-article h3:first-child{
+    margin-top: 0;
+}
+
+.wiki-body{
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #333;
+    margin: 0 0 1.2em;
+}
+
+.wiki-body:last-child{
+    margin-bottom: 0;
+}
+
+.wiki-list{
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #333;
+    margin: 0 0 1.2em;
+    padding-left: 1.2em;
+}
+
+.wiki-list li{
+    margin-bottom: 0.3em;
+}
+
+.wiki-link{
+    color: #111;
+}
+
+/* Breakdown rows on Vol. 1 link to their articles. */
+.breakdown-text a{
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid #999;
+}
+
+.breakdown-text a:hover{
+    border-bottom-color: #111;
+}
+
+/* Narrow screens: the tab sits above the article. */
+@media (max-width: 700px){
+    .wiki-layout{
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .wiki-tab{
+        position: static;
+    }
+}
+
+@media (prefers-color-scheme: dark){
+    .wiki-tab{
+        border-color: #555;
+    }
+
+    .wiki-tab a{
+        color: #ccc;
+    }
+
+    .wiki-tab a.active{
+        color: #d96a5c;
+    }
+
+    .wiki-article h3{
+        color: #eee;
+        border-bottom-color: #555;
+    }
+
+    .wiki-body,
+    .wiki-list{
+        color: #ccc;
+    }
+
+    .wiki-link{
+        color: #eee;
+    }
+
+    .breakdown-text a:hover{
+        border-bottom-color: #eee;
+    }
+}

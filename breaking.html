@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="V — Breaking: the malware. Evan Butler.">
+<title>Breaking · V — Systems · Evan Butler</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="stylesheet" href="css/pricingstyle.css">
+<link rel="stylesheet" href="css/desktop.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/volume.css?v=8">
+<link rel="stylesheet" href="css/wiki.css?v=1">
+</head>
+
+<body class="volume-page">
+<div class="page-transition" id="pageTransition"></div>
+
+<header>
+  <a href="index.html" class="brand">Distortion</a>
+  <div class="menu-btn"></div>
+  <div class="navigation">
+    <div class="navigation-items">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="exhibition.html">Exhibition</a>
+      <a href="v.html" class="active">V</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="commentary">
+  <p class="commentary-label"><a href="v.html" aria-label="Back to V"><picture class="label-mark"><source media="(prefers-color-scheme: dark)" srcset="assets/images/VMark-white.jpg"><img src="assets/images/VMark-black.jpg" alt="V"></picture></a> · Systems</p>
+  <p class="commentary-dash">—</p>
+
+  <p class="chapter-tag">SYSTEMS</p>
+  <h2 class="chapter-title">Breaking (割れる)</h2>
+</section>
+
+<div class="wiki-layout">
+
+  <aside class="wiki-tab">
+    <a href="kowloon.html">Kowloon</a>
+    <a href="breaking.html" class="active">Breaking</a>
+    <a href="tanpeki.html">Tanpeki</a>
+  </aside>
+
+  <article class="wiki-article">
+    <p class="wiki-body">
+      Breaking is a malware that, once spread throughout your hardware, scrapes your entire storage device before purging it.
+    </p>
+
+    <p class="wiki-body">
+      It is also speculated that the malware was the genesis of cloud storage, merging the entire internet's storage into one.
+    </p>
+
+    <p class="wiki-body">
+      Rumors claim it was developed by the Chinese government during the 1960s computer arms race. It is said to have lain dormant for decades, resurfacing in the 1990s as the web took off, when it began targeting pornographic sites. Its effectiveness has endured into the modern era, as physical storage grew increasingly obsolete, but the rumor remains unconfirmed.
+    </p>
+
+    <h3>In V</h3>
+    <p class="wiki-body">
+      Breaking is the 1960s entry in the Events timeline in <a class="wiki-link" href="volume1.html">Volume 1 — Prologue</a>.
+    </p>
+  </article>
+
+</div>
+
+<footer class="site-footer">
+  <p>©2026 by Evan Butler.<br>New York, Brooklyn<br><a href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a></p>
+</footer>
+
+<footer>
+  <div class="media-icons">
+    <a href="https://www.facebook.com/evan.butler.9619"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/evan.t.butler/"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+
+<script type="text/javascript">
+  //Javacript for responsive navigation menu
+  const menuBtn = document.querySelector(".menu-btn");
+  const navigation = document.querySelector(".navigation");
+
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+  });
+</script>
+
+<script>
+const pageTransition = document.getElementById('pageTransition');
+
+window.addEventListener('DOMContentLoaded', () => {
+  requestAnimationFrame(() => {
+    pageTransition.classList.add('fade-in');
+  });
+});
+
+document.querySelectorAll('a[href]').forEach(link => {
+  const href = link.getAttribute('href');
+  const isInternal = href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:');
+
+  if (isInternal){
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      pageTransition.classList.remove('fade-in');
+      pageTransition.classList.add('fade-out');
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 600);
+    });
+  }
+});
+</script>
+
+<script src="js/lang.js?v=2"></script>
+<script src="js/menu.js"></script>
+
+</body>
+</html>
