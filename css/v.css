@@ -428,3 +428,50 @@ body{
 .volumes-signup .formkit-form{
   max-width: 100%;
 }
+
+/* Kit's embed colours arrive as inline styles on the button and
+   input, so these overrides need !important to win. Black and
+   white only, flipping with the system setting like the rest
+   of the page: filled button at rest, inverted on hover, the
+   way the Books bar and orbit arrows behave. */
+.volumes-signup .formkit-form[data-uid="6b8a9ddfd4"] .formkit-submit{
+  background-color: var(--v-arrow-hover-bg) !important;
+  color: var(--v-arrow-hover-fg) !important;
+  border: 1px solid var(--v-arrow-hover-bg) !important;
+}
+
+.volumes-signup .formkit-form[data-uid="6b8a9ddfd4"] .formkit-submit:hover{
+  background-color: var(--v-bg) !important;
+  color: var(--v-fg) !important;
+}
+
+.volumes-signup .formkit-form[data-uid="6b8a9ddfd4"] .formkit-submit:hover > span{
+  background-color: transparent !important;
+}
+
+.volumes-signup .formkit-form[data-uid="6b8a9ddfd4"] .formkit-submit:focus-visible{
+  outline: 2px solid var(--v-fg) !important;
+  outline-offset: 3px;
+}
+
+.volumes-signup .formkit-form[data-uid="6b8a9ddfd4"] .formkit-input{
+  background: var(--v-bg) !important;
+  color: var(--v-fg) !important;
+  border-color: var(--v-line) !important;
+}
+
+.volumes-signup .formkit-form[data-uid="6b8a9ddfd4"] .formkit-input:focus{
+  border-color: var(--v-fg) !important;
+}
+
+.volumes-signup .formkit-form[data-uid="6b8a9ddfd4"] .formkit-spinner > div{
+  background-color: var(--v-arrow-hover-fg) !important;
+}
+
+@media (prefers-color-scheme: dark){
+  /* The "Built with Kit" badge is dark lettering; flip it so it
+     stays readable on the black page. The badge stays visible. */
+  .volumes-signup .formkit-powered-by-convertkit{
+    filter: invert(1);
+  }
+}
