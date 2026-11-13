@@ -49,16 +49,16 @@
 
     // ----- exhibition -----
     { sel: '.exhibition-page .commentary-label', ja: ['Propitiation · オンライン展覧会 · 2026年 — アーカイブ'] },
-    { sel: '.chapter-tag', ja: ['はじめに', '第一章', '第二章', '第三章'] },
-    { sel: '.chapter-title', ja: ['新時代', 'インターネットの人々', '爆弾', '地獄'] },
-    { sel: '.chapter-body', ja: [
+    { sel: '.exhibition-page .chapter-tag', ja: ['はじめに', '第一章', '第二章', '第三章'] },
+    { sel: '.exhibition-page .chapter-title', ja: ['新時代', 'インターネットの人々', '爆弾', '地獄'] },
+    { sel: '.exhibition-page .chapter-body', ja: [
       '『<em>Propitiation</em>』を制作するにあたり、私はひとつの単純な考えを示したかった。デジタルアートとは、コンピューターで作られた芸術にとどまらず、それ自身の固有の精神を持つものだということだ。描くことに伴う触覚的な感触が失われることで、この身体的な経験は精神的な経験へと変容し、思考がかたちを成していく。私はこれを、現状に異議を唱える新たな思考の枠組みへの入り口と捉えている。本展で展示される作品は販売しない。',
       '集合的記憶に深く刻み込まれたイメージ。その複製は、描かれた人物その人よりも身近なものとなっている。',
       '世界が嘘をつくとき、誰が真実を語り続けるのか。爆弾は一つの場所だけに落とされたのではない。私たち全員の上に落とされたのだ。',
       '私たちが人生の中でつくり上げるペルソナについて、何を理解すべきなのか。革命家は、自らの生きる社会を曲げるべきか、それとも自分自身を曲げるべきか。人々が革命を必要としているのか、それとも革命家のほうが革命を必要としているのか。'
     ] },
-    { sel: '.special-movie-content h2', ja: ['展覧会<br>スペシャルムービー'] },
-    { sel: '.art-info p', ja: [
+    { sel: '.exhibition-page .special-movie-content h2', ja: ['展覧会<br>スペシャルムービー'] },
+    { sel: '.exhibition-page .art-info p', ja: [
       'デジタルアート · 2023',
       'デジタルアート · 映像 · 2025',
       'デジタルアート · 映像 · 2026',
@@ -77,7 +77,17 @@
     'The Atelier/Propitiation — Evan Butler': 'The Atelier/Propitiation — エヴァン・バトラー',
     'Propitiation (Archived) — Evan Butler': 'Propitiation（アーカイブ）— エヴァン・バトラー',
     'Contact — Evan Butler': 'お問い合わせ — エヴァン・バトラー',
-    'V — Evan Butler': 'V — エヴァン・バトラー'
+    'V — Evan Butler': 'V — エヴァン・バトラー',
+    'Books · V — Evan Butler': 'Books · V — エヴァン・バトラー',
+    'Breaking · V — Systems · Evan Butler': 'Breaking · V — Systems · エヴァン・バトラー',
+    'Distortion · V — Systems · Evan Butler': 'Distortion · V — Systems · エヴァン・バトラー',
+    'Kowloon · V — Systems · Evan Butler': 'Kowloon · V — Systems · エヴァン・バトラー',
+    'Tanpeki · V — Systems · Evan Butler': 'Tanpeki · V — Systems · エヴァン・バトラー',
+    'Vermillion Zyu Hung · V — Systems · Evan Butler': 'Vermillion Zyu Hung · V — Systems · エヴァン・バトラー',
+    'Prologue · Evan Butler': 'Prologue · エヴァン・バトラー',
+    'Volume 2 — Tanpeki · Evan Butler': 'Volume 2 — Tanpeki · エヴァン・バトラー',
+    'Volume 3 — Vermillion Zyu Hung · Evan Butler': 'Volume 3 — Vermillion Zyu Hung · エヴァン・バトラー',
+    'Volume 4 — Pierrot · Evan Butler': 'Volume 4 — Pierrot · エヴァン・バトラー'
   };
 
   var items = [];
