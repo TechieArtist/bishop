@@ -136,11 +136,27 @@
 
   <section class="artwork">
     <div class="artwork-frame">
-      <img src="assets/images/VermillionApple.jpg?v=2" alt="Vermillion Zyu Hung — Apple">
+      <div class="art-slider">
+
+        <div class="art-slide active">
+          <img src="assets/images/VermillionApple.jpg?v=2" alt="Vermillion Zyu Hung — Apple">
+        </div>
+
+        <div class="art-slide">
+          <img src="assets/images/VermillionAppleBoy.jpg" alt="Vermillion Zyu Hung — Apple and the boy">
+        </div>
+
+      </div>
     </div>
+
+    <div class="art-slider-nav">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+    </div>
+
     <div class="art-info">
       <div class="left">
-        <h2>Apple</h2>
+        <h2 id="appleEditionTitle">Apple</h2>
         <p>Digital art · 2026</p>
       </div>
       <div class="right"></div>
@@ -187,6 +203,83 @@
 
   document.querySelectorAll('.artwork').forEach(work => {
     fadeObserver.observe(work);
+  });
+</script>
+
+<script>
+  // The Apple editions slider, as on the Vol. 2 page: dots and swipe
+  // move between the editions of one artwork. The edition title
+  // follows the slide: Apple, then Apple and the boy.
+  document.querySelectorAll(".artwork").forEach(work => {
+
+    const slides = work.querySelectorAll(".art-slide");
+    const dots = work.querySelectorAll(".dot");
+    const slider = work.querySelector(".art-slider");
+
+    if (!slides.length || !slider) return;
+
+    const editionTitle = work.querySelector("#appleEditionTitle");
+    const editionTitles = ["Apple", "Apple and the boy"];
+
+    let currentIndex = 0;
+    slides.forEach((slide, i) => {
+        if (slide.classList.contains("active")) currentIndex = i;
+    });
+
+    function positionSlides(offsetPx = 0, animate = false){
+        slides.forEach((slide, i) => {
+            slide.style.transition = animate ? "transform 0.35s ease" : "none";
+            slide.style.transform = `translateX(calc(${(i - currentIndex) * 100}% + ${offsetPx}px))`;
+        });
+    }
+
+    function goToSlide(index){
+        currentIndex = Math.max(0, Math.min(index, slides.length - 1));
+        dots.forEach(dot => dot.classList.remove("active"));
+        if (dots[currentIndex]) dots[currentIndex].classList.add("active");
+        if (editionTitle && editionTitles[currentIndex]) editionTitle.textContent = editionTitles[currentIndex];
+        positionSlides(0, true);
+    }
+
+    positionSlides();
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            goToSlide(index);
+        });
+    });
+
+    let startX = 0;
+    let dragOffset = 0;
+    let isDragging = false;
+
+    slider.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    }, { passive: true });
+
+    slider.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        dragOffset = e.touches[0].clientX - startX;
+        positionSlides(dragOffset, false);
+    }, { passive: true });
+
+    slider.addEventListener("touchend", () => {
+        isDragging = false;
+        const swipeThreshold = 60;
+
+        if (Math.abs(dragOffset) > swipeThreshold){
+            if (dragOffset < 0 && currentIndex < slides.length - 1){
+                currentIndex++;
+            } else if (dragOffset > 0 && currentIndex > 0){
+                currentIndex--;
+            }
+        }
+
+        dragOffset = 0;
+        goToSlide(currentIndex);
+    }, { passive: true });
+
   });
 </script>
 
