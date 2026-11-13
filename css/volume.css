@@ -57,6 +57,7 @@ body.volume-page{
 }
 
 body.volume-page header .brand,
+body.volume-page header .lang-toggle,
 body.volume-page header .navigation .navigation-items a{
     color: #000;
 }
@@ -184,6 +185,7 @@ body.volume-page .media-icons a{
   }
 
   body.volume-page header .brand,
+  body.volume-page header .lang-toggle,
   body.volume-page header .navigation .navigation-items a{
     color: #fff;
   }
