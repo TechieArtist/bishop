@@ -6,7 +6,7 @@
 <meta name="description" content="Propitiation: Evan Butler's archived online solo exhibition — digital art, video, and animation. Works are not for sale.">
 <title>Propitiation (Archived) — Evan Butler</title>
 <link rel="icon" type="image/png" href="assets/images/favicon.png">
-<link rel="stylesheet" href="css/pricingstyle.css">
+<link rel="stylesheet" href="css/pricingstyle.css?v=1">
 <link rel="stylesheet" href="css/desktop.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -587,6 +587,7 @@ document.querySelectorAll('a[href]').forEach(link => {
     const closeBtn = document.getElementById('lightboxClose');
 
     const mediaItems = [];
+    const sourceImgs = [];
 
     document.querySelectorAll('.artwork-frame:not(.no-zoom)').forEach(frame => {
         const slides = frame.querySelectorAll('.art-slide');
@@ -594,14 +595,14 @@ document.querySelectorAll('a[href]').forEach(link => {
             slides.forEach(slide => {
                 const video = slide.querySelector('video source');
                 const img = slide.querySelector('img');
-                if (video) mediaItems.push({ type: 'video', src: video.getAttribute('src') });
-                else if (img) mediaItems.push({ type: 'img', src: img.getAttribute('src') });
+                if (video) { mediaItems.push({ type: 'video', src: video.getAttribute('src') }); sourceImgs.push(null); }
+                else if (img) { mediaItems.push({ type: 'img', src: img.getAttribute('src') }); sourceImgs.push(img); }
             });
         } else {
             const video = frame.querySelector('video source');
             const img = frame.querySelector(':scope > img, :scope .video-poster-bg');
-            if (video) mediaItems.push({ type: 'video', src: video.getAttribute('src') });
-            else if (frame.querySelector('img')) mediaItems.push({ type: 'img', src: frame.querySelector('img').getAttribute('src') });
+            if (video) { mediaItems.push({ type: 'video', src: video.getAttribute('src') }); sourceImgs.push(null); }
+            else if (frame.querySelector('img')) { mediaItems.push({ type: 'img', src: frame.querySelector('img').getAttribute('src') }); sourceImgs.push(frame.querySelector('img')); }
         }
     });
 
@@ -613,6 +614,7 @@ document.querySelectorAll('a[href]').forEach(link => {
         if (item.type === 'img'){
             const img = document.createElement('img');
             img.src = item.src;
+            img.draggable = false;
             slide.appendChild(img);
         } else {
             const video = document.createElement('video');
@@ -628,6 +630,69 @@ document.querySelectorAll('a[href]').forEach(link => {
     const lightboxSlides = track.querySelectorAll('.lightbox-slide');
     let currentIndex = 0;
 
+    // ---- Zoom state (images only; videos keep their own controls) ----
+    const ZOOM_MIN = 1, ZOOM_MAX = 6;
+    let zoomScale = 1, zoomTX = 0, zoomTY = 0;
+    let openAnimTimer = null, closeTimer = null;
+
+    function currentImg(){
+        const slide = lightboxSlides[currentIndex];
+        return slide ? slide.querySelector('img') : null;
+    }
+
+    function clampPan(){
+        const img = currentImg();
+        if (!img){ zoomTX = 0; zoomTY = 0; return; }
+        const r = img.getBoundingClientRect();
+        const fitW = r.width / zoomScale, fitH = r.height / zoomScale;
+        const maxTX = Math.max(0, (fitW * zoomScale - window.innerWidth) / 2);
+        const maxTY = Math.max(0, (fitH * zoomScale - window.innerHeight) / 2);
+        zoomTX = Math.max(-maxTX, Math.min(maxTX, zoomTX));
+        zoomTY = Math.max(-maxTY, Math.min(maxTY, zoomTY));
+        if (zoomScale <= 1){ zoomTX = 0; zoomTY = 0; }
+    }
+
+    function applyZoom(animate){
+        const img = currentImg();
+        if (!img) return;
+        clampPan();
+        img.style.transition = animate ? 'transform 0.25s ease' : 'none';
+        if (zoomScale <= 1){
+            img.style.transform = '';
+            img.classList.remove('zoomed');
+        } else {
+            img.style.transform = `translate(${zoomTX}px, ${zoomTY}px) scale(${zoomScale})`;
+            img.classList.add('zoomed');
+        }
+    }
+
+    function resetZoom(){
+        zoomScale = 1; zoomTX = 0; zoomTY = 0;
+        lightboxSlides.forEach(slide => {
+            const im = slide.querySelector('img');
+            if (im){ im.style.transition = ''; im.style.transform = ''; im.classList.remove('zoomed'); }
+        });
+    }
+
+    function setZoom(newScale, animate){
+        zoomScale = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, newScale));
+        if (zoomScale <= 1){ zoomTX = 0; zoomTY = 0; }
+        applyZoom(animate);
+    }
+
+    function rectInViewport(r){
+        return r && r.width > 10 && r.height > 10 && r.bottom > 0 && r.top < window.innerHeight && r.right > 0 && r.left < window.innerWidth;
+    }
+
+    // FLIP transform that places the centred, fitted image over its page preview.
+    function flipTransform(img, srcRect){
+        const targetRect = img.getBoundingClientRect();
+        const s = Math.max(0.05, Math.min(1, srcRect.width / targetRect.width));
+        const dx = (srcRect.left + srcRect.width / 2) - (targetRect.left + targetRect.width / 2);
+        const dy = (srcRect.top + srcRect.height / 2) - (targetRect.top + targetRect.height / 2);
+        return `translate(${dx}px, ${dy}px) scale(${s})`;
+    }
+
     function positionLightbox(offsetPx = 0, animate = false){
         lightboxSlides.forEach((slide, i) => {
             slide.style.transition = animate ? "transform 0.35s ease" : "none";
@@ -636,6 +701,7 @@ document.querySelectorAll('a[href]').forEach(link => {
     }
 
     function goToLightboxSlide(index){
+        resetZoom();
         currentIndex = Math.max(0, Math.min(index, lightboxSlides.length - 1));
         positionLightbox(0, true);
 
@@ -649,18 +715,69 @@ document.querySelectorAll('a[href]').forEach(link => {
     }
 
     function openLightbox(index){
+        if (closeTimer){ clearTimeout(closeTimer); closeTimer = null; }
+        if (openAnimTimer){ clearTimeout(openAnimTimer); openAnimTimer = null; }
         currentIndex = index;
         positionLightbox();
         lightbox.classList.add('active');
         goToLightboxSlide(index);
+
+        // Slow zoom in from the preview, ending centred and fitted.
+        const slide = lightboxSlides[currentIndex];
+        const img = slide ? slide.querySelector('img') : null;
+        if (!img) return;
+        const srcEl = sourceImgs[index] || null;
+        const srcRect = srcEl ? srcEl.getBoundingClientRect() : null;
+        if (rectInViewport(srcRect)){
+            img.style.transition = 'none';
+            img.style.transform = flipTransform(img, srcRect);
+            void img.offsetWidth;
+            img.style.transition = 'transform 0.55s cubic-bezier(0.22, 1, 0.36, 1)';
+            img.style.transform = 'translate(0px, 0px) scale(1)';
+            openAnimTimer = setTimeout(() => {
+                if (lightboxSlides[currentIndex] === slide && zoomScale === 1){
+                    img.style.transition = '';
+                    img.style.transform = '';
+                }
+            }, 600);
+        } else {
+            img.style.transition = 'none';
+            img.style.transform = 'scale(0.96)';
+            void img.offsetWidth;
+            img.style.transition = 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)';
+            img.style.transform = 'translate(0px, 0px) scale(1)';
+            openAnimTimer = setTimeout(() => {
+                if (lightboxSlides[currentIndex] === slide && zoomScale === 1){
+                    img.style.transition = '';
+                    img.style.transform = '';
+                }
+            }, 500);
+        }
     }
 
     function closeLightbox(){
-        lightbox.classList.remove('active');
-        lightboxSlides.forEach(slide => {
-            const video = slide.querySelector('video');
+        if (!lightbox.classList.contains('active')) return;
+        if (openAnimTimer){ clearTimeout(openAnimTimer); openAnimTimer = null; }
+        const slide = lightboxSlides[currentIndex];
+        const img = slide ? slide.querySelector('img') : null;
+        const srcEl = sourceImgs[currentIndex] || null;
+        const srcRect = srcEl ? srcEl.getBoundingClientRect() : null;
+        lightboxSlides.forEach(s => {
+            const video = s.querySelector('video');
             if (video) video.pause();
         });
+        // Snap back to fit first so the close animation starts from the centred work.
+        resetZoom();
+        lightbox.classList.remove('active');
+        if (img && rectInViewport(srcRect)){
+            img.style.transition = 'transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)';
+            img.style.transform = flipTransform(img, srcRect);
+            if (closeTimer) clearTimeout(closeTimer);
+            closeTimer = setTimeout(() => { img.style.transition = ''; img.style.transform = ''; }, 450);
+        } else if (img){
+            if (closeTimer) clearTimeout(closeTimer);
+            closeTimer = setTimeout(() => { img.style.transition = ''; img.style.transform = ''; }, 500);
+        }
     }
 
     closeBtn.addEventListener('click', closeLightbox);
@@ -688,35 +805,148 @@ document.querySelectorAll('a[href]').forEach(link => {
     let startX = 0;
     let dragOffset = 0;
     let isDragging = false;
+    let pinchState = null, panState = null, pinchMoved = false;
+    let lastTapTime = 0, lastTapX = 0, lastTapY = 0, lastDoubleTapTime = 0;
+
+    function touchDist(a, b){
+        return Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+    }
 
     window.lightboxAPI = { go: goToLightboxSlide, index: () => currentIndex, isOpen: () => lightbox.classList.contains('active'), close: closeLightbox };
 
     lightbox.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-    }, { passive: true });
+        if (e.touches.length === 2 && currentImg()){
+            pinchState = { startDist: touchDist(e.touches[0], e.touches[1]), startScale: zoomScale };
+            pinchMoved = false;
+            isDragging = false;
+            panState = null;
+            // Snap the track back if a swipe drag was already under way.
+            dragOffset = 0;
+            positionLightbox(0, false);
+            e.preventDefault();
+        } else if (e.touches.length === 1){
+            if (zoomScale > 1 && currentImg()){
+                panState = { x: e.touches[0].clientX, y: e.touches[0].clientY, tx: zoomTX, ty: zoomTY, moved: false };
+                isDragging = false;
+            } else {
+                startX = e.touches[0].clientX;
+                isDragging = true;
+            }
+            dragOffset = 0;
+        }
+    }, { passive: false });
 
     lightbox.addEventListener('touchmove', (e) => {
+        if (pinchState && e.touches.length >= 2){
+            e.preventDefault();
+            const d = touchDist(e.touches[0], e.touches[1]);
+            if (pinchState.startDist > 0){
+                const ns = pinchState.startScale * (d / pinchState.startDist);
+                if (Math.abs(ns - zoomScale) > 0.02) pinchMoved = true;
+                setZoom(ns, false);
+            }
+            return;
+        }
+        if (panState && e.touches.length === 1){
+            e.preventDefault();
+            const dx = e.touches[0].clientX - panState.x;
+            const dy = e.touches[0].clientY - panState.y;
+            if (Math.abs(dx) > 5 || Math.abs(dy) > 5) panState.moved = true;
+            zoomTX = panState.tx + dx;
+            zoomTY = panState.ty + dy;
+            applyZoom(false);
+            return;
+        }
         if (!isDragging) return;
         dragOffset = e.touches[0].clientX - startX;
         positionLightbox(dragOffset, false);
-    }, { passive: true });
+    }, { passive: false });
 
-    lightbox.addEventListener('touchend', () => {
-        isDragging = false;
-        const swipeThreshold = 60;
-
-        if (Math.abs(dragOffset) > swipeThreshold){
-            if (dragOffset < 0 && currentIndex < lightboxSlides.length - 1){
-                currentIndex++;
-            } else if (dragOffset > 0 && currentIndex > 0){
-                currentIndex--;
+    lightbox.addEventListener('touchend', (e) => {
+        if (pinchState){
+            if (e.touches.length < 2) pinchState = null;
+            dragOffset = 0;
+            isDragging = false;
+            return;
+        }
+        if (panState){
+            const wasPan = panState.moved;
+            panState = null;
+            if (wasPan){ dragOffset = 0; return; }
+        } else if (isDragging){
+            isDragging = false;
+            const swipeThreshold = 60;
+            const swiped = Math.abs(dragOffset) > swipeThreshold;
+            if (swiped){
+                if (dragOffset < 0 && currentIndex < lightboxSlides.length - 1){
+                    currentIndex++;
+                } else if (dragOffset > 0 && currentIndex > 0){
+                    currentIndex--;
+                }
+            }
+            dragOffset = 0;
+            goToLightboxSlide(currentIndex);
+            if (swiped) return;
+        }
+        // Double-tap to zoom in / out (images only, not on the close button or arrows).
+        const t = e.changedTouches && e.changedTouches[0];
+        if (t && currentImg() && !e.target.closest('.lightbox-close, .lightbox-arrow')){
+            const now = Date.now();
+            const dt = now - lastTapTime;
+            const dist = Math.hypot(t.clientX - lastTapX, t.clientY - lastTapY);
+            if (dt < 320 && dist < 50){
+                lastTapTime = 0;
+                lastDoubleTapTime = now;
+                if (zoomScale > 1) setZoom(1, true); else setZoom(2.5, true);
+            } else {
+                lastTapTime = now;
+                lastTapX = t.clientX;
+                lastTapY = t.clientY;
             }
         }
-
-        dragOffset = 0;
-        goToLightboxSlide(currentIndex);
     }, { passive: true });
+
+    lightbox.addEventListener('touchcancel', () => {
+        pinchState = null;
+        panState = null;
+        isDragging = false;
+        dragOffset = 0;
+    }, { passive: true });
+
+    // Scroll-wheel / trackpad pinch zoom (desktop), images only.
+    lightbox.addEventListener('wheel', (e) => {
+        if (!currentImg()) return;
+        e.preventDefault();
+        setZoom(zoomScale * Math.exp(-e.deltaY * 0.002), false);
+    }, { passive: false });
+
+    lightbox.addEventListener('dblclick', (e) => {
+        if (Date.now() - lastDoubleTapTime < 500) return;
+        if (!currentImg() || e.target.closest('.lightbox-close, .lightbox-arrow')) return;
+        if (zoomScale > 1) setZoom(1, true); else setZoom(2.5, true);
+    });
+
+    // Stop Safari page pinch-zoom while the lightbox is open.
+    lightbox.addEventListener('gesturestart', (e) => { e.preventDefault(); }, { passive: false });
+
+    // Mouse drag to pan when zoomed (desktop).
+    let mousePan = null;
+    lightbox.addEventListener('mousedown', (e) => {
+        if (zoomScale > 1 && currentImg() && e.target.tagName === 'IMG'){
+            mousePan = { x: e.clientX, y: e.clientY, tx: zoomTX, ty: zoomTY };
+        }
+    });
+    window.addEventListener('mousemove', (e) => {
+        if (!mousePan) return;
+        zoomTX = mousePan.tx + (e.clientX - mousePan.x);
+        zoomTY = mousePan.ty + (e.clientY - mousePan.y);
+        applyZoom(false);
+    });
+    window.addEventListener('mouseup', () => { mousePan = null; });
+
+    window.addEventListener('resize', () => {
+        if (lightbox.classList.contains('active')) resetZoom();
+    });
 })();
 </script>
 
