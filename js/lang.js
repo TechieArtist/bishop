@@ -67,7 +67,105 @@
       '3Dアニメーション · ミクストメディア映像 · 2025',
       'AIアニメーション · 映像 · 2026',
       'AIアニメーション · 3Dアニメーション · クレヨン · 2026'
-    ] }
+    ] },
+
+    // ----- V pages (page-scoped: each rule matches exactly one page) -----
+    // v.html
+    { sel: '.page-v .volumes-intro', ja: ['Vは現実に忠実なはずの世界だった。歪みが現れるまでは。'] },
+    { sel: '.page-v .distortion-counter-label', ja: ['記録された歪み'] },
+    { sel: '.page-v .distortion-counter-note', ja: ['43が来ると想定されている'] },
+    { sel: '.page-v .coming-soon', ja: ['近日公開'] },
+    { sel: '.page-v .books-bar-label', ja: ['書籍'] },
+    { sel: '.page-v .volumes-signup-line', ja: ['新しい巻を、メールで。'] },
+    // volume/wiki page labels, tags, titles (names stay, words translate)
+    { sel: '.page-volume1 .commentary-label-text', ja: [' · プロローグ'] },
+    { sel: '.page-volume2 .commentary-label-text', ja: [' · 第2巻'] },
+    { sel: '.page-volume3 .commentary-label-text', ja: [' · 第3巻'] },
+    { sel: '.page-volume4 .commentary-label-text', ja: [' · 第4巻'] },
+    { sel: '.page-books .commentary-label-text', ja: [' · 書籍'] },
+    { sel: '.page-kowloon .commentary-label-text', ja: [' · システム'] },
+    { sel: '.page-breaking .commentary-label-text', ja: [' · システム'] },
+    { sel: '.page-tanpeki .commentary-label-text', ja: [' · システム'] },
+    { sel: '.page-vermillion .commentary-label-text', ja: [' · システム'] },
+    { sel: '.page-distortion .commentary-label-text', ja: [' · システム'] },
+    { sel: '.page-volume1 .chapter-tag', ja: ['プロローグ'] },
+    { sel: '.page-volume2 .chapter-tag', ja: ['第2巻'] },
+    { sel: '.page-volume3 .chapter-tag', ja: ['第3巻'] },
+    { sel: '.page-volume4 .chapter-tag', ja: ['第4巻'] },
+    { sel: '.page-books .chapter-tag', ja: ['書籍'] },
+    { sel: '.page-kowloon .chapter-tag', ja: ['システム'] },
+    { sel: '.page-breaking .chapter-tag', ja: ['システム'] },
+    { sel: '.page-tanpeki .chapter-tag', ja: ['システム'] },
+    { sel: '.page-vermillion .chapter-tag', ja: ['システム'] },
+    { sel: '.page-distortion .chapter-tag', ja: ['システム'] },
+    { sel: '.page-volume1 .chapter-title', ja: ['プロローグ'] },
+    { sel: '.page-volume2 .chapter-title', ja: ['丹碧 — ベイビー、目を閉じて'] },
+    { sel: '.page-volume3 .chapter-title', ja: ['Vermillion Zyu Hung（朱紅）'] },
+    { sel: '.page-books .chapter-title', ja: ['書籍'] },
+    { sel: '.page-kowloon .chapter-title', ja: ['九龍'] },
+    { sel: '.page-distortion .chapter-title', ja: ['歪み'] },
+    // volume intros (Pierrot / Breaking / Tanpeki / Vermillion titles stay as-is)
+    { sel: '.page-volume1 .chapter-body', ja: ['世界は現実に忠実であるはずだった。どこかで、歪みが現れた。'] },
+    { sel: '.page-volume2 .chapter-body', ja: ['丹碧とは、生命力が人の頭の上に色のハローとして現れる知覚現象である。悪化はピンク、安定はシアン、健康はグリーン。ハローが見えるのは特定の女性だけであり、男性にとってはそれは歪みでしかなく、生命は見えないままである。『ベイビー、目を閉じて』は、ハローの見える看護師、りんねの物語である。'] },
+    { sel: '.page-volume3 .chapter-body', ja: [
+      'Vermillion Zyu Hung — Vにおけるデザイナー・ファッションハウス。フランスの心と、香港の心。',
+      'Vermillion Zyu Hungは1920年代に創業したファッションと美容のハウスで、近年フランス人デザイナーのガブリエル・フランソワと香港出身のエンジェル・ウィングシーによって再始動した。二人は女性に対する家庭内暴力への意識向上に共感して結ばれ、収益の一部は生存者を支援する団体へ寄せられる。綿とマイカ顔料を、米国の防衛契約を持つサプライヤー — 核兵器計画に関わる企業を含む — から調達していることについて、ブランドは厳しく問われている。'
+    ] },
+    { sel: '.page-volume4 .chapter-body', ja: ['Pierrot — それ自体がひとつの章である。'] },
+    // artwork medium lines (artwork titles stay)
+    { sel: '.page-volume1 .art-info p', ja: ['デジタルアート · 2026'] },
+    { sel: '.page-volume2 .art-info p', ja: ['デジタルアート · 2026', 'デジタルアート · 2026', 'デジタルアート · 2026', 'デジタルアート · 2025'] },
+    { sel: '.page-volume3 .art-info p', ja: ['デジタルアート · 2026', 'デジタルアート · 2026', 'キャンバスにアクリル · 2026', 'アメリカ人アーティスト、ドレイク・スミスがヴェルミリオンのために描いた。', 'デジタルアート · 2026', 'デジタルアート · 2026', 'デジタルアート · 2026', 'デジタルアート · 2026'] },
+    { sel: '.page-volume4 .art-info p', ja: ['デジタルアート · 2023', 'デジタルアート · 2023', 'デジタルアート · 2023'] },
+    // breakdown sections
+    { sel: '.page-volume1 .breakdown-label', ja: ['解説'] },
+    { sel: '.page-volume1 .breakdown-title', ja: ['歪みの概要'] },
+    { sel: '.page-volume1 .breakdown-date', ja: ['1800年代', '1960年代', '2000年代'] },
+    { sel: '.page-volume1 .breakdown-text', ja: ['最初の歪みが九龍で始まる。', 'Breakingが大規模な消去を始める。', '丹碧のメディア報道が始まる。'] },
+    { sel: '.page-volume1 .breakdown-note', ja: ['歪みは九龍半島で始まった。天の川銀河の初期質量関数（IMF）から得た係数0.3で、その不規則な人口を割ると、約43.00という近似値が得られる。その意味はまだ理解されていないが、重大な数である。それが、まだ起こっていない歪みの数と関係しているのではないかと推測する者もいる。'] },
+    { sel: '.page-volume2 .breakdown-label', ja: ['解説'] },
+    { sel: '.page-volume2 .breakdown-title', ja: ['丹碧の科学的解説'] },
+    { sel: '.page-volume3 .breakdown-title', ja: ['ヴェルミリオンのフィルム'] },
+    // wiki articles
+    { sel: '.page-kowloon .wiki-body', ja: [
+      '歪みは九龍半島で始まった。天の川銀河の初期質量関数（IMF）から得た係数0.3で、その不規則な人口を割ると、約43.00という近似値が得られる。その意味はまだ理解されていないが、重大な数である。',
+      '最初の歪みは、1800年代に九龍で始まる。<i>People of Kowloon</i>は、そこを舞台にした作品である。',
+      'それが、まだ起こっていない歪みの数と関係しているのではないかと推測する者もいる。',
+      '九龍は、<a class="wiki-link" href="volume1.html">プロローグ</a>のEvents年表の始まりである。'
+    ] },
+    { sel: '.page-kowloon .wiki-article h3', ja: ['最初の歪み', '43.00', 'Vの中で'] },
+    { sel: '.page-breaking .wiki-body', ja: [
+      'Breakingはマルウェアであり、ハードウェア全体に広がると、ストレージデバイスの中身をすべて吸い上げてから消去する。',
+      'このマルウェアが、インターネット全体のストレージをひとつに統合するクラウドストレージの起源であったという説もある。',
+      '1960年代のコンピューター軍拡競争のさなかに、中国政府が開発したとの噂がある。数十年間眠っていたといわれ、ウェブの普及とともに1990年代に再び現れ、ポルノサイトを狙い始めた。物理ストレージがますます時代遅れになっていく現代においても、その有効性は続いているが、噂は未確認のままである。',
+      'Breakingは、<a class="wiki-link" href="volume1.html">プロローグ</a>のEvents年表における1960年代の項目である。'
+    ] },
+    { sel: '.page-breaking .wiki-article h3', ja: ['Vの中で'] },
+    { sel: '.page-tanpeki .wiki-body', ja: [
+      '丹碧は、色の見え方を歪ませる知覚現象である。この言葉は、北海道の科学者たちが、身体のエネルギーの中心である丹田から「丹」を取って名付けた。特定の雌だけが、この歪みを通して生命力のスペクトルを読み取り、色の移り変わりとして物の生命を見ることができる。男性も丹碧の影響を受けるが、彼らにとってはそれは歪みでしかなく、生命は見えないままである。',
+      '生命力が人の頭の上に色のハローとして現れる知覚現象である。特定の女性にしか、これらのハローは見えない。',
+      '丹碧は、ベッドも場所も不足し、救急外来が圧倒的な数のホームレスの人々を抱えていた医療システムに到来した。ハローは、そのひっ迫を目に見えるものにした。',
+      'ハローの色分けはトリアージの区分にそのまま対応するため、世界は振り分けの言葉を発明する必要がなかった — 丹碧はそれを持って到来した。病院は、繰り返し訪れる同じ名前のリストをすでに持っていた。ハローはそのリストを身体の上に載せ、どの部屋でも見えるようにする。',
+      'その可視化が何をもたらすかは未解決である。ピンクのハローは優先を意味しうる — 最も悪化した者が最初に並ぶ — あるいは選別を意味しうる。治療成績の統計は、ベッドにいるグリーンの患者を有利にするからである。丹碧はシステムを分裂させかねない。目に見えるピンクに溺れる公立の救急外来と、静かにグリーンを選別する私立病棟。ホームレスの人のハローは慢性的な悪化であり、状態であって緊急事態ではない。必要性が否定できなくなるか、患者が目に見える「見込みなし」となり、回復するかもしれないピンクのハローにベッドが行くため、最後に回される。',
+      '特定の女性にしかハローは見えないため、病院はハローを読み取れる職員を置く必要がある。',
+      '丹碧は、まわりの人々の生命力を頭の上の色のハローとして見る看護師、りんねを描く<a class="wiki-link" href="volume2.html">第2巻 — ベイビー、目を閉じて</a>である。'
+    ] },
+    { sel: '.page-tanpeki .wiki-article h3', ja: ['ハロー', '病院', 'Vの中で'] },
+    { sel: '.page-tanpeki .wiki-list li', ja: ['<b>悪化</b> — ピンク', '<b>安定</b> — シアン', '<b>健康</b> — グリーン'] },
+    { sel: '.page-vermillion .wiki-body', ja: [
+      '<i>『VISION Magazine』1967年3月1日号より。</i>',
+      'Vermillion Zyu Hungは、1920年代に創業したファッションと美容のハウスで、女性のための仕立てのスカート、ジュエリー、メイクアップを手がけている。近年、フランス人デザイナーのガブリエル・フランソワと香港出身のエンジェル・ウィングシーによって再始動し、伝統の職人技を保ちながら、新しい世代のために生まれ変わった。',
+      '二人は、ヨーロッパとアジア各地で女性が直面する家庭内暴力への意識を高めるという共通の思いで結ばれた。ブランドの収益の一部は、生存者を支援する団体に寄付される。',
+      'ブランドは最近、一部の綿とマイカ顔料が、米国の防衛関連企業 — 核兵器計画に関わる企業を含む — とも契約を持つサプライヤーから調達されているとの報道を受け、厳しい目にさらされている。活動家たちは、倫理的価値観の上に築かれたブランドが、軍需経済から静かに利益を得ているのではないかと疑問を呈し、サプライチェーンのさらなる透明性を求めている。',
+      'Vermillion Zyu Hungは<a class="wiki-link" href="volume3.html">第3巻</a>である。'
+    ] },
+    { sel: '.page-vermillion .wiki-article h3', ja: ['Vの中で'] },
+    { sel: '.page-distortion .wiki-body', ja: [
+      'あるものが歪みとして認められるかどうかは、政府の分類規則によって決まる。歪みと認められるには、3つの条件のうち少なくとも2つが必要である。',
+      '記録された歪みの数は、<a class="wiki-link" href="v.html">Vのトップページ</a>に表示されている。'
+    ] },
+    { sel: '.page-distortion .wiki-article h3', ja: ['Vの中で'] },
+    { sel: '.page-distortion .wiki-list li', ja: ['確立された自然法則からの、文書に記録された逸脱。', '一か所にとどまらず、世界的に拡大する能力。', '放っておけば社会を不安定化させる可能性。'] }
   ];
 
   var TITLES = {

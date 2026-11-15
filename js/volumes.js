@@ -12,7 +12,7 @@
 // first, then the volume's page fades in on arrival.
 //
 // To add a volume, add one <figure class="volume-card"> inside
-// #volumeStage in v.html with its cover and data-title. To remove
+// #volumeStage in v.html with its cover, data-title and data-title-ja. To remove
 // one, delete its figure.
 (function () {
   var stage = document.getElementById('volumeStage');
@@ -24,9 +24,17 @@
   if (!stage || !row || !titleEl || !prevBtn || !nextBtn) return;
 
   var cards = Array.prototype.slice.call(stage.querySelectorAll('.volume-card')).map(function (el) {
-    return { el: el, img: el.querySelector('img'), title: el.getAttribute('data-title') || '' };
+    return { el: el, img: el.querySelector('img'), title: el.getAttribute('data-title') || '', titleJa: el.getAttribute('data-title-ja') || '' };
   });
 
+
+  // The orbit title follows the site language: data-title-ja when
+  // the page is in Japanese, data-title otherwise. lang.js sets
+  // documentElement.lang (and persists it), so the stored language
+  // is already in place when this script runs.
+  function currentTitle(card) {
+    return (document.documentElement.lang === 'ja' && card.titleJa) ? card.titleJa : card.title;
+  }
   var n = cards.length;
   var index = 0;            // card at the front (for the title)
   var wheel = 0;            // wheel rotation in degrees; one step = 360 / n
@@ -48,7 +56,7 @@
     if (!n) return;
     if (index >= n) index = 0;
     place();
-    titleEl.textContent = cards[index].title;
+    titleEl.textContent = currentTitle(cards[index]);
   }
 
   cards.forEach(function (card) {
@@ -108,7 +116,7 @@
 
     titleEl.classList.add('is-leaving');
     setTimeout(function () {
-      titleEl.textContent = cards[index].title;
+      titleEl.textContent = currentTitle(cards[index]);
       titleEl.classList.remove('is-leaving');
     }, 320);
 
@@ -184,6 +192,15 @@
     leaving = false;
     if (volumesEl) volumesEl.classList.remove('is-leaving');
   });
+
+  // Show the front card's title in the current language on load,
+  // and again whenever the JP/EN toggle flips the page language.
+  titleEl.textContent = currentTitle(cards[index]);
+  if (window.MutationObserver) {
+    new MutationObserver(function () {
+      titleEl.textContent = currentTitle(cards[index]);
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  }
 
   place();
 })();
