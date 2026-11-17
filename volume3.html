@@ -47,14 +47,9 @@
   .card .meta { margin-top: 6px; }
   .card .note { font-size: 13px; font-weight: 300; color: #555; line-height: 1.6; margin-top: 8px; }
   .price { font-size: 14px; margin-top: 10px; letter-spacing: .1em; }
-  .slider { position: relative; overflow: hidden; }
-  .slider .slides { display: flex; transition: transform .35s ease; }
-  .slider .slides img { flex: 0 0 100%; }
-  .dots { margin-top: 14px; }
-  .dots span { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #ccc; margin: 0 5px; cursor: pointer; }
-  .dots span.active { background: var(--ink); }
   .crest { width: 72px; height: auto; display: block; margin: 0 auto 18px; }
   .p-slider { position: relative; overflow: hidden; }
+  .p-media { position: relative; }
   .p-slides { display: flex; transition: transform .35s ease; }
   .p-slide { flex: 0 0 100%; aspect-ratio: var(--ar); }
   .p-slide img { width: 100%; height: 100%; display: block; object-fit: cover; }
@@ -216,21 +211,25 @@
     </div>
 
     <div class="card">
-      <img src="https://evanatelier.com/assets/images/VermillionBomb.jpg?v=6" alt="Trinity">
+      <div class="p-media">
+        <img src="https://evanatelier.com/assets/images/VermillionBomb.jpg?v=6" alt="Trinity">
+        <button type="button" class="p-zoom" aria-label="Show work info"><span>+</span></button>
+      </div>
+      <div class="p-info"><div class="p-info-inner">
+        <div class="meta">Digital art &middot; 2026</div>
+      </div></div>
       <h3>Trinity</h3>
-      <div class="meta">Digital art &middot; 2026</div>
     </div>
 
     <div class="card">
-      <div class="slider" id="appleSlider">
-        <div class="slides" id="appleSlides">
-          <img src="https://evanatelier.com/assets/images/VermillionApple.jpg?v=2" alt="Apple">
-          <img src="https://evanatelier.com/assets/images/VermillionAppleBoy.jpg" alt="Apple and the boy">
-        </div>
+      <div class="p-media">
+        <img src="https://evanatelier.com/assets/images/VermillionApple.jpg?v=2" alt="Apple">
+        <button type="button" class="p-zoom" aria-label="Show work info"><span>+</span></button>
       </div>
-      <div class="dots" id="appleDots"><span class="active"></span><span></span></div>
-      <h3 id="appleTitle">Apple</h3>
-      <div class="meta">Digital art &middot; 2026 &middot; Two editions</div>
+      <div class="p-info"><div class="p-info-inner">
+        <div class="meta">Digital art &middot; 2026</div>
+      </div></div>
+      <h3>Apple</h3>
     </div>
 
   </div>
@@ -340,25 +339,8 @@
 
 <script>
 (function(){
-  var slides = document.getElementById('appleSlides');
-  var dots = document.querySelectorAll('#appleDots span');
-  var title = document.getElementById('appleTitle');
-  var titles = ['Apple', 'Apple and the boy'];
-  dots.forEach(function(dot, i){
-    dot.addEventListener('click', function(){
-      slides.style.transform = 'translateX(-' + (i * 100) + '%)';
-      dots.forEach(function(d){ d.classList.remove('active'); });
-      dot.classList.add('active');
-      title.textContent = titles[i];
-    });
-  });
-})();
-</script>
-
-<script>
-(function(){
   // Generic product sliders: arrows + dots + swipe. Scoped to .p-slider only;
-  // the Apple slider above keeps its own behaviour.
+  // single-image cards get their info toggle from the loop below.
   document.querySelectorAll('.p-slider').forEach(function(slider){
     var track = slider.querySelector('.p-slides');
     var slides = track.children.length;
@@ -400,6 +382,28 @@
     slider.addEventListener('click', function(){ if (!moved){ toggleInfo(); } moved = false; });
     zoom.addEventListener('click', function(e){ e.stopPropagation(); toggleInfo(); });
     go(0);
+  });
+
+  // Info panels on single-image cards (Trinity, Apple): same tap-to-reveal
+  // behaviour as the slider cards — tap the image or the + button.
+  document.querySelectorAll('.card').forEach(function(card){
+    if (card.querySelector('.p-slider')) return;
+    var info = card.querySelector('.p-info');
+    var zoom = card.querySelector('.p-zoom');
+    var media = card.querySelector('.p-media');
+    if (!info || !zoom || !media) return;
+    function toggleInfo(){
+      var open = info.classList.toggle('open');
+      zoom.classList.toggle('open', open);
+      zoom.setAttribute('aria-label', open ? 'Hide work info' : 'Show work info');
+    }
+    var moved = false, tX = 0, tY = 0;
+    media.addEventListener('touchstart', function(e){ moved = false; tX = e.touches[0].clientX; tY = e.touches[0].clientY; }, { passive: true });
+    media.addEventListener('touchmove', function(e){
+      if (Math.abs(e.touches[0].clientX - tX) > 10 || Math.abs(e.touches[0].clientY - tY) > 10){ moved = true; }
+    }, { passive: true });
+    media.addEventListener('click', function(){ if (!moved){ toggleInfo(); } moved = false; });
+    zoom.addEventListener('click', function(e){ e.stopPropagation(); toggleInfo(); });
   });
 
   // Save (star) toggle on the Cinnabar buy bar.
