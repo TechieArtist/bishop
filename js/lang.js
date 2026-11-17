@@ -80,8 +80,6 @@
     { sel: '.page-v .volumes-signup-line', ja: ['新しい巻を、メールで。'] },
     // volume/wiki page labels, tags, titles (names stay, words translate)
     { sel: '.page-volume1 .commentary-label-text', ja: [' · プロローグ'] },
-    { sel: '.page-volume2 .commentary-label-text', ja: [' · 第2巻'] },
-    { sel: '.page-volume3 .commentary-label-text', ja: [' · 第3巻'] },
     { sel: '.page-volume4 .commentary-label-text', ja: [' · 第4巻'] },
     { sel: '.page-books .commentary-label-text', ja: [' · 書籍'] },
     { sel: '.page-shop .commentary-label-text', ja: [' · ショップ'] },
@@ -91,8 +89,6 @@
     { sel: '.page-vermillion .commentary-label-text', ja: [' · システム'] },
     { sel: '.page-distortion .commentary-label-text', ja: [' · システム'] },
     { sel: '.page-volume1 .chapter-tag', ja: ['プロローグ'] },
-    { sel: '.page-volume2 .chapter-tag', ja: ['第2巻'] },
-    { sel: '.page-volume3 .chapter-tag', ja: ['第3巻'] },
     { sel: '.page-volume4 .chapter-tag', ja: ['第4巻'] },
     { sel: '.page-books .chapter-tag', ja: ['書籍'] },
     { sel: '.page-shop .chapter-tag', ja: ['ショップ'] },
@@ -102,24 +98,15 @@
     { sel: '.page-vermillion .chapter-tag', ja: ['システム'] },
     { sel: '.page-distortion .chapter-tag', ja: ['システム'] },
     { sel: '.page-volume1 .chapter-title', ja: ['プロローグ'] },
-    { sel: '.page-volume2 .chapter-title', ja: ['丹碧 — ベイビー、目を閉じて'] },
-    { sel: '.page-volume3 .chapter-title', ja: ['Vermillion Zyu Hung（朱紅）'] },
     { sel: '.page-books .chapter-title', ja: ['書籍'] },
     { sel: '.page-shop .chapter-title', ja: ['ショップ'] },
     { sel: '.page-kowloon .chapter-title', ja: ['九龍'] },
     { sel: '.page-distortion .chapter-title', ja: ['歪み'] },
     // volume intros (Pierrot / Breaking / Tanpeki / Vermillion titles stay as-is)
     { sel: '.page-volume1 .chapter-body', ja: ['世界は現実に忠実であるはずだった。どこかで、歪みが現れた。'] },
-    { sel: '.page-volume2 .chapter-body', ja: ['丹碧とは、生命力が人の頭の上に色のハローとして現れる知覚現象である。悪化はピンク、安定はシアン、健康はグリーン。ハローが見えるのは特定の女性だけであり、男性にとってはそれは歪みでしかなく、生命は見えないままである。『ベイビー、目を閉じて』は、ハローの見える看護師、りんねの物語である。'] },
-    { sel: '.page-volume3 .chapter-body', ja: [
-      'Vermillion Zyu Hung — Vにおけるデザイナー・ファッションハウス。フランスの心と、香港の心。',
-      'Vermillion Zyu Hungは1920年代に創業したファッションと美容のハウスで、近年フランス人デザイナーのガブリエル・フランソワと香港出身のエンジェル・ウィングシーによって再始動した。二人は女性に対する家庭内暴力への意識向上に共感して結ばれ、収益の一部は生存者を支援する団体へ寄せられる。綿とマイカ顔料を、米国の防衛契約を持つサプライヤー — 核兵器計画に関わる企業を含む — から調達していることについて、ブランドは厳しく問われている。'
-    ] },
     { sel: '.page-volume4 .chapter-body', ja: ['Pierrot — それ自体がひとつの章である。'] },
     // artwork medium lines (artwork titles stay)
     { sel: '.page-volume1 .art-info p', ja: ['デジタルアート · 2026'] },
-    { sel: '.page-volume2 .art-info p', ja: ['デジタルアート · 2026', 'デジタルアート · 2026', 'デジタルアート · 2026', 'デジタルアート · 2025'] },
-    { sel: '.page-volume3 .art-info p', ja: ['デジタルアート · 2026', 'デジタルアート · 2026', 'キャンバスにアクリル · 2026', 'アメリカ人アーティスト、ドレイク・スミスがヴェルミリオンのために描いた。', 'デジタルアート · 2026', 'デジタルアート · 2026', 'デジタルアート · 2026', 'デジタルアート · 2026'] },
     { sel: '.page-volume4 .art-info p', ja: ['デジタルアート · 2023', 'デジタルアート · 2023', 'デジタルアート · 2023'] },
     // breakdown sections
     { sel: '.page-volume1 .breakdown-label', ja: ['解説'] },
@@ -127,9 +114,6 @@
     { sel: '.page-volume1 .breakdown-date', ja: ['1800年代', '1960年代', '2000年代'] },
     { sel: '.page-volume1 .breakdown-text', ja: ['最初の歪みが九龍で始まる。', 'Breakingが大規模な消去を始める。', '丹碧のメディア報道が始まる。'] },
     { sel: '.page-volume1 .breakdown-note', ja: ['歪みは九龍半島で始まった。天の川銀河の初期質量関数（IMF）から得た係数0.3で、その不規則な人口を割ると、約43.00という近似値が得られる。その意味はまだ理解されていないが、重大な数である。それが、まだ起こっていない歪みの数と関係しているのではないかと推測する者もいる。'] },
-    { sel: '.page-volume2 .breakdown-label', ja: ['解説'] },
-    { sel: '.page-volume2 .breakdown-title', ja: ['丹碧の科学的解説'] },
-    { sel: '.page-volume3 .breakdown-title', ja: ['ヴェルミリオンのフィルム'] },
     // wiki articles
     { sel: '.page-kowloon .wiki-body', ja: [
       '歪みは九龍半島で始まった。天の川銀河の初期質量関数（IMF）から得た係数0.3で、その不規則な人口を割ると、約43.00という近似値が得られる。その意味はまだ理解されていないが、重大な数である。',
@@ -169,7 +153,88 @@
       '記録された歪みの数は、<a class="wiki-link" href="v.html">Vのトップページ</a>に表示されている。'
     ] },
     { sel: '.page-distortion .wiki-article h3', ja: ['Vの中で'] },
-    { sel: '.page-distortion .wiki-list li', ja: ['確立された自然法則からの、文書に記録された逸脱。', '一か所にとどまらず、世界的に拡大する能力。', '放っておけば社会を不安定化させる可能性。'] }
+    { sel: '.page-distortion .wiki-list li', ja: ['確立された自然法則からの、文書に記録された逸脱。', '一か所にとどまらず、世界的に拡大する能力。', '放っておけば社会を不安定化させる可能性。'] },
+
+    // ----- storefront (volume3.html) -----
+    { sel: '.storefront .utility .vol', ja: ['第3巻'] },
+    { sel: '.storefront .masthead .sub', ja: ['Vにおけるデザイナー・ファッションハウス · フランスの心と、香港の心'] },
+    { sel: '.storefront .masthead .fiction', ja: ['Vermillion Zyu Hungは、Vにおける架空のハウスである。'] },
+    { sel: '.storefront .hero .eyebrow', ja: ['2026年春夏 · ウィメンズウェア'] },
+    { sel: '.storefront .house h2', ja: ['ハウスについて'] },
+    { sel: '.storefront .house p', ja: ['Vermillion Zyu Hungは1920年代に創業したファッションと美容のハウスで、近年フランス人デザイナーのガブリエル・フランソワと香港出身のエンジェル・ウィングシーによって再始動した。二人は女性に対する家庭内暴力への意識向上に共感して結ばれ、収益の一部は生存者を支援する団体へ寄せられる。綿とマイカ顔料を、米国の防衛契約を持つサプライヤー — 核兵器計画に関わる企業を含む — から調達していることについて、ブランドは厳しく問われている。'] },
+    { sel: '.storefront .collection h2', ja: ['コレクション'] },
+    { sel: '.storefront .collection .count', ja: ['4作品'] },
+    { sel: '.storefront .p-info-inner .meta', ja: ['デジタルアート · 2026', 'キャンバスにアクリル · 2026', 'デジタルアート · 2026', 'デジタルアート · 2026'] },
+    { sel: '.storefront .p-info-inner .note', ja: ['アメリカ人アーティスト、カート・ハートフィールドがヴェルミリオンのために描いた。'] },
+    { sel: '.storefront .p-buy-main', ja: ['クリック＆コレクト'] },
+    { sel: '.storefront .sketch h2', ja: ['スケッチ'] },
+    { sel: '.storefront .s-slide .meta', ja: ['ガブリエル・フランソワ · 2026年春夏 · ウィメンズウェア', 'ガブリエル・フランソワ · 2026年春夏 · ウィメンズウェア'] },
+    { sel: '.storefront .art-eyebrow', ja: ['Vision Magazine · 1967年3月1日'] },
+    { sel: '.storefront .art-headline', ja: ['Vermillion Zyu Hung：1920年代のハウスの再始動'] },
+    { sel: '.storefront .art-deck', ja: ['近年フランス人デザイナーのガブリエル・フランソワと香港出身のエンジェル・ウィングシーによって再始動したファッションと美容のハウスは、人道的な大義と、厳しく問われるサプライチェーンを併せ持つ。'] },
+    { sel: '.storefront .art-body p', ja: [
+      'Vermillion Zyu Hungは1920年代に創業したファッションと美容のハウスで、近年フランス人デザイナーのガブリエル・フランソワと香港出身のエンジェル・ウィングシーによって再始動した。',
+      '二人は女性に対する家庭内暴力への意識向上に共感して結ばれ、収益の一部は生存者を支援する団体へ寄せられる。',
+      '今季のコレクションには、Aureate Maja skirt、Cinnabarのフレグランス、そしてアメリカ人アーティスト、カート・ハートフィールドがハウスのために描いたRobberyが含まれる。'
+    ] },
+    { sel: '.storefront .art-pull', ja: ['綿とマイカ顔料を、米国の防衛契約を持つサプライヤー — 核兵器計画に関わる企業を含む — から調達していることについて、ブランドは厳しく問われている。'] },
+    { sel: '.storefront .art-foot', ja: ['Vision Magazine · 1967年3月1日'] },
+    { sel: '.storefront .film .eyebrow', ja: ['ヴェルミリオン · スペシャル'] },
+    { sel: '.storefront .film h2', ja: ['ヴェルミリオンのフィルム'] },
+    { sel: '.storefront .services h4', ja: ['お問い合わせ', 'Vの世界', '新しい巻を、メールで。'] },
+    { sel: '.storefront .services p a', ja: [null, 'Vに戻る', '購読する'] },
+    { sel: '.storefront footer', ja: ['© 2026 Evan Butler · ニューヨーク、ブルックリン<br>Vermillion Zyu Hung — V 第3巻'] },
+
+    // ----- research dossier (volume2.html) -----
+    { sel: '.research .topbar a', ja: ['V · 第2巻'] },
+    { sel: '.research .topbar span', ja: ['研究ノートと図版'] },
+    { sel: '.research .subtitle', ja: ['<span class="jp">丹碧</span> &nbsp;·&nbsp; 対立色空間における錐体順応'] },
+    { sel: '.research .epigraph', ja: ['“知覚は牢獄である。”'] },
+    { sel: '.research .epigraph-attr', ja: ['丹碧と題されたノート、2023年8月'] },
+    { sel: '.research .seclabel', ja: [
+      '<b>概要</b>',
+      '<b>ハロー</b> — 読み方',
+      '<b>01</b> · 錐体順応',
+      '<b>02</b> · 対立色の基盤',
+      '<b>03</b> · 残像',
+      '<b>04</b> · 解説',
+      '<b>05</b> · ノート、2023年8月',
+      '<b>参考文献</b>'
+    ] },
+    { sel: '.research .abstract p', ja: ['丹碧とは、生命力が人の頭の上に色のハローとして現れる知覚現象である。悪化はピンク、安定はシアン、健康はグリーン。ハローが見えるのは特定の女性だけであり、男性にとってはそれは歪みでしかなく、生命は見えないままである。『ベイビー、目を閉じて』は、ハローの見える看護師、りんねの物語である。'] },
+    { sel: '.research .basis', ja: ['研究基盤 — ヒトの色覚：対立処理 · 錐体順応 · 残像'] },
+    { sel: '.research .halokey .cname', ja: ['ピンク', 'シアン', 'グリーン'] },
+    { sel: '.research .halokey .state', ja: ['— 悪化', '— 安定', '— 健康'] },
+    { sel: '.research .intro', ja: [
+      'プロットは、錐体が疲労するにつれて、中心窩が順応している状態に対して、ニュートラルグレーが今どのように見えるかを追跡する。色順応の古典的な説明はフォン・クリースである <a href="#ref2">[2]</a>。',
+      'プロットの軸は、色空間の基底方向であり <a href="#ref6">[6]</a>、外側膝状体で測定されたものである <a href="#ref7">[7]</a> — マクラウド–ボイントン色度図に基づく <a href="#ref5">[5]</a>。対立色の説明はヘリングに始まり <a href="#ref1">[1]</a>、その定量的な形がハーヴィッチとジェイムソンである <a href="#ref4">[4]</a>。',
+      '2023年のノートには、受容体が疲労するにつれて、明るい黄色の面がシアンとマゼンタへと移っていくことが記録されている。'
+    ] },
+    { sel: '.research figcaption', ja: [
+      '<b>図1</b> — 対立色空間における錐体順応。t = 0.1 s、フレーム1/5、look 1/2。左：対立空間における位置 — green ← L−M → red、yellow ← S−(L+M)/2 → violet-blue、明るさ。右：画面上 / 見えるもの、および中心窩における錐体疲労。',
+      '<b>図2</b> — t = 1.2 sにおける同じ空間、フレーム1/5、look 1/2。画面上 / 見えるもの。中心窩における錐体疲労（L、M、S）。',
+      '<b>図3</b> — 対立色：波長に対する応答、400–700 nm。図表：CBlackwell、2012年。',
+      '<b>図4</b> — CIE標準観測者、1931年xyz等色関数 <a href="#ref3">[3]</a>。図：Roger N. Clark、clarkvision.com。',
+      '<b>図5</b> — 5フレーム。列：原画像、着地時の見え、フレーム終了時の見え、グレー上の残像。',
+      '<b>図6</b> — 赤、緑、青のチャンネル分布。',
+      '<b>映像</b> — 丹碧の科学的解説。'
+    ] },
+    { sel: '.research .reading', ja: [
+      '<span class="rl">解釈</span>目が報告するものは、決して光そのものではない。それは、目がすでに順応している状態を通して濾過された光であり — 丹碧はその隔たりの中に生きている。0.1秒の時点では、ハローはまだ世界から分離していない。目はまだ画面を見ており、自分自身を見ているのではない。',
+      '<span class="rl">解釈</span>図1と図2の間で、画面上のものは何も変わっていない。変わったのは目であり — 絵もそれとともに変わった。',
+      '<span class="rl">解釈</span>目は決して波長を報告しない。報告するのは差異である — 緑に対する赤、紫に対する黄 — そしてハローは、可視化された差異である。ピンクとグリーンは対立する状態である。悪化と健康が、ひとつのチャンネルの両端として。',
+      '<span class="rl">解釈</span>これは平均的な目を地図化したものである。知覚者は同じ色を見る — そしてもうひとつ、平均的な目が決して読み取らない状態を。丹碧とは、平均的な目が見逃すものである。',
+      '<span class="rl">解釈1</span>残像とは、目が自分自身の疲労を見ているものである。ハローも同じように働く。生命力は現実のものであるが、その色は知覚者の目が翻訳したものである。',
+      '<span class="rl">解釈2</span>残像とは、その背後に光のない色である。ハローはその逆である。ほとんどの目には捉えられない光を、知覚者の目には捉えることができる。'
+    ] },
+    { sel: '.research .notes p', ja: [
+      '“片頭痛を描くこと、熱に浮かされた夢を地図化すること。”',
+      '“せん妄の軸が十字に折れて、無限の色へ。”',
+      '“RGB空間におけるベクトルとしての色が、自身へとループして戻る。”',
+      '“混ざり合っても同じ色のままでいられる2色 — 無限の色。”'
+    ] },
+    { sel: '.research .notes-attr', ja: ['丹碧と題された手書きのノート。TanpekiはAdobe Illustratorで、組み合わせたベクトルシェイプから作られ、ソフトウェアがクラッシュするまで続けられた。ファイルはProcreateにアップロードするために縮小され、そこでCurvesとHue/Saturationが色覚の実験を担った。'] },
+    { sel: '.research footer', ja: ['Tanpeki · 第2巻 · V — 歪んだ世界<br>図版：Evan Butler（クレジットのあるものを除く）。'] }
   ];
 
   var TITLES = {
@@ -212,7 +277,7 @@
   style.textContent =
     '.lang-toggle{margin-left:auto;margin-right:18px;background:none;border:none;color:#fff;font:inherit;font-size:1em;font-weight:500;letter-spacing:1px;cursor:pointer;padding:6px 4px;transition:opacity .3s}' +
     '.lang-toggle:hover{opacity:.7}' +
-    'html[lang="ja"] :not(i){font-family:"Poppins","Noto Sans JP",sans-serif}' +
+    'html[lang="ja"] body:not(.storefront):not(.research) :not(i){font-family:"Poppins","Noto Sans JP",sans-serif}' +
     'html[lang="ja"] .chapter-title{font-family:"Hahmlet","Noto Serif JP",serif}' +
     'html[lang="ja"] p{line-break:strict}';
   document.head.appendChild(style);

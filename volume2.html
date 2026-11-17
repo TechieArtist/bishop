@@ -9,30 +9,31 @@
 <style>
   :root { --bg: #0b0b0b; --panel: #111; --ink: #e6e6e6; --muted: #9a9a9a; --faint: #6a6a6a; --line: #2a2a2a; --red: #d43d2a; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Archivo', sans-serif; font-weight: 300; color: var(--ink); background: var(--bg); }
-  .mono { font-family: 'IBM Plex Mono', monospace; }
+  body { font-family: 'Archivo', 'Noto Sans JP', sans-serif; font-weight: 300; color: var(--ink); background: var(--bg); }
+  .mono { font-family: 'IBM Plex Mono', 'Noto Sans JP', monospace; }
   .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
 
-  .topbar { display: flex; justify-content: space-between; gap: 16px; padding: 18px 20px; border-bottom: 1px solid var(--line); font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .22em; color: var(--muted); text-transform: uppercase; }
+  .topbar { display: flex; justify-content: space-between; gap: 16px; padding: 18px 20px; border-bottom: 1px solid var(--line); font-family: 'IBM Plex Mono', 'Noto Sans JP', monospace; font-size: 11px; letter-spacing: .22em; color: var(--muted); text-transform: uppercase; }
   .topbar a { color: inherit; text-decoration: none; }
+  .topbar .lang-toggle { margin-left: 16px; margin-right: 0; }
 
   .titleblock { padding: 64px 0 8px; }
   h1 { font-weight: 600; font-size: clamp(52px, 14vw, 96px); letter-spacing: .1em; line-height: 1; }
   .rule-red { width: 64px; height: 2px; background: var(--red); margin: 26px 0 20px; }
-  .subtitle { font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: .14em; color: var(--muted); }
+  .subtitle { font-family: 'IBM Plex Mono', 'Noto Sans JP', monospace; font-size: 14px; letter-spacing: .14em; color: var(--muted); }
   .subtitle .jp { color: var(--ink); font-size: 17px; letter-spacing: .2em; }
 
   .epigraph { margin: 52px 0 6px; font-size: 23px; font-style: italic; color: #c9c9c9; line-height: 1.5; }
-  .epigraph-attr { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .18em; color: var(--faint); text-transform: uppercase; }
+  .epigraph-attr { font-family: 'IBM Plex Mono', 'Noto Sans JP', monospace; font-size: 11px; letter-spacing: .18em; color: var(--faint); text-transform: uppercase; }
 
-  .seclabel { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .24em; color: var(--muted); text-transform: uppercase; border-top: 1px solid var(--line); padding-top: 14px; margin: 68px 0 26px; }
+  .seclabel { font-family: 'IBM Plex Mono', 'Noto Sans JP', monospace; font-size: 11px; letter-spacing: .24em; color: var(--muted); text-transform: uppercase; border-top: 1px solid var(--line); padding-top: 14px; margin: 68px 0 26px; }
   .seclabel b { color: var(--ink); font-weight: 500; }
 
   .abstract p { font-size: 17px; line-height: 1.8; max-width: 680px; }
-  .basis { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .18em; color: var(--faint); text-transform: uppercase; margin-top: 22px; line-height: 1.9; }
+  .basis { font-family: 'IBM Plex Mono', 'Noto Sans JP', monospace; font-size: 11px; letter-spacing: .18em; color: var(--faint); text-transform: uppercase; margin-top: 22px; line-height: 1.9; }
 
   .halokey { display: flex; flex-wrap: wrap; gap: 14px 36px; }
-  .halokey .key { display: flex; align-items: center; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .14em; }
+  .halokey .key { display: flex; align-items: center; gap: 12px; font-family: 'IBM Plex Mono', 'Noto Sans JP', monospace; font-size: 13px; letter-spacing: .14em; }
   .halokey .dot { width: 18px; height: 18px; border-radius: 50%; flex: none; }
   .halokey .state { color: var(--muted); }
 
@@ -44,24 +45,24 @@
   figure video { display: block; width: 100%; height: auto; background: #000; }
   .fig-narrow { max-width: 620px; margin-left: auto; margin-right: auto; }
   .fig-plate { border: 1px solid var(--line); }
-  figcaption { font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 1.75; color: var(--muted); margin-top: 14px; }
+  figcaption { font-family: 'IBM Plex Mono', 'Noto Sans JP', monospace; font-size: 12px; line-height: 1.75; color: var(--muted); margin-top: 14px; }
   figcaption b { color: var(--ink); font-weight: 500; }
 
   .notes p { font-size: 20px; font-style: italic; line-height: 1.6; color: #c9c9c9; margin: 0 0 22px; max-width: 640px; }
   .notes-attr { font-size: 15px; line-height: 1.8; color: var(--muted); max-width: 680px; margin-top: 30px; }
 
-  .refs { list-style: none; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; line-height: 1.85; color: #bdbdbd; }
+  .refs { list-style: none; font-family: 'IBM Plex Mono', 'Noto Sans JP', monospace; font-size: 12.5px; line-height: 1.85; color: #bdbdbd; }
   .refs li { padding-left: 2.4em; text-indent: -2.4em; margin-bottom: 14px; }
   .refs .n { color: var(--faint); }
 
-  footer { border-top: 1px solid var(--line); margin-top: 76px; padding: 26px 0 44px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .18em; color: var(--faint); text-transform: uppercase; line-height: 2; }
+  footer { border-top: 1px solid var(--line); margin-top: 76px; padding: 26px 0 44px; font-family: 'IBM Plex Mono', 'Noto Sans JP', monospace; font-size: 11px; letter-spacing: .18em; color: var(--faint); text-transform: uppercase; line-height: 2; }
   .reading { margin-top: 18px; padding-left: 16px; border-left: 2px solid #3a3a3a; font-size: 15.5px; line-height: 1.75; color: #d6d6d6; font-style: italic; }
-  .reading .rl { display: block; font-family: 'IBM Plex Mono', monospace; font-style: normal; font-size: 10.5px; letter-spacing: .22em; color: var(--faint); text-transform: uppercase; margin-bottom: 8px; }
+  .reading .rl { display: block; font-family: 'IBM Plex Mono', 'Noto Sans JP', monospace; font-style: normal; font-size: 10.5px; letter-spacing: .22em; color: var(--faint); text-transform: uppercase; margin-bottom: 8px; }
 </style>
 </head>
-<body>
+<body class="research">
 
-<div class="topbar"><a href="v.html">V · Volume 2</a><span>Research notes and figures</span></div>
+<header class="topbar"><a href="v.html">V · Volume 2</a><span class="brand">Research notes and figures</span></header>
 
 <div class="wrap">
 
@@ -82,9 +83,9 @@
 
   <div class="seclabel"><b>The halo</b> — reading</div>
   <div class="halokey">
-    <div class="key"><span class="dot" style="background:#ff5da2"></span>PINK <span class="state">— DETERIORATING</span></div>
-    <div class="key"><span class="dot" style="background:#4fd6ff"></span>CYAN <span class="state">— STABLE</span></div>
-    <div class="key"><span class="dot" style="background:#52d273"></span>GREEN <span class="state">— HEALTHY</span></div>
+    <div class="key"><span class="dot" style="background:#ff5da2"></span><span class="cname">PINK</span> <span class="state">— DETERIORATING</span></div>
+    <div class="key"><span class="dot" style="background:#4fd6ff"></span><span class="cname">CYAN</span> <span class="state">— STABLE</span></div>
+    <div class="key"><span class="dot" style="background:#52d273"></span><span class="cname">GREEN</span> <span class="state">— HEALTHY</span></div>
   </div>
 
   <div class="seclabel"><b>01</b> · Cone adaptation</div>
@@ -162,6 +163,7 @@
 
 </div>
 
+<script src="js/lang.js"></script>
 <!-- Kit sticky bar: V Volumes Announcements -->
 <script async data-uid="3893e690ee" src="https://v-71.kit.com/3893e690ee/index.js"></script>
 </body>
