@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 <link rel="stylesheet" href="css/menu.css">
 <link rel="stylesheet" href="css/volume.css?v=13">
-<link rel="stylesheet" href="css/books.css?v=1">
+<link rel="stylesheet" href="css/books.css?v=2">
 </head>
 
 <body class="volume-page page-books">
@@ -65,6 +65,9 @@
       <p><a class="story-link" href="baby-close-your-eyes-ja.html">物語を読む &rarr;</a></p>
     </div>
   </section>
+
+  <p class="shop-link" id="shopLinkEn"><a class="story-link" href="shop.html">Shop &rarr;</a></p>
+  <p class="shop-link" id="shopLinkJa" hidden><a class="story-link" href="shop.html">ショップ &rarr;</a></p>
 </div>
 
 <footer class="site-footer">
@@ -119,16 +122,20 @@ document.querySelectorAll('a[href]').forEach(link => {
 <script src="js/lang.js?v=5"></script>
 <script src="js/menu.js"></script>
 <script>
-// The story follows the site's language: lang.js records the
+// The story and shop link follow the site's language: lang.js records the
 // JP/EN toggle on <html lang>. Show the matching text on load
 // and whenever the toggle changes.
 (function () {
   var en = document.getElementById('storyEn');
   var ja = document.getElementById('storyJa');
+  var shopEn = document.getElementById('shopLinkEn');
+  var shopJa = document.getElementById('shopLinkJa');
   function show(lang) {
     var isJa = lang === 'ja';
     if (en) en.hidden = isJa;
     if (ja) ja.hidden = !isJa;
+    if (shopEn) shopEn.hidden = isJa;
+    if (shopJa) shopJa.hidden = !isJa;
   }
   show(document.documentElement.lang || 'en');
   if (window.MutationObserver) {

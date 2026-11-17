@@ -323,10 +323,10 @@ body{
   }
 }
 
-/* ----- Books bar ----- */
-/* A bordered strip under the volume title, opening the Books
-   section. Inverts on hover like the orbit arrows. */
-.books-bar{
+/* ----- Books / Shop bars ----- */
+/* Bordered strips under the volume title, opening the Books
+   and Shop sections. Invert on hover like the orbit arrows. */
+.books-bar,.shop-bar{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -343,23 +343,28 @@ body{
   transition: background .2s ease, color .2s ease, border-color .2s ease;
 }
 
-.books-bar:hover{
+.books-bar:hover,.shop-bar:hover{
   background: var(--v-arrow-hover-bg);
   color: var(--v-arrow-hover-fg);
   border-color: transparent;
 }
 
-.books-bar:focus-visible{
+.books-bar:focus-visible,.shop-bar:focus-visible{
   outline: 2px solid var(--v-fg);
   outline-offset: 3px;
 }
 
-.books-bar-arrow{
+.books-bar-arrow,.shop-bar-arrow{
   transition: transform .2s ease;
 }
 
-.books-bar:hover .books-bar-arrow{
+.books-bar:hover .books-bar-arrow,.shop-bar:hover .shop-bar-arrow{
   transform: translateX(4px);
+}
+
+/* The Shop strip sits directly under Books: tighter gap. */
+.shop-bar{
+  margin-top: 12px;
 }
 
 /* ----- What V is ----- */

@@ -1,0 +1,16 @@
+/* shop.css — Shop page. The entry text styles live in
+   volume.css (.story-*); this file only lays out the page
+   and the principle line. */
+
+.shop{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+}
+
+.shop-principle{
+    font-size: 1.15rem;
+    line-height: 1.7;
+    text-align: center;
+    margin: 0 0 48px;
+}

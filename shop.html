@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shop — Evan Butler. Holdable forms of V.">
+<title>Shop — Evan Butler</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="stylesheet" href="css/pricingstyle.css">
+<link rel="stylesheet" href="css/desktop.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/volume.css?v=13">
+<link rel="stylesheet" href="css/shop.css?v=1">
+</head>
+
+<body class="volume-page page-shop">
+<div class="page-transition" id="pageTransition"></div>
+
+<header>
+  <a href="index.html" class="brand">Distortion</a>
+  <div class="menu-btn"></div>
+  <div class="navigation">
+    <div class="navigation-items">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="exhibition.html">Exhibition</a>
+      <a href="v.html" class="active">V</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="commentary">
+  <p class="commentary-label"><a href="v.html" aria-label="Back to V"><picture class="label-mark"><source media="(prefers-color-scheme: dark)" srcset="assets/images/VMark-white.jpg"><img src="assets/images/VMark-black.jpg" alt="V"></picture></a><span class="commentary-label-text"> · Shop</span></p>
+  <p class="commentary-dash">—</p>
+
+  <p class="chapter-tag">SHOP</p>
+  <h2 class="chapter-title">Shop</h2>
+</section>
+
+<div class="shop">
+  <!-- THE SHOP — holdable forms of V. Reading on this site is
+       free; this page lists the printed objects. Follows the
+       site's language (JP/EN toggle in the header): English
+       while the site is in English, Japanese when the JP
+       toggle is on. -->
+  <div lang="en" id="shopEn">
+    <p class="shop-principle">Everything on this site is free to read. These are the holdable forms.</p>
+
+    <section class="story">
+      <p class="story-label">Anthology · In progress</p>
+      <h2 class="story-title">V Stories</h2>
+
+      <div class="story-summary">
+        <p>Baby, close your eyes (Vol. 2 · Tanpeki)</p>
+        <p>A new story (Vol. 3 · Vermillion) — in progress</p>
+        <p>Available when the second story is finished.</p>
+        <p><a class="story-link" href="v.html">Get notified when it&rsquo;s ready &rarr;</a></p>
+      </div>
+    </section>
+  </div>
+
+  <div lang="ja" id="shopJa" hidden>
+    <p class="shop-principle">サイトのすべては無料で読めます。これらは、手に持てる形です。</p>
+
+    <section class="story">
+      <p class="story-label">アンソロジー · 制作中</p>
+      <h2 class="story-title">V Stories</h2>
+
+      <div class="story-summary">
+        <p>ベイビー、目を閉じて（第2巻 · 丹碧）</p>
+        <p>新しい物語（第3巻 · Vermillion）— 制作中</p>
+        <p>二番目の物語が完成したら、販売します。</p>
+        <p><a class="story-link" href="v.html">完成したら知らせを受け取る &rarr;</a></p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>©2026 by Evan Butler.<br>New York, Brooklyn<br><a href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a></p>
+</footer>
+
+<footer>
+  <div class="media-icons">
+    <a href="https://www.facebook.com/evan.butler.9619"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/evan.t.butler/"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+
+<script type="text/javascript">
+  //Javacript for responsive navigation menu
+  const menuBtn = document.querySelector(".menu-btn");
+  const navigation = document.querySelector(".navigation");
+
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+  });
+</script>
+
+<script>
+const pageTransition = document.getElementById('pageTransition');
+
+window.addEventListener('DOMContentLoaded', () => {
+  requestAnimationFrame(() => {
+    pageTransition.classList.add('fade-in');
+  });
+});
+
+document.querySelectorAll('a[href]').forEach(link => {
+  const href = link.getAttribute('href');
+  const isInternal = href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:');
+
+  if (isInternal){
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      pageTransition.classList.remove('fade-in');
+      pageTransition.classList.add('fade-out');
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 600);
+    });
+  }
+});
+</script>
+
+<script src="js/lang.js?v=6"></script>
+<script src="js/menu.js"></script>
+<script>
+// The shop follows the site's language: lang.js records the
+// JP/EN toggle on <html lang>. Show the matching text on load
+// and whenever the toggle changes.
+(function () {
+  var en = document.getElementById('shopEn');
+  var ja = document.getElementById('shopJa');
+  function show(lang) {
+    var isJa = lang === 'ja';
+    if (en) en.hidden = isJa;
+    if (ja) ja.hidden = !isJa;
+  }
+  show(document.documentElement.lang || 'en');
+  if (window.MutationObserver) {
+    new MutationObserver(function (muts) {
+      muts.forEach(function (m) {
+        if (m.attributeName === 'lang') show(document.documentElement.lang);
+      });
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  }
+})();
+</script>
+
+</body>
+</html>

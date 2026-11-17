@@ -76,6 +76,7 @@
     { sel: '.page-v .distortion-counter-note', ja: ['43が来ると想定されている'] },
     { sel: '.page-v .coming-soon', ja: ['近日公開'] },
     { sel: '.page-v .books-bar-label', ja: ['書籍'] },
+    { sel: '.page-v .shop-bar-label', ja: ['ショップ'] },
     { sel: '.page-v .volumes-signup-line', ja: ['新しい巻を、メールで。'] },
     // volume/wiki page labels, tags, titles (names stay, words translate)
     { sel: '.page-volume1 .commentary-label-text', ja: [' · プロローグ'] },
@@ -83,6 +84,7 @@
     { sel: '.page-volume3 .commentary-label-text', ja: [' · 第3巻'] },
     { sel: '.page-volume4 .commentary-label-text', ja: [' · 第4巻'] },
     { sel: '.page-books .commentary-label-text', ja: [' · 書籍'] },
+    { sel: '.page-shop .commentary-label-text', ja: [' · ショップ'] },
     { sel: '.page-kowloon .commentary-label-text', ja: [' · システム'] },
     { sel: '.page-breaking .commentary-label-text', ja: [' · システム'] },
     { sel: '.page-tanpeki .commentary-label-text', ja: [' · システム'] },
@@ -93,6 +95,7 @@
     { sel: '.page-volume3 .chapter-tag', ja: ['第3巻'] },
     { sel: '.page-volume4 .chapter-tag', ja: ['第4巻'] },
     { sel: '.page-books .chapter-tag', ja: ['書籍'] },
+    { sel: '.page-shop .chapter-tag', ja: ['ショップ'] },
     { sel: '.page-kowloon .chapter-tag', ja: ['システム'] },
     { sel: '.page-breaking .chapter-tag', ja: ['システム'] },
     { sel: '.page-tanpeki .chapter-tag', ja: ['システム'] },
@@ -102,6 +105,7 @@
     { sel: '.page-volume2 .chapter-title', ja: ['丹碧 — ベイビー、目を閉じて'] },
     { sel: '.page-volume3 .chapter-title', ja: ['Vermillion Zyu Hung（朱紅）'] },
     { sel: '.page-books .chapter-title', ja: ['書籍'] },
+    { sel: '.page-shop .chapter-title', ja: ['ショップ'] },
     { sel: '.page-kowloon .chapter-title', ja: ['九龍'] },
     { sel: '.page-distortion .chapter-title', ja: ['歪み'] },
     // volume intros (Pierrot / Breaking / Tanpeki / Vermillion titles stay as-is)
