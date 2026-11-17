@@ -67,6 +67,29 @@ img{display:block}
     line-height:2;
 }
 
+/* Title page: book-style title + colophon */
+.reader-page.is-title{background:#f4f4f4;align-items:center;padding:40px 24px}
+.title-col{
+    flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;min-height:0;
+}
+.title-name{font-size:clamp(30px,7vw,42px);line-height:1.3;margin:0}
+.title-by{font-size:19px;margin:20px 0 0}
+.title-vol{
+    font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#6b7678;
+    margin:28px 0 0;
+}
+.title-colophon{text-align:center}
+.title-colophon p{
+    font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+    font-size:12px;letter-spacing:.08em;color:#6b7678;margin:0 0 6px;
+}
+.title-colophon p:last-child{margin-bottom:0}
+.reader-ja .title-name{
+    font-family:Georgia,'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif;
+}
+
 /* Fin: white Fin over the cardinal */
 .reader-page.is-fin{
     background:#9fb9c1;align-items:center;justify-content:flex-start;
@@ -79,7 +102,7 @@ img{display:block}
 
 /* Progress line above the footer */
 .reader-progress{height:2px;background:#d8dedd;flex-shrink:0}
-.reader-progress-fill{height:100%;background:#1c2224;width:20%;transition:width .35s ease}
+.reader-progress-fill{height:100%;background:#1c2224;width:16.67%;transition:width .35s ease}
 
 /* Footer: pill buttons + centred count/label */
 .reader-footer{
