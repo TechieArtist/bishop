@@ -78,8 +78,12 @@
 
   // Angle of a card on the orbit. Front is 90° — the bottom of the
   // ellipse, nearest the viewer. 270° is the far side, behind.
+  // Cards are laid out counter-clockwise (90 - i*step) so that
+  // advancing turns the wheel the way a left swipe travels: the
+  // front card exits left, the next card swings in from the right,
+  // and the content follows the finger instead of fighting it.
   function angleOf(i) {
-    return 90 + i * step() + wheel;
+    return 90 - i * step() + wheel;
   }
 
   function place() {
@@ -107,11 +111,11 @@
     if (animating || n < 2) return;
     animating = true;
     var from = wheel;
-    // The wheel turns the other way from the title index, so the
-    // rotation has to run opposite to the index step for the front
-    // card and the title to agree: Next brings Volume 2 to the
-    // front after Prologue, then 3, then 4, then loops.
-    var to = wheel - dir * step();
+    // The wheel turns with the title index: Next brings Volume 2 to
+    // the front after Prologue, then 3, then 4, then loops — with
+    // the next card swinging in from the right, so a left swipe
+    // and the › button turn the wheel the same way.
+    var to = wheel + dir * step();
     index = (index + dir + n) % n;
 
     titleEl.classList.add('is-leaving');
