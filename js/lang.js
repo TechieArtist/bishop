@@ -142,9 +142,7 @@
     { sel: '.page-tanpeki .wiki-list li', ja: ['<b>悪化</b> — ピンク', '<b>安定</b> — シアン', '<b>健康</b> — グリーン'] },
     { sel: '.page-vermillion .wiki-body', ja: [
       '<i>『VISION Magazine』1967年3月1日号より。</i>',
-      'Vermillion Zyu Hungは、1920年代に創業したファッションと美容のハウスで、女性のための仕立てのスカート、ジュエリー、メイクアップを手がけている。近年、フランス人デザイナーのガブリエル・フランソワと香港出身のエンジェル・ウィングシーによって再始動し、伝統の職人技を保ちながら、新しい世代のために生まれ変わった。',
-      '二人は、ヨーロッパとアジア各地で女性が直面する家庭内暴力への意識を高めるという共通の思いで結ばれた。ブランドの収益の一部は、生存者を支援する団体に寄付される。',
-      'ブランドは最近、一部の綿とマイカ顔料が、米国の防衛関連企業 — 核兵器計画に関わる企業を含む — とも契約を持つサプライヤーから調達されているとの報道を受け、厳しい目にさらされている。活動家たちは、倫理的価値観の上に築かれたブランドが、軍需経済から静かに利益を得ているのではないかと疑問を呈し、サプライチェーンのさらなる透明性を求めている。',
+      'Vermillion Zyu Hungはファッションハウスである。',
       'Vermillion Zyu Hungは<a class="wiki-link" href="volume3.html">第3巻</a>である。'
     ] },
     { sel: '.page-vermillion .wiki-article h3', ja: ['Vの中で'] },
@@ -157,11 +155,11 @@
 
     // ----- storefront (volume3.html) -----
     { sel: '.storefront .utility .vol', ja: ['第3巻'] },
-    { sel: '.storefront .masthead .sub', ja: ['Vにおけるデザイナー・ファッションハウス · フランスの心と、香港の心'] },
+    { sel: '.storefront .masthead .sub', ja: ['Vにおけるデザイナー・ファッションハウス'] },
     { sel: '.storefront .masthead .fiction', ja: ['Vermillion Zyu Hungは、Vにおける架空のハウスである。'] },
     { sel: '.storefront .hero .eyebrow', ja: ['2026年春夏 · ウィメンズウェア'] },
     { sel: '.storefront .house h2', ja: ['ハウスについて'] },
-    { sel: '.storefront .house p', ja: ['Vermillion Zyu Hungは1920年代に創業したファッションと美容のハウスで、近年フランス人デザイナーのガブリエル・フランソワと香港出身のエンジェル・ウィングシーによって再始動した。二人は女性に対する家庭内暴力への意識向上に共感して結ばれ、収益の一部は生存者を支援する団体へ寄せられる。綿とマイカ顔料を、米国の防衛契約を持つサプライヤー — 核兵器計画に関わる企業を含む — から調達していることについて、ブランドは厳しく問われている。'] },
+    { sel: '.storefront .house p', ja: ['Vermillion Zyu Hungはファッションハウスである。'] },
     { sel: '.storefront .collection h2', ja: ['コレクション'] },
     { sel: '.storefront .collection .count', ja: ['4作品'] },
     { sel: '.storefront .p-info-inner .meta', ja: ['デジタルアート · 2026', 'キャンバスにアクリル · 2026', 'デジタルアート · 2026', 'デジタルアート · 2026'] },
@@ -170,14 +168,10 @@
     { sel: '.storefront .sketch h2', ja: ['スケッチ'] },
     { sel: '.storefront .s-slide .meta', ja: ['ガブリエル・フランソワ · 2026年春夏 · ウィメンズウェア', 'ガブリエル・フランソワ · 2026年春夏 · ウィメンズウェア'] },
     { sel: '.storefront .art-eyebrow', ja: ['Vision Magazine · 1967年3月1日'] },
-    { sel: '.storefront .art-headline', ja: ['Vermillion Zyu Hung：1920年代のハウスの再始動'] },
-    { sel: '.storefront .art-deck', ja: ['近年フランス人デザイナーのガブリエル・フランソワと香港出身のエンジェル・ウィングシーによって再始動したファッションと美容のハウスは、人道的な大義と、厳しく問われるサプライチェーンを併せ持つ。'] },
+    { sel: '.storefront .art-headline', ja: ['Vermillion Zyu Hung'] },
     { sel: '.storefront .art-body p', ja: [
-      'Vermillion Zyu Hungは1920年代に創業したファッションと美容のハウスで、近年フランス人デザイナーのガブリエル・フランソワと香港出身のエンジェル・ウィングシーによって再始動した。',
-      '二人は女性に対する家庭内暴力への意識向上に共感して結ばれ、収益の一部は生存者を支援する団体へ寄せられる。',
-      '今季のコレクションには、Aureate Maja skirt、Cinnabarのフレグランス、そしてアメリカ人アーティスト、カート・ハートフィールドがハウスのために描いたRobberyが含まれる。'
+      'Vermillion Zyu Hungはファッションハウスである。'
     ] },
-    { sel: '.storefront .art-pull', ja: ['綿とマイカ顔料を、米国の防衛契約を持つサプライヤー — 核兵器計画に関わる企業を含む — から調達していることについて、ブランドは厳しく問われている。'] },
     { sel: '.storefront .art-foot', ja: ['Vision Magazine · 1967年3月1日'] },
     { sel: '.storefront .film .eyebrow', ja: ['ヴェルミリオン · スペシャル'] },
     { sel: '.storefront .film h2', ja: ['ヴェルミリオンのフィルム'] },
