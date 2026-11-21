@@ -142,7 +142,7 @@
     { sel: '.page-tanpeki .wiki-list li', ja: ['<b>悪化</b> — ピンク', '<b>安定</b> — シアン', '<b>健康</b> — グリーン'] },
     { sel: '.page-vermillion .wiki-body', ja: [
       '<i>『VISION Magazine』1967年3月1日号より。</i>',
-      'Vermillion Zyu Hungはファッションハウスである。',
+      'Vermillion Zyu Hungは、1920年代に創業したファッションと美容のハウスで、女性のための仕立てのスカート、ジュエリー、メイクアップを手がけている。フランス人デザイナーのガブリエル・フランソワと香港出身のエンジェル・ウィングシーによって再始動し、伝統の職人技を保ちながら、新しい世代のために生まれ変わった。',
       'Vermillion Zyu Hungは<a class="wiki-link" href="volume3.html">第3巻</a>である。'
     ] },
     { sel: '.page-vermillion .wiki-article h3', ja: ['Vの中で'] },
@@ -155,11 +155,11 @@
 
     // ----- storefront (volume3.html) -----
     { sel: '.storefront .utility .vol', ja: ['第3巻'] },
-    { sel: '.storefront .masthead .sub', ja: ['Vにおけるデザイナー・ファッションハウス'] },
+    { sel: '.storefront .masthead .sub', ja: ['Vにおけるデザイナー・ファッションハウス · フランスの心と、香港の心'] },
     { sel: '.storefront .masthead .fiction', ja: ['Vermillion Zyu Hungは、Vにおける架空のハウスである。'] },
     { sel: '.storefront .hero .eyebrow', ja: ['2026年春夏 · ウィメンズウェア'] },
     { sel: '.storefront .house h2', ja: ['ハウスについて'] },
-    { sel: '.storefront .house p', ja: ['Vermillion Zyu Hungはファッションハウスである。'] },
+    { sel: '.storefront .house p', ja: ['Vermillion Zyu Hungは、1920年代に創業したファッションと美容のハウスで、女性のための仕立てのスカート、ジュエリー、メイクアップを手がけている。フランス人デザイナーのガブリエル・フランソワと香港出身のエンジェル・ウィングシーによって再始動し、伝統の職人技を保ちながら、新しい世代のために生まれ変わった。'] },
     { sel: '.storefront .collection h2', ja: ['コレクション'] },
     { sel: '.storefront .collection .count', ja: ['4作品'] },
     { sel: '.storefront .p-info-inner .meta', ja: ['デジタルアート · 2026', 'キャンバスにアクリル · 2026', 'デジタルアート · 2026', 'デジタルアート · 2026'] },
@@ -170,7 +170,7 @@
     { sel: '.storefront .art-eyebrow', ja: ['Vision Magazine · 1967年3月1日'] },
     { sel: '.storefront .art-headline', ja: ['Vermillion Zyu Hung'] },
     { sel: '.storefront .art-body p', ja: [
-      'Vermillion Zyu Hungはファッションハウスである。'
+      'Vermillion Zyu Hungは、1920年代に創業したファッションと美容のハウスで、女性のための仕立てのスカート、ジュエリー、メイクアップを手がけている。フランス人デザイナーのガブリエル・フランソワと香港出身のエンジェル・ウィングシーによって再始動し、伝統の職人技を保ちながら、新しい世代のために生まれ変わった。'
     ] },
     { sel: '.storefront .art-foot', ja: ['Vision Magazine · 1967年3月1日'] },
     { sel: '.storefront .film .eyebrow', ja: ['ヴェルミリオン · スペシャル'] },
