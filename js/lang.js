@@ -72,8 +72,6 @@
     // ----- V pages (page-scoped: each rule matches exactly one page) -----
     // v.html
     { sel: '.page-v .volumes-intro', ja: ['Vは現実に忠実なはずの世界だった。歪みが現れるまでは。'] },
-    { sel: '.page-v .distortion-counter-label', ja: ['記録された歪み'] },
-    { sel: '.page-v .distortion-counter-note', ja: ['43が来ると想定されている'] },
     { sel: '.page-v .coming-soon', ja: ['近日公開'] },
     { sel: '.page-v .books-bar-label', ja: ['書籍'] },
     { sel: '.page-v .shop-bar-label', ja: ['ショップ'] },
