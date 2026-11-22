@@ -71,63 +71,43 @@
 
     // ----- V pages (page-scoped: each rule matches exactly one page) -----
     // v.html
-    { sel: '.page-v .volumes-intro', ja: ['Vは現実に忠実なはずの世界だった。歪みが現れるまでは。'] },
+    { sel: '.page-v .volumes-intro', ja: ['アンソロジー、巻ごとに展開する'] },
     { sel: '.page-v .coming-soon', ja: ['近日公開'] },
     { sel: '.page-v .books-bar-label', ja: ['書籍'] },
     { sel: '.page-v .shop-bar-label', ja: ['ショップ'] },
     { sel: '.page-v .volumes-signup-line', ja: ['新しい巻を、メールで。'] },
     // volume/wiki page labels, tags, titles (names stay, words translate)
-    { sel: '.page-volume1 .commentary-label-text', ja: [' · プロローグ'] },
+    { sel: '.page-volume1 .commentary-label-text', ja: [' · 用語集'] },
     { sel: '.page-volume4 .commentary-label-text', ja: [' · 第4巻'] },
     { sel: '.page-books .commentary-label-text', ja: [' · 書籍'] },
     { sel: '.page-shop .commentary-label-text', ja: [' · ショップ'] },
-    { sel: '.page-kowloon .commentary-label-text', ja: [' · システム'] },
-    { sel: '.page-tanpeki .commentary-label-text', ja: [' · システム'] },
-    { sel: '.page-vermillion .commentary-label-text', ja: [' · システム'] },
-    { sel: '.page-distortion .commentary-label-text', ja: [' · システム'] },
-    { sel: '.page-volume1 .chapter-tag', ja: ['プロローグ'] },
+    { sel: '.page-tanpeki .commentary-label-text', ja: [' · 用語集'] },
+    { sel: '.page-vermillion .commentary-label-text', ja: [' · 用語集'] },
+    { sel: '.page-volume1 .chapter-tag', ja: ['用語集'] },
     { sel: '.page-volume4 .chapter-tag', ja: ['第4巻'] },
     { sel: '.page-books .chapter-tag', ja: ['書籍'] },
     { sel: '.page-shop .chapter-tag', ja: ['ショップ'] },
-    { sel: '.page-kowloon .chapter-tag', ja: ['システム'] },
-    { sel: '.page-tanpeki .chapter-tag', ja: ['システム'] },
-    { sel: '.page-vermillion .chapter-tag', ja: ['システム'] },
-    { sel: '.page-distortion .chapter-tag', ja: ['システム'] },
-    { sel: '.page-volume1 .chapter-title', ja: ['プロローグ'] },
+    { sel: '.page-tanpeki .chapter-tag', ja: ['用語集'] },
+    { sel: '.page-vermillion .chapter-tag', ja: ['用語集'] },
+    { sel: '.page-volume1 .chapter-title', ja: ['用語集'] },
     { sel: '.page-books .chapter-title', ja: ['書籍'] },
     { sel: '.page-shop .chapter-title', ja: ['ショップ'] },
-    { sel: '.page-kowloon .chapter-title', ja: ['九龍'] },
-    { sel: '.page-distortion .chapter-title', ja: ['歪み'] },
     // volume intros (Pierrot / Tanpeki / Vermillion titles stay as-is)
-    { sel: '.page-volume1 .chapter-body', ja: ['世界は現実に忠実であるはずだった。どこかで、歪みが現れた。'] },
     { sel: '.page-volume4 .chapter-body', ja: ['Pierrot — それ自体がひとつの章である。'] },
     // artwork medium lines (artwork titles stay)
-    { sel: '.page-volume1 .art-info p', ja: ['デジタルアート · 2026'] },
     { sel: '.page-volume4 .art-info p', ja: ['デジタルアート · 2023', 'デジタルアート · 2023', 'デジタルアート · 2023'] },
-    // breakdown sections
-    { sel: '.page-volume1 .breakdown-label', ja: ['解説'] },
-    { sel: '.page-volume1 .breakdown-title', ja: ['歪みの概要'] },
-    { sel: '.page-volume1 .breakdown-date', ja: ['1800年代', '2000年代'] },
-    { sel: '.page-volume1 .breakdown-text', ja: ['最初の歪みが九龍で始まる。', '丹碧のメディア報道が始まる。'] },
-    { sel: '.page-volume1 .breakdown-note', ja: ['歪みは九龍半島で始まった。天の川銀河の初期質量関数（IMF）から得た係数0.3で、その不規則な人口を割ると、約43.00という近似値が得られる。その意味はまだ理解されていないが、重大な数である。それが、まだ起こっていない歪みの数と関係しているのではないかと推測する者もいる。'] },
     // wiki articles
-    { sel: '.page-kowloon .wiki-body', ja: [
-      '歪みは九龍半島で始まった。天の川銀河の初期質量関数（IMF）から得た係数0.3で、その不規則な人口を割ると、約43.00という近似値が得られる。その意味はまだ理解されていないが、重大な数である。',
-      '最初の歪みは、1800年代に九龍で始まる。<i>People of Kowloon</i>は、そこを舞台にした作品である。',
-      'それが、まだ起こっていない歪みの数と関係しているのではないかと推測する者もいる。',
-      '九龍は、<a class="wiki-link" href="volume1.html">プロローグ</a>のEvents年表の始まりである。'
+    // Glossary list (volume1.html)
+    { sel: '.page-volume1 .wiki-body', ja: [
+      '<a class="wiki-link" href="tanpeki.html">Tanpeki (丹碧)</a> — 生命力が人の頭の上に色のハローとして現れる知覚現象である。',
+      '<a class="wiki-link" href="vermillion.html">Vermillion Zyu Hung (朱紅)</a> — 1920年代に創業したファッションと美容のハウスで、女性のための仕立てのスカート、ジュエリー、メイクアップを手がけている。'
     ] },
-    { sel: '.page-kowloon .wiki-article h3', ja: ['最初の歪み', '43.00', 'Vの中で'] },
     { sel: '.page-tanpeki .wiki-body', ja: [
       '丹碧は、色の見え方を歪ませる知覚現象である。この言葉は、北海道の科学者たちが、身体のエネルギーの中心である丹田から「丹」を取って名付けた。特定の雌だけが、この歪みを通して生命力のスペクトルを読み取り、色の移り変わりとして物の生命を見ることができる。男性も丹碧の影響を受けるが、彼らにとってはそれは歪みでしかなく、生命は見えないままである。',
       '生命力が人の頭の上に色のハローとして現れる知覚現象である。特定の女性にしか、これらのハローは見えない。',
-      '丹碧は、ベッドも場所も不足し、救急外来が圧倒的な数のホームレスの人々を抱えていた医療システムに到来した。ハローは、そのひっ迫を目に見えるものにした。',
-      'ハローの色分けはトリアージの区分にそのまま対応するため、世界は振り分けの言葉を発明する必要がなかった — 丹碧はそれを持って到来した。病院は、繰り返し訪れる同じ名前のリストをすでに持っていた。ハローはそのリストを身体の上に載せ、どの部屋でも見えるようにする。',
-      'その可視化が何をもたらすかは未解決である。ピンクのハローは優先を意味しうる — 最も悪化した者が最初に並ぶ — あるいは選別を意味しうる。治療成績の統計は、ベッドにいるグリーンの患者を有利にするからである。丹碧はシステムを分裂させかねない。目に見えるピンクに溺れる公立の救急外来と、静かにグリーンを選別する私立病棟。ホームレスの人のハローは慢性的な悪化であり、状態であって緊急事態ではない。必要性が否定できなくなるか、患者が目に見える「見込みなし」となり、回復するかもしれないピンクのハローにベッドが行くため、最後に回される。',
-      '特定の女性にしかハローは見えないため、病院はハローを読み取れる職員を置く必要がある。',
       '丹碧は、まわりの人々の生命力を頭の上の色のハローとして見る看護師、りんねを描く<a class="wiki-link" href="volume2.html">第2巻 — ベイビー、目を閉じて</a>である。'
     ] },
-    { sel: '.page-tanpeki .wiki-article h3', ja: ['ハロー', '病院', 'Vの中で'] },
+    { sel: '.page-tanpeki .wiki-article h3', ja: ['ハロー', 'Vの中で'] },
     { sel: '.page-tanpeki .wiki-list li', ja: ['<b>悪化</b> — ピンク', '<b>安定</b> — シアン', '<b>健康</b> — グリーン'] },
     { sel: '.page-vermillion .wiki-body', ja: [
       '<i>『VISION Magazine』1967年3月1日号より。</i>',
@@ -135,12 +115,6 @@
       'Vermillion Zyu Hungは<a class="wiki-link" href="volume3.html">第3巻</a>である。'
     ] },
     { sel: '.page-vermillion .wiki-article h3', ja: ['Vの中で'] },
-    { sel: '.page-distortion .wiki-body', ja: [
-      'あるものが歪みとして認められるかどうかは、政府の分類規則によって決まる。歪みと認められるには、3つの条件のうち少なくとも2つが必要である。',
-      '記録された歪みの数は、<a class="wiki-link" href="v.html">Vのトップページ</a>に表示されている。'
-    ] },
-    { sel: '.page-distortion .wiki-article h3', ja: ['Vの中で'] },
-    { sel: '.page-distortion .wiki-list li', ja: ['確立された自然法則からの、文書に記録された逸脱。', '一か所にとどまらず、世界的に拡大する能力。', '放っておけば社会を不安定化させる可能性。'] },
 
     // ----- storefront (volume3.html) -----
     { sel: '.storefront .utility .vol', ja: ['第3巻'] },
@@ -229,11 +203,9 @@
     'Contact — Evan Butler': 'お問い合わせ — エヴァン・バトラー',
     'V — Evan Butler': 'V — エヴァン・バトラー',
     'Books · V — Evan Butler': 'Books · V — エヴァン・バトラー',
-    'Distortion · V — Systems · Evan Butler': 'Distortion · V — Systems · エヴァン・バトラー',
-    'Kowloon · V — Systems · Evan Butler': 'Kowloon · V — Systems · エヴァン・バトラー',
-    'Tanpeki · V — Systems · Evan Butler': 'Tanpeki · V — Systems · エヴァン・バトラー',
-    'Vermillion Zyu Hung · V — Systems · Evan Butler': 'Vermillion Zyu Hung · V — Systems · エヴァン・バトラー',
-    'Prologue · Evan Butler': 'Prologue · エヴァン・バトラー',
+    'Tanpeki · V — Glossary · Evan Butler': 'Tanpeki · V — Glossary · エヴァン・バトラー',
+    'Vermillion Zyu Hung · V — Glossary · Evan Butler': 'Vermillion Zyu Hung · V — Glossary · エヴァン・バトラー',
+    'Glossary · Evan Butler': 'Glossary · エヴァン・バトラー',
     'Volume 2 — Tanpeki · Evan Butler': 'Volume 2 — Tanpeki · エヴァン・バトラー',
     'Volume 3 — Vermillion Zyu Hung · Evan Butler': 'Volume 3 — Vermillion Zyu Hung · エヴァン・バトラー',
     'Volume 4 — Pierrot · Evan Butler': 'Volume 4 — Pierrot · エヴァン・バトラー'
