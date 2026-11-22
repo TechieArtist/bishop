@@ -84,7 +84,6 @@
     { sel: '.page-books .commentary-label-text', ja: [' · 書籍'] },
     { sel: '.page-shop .commentary-label-text', ja: [' · ショップ'] },
     { sel: '.page-kowloon .commentary-label-text', ja: [' · システム'] },
-    { sel: '.page-breaking .commentary-label-text', ja: [' · システム'] },
     { sel: '.page-tanpeki .commentary-label-text', ja: [' · システム'] },
     { sel: '.page-vermillion .commentary-label-text', ja: [' · システム'] },
     { sel: '.page-distortion .commentary-label-text', ja: [' · システム'] },
@@ -93,7 +92,6 @@
     { sel: '.page-books .chapter-tag', ja: ['書籍'] },
     { sel: '.page-shop .chapter-tag', ja: ['ショップ'] },
     { sel: '.page-kowloon .chapter-tag', ja: ['システム'] },
-    { sel: '.page-breaking .chapter-tag', ja: ['システム'] },
     { sel: '.page-tanpeki .chapter-tag', ja: ['システム'] },
     { sel: '.page-vermillion .chapter-tag', ja: ['システム'] },
     { sel: '.page-distortion .chapter-tag', ja: ['システム'] },
@@ -102,7 +100,7 @@
     { sel: '.page-shop .chapter-title', ja: ['ショップ'] },
     { sel: '.page-kowloon .chapter-title', ja: ['九龍'] },
     { sel: '.page-distortion .chapter-title', ja: ['歪み'] },
-    // volume intros (Pierrot / Breaking / Tanpeki / Vermillion titles stay as-is)
+    // volume intros (Pierrot / Tanpeki / Vermillion titles stay as-is)
     { sel: '.page-volume1 .chapter-body', ja: ['世界は現実に忠実であるはずだった。どこかで、歪みが現れた。'] },
     { sel: '.page-volume4 .chapter-body', ja: ['Pierrot — それ自体がひとつの章である。'] },
     // artwork medium lines (artwork titles stay)
@@ -111,8 +109,8 @@
     // breakdown sections
     { sel: '.page-volume1 .breakdown-label', ja: ['解説'] },
     { sel: '.page-volume1 .breakdown-title', ja: ['歪みの概要'] },
-    { sel: '.page-volume1 .breakdown-date', ja: ['1800年代', '1960年代', '2000年代'] },
-    { sel: '.page-volume1 .breakdown-text', ja: ['最初の歪みが九龍で始まる。', 'Breakingが大規模な消去を始める。', '丹碧のメディア報道が始まる。'] },
+    { sel: '.page-volume1 .breakdown-date', ja: ['1800年代', '2000年代'] },
+    { sel: '.page-volume1 .breakdown-text', ja: ['最初の歪みが九龍で始まる。', '丹碧のメディア報道が始まる。'] },
     { sel: '.page-volume1 .breakdown-note', ja: ['歪みは九龍半島で始まった。天の川銀河の初期質量関数（IMF）から得た係数0.3で、その不規則な人口を割ると、約43.00という近似値が得られる。その意味はまだ理解されていないが、重大な数である。それが、まだ起こっていない歪みの数と関係しているのではないかと推測する者もいる。'] },
     // wiki articles
     { sel: '.page-kowloon .wiki-body', ja: [
@@ -122,13 +120,6 @@
       '九龍は、<a class="wiki-link" href="volume1.html">プロローグ</a>のEvents年表の始まりである。'
     ] },
     { sel: '.page-kowloon .wiki-article h3', ja: ['最初の歪み', '43.00', 'Vの中で'] },
-    { sel: '.page-breaking .wiki-body', ja: [
-      'Breakingはマルウェアであり、ハードウェア全体に広がると、ストレージデバイスの中身をすべて吸い上げてから消去する。',
-      'このマルウェアが、インターネット全体のストレージをひとつに統合するクラウドストレージの起源であったという説もある。',
-      '1960年代のコンピューター軍拡競争のさなかに、中国政府が開発したとの噂がある。数十年間眠っていたといわれ、ウェブの普及とともに1990年代に再び現れ、ポルノサイトを狙い始めた。物理ストレージがますます時代遅れになっていく現代においても、その有効性は続いているが、噂は未確認のままである。',
-      'Breakingは、<a class="wiki-link" href="volume1.html">プロローグ</a>のEvents年表における1960年代の項目である。'
-    ] },
-    { sel: '.page-breaking .wiki-article h3', ja: ['Vの中で'] },
     { sel: '.page-tanpeki .wiki-body', ja: [
       '丹碧は、色の見え方を歪ませる知覚現象である。この言葉は、北海道の科学者たちが、身体のエネルギーの中心である丹田から「丹」を取って名付けた。特定の雌だけが、この歪みを通して生命力のスペクトルを読み取り、色の移り変わりとして物の生命を見ることができる。男性も丹碧の影響を受けるが、彼らにとってはそれは歪みでしかなく、生命は見えないままである。',
       '生命力が人の頭の上に色のハローとして現れる知覚現象である。特定の女性にしか、これらのハローは見えない。',
@@ -240,7 +231,6 @@
     'Contact — Evan Butler': 'お問い合わせ — エヴァン・バトラー',
     'V — Evan Butler': 'V — エヴァン・バトラー',
     'Books · V — Evan Butler': 'Books · V — エヴァン・バトラー',
-    'Breaking · V — Systems · Evan Butler': 'Breaking · V — Systems · エヴァン・バトラー',
     'Distortion · V — Systems · Evan Butler': 'Distortion · V — Systems · エヴァン・バトラー',
     'Kowloon · V — Systems · Evan Butler': 'Kowloon · V — Systems · エヴァン・バトラー',
     'Tanpeki · V — Systems · Evan Butler': 'Tanpeki · V — Systems · エヴァン・バトラー',
