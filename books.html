@@ -70,6 +70,31 @@
   <p class="shop-link" id="shopLinkJa" hidden><a class="story-link" href="shop.html">ショップ &rarr;</a></p>
 </div>
 
+<div class="book">
+  <figure class="book-cover">
+    <img src="assets/images/TheModelCover.jpg" alt="The Model — cover">
+  </figure>
+
+  <!-- THE MODEL — novelette, coming soon. No reader link yet: the
+       English version comes out December 23, 2026, Japanese follows
+       shortly after. Follows the site's language (JP/EN toggle in
+       the header) like the Baby entry above. -->
+  <section class="story" id="modelStory">
+    <p class="story-label" id="modelLabelEn">Novelette — Coming soon</p>
+    <p class="story-label" id="modelLabelJa" hidden>中編小説 — 近日公開</p>
+    <h2 class="story-title">The Model</h2>
+    <p class="story-subtitle">麗人</p>
+
+    <div class="story-summary" lang="en" id="modelEn">
+      <p>Anaya, the model, in Paris on March 9, 2026 — the photoshoot with Mr. Moreau. A novelette, coming December 23, 2026. English first — the Japanese version follows shortly after. Two versions, each its own experience.</p>
+    </div>
+
+    <div class="story-summary" lang="ja" id="modelJa" hidden>
+      <p>2026年3月9日、パリ。モデル、アナヤと写真家モローさんの撮影。中編小説、12月23日に出ます。英語版が先で、日本語版はその後まもなく出ます。それぞれ、違う体験です。</p>
+    </div>
+  </section>
+</div>
+
 <footer class="site-footer">
   <p>©2026 by Evan Butler.<br>New York, Brooklyn<br><a href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a></p>
 </footer>
@@ -130,12 +155,20 @@ document.querySelectorAll('a[href]').forEach(link => {
   var ja = document.getElementById('storyJa');
   var shopEn = document.getElementById('shopLinkEn');
   var shopJa = document.getElementById('shopLinkJa');
+  var modelEn = document.getElementById('modelEn');
+  var modelJa = document.getElementById('modelJa');
+  var modelLabelEn = document.getElementById('modelLabelEn');
+  var modelLabelJa = document.getElementById('modelLabelJa');
   function show(lang) {
     var isJa = lang === 'ja';
     if (en) en.hidden = isJa;
     if (ja) ja.hidden = !isJa;
     if (shopEn) shopEn.hidden = isJa;
     if (shopJa) shopJa.hidden = !isJa;
+    if (modelEn) modelEn.hidden = isJa;
+    if (modelJa) modelJa.hidden = !isJa;
+    if (modelLabelEn) modelLabelEn.hidden = isJa;
+    if (modelLabelJa) modelLabelJa.hidden = !isJa;
   }
   show(document.documentElement.lang || 'en');
   if (window.MutationObserver) {
