@@ -22,13 +22,16 @@ header{ z-index: 5000; }
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     width: auto;
-    height: auto;
+    height: 100vh;
+    height: 100dvh;
     z-index: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-top: 100px;
+    overflow-y: auto;
     background: #fff;
-    touch-action: none;
+    touch-action: pan-y;
     animation: menuFade .25s ease;
   }
 
@@ -48,11 +51,11 @@ header{ z-index: 5000; }
 
   header .navigation .navigation-items a{
     color: #000;
-    font-size: clamp(1.8rem, 8vw, 2.6rem);
+    font-size: clamp(1.45rem, 6.5vw, 2rem);
     font-weight: 300;
     letter-spacing: .5px;
     margin: 0;
-    padding: 10px 24px;
+    padding: 6px 24px;
   }
 
   header .navigation .navigation-items a::before,
@@ -95,6 +98,20 @@ header{ z-index: 5000; }
 
   body.menu-open{
     overflow: hidden;
+  }
+
+  /* While the menu is open the header must not transform or blur: either
+     one turns the header into the containing block for the fixed overlay,
+     collapsing it to the header's height — the menu text then floats over
+     the page with no background and the page sits stuck behind it. (The
+     Books page's slide-away header and frosted scrolled header both do
+     this once the page is scrolled.) The overlay also carries an explicit
+     viewport height now, so it cannot collapse even mid-transition. */
+  body.menu-open header{
+    transform: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    transition: none !important;
   }
 }
 
@@ -157,7 +174,7 @@ header{ z-index: 5000; }
         letter-spacing: .22em;
         text-transform: uppercase;
         opacity: .55;
-        margin: 14px 0 4px;
+        margin: 10px 0 2px;
     }
     .nav-group-label:first-child{
         margin-top: 0;
@@ -165,6 +182,6 @@ header{ z-index: 5000; }
     .nav-divider{
         width: 44px;
         height: 1px;
-        margin: 22px auto;
+        margin: 14px auto;
     }
 }
