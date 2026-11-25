@@ -378,28 +378,32 @@ header .brand {
   will-change: transform;
 }
 
+/* CSS chevron replacing the Dash PNGs: the source graphics are
+   ~5px pale-grey strokes that go sub-pixel when shown at 45px,
+   so even inverted they stay faint on white. A border chevron
+   is crisp at any size and follows the page foreground in both
+   modes via var(--ab-fg). */
 .scroll-icon {
-  width: 45px;
-  height: auto;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-right: 3px solid var(--ab-fg);
+  border-bottom: 3px solid var(--ab-fg);
 
   cursor: pointer;
 
-  /* The dash arrows are white graphics from the dark theme;
-     invert them so they read on the white page in light mode,
-     like the hamburger icon. */
-  filter: invert(1);
-
-  transition: 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark){
-  .scroll-icon{
-    filter: none;
-  }
+#dashDown{
+  transform: rotate(45deg);
+}
+
+#dashUp{
+  transform: rotate(225deg);
 }
 
 .scroll-icon:hover {
-  transform: translateY(-4px);
   opacity: 0.7;
 }
 
@@ -626,7 +630,8 @@ header .brand {
   }
 
   .scroll-icon {
-    width: 40px;
+    width: 26px;
+    height: 26px;
   }
 }
 
