@@ -173,6 +173,7 @@ header{ z-index: 5000; }
         font-weight: 500;
         letter-spacing: .22em;
         text-transform: uppercase;
+        color: #000;
         opacity: .55;
         margin: 10px 0 2px;
     }
@@ -182,6 +183,20 @@ header{ z-index: 5000; }
     .nav-divider{
         width: 44px;
         height: 1px;
+        color: #000;
         margin: 14px auto;
+    }
+}
+
+/* Dark menu: the group labels and divider must be white. (They inherit
+   their colour, and on the homepage that comes through black, so on the
+   black menu they vanish. This block sits last so it beats the black
+   colour set in the light rules above.) */
+@media (max-width: 1040px) and (prefers-color-scheme: dark){
+    .nav-group-label{
+        color: #fff;
+    }
+    .nav-divider{
+        color: #fff;
     }
 }
