@@ -384,7 +384,18 @@ header .brand {
 
   cursor: pointer;
 
+  /* The dash arrows are white graphics from the dark theme;
+     invert them so they read on the white page in light mode,
+     like the hamburger icon. */
+  filter: invert(1);
+
   transition: 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark){
+  .scroll-icon{
+    filter: none;
+  }
 }
 
 .scroll-icon:hover {
