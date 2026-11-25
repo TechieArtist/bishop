@@ -1,74 +1,132 @@
-/* Reader pages — styled after the Muse page-turn reader */
+/* Reader pages — full-screen, Apple Books style. The page is just the
+   text; every control lives in one small floating pill bar that appears
+   only on a centre tap. */
 *,*::before,*::after{box-sizing:border-box}
 html,body{margin:0;padding:0}
+
+/* Reading colours, set by the theme (body[data-theme]) and the dark
+   toggle (body.reader-dark). */
 body{
-    background:#9fb9c1;
+    --page-bg:#f4f4f4;
+    --page-text:#1c2224;
+    --ground:#9fb9c1;
+    --muted:#6b7678;
+    --line:#d8dedd;
+    --reader-font-size:19px;
+    --reader-line-height:1.85;
+    --prose-max:510px;
+    background:var(--ground);
     font-family:Georgia,'Times New Roman',serif;
-    color:#1c2224;
+    color:var(--page-text);
     -webkit-font-smoothing:antialiased;
 }
+body[data-theme="quiet"]{--page-bg:#f7f2e8;--page-text:#2e2a22;--ground:#d8cdb8;--muted:#8a7f6a;--line:#e0d8c8}
+body[data-theme="paper"]{--page-bg:#ffffff;--page-text:#111111;--ground:#e8e8e8;--muted:#777777;--line:#e0e0e0}
+body[data-theme="bold"]{--page-bg:#ffffff;--page-text:#000000;--ground:#111111;--muted:#555555;--line:#cccccc}
+body[data-theme="calm"]{--page-bg:#eef2f3;--page-text:#33414a;--ground:#b9cdd6;--muted:#6b7f8a;--line:#d3dee2}
+body[data-theme="focus"]{--page-bg:#1e2426;--page-text:#e8e6df;--ground:#121617;--muted:#8a9494;--line:#333a3c}
+body.reader-dark{--page-bg:#16191a;--page-text:#e8e6df;--ground:#0e1112;--muted:#8a9494;--line:#333a3c}
+body.reader-ja{--reader-line-height:2}
+
+/* Chrome colours (pill, sheets, close buttons): light by default, and
+   following the system setting — so the close button stays readable in
+   both light and dark mode. The reader's own dark toggle overrides them
+   too, via body.reader-dark below. */
+:root{
+    --pill-bg:rgba(255,255,255,.92);
+    --pill-text:#1c2224;
+    --pill-hover:rgba(28,34,36,.08);
+    --sheet-bg:#ffffff;
+    --sheet-text:#1c2224;
+    --sheet-muted:#6b7678;
+    --sheet-line:#e3e6e6;
+}
+@media (prefers-color-scheme: dark){
+    :root{
+        --pill-bg:rgba(28,34,36,.92);
+        --pill-text:#f4f4f4;
+        --pill-hover:rgba(244,244,244,.12);
+        --sheet-bg:#232a2c;
+        --sheet-text:#f4f4f4;
+        --sheet-muted:#9aa4a4;
+        --sheet-line:#3a4244;
+    }
+}
+body.reader-dark{
+    --pill-bg:rgba(28,34,36,.92);
+    --pill-text:#f4f4f4;
+    --pill-hover:rgba(244,244,244,.12);
+    --sheet-bg:#232a2c;
+    --sheet-text:#f4f4f4;
+    --sheet-muted:#9aa4a4;
+    --sheet-line:#3a4244;
+}
+
 img{display:block}
 
 /* Page transition (same pattern as the rest of the site) */
 .page-transition{
     position:fixed;top:0;left:0;width:100%;height:100%;
-    background:#9fb9c1;z-index:99999;opacity:1;
+    background:var(--ground);z-index:99999;opacity:1;
     transition:opacity .6s ease;pointer-events:none;
 }
 .page-transition.fade-in{opacity:0}
 .page-transition.fade-out{opacity:1;pointer-events:all}
 
-/* Slim top strip: back to Books + language switch */
-.reader-topbar{
-    height:44px;display:flex;justify-content:space-between;align-items:center;
-    padding:0 16px;
-    font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
-}
-.reader-topbar a{
-    color:#1c2224;text-decoration:none;font-size:14px;letter-spacing:.04em;
-}
-.reader-topbar a:hover{text-decoration:underline}
-
-/* Centered panel */
+/* Centered panel, full screen — no topbar, no footer */
 .reader-panel{
     position:relative;max-width:760px;margin:0 auto;
-    height:calc(100vh - 44px);height:calc(100dvh - 44px);
+    height:100vh;height:100dvh;
     display:flex;flex-direction:column;
-    background:#f4f4f4;overflow:hidden;
+    background:var(--page-bg);overflow:hidden;
 }
-.reader-page{display:none;flex:1;min-height:0}
+.reader-page{display:none;flex:1;min-height:0;position:relative;background:var(--page-bg);color:var(--page-text)}
 .reader-page.is-active{display:flex;flex-direction:column}
 
-/* Cover: poster on the blue-grey ground */
-.reader-page.is-cover{background:#9fb9c1;align-items:center;justify-content:center;padding:0}
+/* Quiet in-page markers: pages left at the top, page count at the bottom */
+.reader-left,.reader-count-line{
+    position:absolute;left:0;right:0;text-align:center;
+    font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+    font-size:12px;letter-spacing:.14em;color:var(--muted);
+    margin:0;pointer-events:none;z-index:2;
+}
+.reader-left{top:20px}
+.reader-count-line{bottom:20px}
+
+/* Cover: poster on the ground colour */
+.reader-page.is-cover{background:var(--ground);align-items:center;justify-content:center;padding:0}
 .reader-page.is-cover img{max-width:100%;max-height:100%;object-fit:contain}
 
-/* Prose pages: off-white page, narrow serif column */
-.reader-page.is-prose{background:#f4f4f4;overflow-y:auto;padding:40px 24px 32px}
-.prose-col{width:100%;max-width:510px;margin:0 auto}
+/* Prose pages: page, narrow serif column, generous air */
+.reader-page.is-prose{background:var(--page-bg);overflow-y:auto;padding:64px 24px}
+.prose-col{width:100%;max-width:var(--prose-max);margin:0 auto}
 .reader-prose-header{
     display:flex;justify-content:space-between;align-items:baseline;
-    border-bottom:1px solid #d8dedd;padding-bottom:10px;margin-bottom:28px;
+    border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:28px;
 }
 .reader-prose-header .page-no{
     font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
-    font-size:12px;letter-spacing:.18em;color:#6b7678;
+    font-size:12px;letter-spacing:.18em;color:var(--muted);
 }
 .reader-prose-header .reader-v{font-size:20px;font-weight:700;line-height:1}
 .reader-prose p{
-    font-size:19px;line-height:1.85;margin:0 0 1.85em;text-align:left;
+    font-size:var(--reader-font-size);line-height:var(--reader-line-height);
+    margin:0 0 1.85em;text-align:left;
 }
 .reader-prose p:last-child{margin-bottom:0}
 .reader-prose p.gap-before{margin-top:3.2em}
+body.reader-sans .reader-prose p{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
 
 /* Japanese prose: serif JP stack, slightly more leading */
 .reader-ja .reader-prose p{
     font-family:Georgia,'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif;
-    line-height:2;
+}
+body.reader-sans.reader-ja .reader-prose p{
+    font-family:-apple-system,'Helvetica Neue','Hiragino Sans','Yu Gothic',Arial,sans-serif;
 }
 
 /* Title page: book-style title + colophon */
-.reader-page.is-title{background:#f4f4f4;align-items:center;padding:40px 24px}
+.reader-page.is-title{background:var(--page-bg);align-items:center;padding:64px 24px}
 .title-col{
     flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
     text-align:center;min-height:0;
@@ -77,66 +135,159 @@ img{display:block}
 .title-by{font-size:19px;margin:20px 0 0}
 .title-vol{
     font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
-    font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#6b7678;
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
     margin:28px 0 0;
 }
 .title-colophon{text-align:center}
 .title-colophon p{
     font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
-    font-size:12px;letter-spacing:.08em;color:#6b7678;margin:0 0 6px;
+    font-size:12px;letter-spacing:.08em;color:var(--muted);margin:0 0 6px;
 }
 .title-colophon p:last-child{margin-bottom:0}
 .reader-ja .title-name{
     font-family:Georgia,'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif;
 }
 
-/* Fin: white Fin over the cardinal */
+/* Fin: Fin over the cardinal */
 .reader-page.is-fin{
-    background:#9fb9c1;align-items:center;justify-content:flex-start;
-    padding:48px 24px 24px;gap:28px;
+    background:var(--ground);align-items:center;justify-content:flex-start;
+    padding:64px 24px;gap:28px;
 }
 .fin-word{font-size:clamp(64px,14vw,110px);color:#fff;line-height:1;font-weight:400;margin:0}
 .reader-page.is-fin img{
-    max-width:min(420px,86%);max-height:calc(100% - 170px);object-fit:contain;
+    max-width:min(420px,86%);max-height:calc(100% - 190px);object-fit:contain;
 }
 
-/* Progress line above the footer */
-.reader-progress{height:2px;background:#d8dedd;flex-shrink:0}
-.reader-progress-fill{height:100%;background:#1c2224;width:16.67%;transition:width .35s ease}
-
-/* Footer: pill buttons + centred count/label */
-.reader-footer{
-    display:flex;justify-content:space-between;align-items:center;gap:12px;
-    padding:14px 16px calc(14px + env(safe-area-inset-bottom));
-    background:#f4f4f4;flex-shrink:0;
+/* Floating pill bar: the only chrome while reading. Hidden by default,
+   shown on a centre tap. */
+.reader-pill{
+    position:fixed;top:calc(12px + env(safe-area-inset-top));left:50%;
+    transform:translate(-50%,-8px);z-index:60;
+    display:flex;align-items:center;gap:2px;
+    padding:5px 6px;border-radius:999px;
+    background:var(--pill-bg);color:var(--pill-text);
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+    box-shadow:0 8px 28px rgba(0,0,0,.22),0 2px 8px rgba(0,0,0,.14);
+    opacity:0;pointer-events:none;
+    transition:opacity .25s ease,transform .25s ease;
     font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+    max-width:calc(100vw - 24px);
 }
-.reader-footer button{
-    font-family:inherit;font-size:14px;padding:9px 20px;
-    border:1px solid #1c2224;border-radius:999px;
-    background:transparent;color:#1c2224;cursor:pointer;white-space:nowrap;
+.reader-pill.is-visible{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
+.pill-btn{
+    display:flex;align-items:center;gap:5px;
+    min-height:34px;padding:6px 10px;border:none;border-radius:999px;
+    background:transparent;color:inherit;cursor:pointer;
+    font-family:inherit;font-size:13px;white-space:nowrap;
+    text-decoration:none;
 }
-.reader-footer button:hover:not(:disabled){background:#1c2224;color:#f4f4f4}
-.reader-footer button:disabled{opacity:.3;cursor:default}
-.reader-count{text-align:center;display:flex;flex-direction:column;gap:2px}
-.reader-count .count-no{font-size:14px}
-.reader-count .count-label{font-size:11px;letter-spacing:.16em;color:#6b7678}
+.pill-btn:hover{background:var(--pill-hover)}
+.pill-btn .pill-ico{font-size:16px;line-height:1}
+.pill-btn .pill-aa{font-size:14px;font-weight:600;letter-spacing:.02em}
+.pill-btn .pill-pct{font-size:11px;opacity:.65}
+.pill-btn.is-on{color:inherit}
+.pill-btn.is-on .pill-ico{font-weight:700}
+.pill-close{font-size:18px;line-height:1;padding:6px 11px}
+.pill-sep{width:1px;height:20px;background:currentColor;opacity:.2;flex-shrink:0}
 
-/* Edge tap zones */
-.reader-zone{
-    position:absolute;top:50%;transform:translateY(-50%);z-index:5;
-    background:transparent;border:none;font-size:34px;line-height:1;
-    color:rgba(28,34,36,.35);cursor:pointer;padding:20px 10px;
+/* Sheets (Contents, Themes & Settings): bottom sheet on small screens,
+   centred card on desktop */
+.reader-sheet-wrap{
+    position:fixed;inset:0;z-index:70;
+    display:flex;align-items:flex-end;justify-content:center;
+    visibility:hidden;pointer-events:none;
 }
-.reader-zone.prev{left:2px}
-.reader-zone.next{right:2px}
-.reader-zone.is-hidden{visibility:hidden}
+.reader-sheet-wrap.is-visible{visibility:visible;pointer-events:auto}
+.reader-sheet-backdrop{
+    position:absolute;inset:0;background:rgba(0,0,0,.35);
+    opacity:0;transition:opacity .25s ease;
+}
+.reader-sheet-wrap.is-visible .reader-sheet-backdrop{opacity:1}
+.reader-sheet{
+    position:relative;width:100%;max-width:460px;max-height:82dvh;overflow-y:auto;
+    background:var(--sheet-bg);color:var(--sheet-text);
+    border-radius:18px 18px 0 0;padding:18px 20px calc(20px + env(safe-area-inset-bottom));
+    font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+    transform:translateY(24px);transition:transform .25s ease;
+    box-shadow:0 -8px 32px rgba(0,0,0,.25);
+}
+.reader-sheet-wrap.is-visible .reader-sheet{transform:translateY(0)}
+@media (min-width:640px){
+    .reader-sheet-wrap{align-items:center;padding:24px}
+    .reader-sheet{border-radius:18px;box-shadow:0 16px 48px rgba(0,0,0,.28)}
+}
+.sheet-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px}
+.sheet-head h2{font-size:17px;font-weight:600;margin:0}
+.sheet-close{
+    border:none;background:transparent;color:var(--sheet-text);
+    font-size:22px;line-height:1;cursor:pointer;padding:6px 10px;border-radius:999px;
+}
+.sheet-close:hover{background:var(--pill-hover)}
+.sheet-sub{
+    font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--sheet-muted);margin:18px 0 6px;
+}
+.contents-list{list-style:none;margin:0;padding:0}
+.contents-list li{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding:11px 4px;border-bottom:1px solid var(--sheet-line);cursor:pointer;
+}
+.contents-list li:last-child{border-bottom:none}
+.contents-list li.is-active{font-weight:600}
+.contents-list .c-label{font-size:15px}
+.contents-list .c-no{font-size:12px;color:var(--sheet-muted);white-space:nowrap}
+.contents-list .c-remove{
+    border:none;background:transparent;color:var(--sheet-muted);
+    font-size:16px;cursor:pointer;padding:4px 8px;
+}
+.bookmark-empty{font-size:14px;color:var(--sheet-muted);margin:6px 4px 0}
+.sheet-row{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding:12px 4px;border-bottom:1px solid var(--sheet-line);font-size:15px;
+}
+.sheet-row:last-child{border-bottom:none}
+.seg{display:flex;align-items:center;gap:2px;background:var(--pill-hover);border-radius:999px;padding:3px}
+.seg button{
+    border:none;background:transparent;color:var(--sheet-text);cursor:pointer;
+    font-family:inherit;font-size:14px;padding:6px 12px;border-radius:999px;white-space:nowrap;
+}
+.seg button.is-on{background:var(--sheet-bg);box-shadow:0 1px 4px rgba(0,0,0,.18);font-weight:600}
+.seg .seg-val{min-width:28px;text-align:center;font-size:14px}
+.sheet-row input[type="range"]{width:150px;accent-color:var(--sheet-text)}
+.theme-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
+    padding:12px 4px;border-bottom:1px solid var(--sheet-line);
+}
+.theme-grid button{
+    border:1px solid var(--sheet-line);border-radius:10px;cursor:pointer;
+    font-family:inherit;font-size:13px;padding:10px 6px;
+    background:var(--sheet-bg);color:var(--sheet-text);
+}
+.theme-grid button.is-on{outline:2px solid var(--sheet-text);outline-offset:-2px;font-weight:600}
+#darkToggle{
+    border:none;background:transparent;color:var(--sheet-text);cursor:pointer;
+    font-size:20px;line-height:1;padding:8px 12px;border-radius:999px;
+}
+#darkToggle:hover{background:var(--pill-hover)}
+
+/* Brightness dimmer, below the pill and sheets */
+.reader-brightness{
+    position:fixed;inset:0;background:#000;opacity:0;
+    pointer-events:none;z-index:40;
+}
+
+/* Scroll mode: the whole book as one continuous page */
+body.reader-scroll .reader-panel{display:block;overflow-y:auto}
+body.reader-scroll .reader-page{display:flex}
+body.reader-scroll .reader-page.is-cover,
+body.reader-scroll .reader-page.is-title,
+body.reader-scroll .reader-page.is-fin{min-height:100dvh}
 
 @media (max-width:520px){
-    .reader-page.is-prose{padding:32px 20px 24px}
-    .reader-prose p{font-size:18px}
-    .reader-footer{padding:12px 12px calc(12px + env(safe-area-inset-bottom))}
-    .reader-footer button{font-size:13px;padding:8px 14px}
-    .reader-zone{font-size:28px;padding:16px 6px}
-    .reader-page.is-fin{padding-top:36px;gap:20px}
+    .reader-page.is-prose{padding:48px 20px}
+    .reader-page.is-title{padding:48px 20px}
+    .reader-page.is-fin{padding:48px 20px;gap:20px}
+    .reader-prose p{font-size:var(--reader-font-size,18px)}
+    .pill-btn{padding:6px 8px;font-size:12px}
+    .sheet-row input[type="range"]{width:120px}
 }

@@ -9,7 +9,7 @@
     display: block; background: none; width: auto; max-width: none;
     margin: 0; padding: 0; box-shadow: none; border-radius: 0;
   }
-  header .navigation .navigation-items a { color: #fff; font-size: 1em; margin: 0 0 0 30px; }
+  header .navigation .navigation-items a { color: #fff; font-size: 1em; margin: 0 0 0 20px; }
   header .navigation .navigation-items a:before { background: #fff; height: 3px; }
 
   /* ----- Snap each work into view ----- */

@@ -142,7 +142,7 @@ header{ z-index: 5000; }
     background: currentColor;
     opacity: .35;
     vertical-align: middle;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .nav-group-label{

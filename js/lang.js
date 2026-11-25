@@ -209,7 +209,15 @@
   }
 
   var current = 'en';
-  try { current = localStorage.getItem('lang') || 'en'; } catch (e) {}
+  try {
+    var saved = localStorage.getItem('lang');
+    if (saved) {
+      current = saved;
+    } else if ((navigator.language || '').toLowerCase().indexOf('ja') === 0) {
+      /* First visit, no saved choice: follow the device's language. */
+      current = 'ja';
+    }
+  } catch (e) {}
   apply(current);
 
   btn.addEventListener('click', function () {
