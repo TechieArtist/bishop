@@ -130,3 +130,41 @@ header{ z-index: 5000; }
     background: #fff;
   }
 }
+
+/* Grouped menu: Atelier (Home, About, Contact) and Works (Exhibition, V,
+   Books), split by a divider. The group labels only show in the mobile
+   overlay, where there is room for them; on desktop the divider alone
+   carries the structure. */
+.nav-divider{
+    display: inline-block;
+    width: 1px;
+    height: 18px;
+    background: currentColor;
+    opacity: .35;
+    vertical-align: middle;
+    margin-left: 30px;
+}
+
+.nav-group-label{
+    display: none;
+}
+
+@media (max-width: 1040px){
+    .nav-group-label{
+        display: block;
+        font-size: .72rem;
+        font-weight: 500;
+        letter-spacing: .22em;
+        text-transform: uppercase;
+        opacity: .55;
+        margin: 14px 0 4px;
+    }
+    .nav-group-label:first-child{
+        margin-top: 0;
+    }
+    .nav-divider{
+        width: 44px;
+        height: 1px;
+        margin: 22px auto;
+    }
+}

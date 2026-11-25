@@ -120,6 +120,17 @@
     display: none;
 }
 
+/* The story block is a pull title and blurb under the cover, not a full
+   story section: drop volume.css's 100px top margin and the wide
+   subtitle gap. */
+body.page-books .story{
+    margin-top: 0;
+}
+
+body.page-books .story-subtitle{
+    margin-bottom: 20px;
+}
+
 /* Safari-style header, this page only: the header slides away while
    scrolling down and returns on scrolling up, with a frosted back so
    it stays readable when it reappears over the covers. */
