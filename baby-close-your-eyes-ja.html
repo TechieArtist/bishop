@@ -6,7 +6,7 @@
 <title>ベイビー、目を閉じて — Evan Butler</title>
 <meta name="description" content="ベイビー、目を閉じて — Evan Butlerの短編小説。第2巻、丹碧。">
 <link rel="icon" type="image/png" href="assets/images/favicon.png?v=2">
-<link rel="stylesheet" href="css/reader.css?v=3">
+<link rel="stylesheet" href="css/reader.css?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
@@ -264,6 +264,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
     function show(i){
         index = Math.max(0, Math.min(total - 1, i));
+        /* Marks the current page for the scroll-mode pinned markers. */
+        pages.forEach(function(p, j){ p.classList.toggle('is-current', j === index); });
         if (settings.mode !== 'scroll') {
             pages.forEach(function(p, j){
                 p.classList.toggle('is-active', j === index);

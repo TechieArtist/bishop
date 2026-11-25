@@ -283,6 +283,15 @@ body.reader-scroll .reader-page.is-cover,
 body.reader-scroll .reader-page.is-title,
 body.reader-scroll .reader-page.is-fin{min-height:100dvh}
 
+/* Scroll mode: pin the current page's markers to the viewport, so the
+   page number stays at the bottom (and pages-left at the top) while the
+   text scrolls underneath — the way iBooks keeps its footer fixed.
+   Only the current page's pair shows; the rest stay hidden. */
+body.reader-scroll .reader-left,
+body.reader-scroll .reader-count-line{position:fixed;display:none}
+body.reader-scroll .reader-page.is-current .reader-left,
+body.reader-scroll .reader-page.is-current .reader-count-line{display:block}
+
 @media (max-width:520px){
     .reader-page.is-prose{padding:48px 20px}
     .reader-page.is-title{padding:48px 20px}
