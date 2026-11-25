@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 <link rel="stylesheet" href="css/menu.css">
 <link rel="stylesheet" href="css/volume.css?v=13">
-<link rel="stylesheet" href="css/books.css?v=2">
+<link rel="stylesheet" href="css/books.css?v=3">
 </head>
 
 <body class="volume-page page-books">
@@ -41,34 +41,19 @@
   <h2 class="chapter-title">Books</h2>
 </section>
 
+<!-- Apple Books library shelf: the two books side by side. Each entry
+     IS the author's cover, rendered as a 3D book — spine, page edge,
+     shelf shadow — with a status pill under it. No card text: tap the
+     Baby cover to open the reader. -->
+<div class="books-shelf">
 <div class="book">
+  <a class="book-cover-link" id="babyCoverLink" href="baby-close-your-eyes.html" aria-label="Read Baby, close your eyes">
   <figure class="book-cover">
     <img src="assets/images/Volume2Cover.jpg?v=3" alt="Baby, close your eyes — cover">
   </figure>
+  </a>
 
-  <!-- THE STORY — a short summary and a link to the reader.
-       The full story lives in the page-turn readers; this section
-       only introduces it. Follows the site's language (JP/EN
-       toggle in the header): English while the site is in
-       English, Japanese when the JP toggle is on. -->
-  <section class="story" id="story">
-    <p class="story-label">Short Story — 読み切り</p>
-    <h2 class="story-title">Baby, close your eyes</h2>
-    <p class="story-subtitle">ベイビー、目を閉じて</p>
-
-    <div class="story-summary" lang="en" id="storyEn">
-      <p>Rinne is a nurse who sees the vitality of the people around her as a coloured halo above their heads. The story follows her through one hospital shift, one night at home, and one night back in the ER.</p>
-      <p><a class="story-link" href="baby-close-your-eyes.html">Read the story &rarr;</a></p>
-    </div>
-
-    <div class="story-summary" lang="ja" id="storyJa" hidden>
-      <p>りんねは看護師で、まわりの人の生命力が、頭の上に色のハローとして見える。物語は、病院での勤務、家での一夜、そしてERに戻る一夜をたどる。</p>
-      <p><a class="story-link" href="baby-close-your-eyes-ja.html">物語を読む &rarr;</a></p>
-    </div>
-  </section>
-
-  <p class="shop-link" id="shopLinkEn"><a class="story-link" href="shop.html">Shop &rarr;</a></p>
-  <p class="shop-link" id="shopLinkJa" hidden><a class="story-link" href="shop.html">ショップ &rarr;</a></p>
+  <p class="book-status"><span class="status-pill status-out" id="statusBabyEn">Out now</span><span class="status-pill status-out" id="statusBabyJa" hidden>公開中</span></p>
 </div>
 
 <div class="book">
@@ -76,25 +61,12 @@
     <img src="assets/images/TheModelCover.jpg" alt="The Model — cover">
   </figure>
 
-  <!-- THE MODEL — novelette, coming soon. No reader link yet: the
-       English version comes out December 23, 2026, Japanese follows
-       shortly after. Follows the site's language (JP/EN toggle in
-       the header) like the Baby entry above. -->
-  <section class="story" id="modelStory">
-    <p class="story-label" id="modelLabelEn">Novelette — Coming soon</p>
-    <p class="story-label" id="modelLabelJa" hidden>中編小説 — 近日公開</p>
-    <h2 class="story-title">The Model</h2>
-    <p class="story-subtitle">麗人</p>
-
-    <div class="story-summary" lang="en" id="modelEn">
-      <p>Anaya, the model, in Paris on March 9, 2026 — the photoshoot with Mr. Moreau. A novelette, coming December 23, 2026. English first — the Japanese version follows shortly after. Two versions, each its own experience.</p>
-    </div>
-
-    <div class="story-summary" lang="ja" id="modelJa" hidden>
-      <p>2026年3月9日、パリ。モデル、アナヤと写真家モローさんの撮影。中編小説、12月23日に出ます。英語版が先で、日本語版はその後まもなく出ます。それぞれ、違う体験です。</p>
-    </div>
-  </section>
+  <p class="book-status"><span class="status-pill status-soon" id="statusModelEn">Coming soon</span><span class="status-pill status-soon" id="statusModelJa" hidden>近日公開</span></p>
 </div>
+</div>
+
+<p class="shop-link" id="shopLinkEn"><a class="story-link" href="shop.html">Shop &rarr;</a></p>
+<p class="shop-link" id="shopLinkJa" hidden><a class="story-link" href="shop.html">ショップ &rarr;</a></p>
 
 <footer class="site-footer">
   <p>©2026 by Evan Butler.<br>New York, Brooklyn<br><a href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a></p>
@@ -148,28 +120,26 @@ document.querySelectorAll('a[href]').forEach(link => {
 <script src="js/lang.js?v=5"></script>
 <script src="js/menu.js"></script>
 <script>
-// The story and shop link follow the site's language: lang.js records the
-// JP/EN toggle on <html lang>. Show the matching text on load
-// and whenever the toggle changes.
+// The cover link, shop link, and status pills follow the site's language:
+// lang.js records the JP/EN toggle on <html lang>. Show the matching
+// text on load and whenever the toggle changes.
 (function () {
-  var en = document.getElementById('storyEn');
-  var ja = document.getElementById('storyJa');
   var shopEn = document.getElementById('shopLinkEn');
   var shopJa = document.getElementById('shopLinkJa');
-  var modelEn = document.getElementById('modelEn');
-  var modelJa = document.getElementById('modelJa');
-  var modelLabelEn = document.getElementById('modelLabelEn');
-  var modelLabelJa = document.getElementById('modelLabelJa');
+  var statusBabyEn = document.getElementById('statusBabyEn');
+  var statusBabyJa = document.getElementById('statusBabyJa');
+  var statusModelEn = document.getElementById('statusModelEn');
+  var statusModelJa = document.getElementById('statusModelJa');
+  var babyCoverLink = document.getElementById('babyCoverLink');
   function show(lang) {
     var isJa = lang === 'ja';
-    if (en) en.hidden = isJa;
-    if (ja) ja.hidden = !isJa;
     if (shopEn) shopEn.hidden = isJa;
     if (shopJa) shopJa.hidden = !isJa;
-    if (modelEn) modelEn.hidden = isJa;
-    if (modelJa) modelJa.hidden = !isJa;
-    if (modelLabelEn) modelLabelEn.hidden = isJa;
-    if (modelLabelJa) modelLabelJa.hidden = !isJa;
+    if (statusBabyEn) statusBabyEn.hidden = isJa;
+    if (statusBabyJa) statusBabyJa.hidden = !isJa;
+    if (statusModelEn) statusModelEn.hidden = isJa;
+    if (statusModelJa) statusModelJa.hidden = !isJa;
+    if (babyCoverLink) babyCoverLink.href = isJa ? 'baby-close-your-eyes-ja.html' : 'baby-close-your-eyes.html';
   }
   show(document.documentElement.lang || 'en');
   if (window.MutationObserver) {
@@ -179,6 +149,30 @@ document.querySelectorAll('a[href]').forEach(link => {
       });
     }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   }
+})();
+</script>
+
+<script>
+// Safari-style header: the header slides away while scrolling down and
+// returns when scrolling up. This page scrolls inside <body> (the site
+// sets html/body to 100vh), so listen to the body's scroll, not the window's.
+(function () {
+  var header = document.querySelector('header');
+  var navigation = document.querySelector('.navigation');
+  var lastY = 0;
+  function onScroll() {
+    var y = document.body.scrollTop;
+    var menuOpen = navigation && navigation.classList.contains('active');
+    if (!menuOpen && y > 140 && y > lastY + 6) {
+      header.classList.add('header-hidden');
+    } else if (y < lastY - 6 || y <= 140) {
+      header.classList.remove('header-hidden');
+    }
+    header.classList.toggle('header-scrolled', y > 40);
+    lastY = y;
+  }
+  document.body.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 })();
 </script>
 
