@@ -1,7 +1,7 @@
 (function () {
   var RULES = [
     // ----- all pages -----
-    { sel: '.navigation-items a', ja: ['ホーム', 'プロフィール', 'お問い合わせ', '展覧会', 'V', '書籍'] },
+    { sel: '.navigation-items a', ja: ['ホーム', 'プロフィール', 'お問い合わせ', '展覧会', 'V：アンソロジー', 'ショップ'] },
     { sel: '.nav-group-label', ja: ['アトリエ', '作品'] },
     { sel: '.site-footer p', ja: ['©2026 Evan Butler<br>ニューヨーク、ブルックリン<br><a href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a>'] },
 
@@ -22,7 +22,7 @@
       '2023年の夏、バトラーはアニメーション短編映画の制作に着手したが、未完のままとなった。同じ時期に、初期の主要作品のひとつである《Untitled (2023)》を制作した。',
       '2024年初頭、バトラーの制作は、概念的にも技術的にも人工知能を枠組みとする方向へ移り、芸術と学術の両面における軌跡を方向づけた。東アジアに影響を受けたコンセプトアートを制作する傍ら、東京工業大学のAIシステム講座に入学する以前から、生成メディアとしてのAIに取り組んでいた。',
       '2024年末にかけて、バトラーの作品は暴力的なイメージや困窮した都市環境の描写へと次第に傾いていった。その後、不安定な生活状況のもとニュージャージーへ移り住み、制作活動を中断した。',
-      '2026年6月、バトラーは初の個展『Propitiation』の制作に着手した。現在はアーカイブされている。現在、バトラーはVというアンソロジーを、巻ごとに展開する形で制作している。'
+      '2026年6月、バトラーは初の個展『Propitiation』の制作に着手した。現在はアーカイブされている。現在、バトラーはV：アンソロジーを、巻ごとに展開する形で制作している。'
     ] },
 
     // ----- contact -----
@@ -72,69 +72,36 @@
 
     // ----- V pages (page-scoped: each rule matches exactly one page) -----
     // v.html
-    { sel: '.page-v .volumes-intro', ja: ['アンソロジー、巻ごとに展開する'] },
+    { sel: '.page-v .volumes-intro', ja: ['V：アンソロジー、巻ごとに展開する'] },
     { sel: '.page-v .coming-soon', ja: ['近日公開'] },
-    { sel: '.page-v .books-bar-label', ja: ['書籍'] },
     { sel: '.page-v .shop-bar-label', ja: ['ショップ'] },
     { sel: '.page-v .volumes-signup-line', ja: ['新しい巻を、メールで。'] },
     // volume/wiki page labels, tags, titles (names stay, words translate)
-    { sel: '.page-volume1 .commentary-label-text', ja: [' · 用語集'] },
     { sel: '.page-volume2 .commentary-label-text', ja: [' · 第2巻'] },
     { sel: '.page-volume3 .commentary-label-text', ja: [' · 第3巻'] },
     { sel: '.page-volume4 .commentary-label-text', ja: [' · 第4巻'] },
-    { sel: '.page-books .commentary-label-text', ja: [' · 書籍'] },
     { sel: '.page-shop .commentary-label-text', ja: [' · ショップ'] },
-    { sel: '.page-tanpeki .commentary-label-text', ja: [' · 用語集'] },
-    { sel: '.page-vermillion .commentary-label-text', ja: [' · 用語集'] },
-    { sel: '.page-volume1 .chapter-tag', ja: ['用語集'] },
     { sel: '.page-volume2 .chapter-tag', ja: ['第2巻'] },
     { sel: '.page-volume3 .chapter-tag', ja: ['第3巻'] },
     { sel: '.page-volume4 .chapter-tag', ja: ['第4巻'] },
-    { sel: '.page-books .chapter-tag', ja: ['書籍'] },
     { sel: '.page-shop .chapter-tag', ja: ['ショップ'] },
-    { sel: '.page-tanpeki .chapter-tag', ja: ['用語集'] },
-    { sel: '.page-vermillion .chapter-tag', ja: ['用語集'] },
-    { sel: '.page-volume1 .chapter-title', ja: ['用語集'] },
     { sel: '.page-volume2 .chapter-title', ja: ['丹碧 — ベイビー、目を閉じて'] },
     { sel: '.page-volume3 .chapter-title', ja: ['Vermillion Zyu Hung（朱紅）'] },
-    { sel: '.page-books .chapter-title', ja: ['書籍'] },
     { sel: '.page-shop .chapter-title', ja: ['ショップ'] },
     // volume intros (Pierrot / Tanpeki / Vermillion titles stay as-is)
-    { sel: '.page-volume2 .chapter-body', ja: ['丹碧とは、生命力が人の頭の上に色のハローとして現れる知覚現象である。悪化はピンク、安定はシアン、健康はグリーン。ハローが見えるのは特定の女性だけであり、男性にとってはそれは歪みでしかなく、生命は見えないままである。『ベイビー、目を閉じて』は、ハローの見える看護師、りんねの物語である。'] },
-    { sel: '.page-volume3 .chapter-body', ja: [
-      'Vermillion Zyu Hung — Vにおけるデザイナー・ファッションハウス。フランスの心と、香港の心。',
-      'Vermillion Zyu Hungは、1920年代に創業したファッションと美容のハウスで、女性のための仕立てのスカート、ジュエリー、メイクアップを手がけている。フランス人デザイナーのガブリエル・フランソワと香港出身のエンジェル・ウィングシーによって再始動し、伝統の職人技を保ちながら、新しい世代のために生まれ変わった。',
-      'Vermillion Zyu Hungは、Vにおける架空のハウスである。'
-    ] },
+    
+    
     { sel: '.page-volume4 .chapter-body', ja: ['Pierrot — それ自体がひとつの章である。'] },
     // artwork medium lines (artwork titles stay)
     { sel: '.page-volume2 .art-info p', ja: ['デジタルアート · 2026', 'デジタルアート · 2026', 'デジタルアート · 2026', 'デジタルアート · 2025'] },
     { sel: '.page-volume3 .art-info p', ja: ['デジタルアート · 2026', 'デジタルアート · 2026', null, 'デジタルアート · 2026', '$450', 'キャンバスにアクリル · 2026', 'アメリカ人アーティスト、カート・ハートフィールドがヴェルミリオンのために描いた。', 'デジタルアート · 2026', 'デジタルアート · 2026', 'ガブリエル・フランソワ · 2026年春夏 · ウィメンズウェア', 'デジタルアート · 2026'] },
     { sel: '.page-volume4 .art-info p', ja: ['デジタルアート · 2023', 'デジタルアート · 2023', 'デジタルアート · 2023'] },
     // breakdown sections
-    { sel: '.page-volume2 .breakdown-label', ja: ['解説'] },
-    { sel: '.page-volume2 .breakdown-title', ja: ['丹碧の科学的解説'] },
     { sel: '.page-volume3 .breakdown-title', ja: ['ヴェルミリオンのフィルム'] },
-    { sel: '.page-volume2 .volume-footer', ja: ['Tanpeki · 第2巻 · V — アンソロジー'] },
-    // wiki articles
-    // Glossary list (volume1.html)
-    { sel: '.page-volume1 .wiki-body', ja: [
-      '<a class="wiki-link" href="tanpeki.html">Tanpeki (丹碧)</a> — 生命力が人の頭の上に色のハローとして現れる知覚現象である。',
-      '<a class="wiki-link" href="vermillion.html">Vermillion Zyu Hung (朱紅)</a> — 1920年代に創業したファッションと美容のハウスで、女性のための仕立てのスカート、ジュエリー、メイクアップを手がけている。'
-    ] },
-    { sel: '.page-tanpeki .wiki-body', ja: [
-      '丹碧は、色の見え方を歪ませる知覚現象である。この言葉は、北海道の科学者たちが、身体のエネルギーの中心である丹田から「丹」を取って名付けた。特定の雌だけが、この歪みを通して生命力のスペクトルを読み取り、色の移り変わりとして物の生命を見ることができる。男性も丹碧の影響を受けるが、彼らにとってはそれは歪みでしかなく、生命は見えないままである。',
-      '生命力が人の頭の上に色のハローとして現れる知覚現象である。特定の女性にしか、これらのハローは見えない。',
-      '丹碧は、まわりの人々の生命力を頭の上の色のハローとして見る看護師、りんねを描く<a class="wiki-link" href="volume2.html">第2巻 — ベイビー、目を閉じて</a>である。'
-    ] },
-    { sel: '.page-tanpeki .wiki-article h3', ja: ['ハロー', 'Vの中で'] },
-    { sel: '.page-tanpeki .wiki-list li', ja: ['<b>悪化</b> — ピンク', '<b>安定</b> — シアン', '<b>健康</b> — グリーン'] },
-    { sel: '.page-vermillion .wiki-body', ja: [
-      '<i>『VISION Magazine』1967年3月1日号より。</i>',
-      'Vermillion Zyu Hungは、1920年代に創業したファッションと美容のハウスで、女性のための仕立てのスカート、ジュエリー、メイクアップを手がけている。フランス人デザイナーのガブリエル・フランソワと香港出身のエンジェル・ウィングシーによって再始動し、伝統の職人技を保ちながら、新しい世代のために生まれ変わった。',
-      'Vermillion Zyu Hungは<a class="wiki-link" href="volume3.html">第3巻</a>である。'
-    ] },
-    { sel: '.page-vermillion .wiki-article h3', ja: ['Vの中で'] },
+    { sel: '.page-volume2 .volume-footer', ja: ['Tanpeki · 第2巻 · V：アンソロジー'] },
+    
+    
+    
 
   ];
 
@@ -145,11 +112,7 @@
     'The Atelier/Propitiation — Evan Butler': 'The Atelier/Propitiation — エヴァン・バトラー',
     'Propitiation (Archived) — Evan Butler': 'Propitiation（アーカイブ）— エヴァン・バトラー',
     'Contact — Evan Butler': 'お問い合わせ — エヴァン・バトラー',
-    'V — Evan Butler': 'V — エヴァン・バトラー',
-    'Books · V — Evan Butler': 'Books · V — エヴァン・バトラー',
-    'Tanpeki · V — Glossary · Evan Butler': 'Tanpeki · V — Glossary · エヴァン・バトラー',
-    'Vermillion Zyu Hung · V — Glossary · Evan Butler': 'Vermillion Zyu Hung · V — Glossary · エヴァン・バトラー',
-    'Glossary · Evan Butler': 'Glossary · エヴァン・バトラー',
+    'V:Anthology — Evan Butler': 'V:Anthology — エヴァン・バトラー',
     'Volume 2 — Tanpeki · Evan Butler': 'Volume 2 — Tanpeki · エヴァン・バトラー',
     'Volume 3 — Vermillion Zyu Hung · Evan Butler': 'Volume 3 — Vermillion Zyu Hung · エヴァン・バトラー',
     'Volume 4 — Pierrot · Evan Butler': 'Volume 4 — Pierrot · エヴァン・バトラー'

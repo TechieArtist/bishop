@@ -7,7 +7,7 @@
 // A single continuous rotation drives every card, so the motion
 // is one smooth turn, not a set of separate slides.
 // The arrows, keys and swipes turn the wheel in volume order
-// (Prologue → Volume 2 → Volume 3 → Volume 4 → loop).
+// (Volume 2 → Volume 3 → Volume 4 → loop).
 // Clicking a card opens that volume's page: the orbit fades up
 // first, then the volume's page fades in on arrival.
 //
@@ -111,8 +111,8 @@
     if (animating || n < 2) return;
     animating = true;
     var from = wheel;
-    // The wheel turns with the title index: Next brings Volume 2 to
-    // the front after Prologue, then 3, then 4, then loops — with
+    // The wheel turns with the title index: Next brings Volume 3 to
+    // the front after Volume 2, then 4, then loops — with
     // the next card swinging in from the right, so a left swipe
     // and the › button turn the wheel the same way.
     var to = wheel + dir * step();
