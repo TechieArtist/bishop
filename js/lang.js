@@ -2,6 +2,7 @@
   var RULES = [
     // ----- all pages -----
     { sel: '.navigation-items a', ja: ['ホーム', 'プロフィール', 'お問い合わせ', '展覧会', 'V：アンソロジー', 'ショップ'] },
+    { sel: 'header .brand', ja: ['アトリエ'] },
     { sel: '.nav-group-label', ja: ['アトリエ', '作品'] },
     { sel: '.site-footer p', ja: ['©2026 Evan Butler<br>ニューヨーク、ブルックリン<br><a href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a>'] },
 
