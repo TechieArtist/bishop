@@ -903,67 +903,87 @@ section{
    ========================================================================== */
 
 body.exhibition-page{
-  --ex-bg:#ffffff;
-  --ex-bg-2:#fbfbfa;
-  --ex-bg-3:#f7f7f5;
-  --ex-bg-4:#f3f3f0;
-  --ex-bg-5:#ffffff;
-  --ex-fg:#141310;
-  --ex-fg-dim:rgba(20,19,16,.62);
-  --ex-line:rgba(20,19,16,.16);
-  --ex-line-strong:rgba(20,19,16,.30);
-  --ex-header-bg:rgba(255,255,255,.88);
-  --ex-header-line:rgba(20,19,16,.12);
-  --ex-hero-fade-rgb:255,255,255;
-  --ex-hover-bg:rgba(20,19,16,.04);
-  --ex-frame-line:#141310;
-  --ex-frame-line-soft:rgba(20,19,16,.32);
-  --ex-frame-mat:#ffffff;
-  --ex-frame-shadow:rgba(0,0,0,.10);
-  --ex-play-bg:rgba(255,255,255,.55);
-  --ex-ghost-stroke:rgba(20,19,16,.14);
+  /* Whiteroom background (the original exhibition background) — the photo
+     lives on a fixed pseudo-element below (iOS-safe, not
+     background-attachment:fixed); rooms are transparent so it shows
+     through, with only a whisper of deepening. Text is bone-white. */
+  --ex-bg:transparent;
+  --ex-bg-2:rgba(0,0,0,.05);
+  --ex-bg-3:rgba(0,0,0,.10);
+  --ex-bg-4:rgba(0,0,0,.15);
+  --ex-bg-5:rgba(0,0,0,.20);
+  --ex-fg:#f2f0eb;
+  --ex-fg-dim:rgba(242,240,235,.66);
+  --ex-line:rgba(242,240,235,.22);
+  --ex-line-strong:rgba(242,240,235,.38);
+  --ex-header-bg:rgba(18,18,17,.72);
+  --ex-header-line:rgba(242,240,235,.14);
+  --ex-hero-fade-rgb:92,92,89;
+  --ex-hover-bg:rgba(242,240,235,.07);
+  --ex-frame-line:#efece5;
+  --ex-frame-line-soft:rgba(239,236,229,.38);
+  --ex-frame-mat:transparent;
+  --ex-frame-shadow:rgba(0,0,0,.45);
+  --ex-play-bg:rgba(0,0,0,.38);
+  --ex-ghost-stroke:rgba(242,240,235,.16);
   --ex-cinnabar:#e0502c;
   --ex-serif:"Cormorant Garamond", Georgia, serif;
   --ex-sans:"Archivo", "Helvetica Neue", Arial, sans-serif;
   color-scheme:light dark;
-  background:var(--ex-bg);
-  background-image:none;
+  background-color:#000;
   color:var(--ex-fg);
   font-family:var(--ex-sans);
   scroll-behavior:smooth;
   scroll-snap-type:none;
 }
+/* Fixed Whiteroom background layer.
+   The original exhibition background: Whiteroom.jpg under a 50% black
+   overlay. A fixed pseudo-element (not background-attachment:fixed) so
+   it holds steady on iOS Safari. It sits behind the content (z-index -1)
+   and does not scroll with the page. */
+body.exhibition-page::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+    linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+    url('../assets/images/Whiteroom.jpg');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  pointer-events:none;
+}
 @media (prefers-color-scheme: dark){
   body.exhibition-page{
-    --ex-bg:#000000;
-    --ex-bg-2:#050505;
-    --ex-bg-3:#090909;
-    --ex-bg-4:#0c0c0b;
-    --ex-bg-5:#000000;
+    /* Same Whiteroom grey in dark mode — the background is the photo,
+       not the palette, so the rooms stay transparent here too. */
+    --ex-bg:transparent;
+    --ex-bg-2:rgba(0,0,0,.05);
+    --ex-bg-3:rgba(0,0,0,.10);
+    --ex-bg-4:rgba(0,0,0,.15);
+    --ex-bg-5:rgba(0,0,0,.20);
     --ex-fg:#f2f0eb;
-    --ex-fg-dim:rgba(242,240,235,.62);
-    --ex-line:rgba(242,240,235,.18);
-    --ex-line-strong:rgba(242,240,235,.34);
-    --ex-header-bg:rgba(0,0,0,.88);
-    --ex-header-line:rgba(242,240,235,.12);
-    --ex-hero-fade-rgb:0,0,0;
-    --ex-hover-bg:rgba(242,240,235,.06);
+    --ex-fg-dim:rgba(242,240,235,.66);
+    --ex-line:rgba(242,240,235,.22);
+    --ex-line-strong:rgba(242,240,235,.38);
+    --ex-header-bg:rgba(18,18,17,.72);
+    --ex-header-line:rgba(242,240,235,.14);
+    --ex-hero-fade-rgb:92,92,89;
+    --ex-hover-bg:rgba(242,240,235,.07);
     --ex-frame-line:#efece5;
-    --ex-frame-line-soft:rgba(239,236,229,.32);
-    --ex-frame-mat:#000000;
-    --ex-frame-shadow:rgba(0,0,0,.55);
+    --ex-frame-line-soft:rgba(239,236,229,.38);
+    --ex-frame-mat:transparent;
+    --ex-frame-shadow:rgba(0,0,0,.45);
     --ex-play-bg:rgba(0,0,0,.38);
-    --ex-ghost-stroke:rgba(242,240,235,.15);
+    --ex-ghost-stroke:rgba(242,240,235,.16);
   }
 }
 html:has(body.exhibition-page){
-  background:#fff;
+  background:#000;
   background-image:none;
   color-scheme:light dark;
   scroll-behavior:smooth;
-}
-@media (prefers-color-scheme: dark){
-  html:has(body.exhibition-page){ background:#000; }
 }
 @media (prefers-reduced-motion: reduce){
   body.exhibition-page, html:has(body.exhibition-page){ scroll-behavior:auto; }
