@@ -2,31 +2,29 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
 <meta name="description" content="Propitiation: Evan Butler's archived online solo exhibition — digital art, video, and animation. Works are not for sale.">
 <title>Propitiation (Archived) — Evan Butler</title>
 <link rel="icon" type="image/png" href="assets/images/favicon.png?v=2">
-<link rel="stylesheet" href="css/pricingstyle.css?v=1">
+<link rel="stylesheet" href="css/pricingstyle.css?v=2">
 <link rel="stylesheet" href="css/desktop.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
 <link rel="stylesheet" href="css/menu.css?v=2">
 </head>
- 
+
 <body class="exhibition-page">
 <div class="page-transition" id="pageTransition"></div>
 
+<div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
 
-<div id="topSentinel" style="position:absolute; top:0; height:1px; width:1px;"></div>
-
- 
 <header>
   <a href="index.html" class="brand">Atelier</a>
   <div class="menu-btn"></div>
 
-
- 
   <div class="navigation">
     <div class="navigation-items">
       <span class="nav-group-label">Atelier</span>
@@ -42,342 +40,326 @@
   </div>
 </header>
 
-<section class="poster">
-  <div class="poster-overlay"></div>
-  <div class="poster-content">
-    <h1></h1>
-    <p class="poster-subtitle"></p>
-    <p class="poster-dates"></p>
-  </div>
-</section>
+<nav class="rail" aria-label="Chapters">
+  <a href="#thesis" data-rail="prologue"><span class="rn">00</span><span class="rl">Prologue</span></a>
+  <a href="#ch1" data-rail="ch1"><span class="rn">I</span><span class="rl">People of the Internet</span></a>
+  <a href="#ch2" data-rail="ch2"><span class="rn">II</span><span class="rl">The Bomb</span></a>
+  <a href="#ch3" data-rail="ch3"><span class="rn">III</span><span class="rl">Hell</span></a>
+  <a href="#film" data-rail="film"><span class="rn">✳</span><span class="rl">Special Movie</span></a>
+</nav>
 
-<section class="commentary">
-  <p class="commentary-label">Propitiation · Archived online exhibition · 2026</p>
-  <p class="commentary-dash">—</p>
+<main id="top">
 
-  <p class="chapter-tag">Introduction</p>
-  <h2 class="chapter-title">The New Era</h2>
-
-  <p class="chapter-body">
-    When I created <em>Propitiation</em>, I wanted to establish a simple idea:
-    digital art is more than art made with computers — it has its own distinct
-    spirit. Through the loss of tactile presence in drawing, this physical
-    experience has been altered into a mental experience where thoughts give
-    way to shape. I saw it as a gateway to a new frame of thinking that
-    challenges the status quo. The works shown in the exhibition are not for sale.
-  </p>
-
-</section>
-
-<section class="special-movie"id="specialMovie">
-  <video class="special-movie-bg" autoplay muted loop playsinline poster="">
-    <source src="assets/videos/SpecialMovieBG.mp4" type="video/mp4">
-  </video>
-  <div class="special-movie-overlay"></div>
-  <div class="special-movie-content">
-    <h2>EXHIBITION<br>SPECIAL MOVIE</h2>
-
-    <div class="movie-links">
-      <a href="#" class="movie-link" onclick="openMovieModal('nlVRBkvuoZg'); return false;">
-
-       <img src="assets/images/Playr.PNG" alt="Play">
-   </a>
-
-      <!-- add a second video the same way when you have it -->
-      <!--
-      <a href="#" class="movie-link" onclick="openMovieModal('SECOND_VIDEO_ID'); return false;">
-        <span>2nd</span>
-        <img src="Playr.png" alt="Play">
-      </a>
-      -->
-    </div>
-  </div>
-</section>
-
-<!-- Video Modal -->
-<div class="movie-modal" id="movieModal">
-  <div class="movie-modal-close" onclick="closeMovieModal()">&times;</div>
-  <div class="movie-modal-inner">
-    <iframe id="movieFrame"
-      src=""
-      frameborder="0"
-      allow="autoplay; fullscreen; encrypted-media"
-      allowfullscreen>
-    </iframe>
-  </div>
-</div>
-
-
- 
-<div class="catalogue">
-
- 
-
-  <!-- Artwork 1: Untitled 2023 -->
-<section class="artwork">
-  <div class="artwork-frame">
-     
-    <img src="assets/images/Untitled2023.jpg" alt="Untitled2023">
-    
-  </div>
-
-  <div class="art-info">
-    <div class="left">
-      <h2>Untitled 2023</h2>
-      <p>Digital art · 2023</p>
-    </div>
-    <div class="right"></div>
-  </div>
-</section>
-
-
-  <!-- Artwork 2: Breaking (short loop) -->
-  <section class="artwork">
-    <div class="artwork-frame">
-        <div class="video-frame-wrap">
-  <img src="assets/images/Break.jpg" class="video-poster-bg" alt="">
-  <video muted loop playsinline preload="metadata" data-lazy-video>
-    <source src="assets/videos/Form.MP4" type="video/mp4">
-  </video>
-</div>
-  </div>
-
-
-    <div class="art-info">
-        <h2>Breaking (割れる)</h2>
-        <p>Digital art · Video · 2025</p>
-       
-    </div>
-</section>
-
-<!-- Artwork 3: Dante's Inferno (short loop) -->
-  <section class="artwork">
-    <div class="artwork-frame">
-      <div class="video-frame-wrap">
-  <img src="assets/images/Dantep.jpg" class="video-poster-bg" alt="">
-  <video muted loop playsinline preload="metadata" data-lazy-video>
-    <source src="assets/videos/Dante.MP4" type="video/mp4">
-  </video>
-</div>
-    </div>
-
-    <div class="art-info">
-      <div class="left">
-        <h2>Dante's Inferno</h2>
-        <p>Digital art · Video · 2026</p>
+  <!-- ================= HERO / POSTER ================= -->
+  <section class="room room-light hero" data-chapter="prologue">
+    <div class="hero-img"><img src="assets/images/Cross.jpg" alt="Cross — the exhibition poster image: a city street seen through a cross-shaped cut, in burnt orange and white"></div>
+    <div class="hero-shade"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-top">
+        <p class="kicker commentary-label">Online exhibition <span class="dot">·</span> Evan Butler <span class="dot">·</span> New York</p>
+        <p class="hero-ja" aria-hidden="true">贖罪 <b>·</b><span class="hide-sm"> プロピシエーション</span></p>
       </div>
-
-      <div class="right">
-        
-      </div>
-    </div>
-  </section>
-<!-- Commentary -->
- <section class="commentary">
-  <p class="commentary-dash">—</p>
-
-  <p class="chapter-tag">CHAPTER I</p>
-  <h2 class="chapter-title">People of the Internet</h2>
-
-  <p class="chapter-body">
-    An image so ingrained in the collective memory that its 
-   reproduction has become more immediate than the man it depicts.
-  </p>
-
-</section>
-
-<!-- Artwork 4: Hungry Gull and the Water Vessel (short loop) -->
-  <section class="artwork">
-    <div class="artwork-frame">
-      <div class="video-frame-wrap">
-  <img src="assets/images/Hungrygullp.jpg" class="video-poster-bg" alt="">
-  <video muted loop playsinline preload="metadata" data-lazy-video>
-    <source src="assets/videos/Hungrygull.mp4" type="video/mp4">
-  </video>
-</div>
-    </div>
-
-    <div class="art-info">
-      <div class="left">
-        <h2>Hungry Gull and the Water Vessel </h2>
-        <p>Digital art · Animation · 2026</p>
-      </div>
-
-      <div class="right">
-        
+      <h1>Propiti<em>a</em>tion</h1>
+      <div class="hero-meta">
+        <span class="hero-meta-item">8 works</span><span class="hero-meta-item">3 chapters</span><span class="hero-meta-item">1 film</span><span class="hero-meta-item">Works are not for sale</span>
+        <a class="enter" href="#thesis">Enter the exhibition <span class="arr">↓</span></a>
       </div>
     </div>
   </section>
 
-  <!-- Artwork 5: Tanpeki -->
-  <section class="artwork">
-
-  <div class="artwork-frame">
-  <div class="art-slider">
-
-    <div class="art-slide active">
-      <img src="assets/images/Tanpeki.jpg">
-    </div>
-
-    <div class="art-slide">
-      <img src="assets/images/Tanpeki3.jpg">
-    </div>
-
-    <div class="art-slide">
-      <img src="assets/images/Tanpeki5.jpg">
-    </div>
-
-   <div class="art-slide">
-      <img src="assets/images/Tanpeki6.jpg">
-    </div>
-
-   <div class="art-slide">
-      <img src="assets/images/Tanpeki7.jpg">
-    </div>
- 
-  </div>
-  </div>
-
-  <div class="art-slider-nav">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-   
-  </div>
-
-  <div class="art-info">
-      <h2>Tanpeki(丹碧)</h2>
-      <p>Digital art · 2025</p>
-  </div>
-
-</section>
-
-
-  
-
-  <!-- Commentary -->
-  <section class="commentary">
-    
-    <p class="commentary-dash">—</p>
-
-    <p class="chapter-tag">CHAPTER II</p>
-    <h2 class="chapter-title">The Bomb</h2>
-
-    <p class="chapter-body">
-      When the world lies, who remains to tell the truth?
-
-      The bomb was not dropped on one place alone. It was dropped on all of us.
-    </p>
-  </section>
-
-
- 
- <!-- Artwork 6: Automatonophobia 2025 -->
-<section class="artwork">
-  <div class="artwork-grid">
-    <div class="artwork-frame no-zoom">
-      <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/E4PA0kLpCFg"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          title="Untitled"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </div>
-  </div>
-
-  <div class="art-info">
-    <div class="left">
-      <h2>Automatonophobia</h2>
-      <p>3D animation · Mixed video · 2025</p>
-    </div>
-    <div class="right"></div>
-  </div>
-</section>
-
- <!-- Artwork 7: Venus's Cycle (short loop) -->
-  <section class="artwork">
-    <div class="artwork-frame">
-      <div class="video-frame-wrap">
-  <img src="assets/images/Venuscycle.PNG" class="video-poster-bg" alt="">
-  <video muted loop playsinline preload="metadata" data-lazy-video>
-    <source src="assets/videos/Venuscycle.MP4" type="video/mp4">
-  </video>
-</div>
-    </div>
-
-    <div class="art-info">
-      <div class="left">
-        <h2>Venus's Cycle </h2>
-        <p> AI animation · Video · 2026</p>
-      </div>
-
-      <div class="right">
-        
+  <!-- ================= THESIS ================= -->
+  <section class="room room-light thesis" id="thesis" data-chapter="prologue">
+    <div class="wrap">
+      <div class="thesis-grid">
+        <div class="rv">
+          <p class="kicker chapter-tag">00 · Introduction</p>
+          <h2 class="chapter-title">The<br>New <em>Era</em></h2>
+        </div>
+        <div class="thesis-body rv">
+          <p class="chapter-body">When I created <em>Propitiation</em>, I wanted to establish a simple idea: digital art is more than art made with computers — it has its own distinct spirit. Through the loss of tactile presence in drawing, this physical experience has been altered into a mental experience where thoughts give way to shape. I saw it as a gateway to a new frame of thinking that challenges the status quo. The works shown in the exhibition are not for sale.</p>
+        </div>
       </div>
     </div>
   </section>
 
- <!-- Artwork 8: Vagabond (separate pieces) -->
-<section class="artwork" id="lastArtwork">
-
-  <div class="artwork-grid">
-    <div class="artwork-frame">
-      <div class="video-frame-wrap">
-  <img src="assets/images/Vagabondp.jpg" class="video-poster-bg" alt="">
-  <video muted loop playsinline preload="metadata" data-lazy-video>
-    <source src="assets/videos/Poseidonblue2.mp4" type="video/mp4">
-  </video>
-</div>
+  <!-- ================= INDEX ================= -->
+  <section class="room room-light index-sec" id="index" data-chapter="prologue">
+    <div class="wrap">
+      <div class="index-head rv">
+        <p class="kicker index-kicker">Index</p>
+      </div>
+      <ol class="index-list rv">
+        <li><a href="#w1"><span class="no">01</span><span class="ti">Untitled 2023</span><span class="me">Digital art · 2023</span></a></li>
+        <li><a href="#w2"><span class="no">02</span><span class="ti">Breaking （割れる）</span><span class="me">Digital art · Video · 2025</span></a></li>
+        <li><a href="#w3"><span class="no">03</span><span class="ti">Dante's Inferno</span><span class="me">Digital art · Video · 2026</span></a></li>
+        <li><a href="#w4"><span class="no">04</span><span class="ti">Hungry Gull and the Water Vessel</span><span class="me">Digital art · Animation · 2026</span></a></li>
+        <li><a href="#w5"><span class="no">05</span><span class="ti">Tanpeki （丹碧）</span><span class="me">Digital art · 2025</span></a></li>
+        <li><a href="#w6"><span class="no">06</span><span class="ti">Automatonophobia</span><span class="me">3D animation · Mixed video · 2025</span></a></li>
+        <li><a href="#w7"><span class="no">07</span><span class="ti">Venus's Cycle</span><span class="me">AI animation · Video · 2026</span></a></li>
+        <li><a href="#w8"><span class="no">08</span><span class="ti">Vagabond</span><span class="me">AI animation · 3D animation · 2026</span></a></li>
+        <li><a href="#film"><span class="no">✳</span><span class="ti">Exhibition Special Movie</span><span class="me"></span></a></li>
+      </ol>
     </div>
-
-    <div class="artwork-frame">
-      <div class="video-frame-wrap">
-  <img src="assets/images/Vagabondp2.jpg" class="video-poster-bg" alt="">
-  <video muted loop playsinline preload="metadata" data-lazy-video>
-    <source src="assets/videos/Vagabond2.mp4" type="video/mp4">
-  </video>
-</div>
-    </div>
-
-  <!--  <div class="artwork-frame">
-      <img src="assets/images/VagabondDrawing.PNG">
-    </div>
-  </div> -->
-
-  <div class="art-info">
-      <h2>Vagabond</h2>
-      <p>AI animation · 3D animation · 2026</p>
-  </div>
-
-</section>
-
- <!-- Commentary -->
-  <section class="commentary">
-    
-    <p class="commentary-dash">—</p>
-
-
-    <p class="chapter-tag">CHAPTER III</p>
-  <h2 class="chapter-title">Hell</h2>
-
-  <p class="chapter-body">
-    What is to be understood about the personas we create in our lives. Is a revolutionary to bend the society he lives in or bend himself. Do the people need a revolution or does the revolutionary need it?
-  </p>
-
   </section>
- 
-</div>
- 
- <footer class="site-footer">
-    <p>©2026 by Evan Butler.<br>New York, Brooklyn<br><a href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a></p>
- </footer>
- 
+
+  <!-- ================= PROLOGUE WORKS ================= -->
+  <section class="room room-light2 works" data-chapter="prologue">
+    <div class="wrap">
+
+      <!-- Work 1: Untitled 2023 -->
+      <article class="work w-hero rv" id="w1">
+        <div class="frame zoomable" data-lightbox="0" role="button" tabindex="0" aria-label="Enlarge Untitled 2023">
+          <img src="assets/images/Untitled2023.jpg" alt="Untitled 2023">
+        </div>
+        <div class="label art-info">
+          <span class="no">01</span>
+          <h3>Untitled 2023</h3>
+          <p class="meta">Digital art · 2023</p>
+        </div>
+      </article>
+
+      <div class="pair">
+        <!-- Work 2: Breaking -->
+        <article class="work rv" id="w2">
+          <div class="frame zoomable" data-lightbox="1" role="button" tabindex="0" aria-label="Enlarge still from Breaking">
+            <div class="video-frame-wrap">
+              <img src="assets/images/Break.jpg" class="video-poster-bg" alt="">
+              <video muted loop playsinline preload="metadata" data-lazy-video>
+                <source src="assets/videos/Form.MP4" type="video/mp4">
+              </video>
+            </div>
+            <div class="play-badge"><span class="play-circle">Loop</span></div>
+          </div>
+          <div class="label art-info">
+            <span class="no">02</span>
+            <h3>Breaking （割れる）</h3>
+            <p class="meta">Digital art · Video · 2025</p>
+          </div>
+        </article>
+
+        <!-- Work 3: Dante's Inferno -->
+        <article class="work rv" id="w3">
+          <div class="frame zoomable" data-lightbox="2" role="button" tabindex="0" aria-label="Enlarge still from Dante's Inferno">
+            <div class="video-frame-wrap">
+              <img src="assets/images/Dantep.jpg" class="video-poster-bg" alt="">
+              <video muted loop playsinline preload="metadata" data-lazy-video>
+                <source src="assets/videos/Dante.MP4" type="video/mp4">
+              </video>
+            </div>
+            <div class="play-badge"><span class="play-circle">Loop</span></div>
+          </div>
+          <div class="label art-info">
+            <span class="no">03</span>
+            <h3>Dante's Inferno</h3>
+            <p class="meta">Digital art · Video · 2026</p>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CHAPTER I ================= -->
+  <section class="room room-grey chapter" id="ch1" data-chapter="ch1">
+    <span class="big-no" aria-hidden="true">I</span>
+    <div class="wrap">
+      <p class="kicker chapter-tag rv">Chapter I</p>
+      <h2 class="chapter-title rv">People of the <em>Internet</em></h2>
+      <p class="body chapter-body rv">An image so ingrained in the collective memory that its reproduction has become more immediate than the man it depicts.</p>
+      <div class="rule rv"></div>
+    </div>
+  </section>
+
+  <section class="room room-grey works" data-chapter="ch1" style="padding-top:0;">
+    <div class="wrap">
+
+      <!-- Work 4: Hungry Gull and the Water Vessel -->
+      <article class="work w-full rv" id="w4">
+        <div class="frame zoomable" data-lightbox="3" role="button" tabindex="0" aria-label="Enlarge still from Hungry Gull and the Water Vessel">
+          <div class="video-frame-wrap">
+            <img src="assets/images/Hungrygullp.jpg" class="video-poster-bg" alt="">
+            <video muted loop playsinline preload="metadata" data-lazy-video>
+              <source src="assets/videos/Hungrygull.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="play-badge"><span class="play-circle">Loop</span></div>
+        </div>
+        <div class="label art-info">
+          <span class="no">04</span>
+          <h3>Hungry Gull and the Water Vessel</h3>
+          <p class="meta">Digital art · Animation · 2026</p>
+        </div>
+      </article>
+
+      <!-- Work 5: Tanpeki (5-slide slider) -->
+      <article class="work rv" id="w5">
+        <div class="slider">
+          <div class="frame">
+            <div class="slide on"><img src="assets/images/Tanpeki.jpg" alt="Tanpeki — first image of the series"></div>
+            <div class="slide"><img src="assets/images/Tanpeki3.jpg" alt="Tanpeki — second image of the series"></div>
+            <div class="slide"><img src="assets/images/Tanpeki5.jpg" alt="Tanpeki — third image of the series"></div>
+            <div class="slide"><img src="assets/images/Tanpeki6.jpg" alt="Tanpeki — fourth image of the series"></div>
+            <div class="slide"><img src="assets/images/Tanpeki7.jpg" alt="Tanpeki — fifth image of the series"></div>
+          </div>
+          <div class="slider-ui">
+            <button class="sbtn" id="tanPrev" aria-label="Previous Tanpeki image">←</button>
+            <span class="count" id="tanCount">1 / 5</span>
+            <button class="sbtn" id="tanNext" aria-label="Next Tanpeki image">→</button>
+            <span class="track" aria-hidden="true"><i id="tanTrack" style="width:20%"></i></span>
+          </div>
+        </div>
+        <div class="label art-info">
+          <span class="no">05</span>
+          <h3>Tanpeki （丹碧）</h3>
+          <p class="meta">Digital art · 2025</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= CHAPTER II ================= -->
+  <section class="room room-char chapter" id="ch2" data-chapter="ch2">
+    <span class="big-no" aria-hidden="true">II</span>
+    <div class="wrap">
+      <p class="kicker chapter-tag rv">Chapter II</p>
+      <h2 class="chapter-title rv">The <em>Bomb</em></h2>
+      <p class="body chapter-body rv">When the world lies, who remains to tell the truth? The bomb was not dropped on one place alone. It was dropped on all of us.</p>
+      <div class="rule rv"></div>
+    </div>
+  </section>
+
+  <section class="room room-char works" data-chapter="ch2" style="padding-top:0;">
+    <div class="wrap">
+
+      <!-- Work 6: Automatonophobia (cinema panel) -->
+      <article class="work w-full rv" id="w6">
+        <div class="frame" data-film="E4PA0kLpCFg" role="button" tabindex="0" aria-label="Play Automatonophobia" style="cursor:pointer;">
+          <img src="https://i.ytimg.com/vi/E4PA0kLpCFg/maxresdefault.jpg" alt="Automatonophobia — film still">
+          <div class="play-badge"><span class="play-circle">Play</span></div>
+        </div>
+        <div class="label art-info">
+          <span class="no">06</span>
+          <h3>Automatonophobia</h3>
+          <p class="meta">3D animation · Mixed video · 2025 · 1:58</p>
+        </div>
+      </article>
+
+      <!-- Work 7: Venus's Cycle -->
+      <article class="work w-offset rv" id="w7">
+        <div class="frame zoomable" data-lightbox="4" role="button" tabindex="0" aria-label="Enlarge still from Venus's Cycle">
+          <div class="video-frame-wrap">
+            <img src="assets/images/Venuscycle.PNG" class="video-poster-bg" alt="">
+            <video muted loop playsinline preload="metadata" data-lazy-video>
+              <source src="assets/videos/Venuscycle.MP4" type="video/mp4">
+            </video>
+          </div>
+          <div class="play-badge"><span class="play-circle">Loop</span></div>
+        </div>
+        <div class="label art-info">
+          <span class="no">07</span>
+          <h3>Venus's Cycle</h3>
+          <p class="meta">AI animation · Video · 2026</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= CHAPTER III ================= -->
+  <section class="room room-black chapter" id="ch3" data-chapter="ch3">
+    <span class="big-no" aria-hidden="true">III</span>
+    <div class="wrap">
+      <p class="kicker chapter-tag rv">Chapter III</p>
+      <h2 class="chapter-title rv"><em>Hell</em></h2>
+      <p class="body chapter-body rv">What is to be understood about the personas we create in our lives. Is a revolutionary to bend the society he lives in or bend himself. Do the people need a revolution or does the revolutionary need it?</p>
+      <div class="rule rv"></div>
+    </div>
+  </section>
+
+  <section class="room room-black works" data-chapter="ch3" style="padding-top:0;">
+    <div class="wrap">
+
+      <!-- Work 8: Vagabond (diptych, now under Hell) -->
+      <article class="work rv" id="w8">
+        <div class="diptych">
+          <div class="frame zoomable" data-lightbox="5" role="button" tabindex="0" aria-label="Enlarge Vagabond, first panel">
+            <div class="video-frame-wrap">
+              <img src="assets/images/Vagabondp.jpg" class="video-poster-bg" alt="">
+              <video muted loop playsinline preload="metadata" data-lazy-video>
+                <source src="assets/videos/Poseidonblue2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="frame zoomable" data-lightbox="6" role="button" tabindex="0" aria-label="Enlarge Vagabond, second panel">
+            <div class="video-frame-wrap">
+              <img src="assets/images/Vagabondp2.jpg" class="video-poster-bg" alt="">
+              <video muted loop playsinline preload="metadata" data-lazy-video>
+                <source src="assets/videos/Vagabond2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="label art-info">
+          <span class="no">08</span>
+          <h3>Vagabond</h3>
+          <p class="meta">AI animation · 3D animation · 2026</p>
+        </div>
+      </article>
+
+      <div class="closing rv">
+        <p class="end-mark">End</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FILM CODA ================= -->
+  <section class="room room-black film" id="film" data-chapter="film">
+    <span class="ghost" aria-hidden="true">Special Movie</span>
+    <div class="wrap film-inner">
+      <p class="kicker film-kicker rv">Coda</p>
+      <div class="special-movie-content rv">
+        <h2>Exhibition<br>Special Movie</h2>
+      </div>
+      <button class="play-big rv" data-film="nlVRBkvuoZg" aria-label="Play the Exhibition Special Movie">
+        <span class="tri">▶</span><small>Play film</small>
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= COLOPHON ================= -->
+  <section class="room room-black colophon">
+    <div class="wrap">
+      <div class="colo-grid">
+        <div class="rv">
+          <h4>The merge</h4>
+          <ul class="changes">
+            <li><b>1</b><span><strong>From the original —</strong> the introduction and chapter texts, in full</span></li>
+            <li><b>2</b><span><strong>From the original —</strong> medium on every label and index line</span></li>
+            <li><b>3</b><span><strong>From the redesign —</strong> the titled Cross poster and the index up front</span></li>
+            <li><b>4</b><span><strong>From the redesign —</strong> Hell has its work; the movie closes as coda</span></li>
+            <li><b>5</b><span><strong>Kept from both —</strong> white wall, black in Dark Mode, the red accent</span></li>
+          </ul>
+        </div>
+        <div class="colo-side rv">
+          <h4>About</h4>
+          <p>Same works, same chapters — the redesign's hang, in the original's words.</p>
+          <p>All works © Evan Butler. Not for sale.</p>
+        </div>
+      </div>
+      <div class="colo-foot">
+        <button class="to-top" id="toTop">Back to the poster ↑</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>©2026 by Evan Butler.<br>New York, Brooklyn<br><a href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a></p>
+</footer>
+
 <footer>
   <div class="media-icons">
     <a href="https://www.facebook.com/evan.butler.9619"><i class="fab fa-facebook-f"></i></a>
@@ -386,167 +368,233 @@
 </footer>
 
 <div class="scroll-toggle" id="scrollToggle">
-  <img src="assets/images/Dashup.PNG" alt="Scroll down" class="scroll-icon" id="dashDown" onclick="document.getElementById('specialMovie').scrollIntoView({behavior:'smooth'})">
-  <img src="assets/images/Dashdown.PNG" alt="Scroll up" class="scroll-icon" id="dashUp" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="display:none;">
+  <img src="assets/images/Dashup.PNG" alt="Scroll down" class="scroll-icon" id="dashDown" onclick="document.getElementById('thesis').scrollIntoView({behavior:'smooth'})">
+  <img src="assets/images/Dashdown.PNG" alt="Scroll up" class="scroll-icon" id="dashUp" onclick="document.body.scrollTo({top:0, behavior:'smooth'})" style="display:none;">
 </div>
 
- 
-<script src="app.js"></script>
+<!-- Lightbox -->
+<div class="overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged artwork">
+  <button class="ov-close" id="lbClose">Close ✕</button>
+  <button class="ov-nav prev" id="lbPrev" aria-label="Previous work">←</button>
+  <figure>
+    <img id="lbImg" alt="">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button class="ov-nav next" id="lbNext" aria-label="Next work">→</button>
+</div>
 
+<!-- Film modal -->
+<div class="overlay" id="filmModal" role="dialog" aria-modal="true" aria-label="Film player">
+  <button class="ov-close" id="filmClose">Close ✕</button>
+  <div class="vidwrap"><iframe id="filmFrame" title="Exhibition film" allow="autoplay; fullscreen; encrypted-media" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+</div>
 
+<script>
+(function(){
+  "use strict";
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
- 
-<script type="text/javascript">
-  //Javacript for responsive navigation menu
+  /* The body is the scroll container on this site (html, body height:100vh),
+     so scroll position and scrolling go through document.body. */
+  function scrollTop(){
+    return document.body.scrollTop || document.documentElement.scrollTop || 0;
+  }
+  function scrollMax(){
+    var b = document.body;
+    return Math.max(0, b.scrollHeight - b.clientHeight);
+  }
+  function scrollToY(y){
+    if (!reduceMotion){ document.body.scrollTo({top:y, behavior:"smooth"}); }
+    else { document.body.scrollTop = y; }
+  }
+
+  /* ---- scroll progress ---- */
+  var bar = document.getElementById("progressBar");
+  function onScroll(){
+    var max = scrollMax();
+    var p = max > 0 ? Math.round((scrollTop() / max) * 100) : 0;
+    if (bar) bar.style.width = p + "%";
+    updateToggle();
+  }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  document.body.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+
+  /* ---- reveal on scroll ---- */
+  var rvEls = Array.prototype.slice.call(document.querySelectorAll(".rv"));
+  function revealCheck(){
+    var limit = window.innerHeight * 0.94;
+    rvEls = rvEls.filter(function(el){
+      if (el.getBoundingClientRect().top < limit){ el.classList.add("in"); return false; }
+      return true;
+    });
+  }
+  if (!reduceMotion){
+    var ticking = false;
+    function onMove(){
+      if (!ticking){ ticking = true; requestAnimationFrame(function(){ revealCheck(); ticking = false; }); }
+    }
+    window.addEventListener("scroll", onMove, {passive:true});
+    document.body.addEventListener("scroll", onMove, {passive:true});
+    window.addEventListener("resize", onMove);
+    revealCheck();
+    /* Safety: nothing stays hidden if the observers above miss it. */
+    setTimeout(function(){ rvEls.forEach(function(el){ el.classList.add("in"); }); rvEls = []; }, 2000);
+  } else {
+    rvEls.forEach(function(el){ el.classList.add("in"); });
+  }
+
+  /* ---- chapter rail ---- */
+  var railLinks = document.querySelectorAll(".rail a");
+  var chapters = document.querySelectorAll("[data-chapter]");
+  var currentChapter = "";
+  function setRail(name){
+    if (name === currentChapter) return;
+    currentChapter = name;
+    railLinks.forEach(function(a){ a.classList.toggle("on", a.getAttribute("data-rail") === name); });
+  }
+  if ("IntersectionObserver" in window){
+    var chObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) setRail(e.target.getAttribute("data-chapter")); });
+    }, {rootMargin:"-38% 0px -50% 0px"});
+    chapters.forEach(function(s){ chObs.observe(s); });
+  }
+
+  /* ---- Tanpeki slider (5 slides) ---- */
+  var slides = document.querySelectorAll("#w5 .slide");
+  var tanCount = document.getElementById("tanCount");
+  var tanTrack = document.getElementById("tanTrack");
+  var tIdx = 0;
+  function goTan(i){
+    tIdx = (i + slides.length) % slides.length;
+    slides.forEach(function(s, j){ s.classList.toggle("on", j === tIdx); });
+    if (tanCount) tanCount.textContent = (tIdx + 1) + " / " + slides.length;
+    if (tanTrack) tanTrack.style.width = ((tIdx + 1) / slides.length * 100) + "%";
+  }
+  var tanPrev = document.getElementById("tanPrev");
+  var tanNext = document.getElementById("tanNext");
+  if (tanPrev) tanPrev.addEventListener("click", function(){ goTan(tIdx - 1); });
+  if (tanNext) tanNext.addEventListener("click", function(){ goTan(tIdx + 1); });
+  /* swipe */
+  var tanFrame = document.querySelector("#w5 .slider .frame");
+  if (tanFrame){
+    var tStartX = 0, tDragging = false;
+    tanFrame.addEventListener("touchstart", function(e){ tStartX = e.touches[0].clientX; tDragging = true; }, {passive:true});
+    tanFrame.addEventListener("touchend", function(e){
+      if (!tDragging) return;
+      tDragging = false;
+      var dx = e.changedTouches[0].clientX - tStartX;
+      if (Math.abs(dx) > 60){ goTan(dx < 0 ? tIdx + 1 : tIdx - 1); }
+    }, {passive:true});
+  }
+
+  /* ---- lightbox (poster stills) ---- */
+  var gallery = [
+    {src:"assets/images/Untitled2023.jpg", title:"Untitled 2023", meta:"Digital art · 2023 · Prologue"},
+    {src:"assets/images/Break.jpg", title:"Breaking （割れる）", meta:"Digital art · Video · 2025 · Prologue — poster frame"},
+    {src:"assets/images/Dantep.jpg", title:"Dante's Inferno", meta:"Digital art · Video · 2026 · Prologue — poster frame"},
+    {src:"assets/images/Hungrygullp.jpg", title:"Hungry Gull and the Water Vessel", meta:"Digital art · Animation · 2026 · Chapter I — poster frame"},
+    {src:"assets/images/Venuscycle.PNG", title:"Venus's Cycle", meta:"AI animation · Video · 2026 · Chapter II — poster frame"},
+    {src:"assets/images/Vagabondp.jpg", title:"Vagabond — panel one", meta:"AI animation · 3D animation · 2026 · Chapter III"},
+    {src:"assets/images/Vagabondp2.jpg", title:"Vagabond — panel two", meta:"AI animation · 3D animation · 2026 · Chapter III"}
+  ];
+  var lb = document.getElementById("lightbox");
+  var lbImg = document.getElementById("lbImg");
+  var lbCap = document.getElementById("lbCap");
+  var gIdx = 0;
+  function showLb(i){
+    gIdx = (i + gallery.length) % gallery.length;
+    var g = gallery[gIdx];
+    lbImg.src = g.src; lbImg.alt = g.title;
+    lbCap.innerHTML = g.title + "<span>" + g.meta + " · " + (gIdx + 1) + " of " + gallery.length + "</span>";
+  }
+  function openLb(i){ showLb(i); lb.classList.add("open"); document.body.style.overflow = "hidden"; }
+  function closeLb(){ lb.classList.remove("open"); document.body.style.overflow = ""; }
+  document.querySelectorAll("[data-lightbox]").forEach(function(el){
+    var i = parseInt(el.getAttribute("data-lightbox"), 10);
+    el.addEventListener("click", function(){ openLb(i); });
+    el.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " "){ e.preventDefault(); openLb(i); } });
+  });
+  document.getElementById("lbClose").addEventListener("click", closeLb);
+  document.getElementById("lbPrev").addEventListener("click", function(){ showLb(gIdx - 1); });
+  document.getElementById("lbNext").addEventListener("click", function(){ showLb(gIdx + 1); });
+  lb.addEventListener("click", function(e){ if (e.target === lb) closeLb(); });
+
+  /* ---- film modal (Automatonophobia + Special Movie) ---- */
+  var fm = document.getElementById("filmModal");
+  var ff = document.getElementById("filmFrame");
+  function openFilm(id){
+    ff.src = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0";
+    fm.classList.add("open"); document.body.style.overflow = "hidden";
+  }
+  function closeFilm(){ fm.classList.remove("open"); ff.src = ""; document.body.style.overflow = ""; }
+  document.querySelectorAll("[data-film]").forEach(function(el){
+    var id = el.getAttribute("data-film");
+    el.addEventListener("click", function(){ openFilm(id); });
+    el.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " "){ e.preventDefault(); openFilm(id); } });
+  });
+  document.getElementById("filmClose").addEventListener("click", closeFilm);
+  fm.addEventListener("click", function(e){ if (e.target === fm) closeFilm(); });
+
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape"){ closeLb(); closeFilm(); }
+    if (lb.classList.contains("open")){
+      if (e.key === "ArrowRight") showLb(gIdx + 1);
+      if (e.key === "ArrowLeft") showLb(gIdx - 1);
+    }
+  });
+
+  document.getElementById("toTop").addEventListener("click", function(){ scrollToY(0); });
+
+  /* ---- lazy videos: play in view, pause out of view ---- */
+  var lazyVideos = document.querySelectorAll('[data-lazy-video]');
+  var videoObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var video = entry.target;
+      if (entry.isIntersecting){ video.play().catch(function(){}); }
+      else { video.pause(); video.classList.remove('playing'); }
+    });
+  }, {threshold: 0.35});
+  lazyVideos.forEach(function(video){
+    video.addEventListener('playing', function(){ video.classList.add('playing'); });
+    video.addEventListener('pause', function(){ video.classList.remove('playing'); });
+    videoObserver.observe(video);
+  });
+
+  /* ---- scroll toggle: down arrow at top, up arrow after scrolling,
+          hidden entirely near the bottom so it never overlaps the footer ---- */
+  var dashDown = document.getElementById('dashDown');
+  var dashUp = document.getElementById('dashUp');
+  var scrollToggle = document.getElementById('scrollToggle');
+  function updateToggle(){
+    if (!scrollToggle) return;
+    var st = scrollTop();
+    var nearBottom = (scrollMax() - st) < 120;
+    if (nearBottom){ scrollToggle.style.display = 'none'; return; }
+    scrollToggle.style.display = '';
+    if (st > 100){
+      if (dashDown) dashDown.style.display = 'none';
+      if (dashUp) dashUp.style.display = 'block';
+    } else {
+      if (dashDown) dashDown.style.display = 'block';
+      if (dashUp) dashUp.style.display = 'none';
+    }
+  }
+  updateToggle();
+})();
+</script>
+
+<script>
+  // Javascript for responsive navigation menu
   const menuBtn = document.querySelector(".menu-btn");
   const navigation = document.querySelector(".navigation");
 
   menuBtn.addEventListener("click", () => {
     menuBtn.classList.toggle("active");
     navigation.classList.toggle("active");
-  });
-
- document.querySelectorAll(".artwork").forEach(work => {
-
-    const slides = work.querySelectorAll(".art-slide");
-    const dots = work.querySelectorAll(".dot");
-    const slider = work.querySelector(".art-slider");
-
-    if (!slides.length || !slider) return;
-
-    let currentIndex = 0;
-    slides.forEach((slide, i) => {
-        if (slide.classList.contains("active")) currentIndex = i;
-    });
-
-    function positionSlides(offsetPx = 0, animate = false){
-        slides.forEach((slide, i) => {
-            slide.style.transition = animate ? "transform 0.35s ease" : "none";
-            slide.style.transform = `translateX(calc(${(i - currentIndex) * 100}% + ${offsetPx}px))`;
-        });
-    }
-
-    function goToSlide(index){
-        currentIndex = Math.max(0, Math.min(index, slides.length - 1));
-        dots.forEach(dot => dot.classList.remove("active"));
-        if (dots[currentIndex]) dots[currentIndex].classList.add("active");
-        positionSlides(0, true);
-    }
-
-    positionSlides();
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-            goToSlide(index);
-        });
-    });
-
-    let startX = 0;
-    let dragOffset = 0;
-    let isDragging = false;
-
-    slider.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-    }, { passive: true });
-
-    slider.addEventListener("touchmove", (e) => {
-        if (!isDragging) return;
-        dragOffset = e.touches[0].clientX - startX;
-        positionSlides(dragOffset, false);
-    }, { passive: true });
-
-    slider.addEventListener("touchend", () => {
-        isDragging = false;
-        const swipeThreshold = 60;
-
-        if (Math.abs(dragOffset) > swipeThreshold){
-            if (dragOffset < 0 && currentIndex < slides.length - 1){
-                currentIndex++;
-            } else if (dragOffset > 0 && currentIndex > 0){
-                currentIndex--;
-            }
-        }
-
-        dragOffset = 0;
-        goToSlide(currentIndex);
-    }, { passive: true });
-
-});
-</script>
-
-<script>
-function openMovieModal(videoId){
-    const modal = document.getElementById('movieModal');
-    const frame = document.getElementById('movieFrame');
-    frame.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
-    modal.classList.add('active');
-}
-
-function closeMovieModal(){
-    const modal = document.getElementById('movieModal');
-    const frame = document.getElementById('movieFrame');
-    modal.classList.remove('active');
-    frame.src = '';
-}
-</script>
-
-<script>
-const lazyVideos = document.querySelectorAll('[data-lazy-video]');
-
-const videoObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    const video = entry.target;
-    if (entry.isIntersecting) {
-      video.play().catch(()=>{});
-    } else {
-      video.pause();
-      video.classList.remove('playing');
-    }
-  });
-}, { threshold: 0.35 });
-
-lazyVideos.forEach(video => {
-  video.addEventListener('playing', () => {
-    video.classList.add('playing');
-  });
-  video.addEventListener('pause', () => {
-    video.classList.remove('playing');
-  });
-  videoObserver.observe(video);
-});
-</script>
-
- <script>
-  const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-      }
-    });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll('.artwork').forEach(work => {
-    fadeObserver.observe(work);
+    document.body.classList.toggle("menu-open");
   });
 </script>
-
-<script>
-  const dashDown = document.getElementById('dashDown');
-  const dashUp = document.getElementById('dashUp');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      dashDown.style.display = 'none';
-      dashUp.style.display = 'block';
-    } else {
-      dashDown.style.display = 'block';
-      dashUp.style.display = 'none';
-    }
-  });
-</script>
- 
-
 
 <script>
 const pageTransition = document.getElementById('pageTransition');
@@ -575,385 +623,8 @@ document.querySelectorAll('a[href]').forEach(link => {
 });
 </script>
 
-
-<div class="lightbox" id="lightbox">
-  <div class="lightbox-close" id="lightboxClose">&times;</div>
-  <div class="lightbox-track" id="lightboxTrack"></div>
-</div>
-
-
-<script>
-(function(){
-    const lightbox = document.getElementById('lightbox');
-    const track = document.getElementById('lightboxTrack');
-    const closeBtn = document.getElementById('lightboxClose');
-
-    const mediaItems = [];
-    const sourceImgs = [];
-
-    document.querySelectorAll('.artwork-frame:not(.no-zoom)').forEach(frame => {
-        const slides = frame.querySelectorAll('.art-slide');
-        if (slides.length){
-            slides.forEach(slide => {
-                const video = slide.querySelector('video source');
-                const img = slide.querySelector('img');
-                if (video) { mediaItems.push({ type: 'video', src: video.getAttribute('src') }); sourceImgs.push(null); }
-                else if (img) { mediaItems.push({ type: 'img', src: img.getAttribute('src') }); sourceImgs.push(img); }
-            });
-        } else {
-            const video = frame.querySelector('video source');
-            const img = frame.querySelector(':scope > img, :scope .video-poster-bg');
-            if (video) { mediaItems.push({ type: 'video', src: video.getAttribute('src') }); sourceImgs.push(null); }
-            else if (frame.querySelector('img')) { mediaItems.push({ type: 'img', src: frame.querySelector('img').getAttribute('src') }); sourceImgs.push(frame.querySelector('img')); }
-        }
-    });
-
-    mediaItems.forEach((item, i) => {
-        const slide = document.createElement('div');
-        slide.className = 'lightbox-slide';
-        slide.dataset.index = i;
-
-        if (item.type === 'img'){
-            const img = document.createElement('img');
-            img.src = item.src;
-            img.draggable = false;
-            slide.appendChild(img);
-        } else {
-            const video = document.createElement('video');
-            video.src = item.src;
-            video.controls = true;
-            video.playsInline = true;
-            slide.appendChild(video);
-        }
-
-        track.appendChild(slide);
-    });
-
-    const lightboxSlides = track.querySelectorAll('.lightbox-slide');
-    let currentIndex = 0;
-
-    // ---- Zoom state (images only; videos keep their own controls) ----
-    const ZOOM_MIN = 1, ZOOM_MAX = 6;
-    let zoomScale = 1, zoomTX = 0, zoomTY = 0;
-    let openAnimTimer = null, closeTimer = null;
-
-    function currentImg(){
-        const slide = lightboxSlides[currentIndex];
-        return slide ? slide.querySelector('img') : null;
-    }
-
-    function clampPan(){
-        const img = currentImg();
-        if (!img){ zoomTX = 0; zoomTY = 0; return; }
-        const r = img.getBoundingClientRect();
-        const fitW = r.width / zoomScale, fitH = r.height / zoomScale;
-        const maxTX = Math.max(0, (fitW * zoomScale - window.innerWidth) / 2);
-        const maxTY = Math.max(0, (fitH * zoomScale - window.innerHeight) / 2);
-        zoomTX = Math.max(-maxTX, Math.min(maxTX, zoomTX));
-        zoomTY = Math.max(-maxTY, Math.min(maxTY, zoomTY));
-        if (zoomScale <= 1){ zoomTX = 0; zoomTY = 0; }
-    }
-
-    function applyZoom(animate){
-        const img = currentImg();
-        if (!img) return;
-        clampPan();
-        img.style.transition = animate ? 'transform 0.25s ease' : 'none';
-        if (zoomScale <= 1){
-            img.style.transform = '';
-            img.classList.remove('zoomed');
-        } else {
-            img.style.transform = `translate(${zoomTX}px, ${zoomTY}px) scale(${zoomScale})`;
-            img.classList.add('zoomed');
-        }
-    }
-
-    function resetZoom(){
-        zoomScale = 1; zoomTX = 0; zoomTY = 0;
-        lightboxSlides.forEach(slide => {
-            const im = slide.querySelector('img');
-            if (im){ im.style.transition = ''; im.style.transform = ''; im.classList.remove('zoomed'); }
-        });
-    }
-
-    function setZoom(newScale, animate){
-        zoomScale = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, newScale));
-        if (zoomScale <= 1){ zoomTX = 0; zoomTY = 0; }
-        applyZoom(animate);
-    }
-
-    function rectInViewport(r){
-        return r && r.width > 10 && r.height > 10 && r.bottom > 0 && r.top < window.innerHeight && r.right > 0 && r.left < window.innerWidth;
-    }
-
-    // FLIP transform that places the centred, fitted image over its page preview.
-    function flipTransform(img, srcRect){
-        const targetRect = img.getBoundingClientRect();
-        const s = Math.max(0.05, Math.min(1, srcRect.width / targetRect.width));
-        const dx = (srcRect.left + srcRect.width / 2) - (targetRect.left + targetRect.width / 2);
-        const dy = (srcRect.top + srcRect.height / 2) - (targetRect.top + targetRect.height / 2);
-        return `translate(${dx}px, ${dy}px) scale(${s})`;
-    }
-
-    function positionLightbox(offsetPx = 0, animate = false){
-        lightboxSlides.forEach((slide, i) => {
-            slide.style.transition = animate ? "transform 0.35s ease" : "none";
-            slide.style.transform = `translateX(calc(${(i - currentIndex) * 100}% + ${offsetPx}px))`;
-        });
-    }
-
-    function goToLightboxSlide(index){
-        resetZoom();
-        currentIndex = Math.max(0, Math.min(index, lightboxSlides.length - 1));
-        positionLightbox(0, true);
-
-        lightboxSlides.forEach((slide, i) => {
-            const video = slide.querySelector('video');
-            if (video){
-                if (i === currentIndex) video.play().catch(()=>{});
-                else video.pause();
-            }
-        });
-    }
-
-    function openLightbox(index){
-        if (closeTimer){ clearTimeout(closeTimer); closeTimer = null; }
-        if (openAnimTimer){ clearTimeout(openAnimTimer); openAnimTimer = null; }
-        currentIndex = index;
-        positionLightbox();
-        lightbox.classList.add('active');
-        goToLightboxSlide(index);
-
-        // Slow zoom in from the preview, ending centred and fitted.
-        const slide = lightboxSlides[currentIndex];
-        const img = slide ? slide.querySelector('img') : null;
-        if (!img) return;
-        const srcEl = sourceImgs[index] || null;
-        const srcRect = srcEl ? srcEl.getBoundingClientRect() : null;
-        if (rectInViewport(srcRect)){
-            img.style.transition = 'none';
-            img.style.transform = flipTransform(img, srcRect);
-            void img.offsetWidth;
-            img.style.transition = 'transform 0.55s cubic-bezier(0.22, 1, 0.36, 1)';
-            img.style.transform = 'translate(0px, 0px) scale(1)';
-            openAnimTimer = setTimeout(() => {
-                if (lightboxSlides[currentIndex] === slide && zoomScale === 1){
-                    img.style.transition = '';
-                    img.style.transform = '';
-                }
-            }, 600);
-        } else {
-            img.style.transition = 'none';
-            img.style.transform = 'scale(0.96)';
-            void img.offsetWidth;
-            img.style.transition = 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)';
-            img.style.transform = 'translate(0px, 0px) scale(1)';
-            openAnimTimer = setTimeout(() => {
-                if (lightboxSlides[currentIndex] === slide && zoomScale === 1){
-                    img.style.transition = '';
-                    img.style.transform = '';
-                }
-            }, 500);
-        }
-    }
-
-    function closeLightbox(){
-        if (!lightbox.classList.contains('active')) return;
-        if (openAnimTimer){ clearTimeout(openAnimTimer); openAnimTimer = null; }
-        const slide = lightboxSlides[currentIndex];
-        const img = slide ? slide.querySelector('img') : null;
-        const srcEl = sourceImgs[currentIndex] || null;
-        const srcRect = srcEl ? srcEl.getBoundingClientRect() : null;
-        lightboxSlides.forEach(s => {
-            const video = s.querySelector('video');
-            if (video) video.pause();
-        });
-        // Snap back to fit first so the close animation starts from the centred work.
-        resetZoom();
-        lightbox.classList.remove('active');
-        if (img && rectInViewport(srcRect)){
-            img.style.transition = 'transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)';
-            img.style.transform = flipTransform(img, srcRect);
-            if (closeTimer) clearTimeout(closeTimer);
-            closeTimer = setTimeout(() => { img.style.transition = ''; img.style.transform = ''; }, 450);
-        } else if (img){
-            if (closeTimer) clearTimeout(closeTimer);
-            closeTimer = setTimeout(() => { img.style.transition = ''; img.style.transform = ''; }, 500);
-        }
-    }
-
-    closeBtn.addEventListener('click', closeLightbox);
-
-    let mediaCursor = 0;
-    document.querySelectorAll('.artwork-frame:not(.no-zoom)').forEach(frame => {
-        const slides = frame.querySelectorAll('.art-slide');
-        const count = slides.length || 1;
-        const startIndex = mediaCursor;
-
-        frame.addEventListener('click', (e) => {
-            if (e.target.closest('a')) return;
-            let offsetIntoGroup = 0;
-            if (slides.length){
-                const activeSlide = frame.querySelector('.art-slide.active');
-                offsetIntoGroup = Array.from(slides).indexOf(activeSlide);
-                if (offsetIntoGroup < 0) offsetIntoGroup = 0;
-            }
-            openLightbox(startIndex + offsetIntoGroup);
-        });
-
-        mediaCursor += count;
-    });
-
-    let startX = 0;
-    let dragOffset = 0;
-    let isDragging = false;
-    let pinchState = null, panState = null, pinchMoved = false;
-    let lastTapTime = 0, lastTapX = 0, lastTapY = 0, lastDoubleTapTime = 0;
-
-    function touchDist(a, b){
-        return Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
-    }
-
-    window.lightboxAPI = { go: goToLightboxSlide, index: () => currentIndex, isOpen: () => lightbox.classList.contains('active'), close: closeLightbox };
-
-    lightbox.addEventListener('touchstart', (e) => {
-        if (e.touches.length === 2 && currentImg()){
-            pinchState = { startDist: touchDist(e.touches[0], e.touches[1]), startScale: zoomScale };
-            pinchMoved = false;
-            isDragging = false;
-            panState = null;
-            // Snap the track back if a swipe drag was already under way.
-            dragOffset = 0;
-            positionLightbox(0, false);
-            e.preventDefault();
-        } else if (e.touches.length === 1){
-            if (zoomScale > 1 && currentImg()){
-                panState = { x: e.touches[0].clientX, y: e.touches[0].clientY, tx: zoomTX, ty: zoomTY, moved: false };
-                isDragging = false;
-            } else {
-                startX = e.touches[0].clientX;
-                isDragging = true;
-            }
-            dragOffset = 0;
-        }
-    }, { passive: false });
-
-    lightbox.addEventListener('touchmove', (e) => {
-        if (pinchState && e.touches.length >= 2){
-            e.preventDefault();
-            const d = touchDist(e.touches[0], e.touches[1]);
-            if (pinchState.startDist > 0){
-                const ns = pinchState.startScale * (d / pinchState.startDist);
-                if (Math.abs(ns - zoomScale) > 0.02) pinchMoved = true;
-                setZoom(ns, false);
-            }
-            return;
-        }
-        if (panState && e.touches.length === 1){
-            e.preventDefault();
-            const dx = e.touches[0].clientX - panState.x;
-            const dy = e.touches[0].clientY - panState.y;
-            if (Math.abs(dx) > 5 || Math.abs(dy) > 5) panState.moved = true;
-            zoomTX = panState.tx + dx;
-            zoomTY = panState.ty + dy;
-            applyZoom(false);
-            return;
-        }
-        if (!isDragging) return;
-        dragOffset = e.touches[0].clientX - startX;
-        positionLightbox(dragOffset, false);
-    }, { passive: false });
-
-    lightbox.addEventListener('touchend', (e) => {
-        if (pinchState){
-            if (e.touches.length < 2) pinchState = null;
-            dragOffset = 0;
-            isDragging = false;
-            return;
-        }
-        if (panState){
-            const wasPan = panState.moved;
-            panState = null;
-            if (wasPan){ dragOffset = 0; return; }
-        } else if (isDragging){
-            isDragging = false;
-            const swipeThreshold = 60;
-            const swiped = Math.abs(dragOffset) > swipeThreshold;
-            if (swiped){
-                if (dragOffset < 0 && currentIndex < lightboxSlides.length - 1){
-                    currentIndex++;
-                } else if (dragOffset > 0 && currentIndex > 0){
-                    currentIndex--;
-                }
-            }
-            dragOffset = 0;
-            goToLightboxSlide(currentIndex);
-            if (swiped) return;
-        }
-        // Double-tap to zoom in / out (images only, not on the close button or arrows).
-        const t = e.changedTouches && e.changedTouches[0];
-        if (t && currentImg() && !e.target.closest('.lightbox-close, .lightbox-arrow')){
-            const now = Date.now();
-            const dt = now - lastTapTime;
-            const dist = Math.hypot(t.clientX - lastTapX, t.clientY - lastTapY);
-            if (dt < 320 && dist < 50){
-                lastTapTime = 0;
-                lastDoubleTapTime = now;
-                if (zoomScale > 1) setZoom(1, true); else setZoom(2.5, true);
-            } else {
-                lastTapTime = now;
-                lastTapX = t.clientX;
-                lastTapY = t.clientY;
-            }
-        }
-    }, { passive: true });
-
-    lightbox.addEventListener('touchcancel', () => {
-        pinchState = null;
-        panState = null;
-        isDragging = false;
-        dragOffset = 0;
-    }, { passive: true });
-
-    // Scroll-wheel / trackpad pinch zoom (desktop), images only.
-    lightbox.addEventListener('wheel', (e) => {
-        if (!currentImg()) return;
-        e.preventDefault();
-        setZoom(zoomScale * Math.exp(-e.deltaY * 0.002), false);
-    }, { passive: false });
-
-    lightbox.addEventListener('dblclick', (e) => {
-        if (Date.now() - lastDoubleTapTime < 500) return;
-        if (!currentImg() || e.target.closest('.lightbox-close, .lightbox-arrow')) return;
-        if (zoomScale > 1) setZoom(1, true); else setZoom(2.5, true);
-    });
-
-    // Stop Safari page pinch-zoom while the lightbox is open.
-    lightbox.addEventListener('gesturestart', (e) => { e.preventDefault(); }, { passive: false });
-
-    // Mouse drag to pan when zoomed (desktop).
-    let mousePan = null;
-    lightbox.addEventListener('mousedown', (e) => {
-        if (zoomScale > 1 && currentImg() && e.target.tagName === 'IMG'){
-            mousePan = { x: e.clientX, y: e.clientY, tx: zoomTX, ty: zoomTY };
-        }
-    });
-    window.addEventListener('mousemove', (e) => {
-        if (!mousePan) return;
-        zoomTX = mousePan.tx + (e.clientX - mousePan.x);
-        zoomTY = mousePan.ty + (e.clientY - mousePan.y);
-        applyZoom(false);
-    });
-    window.addEventListener('mouseup', () => { mousePan = null; });
-
-    window.addEventListener('resize', () => {
-        if (lightbox.classList.contains('active')) resetZoom();
-    });
-})();
-</script>
-
 <script src="js/desktop.js" defer></script>
-<script src="js/lang.js?v=8"></script>
+<script src="js/lang.js?v=9"></script>
 <script src="js/menu.js"></script>
 <!-- Kit sticky bar: V Volumes Announcements -->
 <script async data-uid="3893e690ee" src="https://v-71.kit.com/3893e690ee/index.js"></script>

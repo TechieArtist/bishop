@@ -50,7 +50,7 @@
     { sel: '.cv-download', ja: ['略歴をダウンロード（PDF）'] },
 
     // ----- exhibition -----
-    { sel: '.exhibition-page .commentary-label', ja: ['Propitiation · オンライン展覧会 · 2026年 — アーカイブ'] },
+    { sel: '.exhibition-page .commentary-label', ja: ['オンライン展覧会 · エヴァン・バトラー · ニューヨーク'] },
     { sel: '.exhibition-page .chapter-tag', ja: ['はじめに', '第一章', '第二章', '第三章'] },
     { sel: '.exhibition-page .chapter-title', ja: ['新時代', 'インターネットの人々', '爆弾', '地獄'] },
     { sel: '.exhibition-page .chapter-body', ja: [
@@ -59,14 +59,32 @@
       '世界が嘘をつくとき、誰が真実を語り続けるのか。爆弾は一つの場所だけに落とされたのではない。私たち全員の上に落とされたのだ。',
       '私たちが人生の中でつくり上げるペルソナについて、何を理解すべきなのか。革命家は、自らの生きる社会を曲げるべきか、それとも自分自身を曲げるべきか。人々が革命を必要としているのか、それとも革命家のほうが革命を必要としているのか。'
     ] },
-    { sel: '.exhibition-page .special-movie-content h2', ja: ['展覧会<br>スペシャルムービー'] },
-    { sel: '.exhibition-page .art-info p', ja: [
+    { sel: '.exhibition-page .hero-meta-item', ja: ['8作品', '3章', '1本の映画', '作品は販売しません'] },
+    { sel: '.exhibition-page .hero-meta .enter', ja: ['展覧会に入る <span class="arr">↓</span>'] },
+    { sel: '.exhibition-page .index-kicker', ja: ['目次'] },
+    { sel: '.exhibition-page .index-list .me', ja: [
       'デジタルアート · 2023',
       'デジタルアート · 映像 · 2025',
       'デジタルアート · 映像 · 2026',
       'デジタルアート · アニメーション · 2026',
       'デジタルアート · 2025',
       '3Dアニメーション · ミクストメディア映像 · 2025',
+      'AIアニメーション · 映像 · 2026',
+      'AIアニメーション · 3Dアニメーション · クレヨン · 2026',
+      null
+    ] },
+    { sel: '.exhibition-page .rail .rl', ja: ['プロローグ', 'インターネットの人々', '爆弾', '地獄', 'スペシャルムービー'] },
+    { sel: '.exhibition-page .special-movie-content h2', ja: ['展覧会<br>スペシャルムービー'] },
+    { sel: '.exhibition-page .film-kicker', ja: ['コーダ'] },
+    { sel: '.exhibition-page .film .play-big small', ja: ['映画を再生'] },
+    { sel: '.exhibition-page .end-mark', ja: ['終'] },
+    { sel: '.exhibition-page .art-info p', ja: [
+      'デジタルアート · 2023',
+      'デジタルアート · 映像 · 2025',
+      'デジタルアート · 映像 · 2026',
+      'デジタルアート · アニメーション · 2026',
+      'デジタルアート · 2025',
+      '3Dアニメーション · ミクストメディア映像 · 2025 · 1:58',
       'AIアニメーション · 映像 · 2026',
       'AIアニメーション · 3Dアニメーション · クレヨン · 2026'
     ] },
