@@ -86,23 +86,12 @@
     { sel: '.page-volume3 .chapter-tag', ja: ['第3巻'] },
     { sel: '.page-volume4 .chapter-tag', ja: ['第4巻'] },
     { sel: '.page-shop .chapter-tag', ja: ['ショップ'] },
-    { sel: '.page-volume2 .chapter-title', ja: ['丹碧 — ベイビー、目を閉じて'] },
-    { sel: '.page-volume3 .chapter-title', ja: ['Vermillion Zyu Hung（朱紅）'] },
     { sel: '.page-shop .chapter-title', ja: ['ショップ'] },
-    // volume intros (Pierrot / Tanpeki / Vermillion titles stay as-is)
-    
-    
+    // volume intro (Pierrot title stays as-is)
     { sel: '.page-volume4 .chapter-body', ja: ['Pierrot — それ自体がひとつの章である。'] },
     // artwork medium lines (artwork titles stay)
-    { sel: '.page-volume2 .art-info p', ja: ['デジタルアート · 2026', 'デジタルアート · 2026', 'デジタルアート · 2026', 'デジタルアート · 2025'] },
-    { sel: '.page-volume3 .art-info p', ja: ['デジタルアート · 2026', 'デジタルアート · 2026', null, 'デジタルアート · 2026', '$450', 'キャンバスにアクリル · 2026', 'アメリカ人アーティスト、カート・ハートフィールドがヴェルミリオンのために描いた。', 'デジタルアート · 2026', 'デジタルアート · 2026', 'ガブリエル・フランソワ · 2026年春夏 · ウィメンズウェア', 'デジタルアート · 2026'] },
     { sel: '.page-volume4 .art-info p', ja: ['デジタルアート · 2023', 'デジタルアート · 2023', 'デジタルアート · 2023'] },
-    // breakdown sections
-    { sel: '.page-volume3 .breakdown-title', ja: ['ヴェルミリオンのフィルム'] },
-    { sel: '.page-volume2 .volume-footer', ja: ['Tanpeki · 第2巻 · V：アンソロジー'] },
-    
-    
-    
+
 
   ];
 

@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 <link rel="stylesheet" href="css/menu.css?v=2">
 <link rel="stylesheet" href="css/volume.css?v=12">
+<link rel="stylesheet" href="css/books.css?v=5">
 </head>
 
 <body class="volume-page page-volume2">
@@ -41,114 +42,37 @@
   <p class="commentary-dash">—</p>
 
   <p class="chapter-tag">VOLUME 2</p>
-  <h2 class="chapter-title">Tanpeki — Baby, close your eyes</h2>
 </section>
 
-<div class="catalogue">
+<!-- The book, in the Books-page format: the cover rendered as a 3D book,
+     a status pill under it, then the pull title and blurb. The cover is
+     the link to the reader. The artworks live in their own layout,
+     worked out separately. -->
+<div class="books-shelf single">
+<div class="book">
+  <a class="book-cover-link" id="babyCoverLink" href="baby-close-your-eyes.html" aria-label="Read Baby, close your eyes">
+  <figure class="book-cover">
+    <img src="assets/images/Volume2Cover.jpg?v=3" alt="Baby, close your eyes — cover">
+  </figure>
+  </a>
 
-  <section class="artwork">
-    <div class="artwork-frame">
-      <img src="assets/images/Volume2Cover.jpg?v=3" alt="Volume 2 — Baby, close your eyes">
-    </div>
-    <div class="art-info">
-      <div class="left">
-        <h2>Rinne Suzuki</h2>
-        <p>Digital art · 2026</p>
-      </div>
-      <div class="right"></div>
-    </div>
-  </section>
+  <p class="book-status"><span class="status-pill status-out" id="statusBabyEn">Out now</span><span class="status-pill status-out" id="statusBabyJa" hidden>公開中</span></p>
 
-  <section class="artwork">
-    <div class="artwork-frame">
-      <img src="assets/images/Volume2Halo.jpg" alt="Halo — Tanpeki">
-    </div>
-    <div class="art-info">
-      <div class="left">
-        <h2>Halo</h2>
-        <p>Digital art · 2026</p>
-      </div>
-      <div class="right"></div>
-    </div>
-  </section>
+  <section class="story" id="story">
+    <p class="story-label">Short Story — 読み切り</p>
+    <h2 class="story-title">Baby, close your eyes</h2>
+    <p class="story-subtitle">ベイビー、目を閉じて</p>
 
-  <section class="artwork">
-    <div class="artwork-frame">
-      <img src="assets/images/Volume2Cardinal.jpg" alt="Cardinal — Tanpeki">
+    <div class="story-summary" lang="en" id="storyEn">
+      <p>Rinne is a nurse who sees the vitality of the people around her as a coloured halo above their heads. The story follows her through one hospital shift, one night at home, and one night back in the ER.</p>
     </div>
-    <div class="art-info">
-      <div class="left">
-        <h2>Cardinal</h2>
-        <p>Digital art · 2026</p>
-      </div>
-      <div class="right"></div>
+
+    <div class="story-summary" lang="ja" id="storyJa" hidden>
+      <p>りんねは看護師で、まわりの人の生命力が、頭の上に色のハローとして見える。物語は、病院での勤務、家での一夜、そしてERに戻る一夜をたどる。</p>
     </div>
   </section>
-
-  <section class="artwork">
-    <div class="artwork-frame">
-      <div class="art-slider">
-
-        <div class="art-slide active">
-          <img src="assets/images/Tanpeki.jpg" alt="Tanpeki(丹碧) — 1">
-        </div>
-
-        <div class="art-slide">
-          <img src="assets/images/Tanpeki3.jpg" alt="Tanpeki(丹碧) — 2">
-        </div>
-
-        <div class="art-slide">
-          <img src="assets/images/Tanpeki5.jpg" alt="Tanpeki(丹碧) — 3">
-        </div>
-
-        <div class="art-slide">
-          <img src="assets/images/Tanpeki6.jpg" alt="Tanpeki(丹碧) — 4">
-        </div>
-
-        <div class="art-slide">
-          <img src="assets/images/Tanpeki7.jpg" alt="Tanpeki(丹碧) — 5">
-        </div>
-
-      </div>
-    </div>
-
-    <div class="art-slider-nav">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-
-    <div class="art-info">
-      <div class="left">
-        <h2>Tanpeki(丹碧)</h2>
-        <p>Digital art · 2025</p>
-      </div>
-      <div class="right"></div>
-    </div>
-  </section>
-
 </div>
-
-
-<!-- THE STORY — "Baby, close your eyes", in brief. The full story
-     lives in the page-turn readers; this section only introduces it. -->
-<section class="story" id="story">
-  <p class="story-label">Short Story — 読み切り</p>
-  <h2 class="story-title">Baby, close your eyes</h2>
-  <p class="story-subtitle">ベイビー、目を閉じて</p>
-
-  <div class="story-summary" lang="en" id="storyEn">
-    <p><a class="story-link" href="baby-close-your-eyes.html">Read the story &rarr;</a></p>
-  </div>
-
-  <div class="story-summary" lang="ja" id="storyJa" hidden>
-    <p><a class="story-link" href="baby-close-your-eyes-ja.html">物語を読む &rarr;</a></p>
-  </div>
-</section>
-
-<p class="volume-footer" style="text-align:center;font-size:0.85rem;color:#777;letter-spacing:1px;padding:0 20px;">Tanpeki · Volume 2 · V:Anthology</p>
+</div>
 
 <footer class="site-footer">
   <p>©2026 by Evan Butler.<br>New York, Brooklyn<br><a href="mailto:bishopb429@gmail.com">bishopb429@gmail.com</a></p>
@@ -169,92 +93,6 @@
   menuBtn.addEventListener("click", () => {
     menuBtn.classList.toggle("active");
     navigation.classList.toggle("active");
-  });
-</script>
-
-<script>
-  const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-      }
-    });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll('.artwork').forEach(work => {
-    fadeObserver.observe(work);
-  });
-</script>
-
-<script>
-  // The Tanpeki slider, as on the exhibition page: dots and swipe
-  // move between the slides of one artwork.
-  document.querySelectorAll(".artwork").forEach(work => {
-
-    const slides = work.querySelectorAll(".art-slide");
-    const dots = work.querySelectorAll(".dot");
-    const slider = work.querySelector(".art-slider");
-
-    if (!slides.length || !slider) return;
-
-    let currentIndex = 0;
-    slides.forEach((slide, i) => {
-        if (slide.classList.contains("active")) currentIndex = i;
-    });
-
-    function positionSlides(offsetPx = 0, animate = false){
-        slides.forEach((slide, i) => {
-            slide.style.transition = animate ? "transform 0.35s ease" : "none";
-            slide.style.transform = `translateX(calc(${(i - currentIndex) * 100}% + ${offsetPx}px))`;
-        });
-    }
-
-    function goToSlide(index){
-        currentIndex = Math.max(0, Math.min(index, slides.length - 1));
-        dots.forEach(dot => dot.classList.remove("active"));
-        if (dots[currentIndex]) dots[currentIndex].classList.add("active");
-        positionSlides(0, true);
-    }
-
-    positionSlides();
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-            goToSlide(index);
-        });
-    });
-
-    let startX = 0;
-    let dragOffset = 0;
-    let isDragging = false;
-
-    slider.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-    }, { passive: true });
-
-    slider.addEventListener("touchmove", (e) => {
-        if (!isDragging) return;
-        dragOffset = e.touches[0].clientX - startX;
-        positionSlides(dragOffset, false);
-    }, { passive: true });
-
-    slider.addEventListener("touchend", () => {
-        isDragging = false;
-        const swipeThreshold = 60;
-
-        if (Math.abs(dragOffset) > swipeThreshold){
-            if (dragOffset < 0 && currentIndex < slides.length - 1){
-                currentIndex++;
-            } else if (dragOffset > 0 && currentIndex > 0){
-                currentIndex--;
-            }
-        }
-
-        dragOffset = 0;
-        goToSlide(currentIndex);
-    }, { passive: true });
-
   });
 </script>
 
@@ -285,19 +123,23 @@ document.querySelectorAll('a[href]').forEach(link => {
 });
 </script>
 
-
-
 <script>
-// The story follows the site's language: lang.js records the
-// JP/EN toggle on <html lang>. Show the matching text on load
-// and whenever the toggle changes.
+// The blurb, status pill, and cover link follow the site's language:
+// lang.js records the JP/EN toggle on <html lang>. Show the matching
+// text on load and whenever the toggle changes.
 (function () {
   var en = document.getElementById('storyEn');
   var ja = document.getElementById('storyJa');
+  var statusEn = document.getElementById('statusBabyEn');
+  var statusJa = document.getElementById('statusBabyJa');
+  var coverLink = document.getElementById('babyCoverLink');
   function show(lang) {
     var isJa = lang === 'ja';
     if (en) en.hidden = isJa;
     if (ja) ja.hidden = !isJa;
+    if (statusEn) statusEn.hidden = isJa;
+    if (statusJa) statusJa.hidden = !isJa;
+    if (coverLink) coverLink.href = isJa ? 'baby-close-your-eyes-ja.html' : 'baby-close-your-eyes.html';
   }
   show(document.documentElement.lang || 'en');
   if (window.MutationObserver) {
@@ -310,415 +152,8 @@ document.querySelectorAll('a[href]').forEach(link => {
 })();
 </script>
 
-<script src="js/lang.js?v=7"></script>
+<script src="js/lang.js?v=8"></script>
 <script src="js/menu.js"></script>
-
-
-
-<!-- Zoom: the exhibition-page lightbox. Clicking an artwork opens it full-screen; swipe or arrows move between works. -->
-<div class="lightbox" id="lightbox">
-  <div class="lightbox-close" id="lightboxClose">&times;</div>
-  <div class="lightbox-track" id="lightboxTrack"></div>
-</div>
-
-
-<script>
-(function(){
-    const lightbox = document.getElementById('lightbox');
-    const track = document.getElementById('lightboxTrack');
-    const closeBtn = document.getElementById('lightboxClose');
-
-    const mediaItems = [];
-    const sourceImgs = [];
-
-    document.querySelectorAll('.artwork-frame:not(.no-zoom)').forEach(frame => {
-        const slides = frame.querySelectorAll('.art-slide');
-        if (slides.length){
-            slides.forEach(slide => {
-                const video = slide.querySelector('video source');
-                const img = slide.querySelector('img');
-                if (video) { mediaItems.push({ type: 'video', src: video.getAttribute('src') }); sourceImgs.push(null); }
-                else if (img) { mediaItems.push({ type: 'img', src: img.getAttribute('src') }); sourceImgs.push(img); }
-            });
-        } else {
-            const video = frame.querySelector('video source');
-            const img = frame.querySelector(':scope > img, :scope .video-poster-bg');
-            if (video) { mediaItems.push({ type: 'video', src: video.getAttribute('src') }); sourceImgs.push(null); }
-            else if (frame.querySelector('img')) { mediaItems.push({ type: 'img', src: frame.querySelector('img').getAttribute('src') }); sourceImgs.push(frame.querySelector('img')); }
-        }
-    });
-
-    mediaItems.forEach((item, i) => {
-        const slide = document.createElement('div');
-        slide.className = 'lightbox-slide';
-        slide.dataset.index = i;
-
-        if (item.type === 'img'){
-            const img = document.createElement('img');
-            img.src = item.src;
-            img.draggable = false;
-            slide.appendChild(img);
-        } else {
-            const video = document.createElement('video');
-            video.src = item.src;
-            video.controls = true;
-            video.playsInline = true;
-            slide.appendChild(video);
-        }
-
-        track.appendChild(slide);
-    });
-
-    const lightboxSlides = track.querySelectorAll('.lightbox-slide');
-    let currentIndex = 0;
-
-    // ---- Zoom state (images only; videos keep their own controls) ----
-    const ZOOM_MIN = 1, ZOOM_MAX = 6;
-    let zoomScale = 1, zoomTX = 0, zoomTY = 0;
-    let openAnimTimer = null, closeTimer = null;
-
-    function currentImg(){
-        const slide = lightboxSlides[currentIndex];
-        return slide ? slide.querySelector('img') : null;
-    }
-
-    function clampPan(){
-        const img = currentImg();
-        if (!img){ zoomTX = 0; zoomTY = 0; return; }
-        const r = img.getBoundingClientRect();
-        const fitW = r.width / zoomScale, fitH = r.height / zoomScale;
-        const maxTX = Math.max(0, (fitW * zoomScale - window.innerWidth) / 2);
-        const maxTY = Math.max(0, (fitH * zoomScale - window.innerHeight) / 2);
-        zoomTX = Math.max(-maxTX, Math.min(maxTX, zoomTX));
-        zoomTY = Math.max(-maxTY, Math.min(maxTY, zoomTY));
-        if (zoomScale <= 1){ zoomTX = 0; zoomTY = 0; }
-    }
-
-    function applyZoom(animate){
-        const img = currentImg();
-        if (!img) return;
-        clampPan();
-        img.style.transition = animate ? 'transform 0.25s ease' : 'none';
-        if (zoomScale <= 1){
-            img.style.transform = '';
-            img.classList.remove('zoomed');
-        } else {
-            img.style.transform = `translate(${zoomTX}px, ${zoomTY}px) scale(${zoomScale})`;
-            img.classList.add('zoomed');
-        }
-    }
-
-    function resetZoom(){
-        zoomScale = 1; zoomTX = 0; zoomTY = 0;
-        lightboxSlides.forEach(slide => {
-            const im = slide.querySelector('img');
-            if (im){ im.style.transition = ''; im.style.transform = ''; im.classList.remove('zoomed'); }
-        });
-    }
-
-    function setZoom(newScale, animate){
-        zoomScale = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, newScale));
-        if (zoomScale <= 1){ zoomTX = 0; zoomTY = 0; }
-        applyZoom(animate);
-    }
-
-    function rectInViewport(r){
-        return r && r.width > 10 && r.height > 10 && r.bottom > 0 && r.top < window.innerHeight && r.right > 0 && r.left < window.innerWidth;
-    }
-
-    // FLIP transform that places the centred, fitted image over its page preview.
-    function flipTransform(img, srcRect){
-        const targetRect = img.getBoundingClientRect();
-        const s = Math.max(0.05, Math.min(1, srcRect.width / targetRect.width));
-        const dx = (srcRect.left + srcRect.width / 2) - (targetRect.left + targetRect.width / 2);
-        const dy = (srcRect.top + srcRect.height / 2) - (targetRect.top + targetRect.height / 2);
-        return `translate(${dx}px, ${dy}px) scale(${s})`;
-    }
-
-    function positionLightbox(offsetPx = 0, animate = false){
-        lightboxSlides.forEach((slide, i) => {
-            slide.style.transition = animate ? "transform 0.35s ease" : "none";
-            slide.style.transform = `translateX(calc(${(i - currentIndex) * 100}% + ${offsetPx}px))`;
-        });
-    }
-
-    function goToLightboxSlide(index){
-        resetZoom();
-        currentIndex = Math.max(0, Math.min(index, lightboxSlides.length - 1));
-        positionLightbox(0, true);
-
-        lightboxSlides.forEach((slide, i) => {
-            const video = slide.querySelector('video');
-            if (video){
-                if (i === currentIndex) video.play().catch(()=>{});
-                else video.pause();
-            }
-        });
-    }
-
-    function openLightbox(index){
-        if (closeTimer){ clearTimeout(closeTimer); closeTimer = null; }
-        if (openAnimTimer){ clearTimeout(openAnimTimer); openAnimTimer = null; }
-        currentIndex = index;
-        positionLightbox();
-        lightbox.classList.add('active');
-        goToLightboxSlide(index);
-
-        // Slow zoom in from the preview, ending centred and fitted.
-        const slide = lightboxSlides[currentIndex];
-        const img = slide ? slide.querySelector('img') : null;
-        if (!img) return;
-        const srcEl = sourceImgs[index] || null;
-        const srcRect = srcEl ? srcEl.getBoundingClientRect() : null;
-        if (rectInViewport(srcRect)){
-            img.style.transition = 'none';
-            img.style.transform = flipTransform(img, srcRect);
-            void img.offsetWidth;
-            img.style.transition = 'transform 0.55s cubic-bezier(0.22, 1, 0.36, 1)';
-            img.style.transform = 'translate(0px, 0px) scale(1)';
-            openAnimTimer = setTimeout(() => {
-                if (lightboxSlides[currentIndex] === slide && zoomScale === 1){
-                    img.style.transition = '';
-                    img.style.transform = '';
-                }
-            }, 600);
-        } else {
-            img.style.transition = 'none';
-            img.style.transform = 'scale(0.96)';
-            void img.offsetWidth;
-            img.style.transition = 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)';
-            img.style.transform = 'translate(0px, 0px) scale(1)';
-            openAnimTimer = setTimeout(() => {
-                if (lightboxSlides[currentIndex] === slide && zoomScale === 1){
-                    img.style.transition = '';
-                    img.style.transform = '';
-                }
-            }, 500);
-        }
-    }
-
-    function closeLightbox(){
-        if (!lightbox.classList.contains('active')) return;
-        if (openAnimTimer){ clearTimeout(openAnimTimer); openAnimTimer = null; }
-        const slide = lightboxSlides[currentIndex];
-        const img = slide ? slide.querySelector('img') : null;
-        const srcEl = sourceImgs[currentIndex] || null;
-        const srcRect = srcEl ? srcEl.getBoundingClientRect() : null;
-        lightboxSlides.forEach(s => {
-            const video = s.querySelector('video');
-            if (video) video.pause();
-        });
-        // Snap back to fit first so the close animation starts from the centred work.
-        resetZoom();
-        lightbox.classList.remove('active');
-        if (img && rectInViewport(srcRect)){
-            img.style.transition = 'transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)';
-            img.style.transform = flipTransform(img, srcRect);
-            if (closeTimer) clearTimeout(closeTimer);
-            closeTimer = setTimeout(() => { img.style.transition = ''; img.style.transform = ''; }, 450);
-        } else if (img){
-            if (closeTimer) clearTimeout(closeTimer);
-            closeTimer = setTimeout(() => { img.style.transition = ''; img.style.transform = ''; }, 500);
-        }
-    }
-
-    closeBtn.addEventListener('click', closeLightbox);
-
-    let mediaCursor = 0;
-    document.querySelectorAll('.artwork-frame:not(.no-zoom)').forEach(frame => {
-        const slides = frame.querySelectorAll('.art-slide');
-        const count = slides.length || 1;
-        const startIndex = mediaCursor;
-
-        frame.addEventListener('click', (e) => {
-            if (e.target.closest('a')) return;
-            let offsetIntoGroup = 0;
-            if (slides.length){
-                const activeSlide = frame.querySelector('.art-slide.active');
-                offsetIntoGroup = Array.from(slides).indexOf(activeSlide);
-                if (offsetIntoGroup < 0) offsetIntoGroup = 0;
-            }
-            openLightbox(startIndex + offsetIntoGroup);
-        });
-
-        mediaCursor += count;
-    });
-
-    let startX = 0;
-    let dragOffset = 0;
-    let isDragging = false;
-    let pinchState = null, panState = null, pinchMoved = false;
-    let lastTapTime = 0, lastTapX = 0, lastTapY = 0, lastDoubleTapTime = 0;
-
-    function touchDist(a, b){
-        return Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
-    }
-
-    window.lightboxAPI = { go: goToLightboxSlide, index: () => currentIndex, isOpen: () => lightbox.classList.contains('active'), close: closeLightbox };
-
-    lightbox.addEventListener('touchstart', (e) => {
-        if (e.touches.length === 2 && currentImg()){
-            pinchState = { startDist: touchDist(e.touches[0], e.touches[1]), startScale: zoomScale };
-            pinchMoved = false;
-            isDragging = false;
-            panState = null;
-            // Snap the track back if a swipe drag was already under way.
-            dragOffset = 0;
-            positionLightbox(0, false);
-            e.preventDefault();
-        } else if (e.touches.length === 1){
-            if (zoomScale > 1 && currentImg()){
-                panState = { x: e.touches[0].clientX, y: e.touches[0].clientY, tx: zoomTX, ty: zoomTY, moved: false };
-                isDragging = false;
-            } else {
-                startX = e.touches[0].clientX;
-                isDragging = true;
-            }
-            dragOffset = 0;
-        }
-    }, { passive: false });
-
-    lightbox.addEventListener('touchmove', (e) => {
-        if (pinchState && e.touches.length >= 2){
-            e.preventDefault();
-            const d = touchDist(e.touches[0], e.touches[1]);
-            if (pinchState.startDist > 0){
-                const ns = pinchState.startScale * (d / pinchState.startDist);
-                if (Math.abs(ns - zoomScale) > 0.02) pinchMoved = true;
-                setZoom(ns, false);
-            }
-            return;
-        }
-        if (panState && e.touches.length === 1){
-            e.preventDefault();
-            const dx = e.touches[0].clientX - panState.x;
-            const dy = e.touches[0].clientY - panState.y;
-            if (Math.abs(dx) > 5 || Math.abs(dy) > 5) panState.moved = true;
-            zoomTX = panState.tx + dx;
-            zoomTY = panState.ty + dy;
-            applyZoom(false);
-            return;
-        }
-        if (!isDragging) return;
-        dragOffset = e.touches[0].clientX - startX;
-        positionLightbox(dragOffset, false);
-    }, { passive: false });
-
-    lightbox.addEventListener('touchend', (e) => {
-        if (pinchState){
-            if (e.touches.length < 2) pinchState = null;
-            dragOffset = 0;
-            isDragging = false;
-            return;
-        }
-        if (panState){
-            const wasPan = panState.moved;
-            panState = null;
-            if (wasPan){ dragOffset = 0; return; }
-        } else if (isDragging){
-            isDragging = false;
-            const swipeThreshold = 60;
-            const swiped = Math.abs(dragOffset) > swipeThreshold;
-            if (swiped){
-                if (dragOffset < 0 && currentIndex < lightboxSlides.length - 1){
-                    currentIndex++;
-                } else if (dragOffset > 0 && currentIndex > 0){
-                    currentIndex--;
-                }
-            }
-            dragOffset = 0;
-            goToLightboxSlide(currentIndex);
-            if (swiped) return;
-        }
-        // Double-tap to zoom in / out (images only, not on the close button or arrows).
-        const t = e.changedTouches && e.changedTouches[0];
-        if (t && currentImg() && !e.target.closest('.lightbox-close, .lightbox-arrow')){
-            const now = Date.now();
-            const dt = now - lastTapTime;
-            const dist = Math.hypot(t.clientX - lastTapX, t.clientY - lastTapY);
-            if (dt < 320 && dist < 50){
-                lastTapTime = 0;
-                lastDoubleTapTime = now;
-                if (zoomScale > 1) setZoom(1, true); else setZoom(2.5, true);
-            } else {
-                lastTapTime = now;
-                lastTapX = t.clientX;
-                lastTapY = t.clientY;
-            }
-        }
-    }, { passive: true });
-
-    lightbox.addEventListener('touchcancel', () => {
-        pinchState = null;
-        panState = null;
-        isDragging = false;
-        dragOffset = 0;
-    }, { passive: true });
-
-    // Scroll-wheel / trackpad pinch zoom (desktop), images only.
-    lightbox.addEventListener('wheel', (e) => {
-        if (!currentImg()) return;
-        e.preventDefault();
-        setZoom(zoomScale * Math.exp(-e.deltaY * 0.002), false);
-    }, { passive: false });
-
-    lightbox.addEventListener('dblclick', (e) => {
-        if (Date.now() - lastDoubleTapTime < 500) return;
-        if (!currentImg() || e.target.closest('.lightbox-close, .lightbox-arrow')) return;
-        if (zoomScale > 1) setZoom(1, true); else setZoom(2.5, true);
-    });
-
-    // Stop Safari page pinch-zoom while the lightbox is open.
-    lightbox.addEventListener('gesturestart', (e) => { e.preventDefault(); }, { passive: false });
-
-    // Mouse drag to pan when zoomed (desktop).
-    let mousePan = null;
-    lightbox.addEventListener('mousedown', (e) => {
-        if (zoomScale > 1 && currentImg() && e.target.tagName === 'IMG'){
-            mousePan = { x: e.clientX, y: e.clientY, tx: zoomTX, ty: zoomTY };
-        }
-    });
-    window.addEventListener('mousemove', (e) => {
-        if (!mousePan) return;
-        zoomTX = mousePan.tx + (e.clientX - mousePan.x);
-        zoomTY = mousePan.ty + (e.clientY - mousePan.y);
-        applyZoom(false);
-    });
-    window.addEventListener('mouseup', () => { mousePan = null; });
-
-    window.addEventListener('resize', () => {
-        if (lightbox.classList.contains('active')) resetZoom();
-    });
-})();
-</script>
-
-<script>
-(function(){
-    // Lightbox arrows and keyboard, as on the exhibition page
-    // (desktop.js parts 3-4 only: no wall-label flip, no slider arrows).
-    const lb = document.getElementById('lightbox');
-    const api = () => window.lightboxAPI;
-    if (lb) {
-        const mk = (cls, label, text, dir) => {
-            const b = document.createElement('button');
-            b.className = 'lightbox-arrow ' + cls;
-            b.type = 'button';
-            b.setAttribute('aria-label', label);
-            b.textContent = text;
-            b.addEventListener('click', e => { e.stopPropagation(); if (api()) api().go(api().index() + dir); });
-            lb.appendChild(b);
-        };
-        mk('prev', 'Previous work', '‹', -1);
-        mk('next', 'Next work', '›', 1);
-    }
-    document.addEventListener('keydown', e => {
-        if (!api() || !api().isOpen()) return;
-        if (e.key === 'Escape') { api().close(); return; }
-        const dir = e.key === 'ArrowLeft' ? -1 : e.key === 'ArrowRight' ? 1 : 0;
-        if (dir) { e.preventDefault(); api().go(api().index() + dir); }
-    });
-})();
-</script>
 
 <!-- Kit sticky bar: V Volumes Announcements -->
 <script async data-uid="3893e690ee" src="https://v-71.kit.com/3893e690ee/index.js"></script>

@@ -22,6 +22,13 @@
     }
 }
 
+/* A single book on its own page (a volume page): one column, centred,
+   at the shelf's single-column width. */
+.books-shelf.single{
+    grid-template-columns: 1fr;
+    max-width: 520px;
+}
+
 .book{
     margin: 0;
     padding: 0;
@@ -123,11 +130,11 @@
 /* The story block is a pull title and blurb under the cover, not a full
    story section: drop volume.css's 100px top margin and the wide
    subtitle gap. */
-body.page-books .story{
+.book .story{
     margin-top: 0;
 }
 
-body.page-books .story-subtitle{
+.book .story-subtitle{
     margin-bottom: 20px;
 }
 
