@@ -7,7 +7,7 @@
 <meta name="description" content="Propitiation: Evan Butler's archived online solo exhibition — digital art, video, and animation. Works are not for sale.">
 <title>Propitiation (Archived) — Evan Butler</title>
 <link rel="icon" type="image/png" href="assets/images/favicon.png?v=2">
-<link rel="stylesheet" href="css/pricingstyle.css?v=2">
+<link rel="stylesheet" href="css/pricingstyle.css?v=3">
 <link rel="stylesheet" href="css/desktop.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -45,7 +45,7 @@
   <a href="#ch1" data-rail="ch1"><span class="rn">I</span><span class="rl">People of the Internet</span></a>
   <a href="#ch2" data-rail="ch2"><span class="rn">II</span><span class="rl">The Bomb</span></a>
   <a href="#ch3" data-rail="ch3"><span class="rn">III</span><span class="rl">Hell</span></a>
-  <a href="#film" data-rail="film"><span class="rn">✳</span><span class="rl">Special Movie</span></a>
+  <a href="#film" data-rail="film"><span class="rn">*</span><span class="rl">Special Movie</span></a>
 </nav>
 
 <main id="top">
@@ -62,7 +62,7 @@
       <h1>Propiti<em>a</em>tion</h1>
       <div class="hero-meta">
         <span class="hero-meta-item">8 works</span><span class="hero-meta-item">3 chapters</span><span class="hero-meta-item">1 film</span><span class="hero-meta-item">Works are not for sale</span>
-        <a class="enter" href="#thesis">Enter the exhibition <span class="arr">↓</span></a>
+        <a class="enter" href="#thesis">Enter the exhibition</a>
       </div>
     </div>
   </section>
@@ -79,26 +79,6 @@
           <p class="chapter-body">When I created <em>Propitiation</em>, I wanted to establish a simple idea: digital art is more than art made with computers — it has its own distinct spirit. Through the loss of tactile presence in drawing, this physical experience has been altered into a mental experience where thoughts give way to shape. I saw it as a gateway to a new frame of thinking that challenges the status quo. The works shown in the exhibition are not for sale.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ================= INDEX ================= -->
-  <section class="room room-light index-sec" id="index" data-chapter="prologue">
-    <div class="wrap">
-      <div class="index-head rv">
-        <p class="kicker index-kicker">Index</p>
-      </div>
-      <ol class="index-list rv">
-        <li><a href="#w1"><span class="no">01</span><span class="ti">Untitled 2023</span><span class="me">Digital art · 2023</span></a></li>
-        <li><a href="#w2"><span class="no">02</span><span class="ti">Breaking （割れる）</span><span class="me">Digital art · Video · 2025</span></a></li>
-        <li><a href="#w3"><span class="no">03</span><span class="ti">Dante's Inferno</span><span class="me">Digital art · Video · 2026</span></a></li>
-        <li><a href="#w4"><span class="no">04</span><span class="ti">Hungry Gull and the Water Vessel</span><span class="me">Digital art · Animation · 2026</span></a></li>
-        <li><a href="#w5"><span class="no">05</span><span class="ti">Tanpeki （丹碧）</span><span class="me">Digital art · 2025</span></a></li>
-        <li><a href="#w6"><span class="no">06</span><span class="ti">Automatonophobia</span><span class="me">3D animation · Mixed video · 2025</span></a></li>
-        <li><a href="#w7"><span class="no">07</span><span class="ti">Venus's Cycle</span><span class="me">AI animation · Video · 2026</span></a></li>
-        <li><a href="#w8"><span class="no">08</span><span class="ti">Vagabond</span><span class="me">AI animation · 3D animation · 2026</span></a></li>
-        <li><a href="#film"><span class="no">✳</span><span class="ti">Exhibition Special Movie</span><span class="me"></span></a></li>
-      </ol>
     </div>
   </section>
 
@@ -128,7 +108,6 @@
                 <source src="assets/videos/Form.MP4" type="video/mp4">
               </video>
             </div>
-            <div class="play-badge"><span class="play-circle">Loop</span></div>
           </div>
           <div class="label art-info">
             <span class="no">02</span>
@@ -146,7 +125,6 @@
                 <source src="assets/videos/Dante.MP4" type="video/mp4">
               </video>
             </div>
-            <div class="play-badge"><span class="play-circle">Loop</span></div>
           </div>
           <div class="label art-info">
             <span class="no">03</span>
@@ -182,7 +160,6 @@
               <source src="assets/videos/Hungrygull.mp4" type="video/mp4">
             </video>
           </div>
-          <div class="play-badge"><span class="play-circle">Loop</span></div>
         </div>
         <div class="label art-info">
           <span class="no">04</span>
@@ -254,7 +231,6 @@
               <source src="assets/videos/Venuscycle.MP4" type="video/mp4">
             </video>
           </div>
-          <div class="play-badge"><span class="play-circle">Loop</span></div>
         </div>
         <div class="label art-info">
           <span class="no">07</span>
@@ -323,7 +299,7 @@
         <h2>Exhibition<br>Special Movie</h2>
       </div>
       <button class="play-big rv" data-film="nlVRBkvuoZg" aria-label="Play the Exhibition Special Movie">
-        <span class="tri">▶</span><small>Play film</small>
+        <small>Play film</small>
       </button>
     </div>
   </section>
@@ -342,10 +318,7 @@
   </div>
 </footer>
 
-<div class="scroll-toggle" id="scrollToggle">
-  <img src="assets/images/Dashup.PNG" alt="Scroll down" class="scroll-icon" id="dashDown" onclick="document.getElementById('thesis').scrollIntoView({behavior:'smooth'})">
-  <img src="assets/images/Dashdown.PNG" alt="Scroll up" class="scroll-icon" id="dashUp" onclick="document.body.scrollTo({top:0, behavior:'smooth'})" style="display:none;">
-</div>
+
 
 <!-- Lightbox -->
 <div class="overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged artwork">
@@ -389,7 +362,6 @@
     var max = scrollMax();
     var p = max > 0 ? Math.round((scrollTop() / max) * 100) : 0;
     if (bar) bar.style.width = p + "%";
-    updateToggle();
   }
   window.addEventListener("scroll", onScroll, {passive:true});
   document.body.addEventListener("scroll", onScroll, {passive:true});
@@ -435,31 +407,45 @@
     chapters.forEach(function(s){ chObs.observe(s); });
   }
 
-  /* ---- Tanpeki slider (5 slides) ---- */
+  /* ---- Tanpeki slider (5 slides) — slide-over, as on the original page ---- */
   var slides = document.querySelectorAll("#w5 .slide");
   var tanCount = document.getElementById("tanCount");
   var tanTrack = document.getElementById("tanTrack");
   var tIdx = 0;
+  function positionTan(offsetPx, animate){
+    slides.forEach(function(s, j){
+      s.style.transition = animate ? "transform .35s ease" : "none";
+      s.style.transform = "translateX(calc(" + ((j - tIdx) * 100) + "% + " + (offsetPx || 0) + "px))";
+    });
+  }
   function goTan(i){
-    tIdx = (i + slides.length) % slides.length;
+    tIdx = Math.max(0, Math.min(i, slides.length - 1));
     slides.forEach(function(s, j){ s.classList.toggle("on", j === tIdx); });
     if (tanCount) tanCount.textContent = (tIdx + 1) + " / " + slides.length;
     if (tanTrack) tanTrack.style.width = ((tIdx + 1) / slides.length * 100) + "%";
+    positionTan(0, true);
   }
   var tanPrev = document.getElementById("tanPrev");
   var tanNext = document.getElementById("tanNext");
   if (tanPrev) tanPrev.addEventListener("click", function(){ goTan(tIdx - 1); });
   if (tanNext) tanNext.addEventListener("click", function(){ goTan(tIdx + 1); });
-  /* swipe */
+  positionTan(0, false);
+  /* swipe: drag follows the finger, release snaps past 60px */
   var tanFrame = document.querySelector("#w5 .slider .frame");
   if (tanFrame){
-    var tStartX = 0, tDragging = false;
-    tanFrame.addEventListener("touchstart", function(e){ tStartX = e.touches[0].clientX; tDragging = true; }, {passive:true});
-    tanFrame.addEventListener("touchend", function(e){
+    var tStartX = 0, tDrag = 0, tDragging = false;
+    tanFrame.addEventListener("touchstart", function(e){ tStartX = e.touches[0].clientX; tDrag = 0; tDragging = true; }, {passive:true});
+    tanFrame.addEventListener("touchmove", function(e){
+      if (!tDragging) return;
+      tDrag = e.touches[0].clientX - tStartX;
+      positionTan(tDrag, false);
+    }, {passive:true});
+    tanFrame.addEventListener("touchend", function(){
       if (!tDragging) return;
       tDragging = false;
-      var dx = e.changedTouches[0].clientX - tStartX;
-      if (Math.abs(dx) > 60){ goTan(dx < 0 ? tIdx + 1 : tIdx - 1); }
+      if (Math.abs(tDrag) > 60){ goTan(tDrag < 0 ? tIdx + 1 : tIdx - 1); }
+      else { goTan(tIdx); }
+      tDrag = 0;
     }, {passive:true});
   }
 
@@ -535,26 +521,6 @@
     videoObserver.observe(video);
   });
 
-  /* ---- scroll toggle: down arrow at top, up arrow after scrolling,
-          hidden entirely near the bottom so it never overlaps the footer ---- */
-  var dashDown = document.getElementById('dashDown');
-  var dashUp = document.getElementById('dashUp');
-  var scrollToggle = document.getElementById('scrollToggle');
-  function updateToggle(){
-    if (!scrollToggle) return;
-    var st = scrollTop();
-    var nearBottom = (scrollMax() - st) < 120;
-    if (nearBottom){ scrollToggle.style.display = 'none'; return; }
-    scrollToggle.style.display = '';
-    if (st > 100){
-      if (dashDown) dashDown.style.display = 'none';
-      if (dashUp) dashUp.style.display = 'block';
-    } else {
-      if (dashDown) dashDown.style.display = 'block';
-      if (dashUp) dashUp.style.display = 'none';
-    }
-  }
-  updateToggle();
 })();
 </script>
 
@@ -598,7 +564,7 @@ document.querySelectorAll('a[href]').forEach(link => {
 </script>
 
 <script src="js/desktop.js" defer></script>
-<script src="js/lang.js?v=9"></script>
+<script src="js/lang.js?v=10"></script>
 <script src="js/menu.js"></script>
 <!-- Kit sticky bar: V Volumes Announcements -->
 <script async data-uid="3893e690ee" src="https://v-71.kit.com/3893e690ee/index.js"></script>

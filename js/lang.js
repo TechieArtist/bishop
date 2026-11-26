@@ -60,19 +60,7 @@
       '私たちが人生の中でつくり上げるペルソナについて、何を理解すべきなのか。革命家は、自らの生きる社会を曲げるべきか、それとも自分自身を曲げるべきか。人々が革命を必要としているのか、それとも革命家のほうが革命を必要としているのか。'
     ] },
     { sel: '.exhibition-page .hero-meta-item', ja: ['8作品', '3章', '1本の映画', '作品は販売しません'] },
-    { sel: '.exhibition-page .hero-meta .enter', ja: ['展覧会に入る <span class="arr">↓</span>'] },
-    { sel: '.exhibition-page .index-kicker', ja: ['目次'] },
-    { sel: '.exhibition-page .index-list .me', ja: [
-      'デジタルアート · 2023',
-      'デジタルアート · 映像 · 2025',
-      'デジタルアート · 映像 · 2026',
-      'デジタルアート · アニメーション · 2026',
-      'デジタルアート · 2025',
-      '3Dアニメーション · ミクストメディア映像 · 2025',
-      'AIアニメーション · 映像 · 2026',
-      'AIアニメーション · 3Dアニメーション · クレヨン · 2026',
-      null
-    ] },
+    { sel: '.exhibition-page .hero-meta .enter', ja: ['展覧会に入る'] },
     { sel: '.exhibition-page .rail .rl', ja: ['プロローグ', 'インターネットの人々', '爆弾', '地獄', 'スペシャルムービー'] },
     { sel: '.exhibition-page .special-movie-content h2', ja: ['展覧会<br>スペシャルムービー'] },
     { sel: '.exhibition-page .film-kicker', ja: ['コーダ'] },

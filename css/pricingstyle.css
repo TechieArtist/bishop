@@ -1136,31 +1136,17 @@ body.exhibition-page .thesis-body p{
   margin-bottom:0;
 }
 
-/* ---------- index of works ---------- */
-body.exhibition-page .index-sec{ padding:0 0 clamp(70px,10vh,120px); }
-body.exhibition-page .index-head{
-  display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:8px;
-}
-body.exhibition-page .index-list{ list-style:none; border-top:1px solid var(--ex-line); margin:0; padding:0; }
-body.exhibition-page .index-list a{
-  display:grid; grid-template-columns:64px 1fr auto; gap:16px; align-items:baseline;
-  padding:17px 6px; text-decoration:none; border-bottom:1px solid var(--ex-line); min-height:44px;
-  transition:padding-left .3s ease, background .3s ease;
-  color:var(--ex-fg);
-}
-body.exhibition-page .index-list a:hover{ padding-left:18px; background:var(--ex-hover-bg); }
-body.exhibition-page .index-list .no{
-  font-family:var(--ex-serif); font-style:italic; font-size:17px; color:var(--ex-cinnabar);
-}
-body.exhibition-page .index-list .ti{
-  font-family:var(--ex-serif); font-size:clamp(21px,2.4vw,30px); font-weight:400; line-height:1.1;
-}
-body.exhibition-page .index-list .me{
-  font-family:var(--ex-sans);
-  font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ex-fg-dim); text-align:right;
-}
-@media (max-width:640px){
-  body.exhibition-page .index-list a{ grid-template-columns:44px 1fr auto; }
+/* ---------- header + menu use the site font (Poppins), not the page font ---------- */
+/* The page sets Archivo on the body, which the header and menu inherit; the rest
+   of the site renders them in Poppins, so restore that here. In JA mode the
+   lang.js rule (html[lang="ja"] ...) still wins and supplies the Noto fallback. */
+body.exhibition-page header,
+body.exhibition-page header .brand,
+body.exhibition-page header .lang-toggle,
+body.exhibition-page header .navigation,
+body.exhibition-page header .navigation .navigation-items a,
+body.exhibition-page header .navigation .nav-group-label{
+  font-family:"Poppins", "Noto Sans JP", sans-serif;
 }
 
 /* ---------- works ---------- */
@@ -1269,9 +1255,7 @@ body.exhibition-page .chapter .rule{ width:64px; height:1px; background:var(--ex
 /* ---------- tanpeki slider ---------- */
 body.exhibition-page .slider{ position:relative; }
 body.exhibition-page .slider .frame{ aspect-ratio:16/8.4; }
-@media (max-width:640px){ body.exhibition-page .slider .frame{ aspect-ratio:4/3; } }
-body.exhibition-page .slide{ position:absolute; inset:0; opacity:0; transition:opacity .7s ease; }
-body.exhibition-page .slide.on{ opacity:1; position:relative; }
+body.exhibition-page .slide{ position:absolute; inset:0; transition:transform .35s ease; will-change:transform; }
 body.exhibition-page .slide img{ width:100%; height:100%; object-fit:cover; display:block; }
 body.exhibition-page .slider-ui{ display:flex; align-items:center; gap:16px; margin-top:16px; }
 body.exhibition-page .slider-ui .count{ font-family:var(--ex-serif); font-style:italic; font-size:17px; }
@@ -1316,7 +1300,6 @@ body.exhibition-page .film .play-big{
   font-family:var(--ex-sans); background:none; cursor:pointer;
 }
 body.exhibition-page .film .play-big:hover{ background:var(--ex-hover-bg); transform:scale(1.05); }
-body.exhibition-page .film .play-big .tri{ font-size:19px; margin-left:4px; }
 body.exhibition-page .film .play-big small{ font-size:9.5px; letter-spacing:.26em; text-transform:uppercase; opacity:.75; }
 
 /* ---------- footer (kept) ---------- */
@@ -1370,13 +1353,6 @@ body.exhibition-page .ov-nav.next{ right:14px; }
 }
 body.exhibition-page .overlay .vidwrap{ width:min(1080px,92vw); aspect-ratio:16/9; }
 body.exhibition-page .overlay .vidwrap iframe{ width:100%; height:100%; border:0; }
-
-/* ---------- scroll toggle (kept; icons inverted on the white page) ---------- */
-body.exhibition-page .scroll-toggle{ z-index:998; }
-body.exhibition-page .scroll-icon{ filter:invert(1); }
-@media (prefers-color-scheme: dark){
-  body.exhibition-page .scroll-icon{ filter:none; }
-}
 
 /* ---------- neutralise desktop.css wall-hung layout for this page ---------- */
 body.exhibition-page, html:has(body.exhibition-page){ scroll-snap-type:none; }
