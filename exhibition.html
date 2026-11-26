@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-<link rel="stylesheet" href="css/menu.css?v=2">
+<link rel="stylesheet" href="css/menu.css?v=3">
 </head>
 
 <body class="exhibition-page">
@@ -328,31 +328,6 @@
     </div>
   </section>
 
-  <!-- ================= COLOPHON ================= -->
-  <section class="room room-black colophon">
-    <div class="wrap">
-      <div class="colo-grid">
-        <div class="rv">
-          <h4>The merge</h4>
-          <ul class="changes">
-            <li><b>1</b><span><strong>From the original —</strong> the introduction and chapter texts, in full</span></li>
-            <li><b>2</b><span><strong>From the original —</strong> medium on every label and index line</span></li>
-            <li><b>3</b><span><strong>From the redesign —</strong> the titled Cross poster and the index up front</span></li>
-            <li><b>4</b><span><strong>From the redesign —</strong> Hell has its work; the movie closes as coda</span></li>
-            <li><b>5</b><span><strong>Kept from both —</strong> white wall, black in Dark Mode, the red accent</span></li>
-          </ul>
-        </div>
-        <div class="colo-side rv">
-          <h4>About</h4>
-          <p>Same works, same chapters — the redesign's hang, in the original's words.</p>
-          <p>All works © Evan Butler. Not for sale.</p>
-        </div>
-      </div>
-      <div class="colo-foot">
-        <button class="to-top" id="toTop">Back to the poster ↑</button>
-      </div>
-    </div>
-  </section>
 
 </main>
 
@@ -544,7 +519,6 @@
     }
   });
 
-  document.getElementById("toTop").addEventListener("click", function(){ scrollToY(0); });
 
   /* ---- lazy videos: play in view, pause out of view ---- */
   var lazyVideos = document.querySelectorAll('[data-lazy-video]');

@@ -1319,40 +1319,6 @@ body.exhibition-page .film .play-big:hover{ background:var(--ex-hover-bg); trans
 body.exhibition-page .film .play-big .tri{ font-size:19px; margin-left:4px; }
 body.exhibition-page .film .play-big small{ font-size:9.5px; letter-spacing:.26em; text-transform:uppercase; opacity:.75; }
 
-/* ---------- colophon ---------- */
-body.exhibition-page .colophon{ border-top:1px solid var(--ex-line); padding:clamp(60px,9vh,100px) 0 0; }
-body.exhibition-page .colo-grid{
-  display:grid; grid-template-columns:1.2fr 1fr; gap:clamp(30px,5vw,90px);
-}
-@media (max-width:860px){ body.exhibition-page .colo-grid{ grid-template-columns:1fr; } }
-body.exhibition-page .colophon h4{
-  font-family:var(--ex-sans);
-  font-size:11px; letter-spacing:.3em; text-transform:uppercase; margin-bottom:20px; color:var(--ex-fg);
-}
-body.exhibition-page .colophon h4 span{ color:var(--ex-cinnabar); }
-body.exhibition-page .changes{ list-style:none; margin:0; padding:0; }
-body.exhibition-page .changes li{
-  display:flex; gap:14px; padding:11px 0; border-bottom:1px solid var(--ex-line);
-  font-family:var(--ex-sans);
-  font-size:14.5px; font-weight:300; line-height:1.55; color:var(--ex-fg-dim);
-}
-body.exhibition-page .changes li b{
-  font-family:var(--ex-serif); font-style:italic; font-weight:400; color:var(--ex-cinnabar);
-  font-size:16px; min-width:26px;
-}
-body.exhibition-page .changes li strong{ color:var(--ex-fg); font-weight:500; }
-body.exhibition-page .colo-side p{
-  font-family:var(--ex-sans);
-  font-size:14.5px; font-weight:300; line-height:1.7; color:var(--ex-fg-dim); max-width:44ch; margin-bottom:0;
-}
-body.exhibition-page .colo-side p + p{ margin-top:1.2em; }
-body.exhibition-page .colo-foot{ padding:44px 0 54px; margin-top:clamp(56px,8vh,90px); border-top:1px solid var(--ex-line); }
-body.exhibition-page .to-top{
-  display:inline-flex; align-items:center; gap:8px; letter-spacing:.14em; text-transform:uppercase;
-  font-size:12px; color:var(--ex-fg-dim); font-family:var(--ex-sans); background:none; border:0; cursor:pointer;
-}
-body.exhibition-page .to-top:hover{ color:var(--ex-fg); }
-
 /* ---------- footer (kept) ---------- */
 body.exhibition-page .site-footer{
   text-align:center; padding:44px 20px 54px;
